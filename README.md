@@ -1,25 +1,20 @@
 # OMNIA — Unified Structural Measurement Engine
 
-Ω · SEI · IRI · SNRC  
+Ω · Ω̂ · SEI · IRI · OMNIA-LIMIT  
+**MB-X.01**
+
 **Author:** Massimiliano Brighindi
 
 ---
 
 ## Overview
 
-**OMNIA** is a **post-hoc, model-agnostic structural measurement engine**.
+**OMNIA** is a **post-hoc structural measurement engine**.
 
-It measures structural stability of representations under independent transformations:
+It measures **structural coherence, drift, saturation, and limits** of representations
+under independent transformations.
 
-- **invariance**
-- **drift**
-- **saturation**
-- **irreversibility**
-- **epistemic limits**
-
-OMNIA is strictly a **measurement layer**.
-
-It:
+OMNIA:
 
 - does **not** interpret meaning  
 - does **not** decide  
@@ -34,89 +29,147 @@ OMNIA measures **what remains invariant when representation changes**.
 
 > **Structural truth is what survives the removal of representation.**
 
-OMNIA evaluates outputs by applying independent structural lenses and measuring the residual Ω.
+OMNIA evaluates outputs by applying independent structural lenses and measuring:
+
+- **invariance**
+- **drift**
+- **saturation**
+- **irreversibility**
+
+The result is a **measured boundary**, not a judgment.
 
 ---
 
-## Quickstart (10 seconds)
+## Architecture
+
+OMNIA is **model-agnostic** and **post-inference**.
+
+Logical chain:
+
+Input / Output ↓ Structural Superposition ↓ Ω (Omega residue) ↓ Ω̂ (Omega-set under transformations) ↓ SEI (Structural Exhaustion Index) ↓ IRI (Irreversibility Risk Index) ↓ OMNIA-LIMIT (formal stop condition)
+
+Separation is non-negotiable:
+
+- **Measurement ≠ Cognition**
+- **Measurement ≠ Decision**
+- **Measurement ≠ Semantics**
+
+---
+
+## Installation
+
+Clone the repository and install in editable mode:
 
 ```bash
-git clone https://github.com/Tuttotorna/OMNIA.git
-cd OMNIA
-
 pip install -e .
+
+Verify installation:
+
+python -c "import omnia; print('OK import omnia', omnia.__version__)"
+
+
+---
+
+Quick Smoke Test (≈10 seconds)
+
+A minimal executable example is included.
+
+Run:
+
 python examples/quick_omnia_test.py
 
-Expected output:
+Expected output (example):
 
-an Ω̂ estimate
-
+Ω̂ estimate: <value>
 OK: OMNIA core executed
 
+This confirms that the core superposition + Omega estimation pipeline is working.
 
 
 ---
 
-Repository Layout
+What OMNIA Is For
 
-omnia/ — core measurement engine
+OMNIA is designed to:
 
-examples/ — minimal runnable smoke tests
+measure hallucination risk post-generation
 
-metrics/ — SEI, IRI, PBII modules (in progress)
+detect structural instability across transformations
 
-limit/ — OMNIA-LIMIT boundary certificates (SNRC) (next step)
+identify saturation points where further processing is meaningless
+
+provide a formal stop condition (OMNIA-LIMIT)
+
+act as a diagnostic layer composable with any model or system
 
 
 
 ---
 
-Structural Chain (non-negotiable)
+What OMNIA Is Not
 
-Correct separation:
+OMNIA is not:
 
-representation → OMNIA measure → OMNIA-LIMIT → STOP
+a language model
 
-Principle:
+a classifier
 
-measurement ≠ cognition ≠ decision
+an optimizer
 
-confidence is signal reliability, not truth by authority
+a safety policy
 
-saturation is a formal stop condition, not escalation
+an alignment framework
 
+a truth oracle
+
+
+OMNIA never claims truth.
+It measures structural invariance only.
+
+
+---
+
+Reproducibility
+
+Deterministic by design
+
+No hidden state
+
+No training phase
+
+No gradient updates
+
+
+Same input + same lenses ⇒ same measurements.
 
 
 ---
 
 Status
 
-Current version: v0.1.0
+Core engine: stable
 
-Stable:
+Smoke test: included
 
-installable Python package
+Benchmarks: in progress
 
-core Ω engine imported
-
-smoke test runnable
+OMNIA-LIMIT: formalized
 
 
-Next milestones:
-
-1. Integrate OMNIA-LIMIT (snrc.py)
-
-
-2. Add one public benchmark pipeline (JSONL real-run)
-
-
-3. Produce a single boundary certificate output (boundary.json)
-
-
+This repository represents the canonical implementation of OMNIA.
 
 
 ---
 
 License
 
-MIT
+Open research use.
+Attribution required.
+
+
+---
+
+Signature
+
+MB-X.01 / OMNIA
+Massimiliano Brighindi

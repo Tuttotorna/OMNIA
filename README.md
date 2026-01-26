@@ -3,9 +3,7 @@
 Ω · Ω̂ · SEI · IRI · OMNIA-LIMIT  
 **MB-X.01**
 
-**Author:** Massimiliano Brighindi  
-**License:** MIT  
-**Status:** Active / Experimental
+**Author:** Massimiliano Brighindi
 
 ---
 
@@ -13,25 +11,16 @@
 
 **OMNIA** is a **post-hoc structural measurement engine**.
 
-It measures **what remains invariant** when representations are transformed.
+It measures **what remains invariant when representations change**.
 
-OMNIA is **not** a model, **not** a classifier, and **not** a decision system.
+OMNIA:
 
-It operates **after** inference and evaluates **structural coherence, drift, saturation, and limits**.
+- does **not** interpret meaning  
+- does **not** decide  
+- does **not** optimize  
+- does **not** learn  
 
----
-
-## What OMNIA Is Not
-
-OMNIA deliberately does **not**:
-
-- interpret meaning  
-- generate text  
-- make decisions  
-- optimize outputs  
-- learn from data  
-
-OMNIA only **measures**.
+OMNIA operates **after inference**, as a **measurement layer**, not as a model.
 
 ---
 
@@ -39,46 +28,57 @@ OMNIA only **measures**.
 
 > **Structural truth is what survives the removal of representation.**
 
-If a signal remains invariant across independent transformations, it carries structural coherence.
+OMNIA evaluates outputs by applying **independent structural transformations**
+and measuring what remains stable.
 
-If it collapses, saturates, or diverges, OMNIA detects it.
-
----
-
-## The OMNIA Measurement Chain
-
-Input / Representation ↓ Structural Superposition ↓ Ω (Invariant Residue) ↓ Ω̂ (Omega-set under transformations) ↓ SEI (Structural Exhaustion Index) ↓ IRI (Irreversibility Index) ↓ OMNIA-LIMIT (Declared structural boundary)
-
-**Important:**  
-OMNIA stops at the boundary. It does not escalate or override limits.
+The result is **a measured boundary**, not a judgment.
 
 ---
 
-## Architecture
+## What OMNIA Measures
 
-OMNIA/ ├── omnia/ │   ├── engine/ │   │   └── superposition.py │   ├── omega.py │   └── init.py ├── examples/ │   └── quick_omnia_test.py ├── pyproject.toml └── README.md
+OMNIA computes structural metrics such as:
 
-- **SuperpositionKernel**: applies independent structural transformations  
-- **OmegaEstimator**: computes invariant residue Ω  
-- **OMNIA-LIMIT**: formal stop condition (no narrative escalation)
+- **Ω (Omega)** — invariant residual under transformation  
+- **Ω̂ (Omega-set)** — Omega under multiple lenses  
+- **ΔΩ / ΔC** — structural drift  
+- **SEI** — Saturation / exhaustion index  
+- **IRI** — irreversibility  
+- **OMNIA-LIMIT** — declared boundary where further transformation is futile  
+
+No semantic labels are produced.
 
 ---
 
-## Installation (Editable Mode)
+## Architecture (High Level)
+
+Input / Model Output ↓ OMNIA Lenses (base, time, causality, token, constraints, compression, permutation…) ↓ Ω / Ω̂ ↓ SEI · IRI ↓ OMNIA-LIMIT (STOP)
+
+**Measurement ≠ cognition ≠ decision**
+
+---
+
+## Repository Structure
+
+OMNIA/ ├─ omnia/                  # Core engine │  ├─ engine/ │  ├─ lenses/ │  ├─ omega.py │  └─ init.py ├─ examples/ │  └─ quick_omnia_test.py  # 10s smoke test ├─ pyproject.toml ├─ README.md └─ .gitignore
+
+---
+
+## Installation (Editable)
 
 From the repository root:
 
 ```bash
-pip install -e .
+pip install -e . -U
 
-Verify installation:
+Verify import:
 
 python -c "import omnia; print('OK import omnia', omnia.__version__)"
 
 
 ---
 
-Quick Smoke Test (≈10 seconds)
+Quick Smoke Test (10 seconds)
 
 Run:
 
@@ -86,110 +86,96 @@ python examples/quick_omnia_test.py
 
 Expected output (example):
 
-Ω̂ estimate: {...}
+Ω̂ estimate: <value>
 OK: OMNIA core executed
 
-This confirms the entire OMNIA core path executes correctly.
+This confirms that:
 
+the engine loads correctly
 
----
+the Omega pipeline executes
 
-Example (Minimal)
-
-from omnia.engine.superposition import SuperpositionKernel
-from omnia.omega import OmegaEstimator
-
-texts = [
-    "OMNIA measures invariance under transformation.",
-    "OMNIA measures structural drift and residual Ω.",
-]
-
-kernel = SuperpositionKernel()
-est = OmegaEstimator(kernel=kernel)
-
-omega_hat = est.estimate(texts)
-print(omega_hat)
-
-
----
-
-Intended Use Cases
-
-LLM hallucination detection (post-hoc)
-
-Structural drift analysis
-
-Representation stability measurement
-
-Saturation and collapse detection
-
-Epistemic boundary certification
-
-Model-agnostic evaluation layer
+no runtime coupling is required
 
 
 
 ---
 
-Design Constraints (Non-Negotiable)
+What OMNIA Is Not
 
-Measurement ≠ cognition
+not a classifier
 
-Measurement ≠ decision
+not a judge
 
-Confidence ≠ certainty
+not an alignment system
 
-Boundary ≠ failure
+not a safety layer
 
-
-OMNIA declares when structure stops being meaningful.
-
-
----
-
-Relation to Other MB-X.01 Repositories
-
-This repository unifies and stabilizes prior components:
-
-dual-echo-perception → conceptual origin
-
-OMNIAMIND → cognitive dynamics (separate layer)
-
-omega-method / omega-translator → experimental precursors
-
-omnia-limit → boundary formalization
+not a truth oracle
 
 
-This repo is the canonical measurement engine.
+OMNIA measures structure only.
 
 
 ---
 
-Epistemic Position
+Intended Use
 
-OMNIA does not claim truth.
+OMNIA is designed to be:
 
-It measures invariance under destruction of representation.
+model-agnostic
 
-If nothing survives → OMNIA stops.
+post-hoc
+
+composable
+
+institution-agnostic
+
+
+Typical use cases:
+
+hallucination boundary detection
+
+structural consistency checks
+
+saturation / collapse detection
+
+evaluation of irreducible residuals
+
+research on invariance and limits
+
 
 
 ---
 
-Attribution
+Status
+
+Core engine: stable
+
+Smoke test: present
+
+Architecture: frozen
+
+OMNIA-LIMIT: defined
+
+No training loop by design
+
+
+
+---
+
+Author & Origin
 
 OMNIA / MB-X.01
 Massimiliano Brighindi
 
+Logical Origin Node (L.O.N.)
+Structural measurement without narrative.
+
 
 ---
 
-Final Note
+License
 
-OMNIA is intentionally non-anthropomorphic.
+MIT License (or repository default)
 
-It does not explain.
-It does not justify.
-It measures — and stops.
-
-That is the feature.

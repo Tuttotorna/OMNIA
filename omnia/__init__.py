@@ -1,11 +1,10 @@
-# OMNIA package init — MBX / OMNIA_TOTALE
-
-from .ice import ICEStatus, ICEInput, ICEResult, ice_gate
+"""
+OMNIA — Unified Structural Measurement Engine
+Post-hoc, model-agnostic structural measurement (Ω, SEI, IRI, SNRC).
+"""
 
 __all__ = [
-    "ICEStatus",
-    "ICEInput",
-    "ICEResult",
-    "ice_gate",
+    "__version__",
 ]
-```0
+
+__version__ = "0.1.0"

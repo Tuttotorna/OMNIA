@@ -3,7 +3,9 @@
 Ω · Ω̂ · SEI · IRI · OMNIA-LIMIT  
 **MB-X.01**
 
-**Author:** Massimiliano Brighindi
+**Author:** Massimiliano Brighindi  
+**License:** MIT  
+**Status:** Active / Experimental
 
 ---
 
@@ -11,17 +13,25 @@
 
 **OMNIA** is a **post-hoc structural measurement engine**.
 
-It measures **structural coherence, drift, saturation, and limits** of representations
-under independent transformations.
+It measures **what remains invariant** when representations are transformed.
 
-OMNIA:
+OMNIA is **not** a model, **not** a classifier, and **not** a decision system.
 
-- does **not** interpret meaning  
-- does **not** decide  
-- does **not** optimize  
-- does **not** learn  
+It operates **after** inference and evaluates **structural coherence, drift, saturation, and limits**.
 
-OMNIA measures **what remains invariant when representation changes**.
+---
+
+## What OMNIA Is Not
+
+OMNIA deliberately does **not**:
+
+- interpret meaning  
+- generate text  
+- make decisions  
+- optimize outputs  
+- learn from data  
+
+OMNIA only **measures**.
 
 ---
 
@@ -29,36 +39,34 @@ OMNIA measures **what remains invariant when representation changes**.
 
 > **Structural truth is what survives the removal of representation.**
 
-OMNIA evaluates outputs by applying independent structural lenses and measuring:
+If a signal remains invariant across independent transformations, it carries structural coherence.
 
-- **invariance**
-- **drift**
-- **saturation**
-- **irreversibility**
+If it collapses, saturates, or diverges, OMNIA detects it.
 
-The result is a **measured boundary**, not a judgment.
+---
+
+## The OMNIA Measurement Chain
+
+Input / Representation ↓ Structural Superposition ↓ Ω (Invariant Residue) ↓ Ω̂ (Omega-set under transformations) ↓ SEI (Structural Exhaustion Index) ↓ IRI (Irreversibility Index) ↓ OMNIA-LIMIT (Declared structural boundary)
+
+**Important:**  
+OMNIA stops at the boundary. It does not escalate or override limits.
 
 ---
 
 ## Architecture
 
-OMNIA is **model-agnostic** and **post-inference**.
+OMNIA/ ├── omnia/ │   ├── engine/ │   │   └── superposition.py │   ├── omega.py │   └── init.py ├── examples/ │   └── quick_omnia_test.py ├── pyproject.toml └── README.md
 
-Logical chain:
-
-Input / Output ↓ Structural Superposition ↓ Ω (Omega residue) ↓ Ω̂ (Omega-set under transformations) ↓ SEI (Structural Exhaustion Index) ↓ IRI (Irreversibility Risk Index) ↓ OMNIA-LIMIT (formal stop condition)
-
-Separation is non-negotiable:
-
-- **Measurement ≠ Cognition**
-- **Measurement ≠ Decision**
-- **Measurement ≠ Semantics**
+- **SuperpositionKernel**: applies independent structural transformations  
+- **OmegaEstimator**: computes invariant residue Ω  
+- **OMNIA-LIMIT**: formal stop condition (no narrative escalation)
 
 ---
 
-## Installation
+## Installation (Editable Mode)
 
-Clone the repository and install in editable mode:
+From the repository root:
 
 ```bash
 pip install -e .
@@ -72,104 +80,116 @@ python -c "import omnia; print('OK import omnia', omnia.__version__)"
 
 Quick Smoke Test (≈10 seconds)
 
-A minimal executable example is included.
-
 Run:
 
 python examples/quick_omnia_test.py
 
 Expected output (example):
 
-Ω̂ estimate: <value>
+Ω̂ estimate: {...}
 OK: OMNIA core executed
 
-This confirms that the core superposition + Omega estimation pipeline is working.
+This confirms the entire OMNIA core path executes correctly.
 
 
 ---
 
-What OMNIA Is For
+Example (Minimal)
 
-OMNIA is designed to:
+from omnia.engine.superposition import SuperpositionKernel
+from omnia.omega import OmegaEstimator
 
-measure hallucination risk post-generation
+texts = [
+    "OMNIA measures invariance under transformation.",
+    "OMNIA measures structural drift and residual Ω.",
+]
 
-detect structural instability across transformations
+kernel = SuperpositionKernel()
+est = OmegaEstimator(kernel=kernel)
 
-identify saturation points where further processing is meaningless
+omega_hat = est.estimate(texts)
+print(omega_hat)
 
-provide a formal stop condition (OMNIA-LIMIT)
 
-act as a diagnostic layer composable with any model or system
+---
+
+Intended Use Cases
+
+LLM hallucination detection (post-hoc)
+
+Structural drift analysis
+
+Representation stability measurement
+
+Saturation and collapse detection
+
+Epistemic boundary certification
+
+Model-agnostic evaluation layer
 
 
 
 ---
 
-What OMNIA Is Not
+Design Constraints (Non-Negotiable)
 
-OMNIA is not:
+Measurement ≠ cognition
 
-a language model
+Measurement ≠ decision
 
-a classifier
+Confidence ≠ certainty
 
-an optimizer
-
-a safety policy
-
-an alignment framework
-
-a truth oracle
+Boundary ≠ failure
 
 
-OMNIA never claims truth.
-It measures structural invariance only.
+OMNIA declares when structure stops being meaningful.
 
 
 ---
 
-Reproducibility
+Relation to Other MB-X.01 Repositories
 
-Deterministic by design
+This repository unifies and stabilizes prior components:
 
-No hidden state
+dual-echo-perception → conceptual origin
 
-No training phase
+OMNIAMIND → cognitive dynamics (separate layer)
 
-No gradient updates
+omega-method / omega-translator → experimental precursors
 
-
-Same input + same lenses ⇒ same measurements.
-
-
----
-
-Status
-
-Core engine: stable
-
-Smoke test: included
-
-Benchmarks: in progress
-
-OMNIA-LIMIT: formalized
+omnia-limit → boundary formalization
 
 
-This repository represents the canonical implementation of OMNIA.
+This repo is the canonical measurement engine.
 
 
 ---
 
-License
+Epistemic Position
 
-Open research use.
-Attribution required.
+OMNIA does not claim truth.
+
+It measures invariance under destruction of representation.
+
+If nothing survives → OMNIA stops.
 
 
 ---
 
-Signature
+Attribution
 
-MB-X.01 / OMNIA
+OMNIA / MB-X.01
 Massimiliano Brighindi
+
+
+---
+
+Final Note
+
+OMNIA is intentionally non-anthropomorphic.
+
+It does not explain.
+It does not justify.
+It measures — and stops.
+
+That is the feature.

@@ -2,11 +2,11 @@
 
 ## Status
 
-This document defines the position of **OMNIA** inside the broader **OMNIABASE** framework.
+This document defines the position of **OMNIA** inside the broader **[OMNIABASE](https://github.com/Tuttotorna/OMNIABASE)** framework.
 
 Its purpose is to prevent architectural confusion.
 
-OMNIA is not the whole framework.
+OMNIA is not the whole framework.  
 OMNIA is one of its canonical branches.
 
 This document freezes that distinction.
@@ -15,7 +15,7 @@ This document freezes that distinction.
 
 ## 1. General framework vs branch
 
-**OMNIABASE** is the general framework.
+**[OMNIABASE](https://github.com/Tuttotorna/OMNIABASE)** is the general framework.
 
 It defines the broad multirepresentational principle:
 
@@ -40,7 +40,7 @@ This means:
 
 ## 2. What OMNIABASE asks
 
-At the most general level, OMNIABASE asks:
+At the most general level, **[OMNIABASE](https://github.com/Tuttotorna/OMNIABASE)** asks:
 
 - what depends on the representation?
 - what remains stable beyond it?
@@ -103,12 +103,12 @@ That maturity does not make it identical to the framework as a whole.
 
 ## 5. What OMNIA is not inside the framework
 
-Inside OMNIABASE, OMNIA should not be confused with:
+Inside **[OMNIABASE](https://github.com/Tuttotorna/OMNIABASE)**, OMNIA should not be confused with:
 
 - the umbrella framework itself
-- the Coordinate Discovery branch
-- the Cross-Representation Translation branch
-- the epistemic pre-layer associated with observer decentering
+- the **[Coordinate Discovery branch](https://github.com/Tuttotorna/omniabase-coordinate-discovery)**
+- the **[Cross-Representation Translation branch](https://github.com/Tuttotorna/omega-translator)**
+- the epistemic pre-layer associated with **[observer-suspension](https://github.com/Tuttotorna/observer-suspension)**
 - the total history of related MB-X.01 repositories
 
 OMNIA is not the general theory of everything in the ecosystem.
@@ -124,6 +124,8 @@ That role is narrow, serious, and valuable precisely because it remains bounded.
 To understand OMNIA correctly, it should be read together with the existence of the other canonical Omniabase branches.
 
 ### A. Coordinate Discovery
+
+Repository: **[omniabase-coordinate-discovery](https://github.com/Tuttotorna/omniabase-coordinate-discovery)**
 
 Question:
 
@@ -141,9 +143,9 @@ It is concerned with:
 
 OMNIA does not primarily do this.
 
----
-
 ### B. Cross-Representation Translation
+
+Representative repository: **[omega-translator](https://github.com/Tuttotorna/omega-translator)**
 
 Question:
 
@@ -167,6 +169,8 @@ OMNIA does not primarily do this either.
 
 The Omniabase ecosystem also includes an epistemic pre-layer concerned with reducing the silent monopoly of the privileged observer.
 
+Primary repository: **[observer-suspension](https://github.com/Tuttotorna/observer-suspension)**
+
 That work helps motivate why a single representation should not be treated as final.
 
 OMNIA inherits the consequences of that move, but OMNIA is not itself the full observer-decentering framework.
@@ -181,8 +185,8 @@ It does not exist to establish that need from scratch.
 
 The following distinction must remain stable:
 
-- **OMNIABASE** -> general framework
-- **OMNIA** -> Diagnostics / Structural Measurement branch
+- **[OMNIABASE](https://github.com/Tuttotorna/OMNIABASE)** -> general framework
+- **[OMNIA](https://github.com/Tuttotorna/OMNIA)** -> Diagnostics / Structural Measurement branch
 - **other branches** -> distinct operational families
 - **pre-layers and satellites** -> conceptually relevant, but not identical to the framework core
 
@@ -202,9 +206,11 @@ Without it, the ecosystem collapses into conceptual ambiguity.
 If OMNIA is treated as the whole of OMNIABASE, two errors follow.
 
 ### Error 1
+
 The framework becomes artificially narrowed.
 
 OMNIABASE would then be mistaken for:
+
 - only diagnostics
 - only fragility sensing
 - only post-hoc measurement
@@ -213,9 +219,11 @@ OMNIABASE would then be mistaken for:
 That would be false.
 
 ### Error 2
+
 OMNIA itself becomes overloaded.
 
 It would then be expected to cover:
+
 - hidden coordinate discovery
 - translation across representations
 - all epistemic functions
@@ -260,6 +268,9 @@ Because diagnostics is easier to:
 This makes OMNIA the natural first operational face of a broader framework.
 
 That strategic role should not be confused with architectural supremacy.
+
+For deeper operational and historical branch material, see also:  
+**[lon-mirror](https://github.com/Tuttotorna/lon-mirror)**
 
 ---
 

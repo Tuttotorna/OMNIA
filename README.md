@@ -1,6 +1,3 @@
-
-
-
 # OMNIA — Unified Structural Measurement Engine
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18379486.svg)](https://doi.org/10.5281/zenodo.18379486)
@@ -10,15 +7,16 @@
 This repository is part of the **MB-X.01 / OMNIABASE / OMNIA** ecosystem.
 
 Canonical architecture and broader ecosystem map:  
-https://github.com/Tuttotorna/lon-mirror/blob/main/ECOSYSTEM.md
+**[lon-mirror / ECOSYSTEM.md](https://github.com/Tuttotorna/lon-mirror/blob/main/ECOSYSTEM.md)**
 
-**OMNIABASE** defines the general multirepresentational framework.  
+**[OMNIABASE](https://github.com/Tuttotorna/OMNIABASE)** defines the general multirepresentational framework.  
 **OMNIA** is its most mature **Diagnostics / Structural Measurement** branch.
 
 Ω · Ω̂ · SEI · IRI · OMNIA-LIMIT  
 **MB-X.01**
 
-**Author:** Massimiliano Brighindi
+**Author:** Massimiliano Brighindi  
+**Contact:** brighissimo@gmail.com
 
 ---
 
@@ -43,7 +41,7 @@ It is designed to evaluate whether apparent stability survives beyond a single r
 
 ## Position Inside OMNIABASE
 
-**OMNIABASE** is the general framework.
+**[OMNIABASE](https://github.com/Tuttotorna/OMNIABASE)** is the general framework.
 
 It begins from one principle:
 
@@ -69,10 +67,12 @@ OMNIA evaluates outputs by applying **independent structural transformations** a
 The result is **a measured boundary**, not a semantic judgment.
 
 OMNIA does not ask first:
+
 - what does this mean?
 - what should be done?
 
 OMNIA asks first:
+
 - what remains?
 - what drifts?
 - what saturates?
@@ -92,8 +92,8 @@ OMNIA computes structural metrics such as:
 - **IRI** — irreversibility
 - **OMNIA-LIMIT** — declared boundary where further transformation is structurally futile
 
-No semantic labels are required.
-No narrative interpretation is required.
+No semantic labels are required.  
+No narrative interpretation is required.  
 The output is **measurement only**.
 
 ---
@@ -261,7 +261,9 @@ a replacement for domain-specific models
 
 OMNIA measures structure only.
 
-It does not replace reasoning. It does not replace interpretation. It does not replace decision.
+It does not replace reasoning.
+It does not replace interpretation.
+It does not replace decision.
 
 It measures structural behavior after an output already exists.
 
@@ -312,6 +314,28 @@ OMNIA should therefore be read not as an isolated universal system, but as one o
 
 ---
 
+Related Repositories
+
+For the shortest functional path through the broader ecosystem:
+
+OMNIABASE — umbrella framework
+
+lon-mirror — deep operational and historical core of the diagnostics lineage
+
+observer-suspension — epistemic pre-layer
+
+omniabase-coordinate-discovery — Coordinate Discovery branch
+
+omega-translator — Cross-Representation Translation branch
+
+OMNIA-RADAR — residual structural opportunity detection
+
+omnia-limit — structural boundary / saturation layer
+
+
+
+---
+
 Status
 
 Core engine: stable
@@ -344,5 +368,3 @@ Structural measurement without narrative.
 License
 
 MIT License
-
-

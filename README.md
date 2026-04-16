@@ -1,12 +1,19 @@
+
+
+
 # OMNIA — Unified Structural Measurement Engine
+
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18379486.svg)](https://doi.org/10.5281/zenodo.18379486)
 
 ## Canonical Ecosystem Map
 
-This repository is part of the **MB-X.01 / OMNIA** ecosystem.
+This repository is part of the **MB-X.01 / OMNIABASE / OMNIA** ecosystem.
 
-Canonical architecture and full map:
+Canonical architecture and broader ecosystem map:  
 https://github.com/Tuttotorna/lon-mirror/blob/main/ECOSYSTEM.md
+
+**OMNIABASE** defines the general multirepresentational framework.  
+**OMNIA** is its most mature **Diagnostics / Structural Measurement** branch.
 
 Ω · Ω̂ · SEI · IRI · OMNIA-LIMIT  
 **MB-X.01**
@@ -19,16 +26,37 @@ https://github.com/Tuttotorna/lon-mirror/blob/main/ECOSYSTEM.md
 
 **OMNIA** is a **post-hoc structural measurement engine**.
 
-It measures **what remains invariant when representations change**.
+It measures **what remains structurally stable when representations change**.
 
 OMNIA:
 
-- does **not** interpret meaning  
-- does **not** decide  
-- does **not** optimize  
-- does **not** learn  
+- does **not** interpret meaning
+- does **not** decide
+- does **not** optimize
+- does **not** learn
 
 OMNIA operates **after inference**, as a **measurement layer**, not as a model.
+
+It is designed to evaluate whether apparent stability survives beyond a single representation.
+
+---
+
+## Position Inside OMNIABASE
+
+**OMNIABASE** is the general framework.
+
+It begins from one principle:
+
+> a phenomenon should not be treated as exhausted by a single representation.
+
+From that principle, multiple branches follow.
+
+**OMNIA** is the branch focused on one narrower question:
+
+> when something looks stable in one representation, does that stability survive when representation changes?
+
+In that sense, OMNIA is not the whole framework.  
+It is the **Diagnostics / Structural Measurement** branch of OMNIABASE.
 
 ---
 
@@ -36,10 +64,20 @@ OMNIA operates **after inference**, as a **measurement layer**, not as a model.
 
 > **Structural truth is what survives the removal of representation.**
 
-OMNIA evaluates outputs by applying **independent structural transformations**
-and measuring what remains stable.
+OMNIA evaluates outputs by applying **independent structural transformations** and measuring what remains stable.
 
-The result is **a measured boundary**, not a judgment.
+The result is **a measured boundary**, not a semantic judgment.
+
+OMNIA does not ask first:
+- what does this mean?
+- what should be done?
+
+OMNIA asks first:
+- what remains?
+- what drifts?
+- what saturates?
+- what collapses?
+- what becomes irrecoverable under further transformation?
 
 ---
 
@@ -47,36 +85,94 @@ The result is **a measured boundary**, not a judgment.
 
 OMNIA computes structural metrics such as:
 
-- **Ω (Omega)** — invariant residual under transformation  
-- **Ω̂ (Omega-set)** — Omega under multiple lenses  
-- **ΔΩ / ΔC** — structural drift  
-- **SEI** — Saturation / exhaustion index  
-- **IRI** — irreversibility  
-- **OMNIA-LIMIT** — declared boundary where further transformation is futile  
+- **Ω (Omega)** — invariant residual under transformation
+- **Ω̂ (Omega-set)** — Omega under multiple lenses
+- **ΔΩ / ΔC** — structural drift
+- **SEI** — saturation / exhaustion index
+- **IRI** — irreversibility
+- **OMNIA-LIMIT** — declared boundary where further transformation is structurally futile
 
-No semantic labels are produced.
+No semantic labels are required.
+No narrative interpretation is required.
+The output is **measurement only**.
+
+---
+
+## Architectural Rule
+
+**Measurement ≠ cognition ≠ decision**
+
+This separation is non-negotiable.
+
+- **Measurement** asks what remains invariant, what drifts, what saturates, and what collapses.
+- **Cognition** asks what those measurements mean inside a model or domain.
+- **Decision** asks what action should follow.
+
+OMNIA belongs to the first layer only.
 
 ---
 
 ## Architecture (High Level)
 
-Input / Model Output ↓ OMNIA Lenses (base, time, causality, token, constraints, compression, permutation…) ↓ Ω / Ω̂ ↓ SEI · IRI ↓ OMNIA-LIMIT (STOP)
+```text
+Input / Model Output
+        ↓
+OMNIA lenses
+(base, time, causality, token, constraints, compression, permutation, ...)
+        ↓
+Ω / Ω̂
+        ↓
+SEI · IRI
+        ↓
+OMNIA-LIMIT (STOP)
 
-**Measurement ≠ cognition ≠ decision**
+OMNIA is therefore:
+
+post-hoc
+
+model-agnostic
+
+composable
+
+structural
+
+non-semantic by design
+
+
 
 ---
 
-## Repository Structure
+Repository Structure
 
-OMNIA/ ├─ omnia/                  # Core engine │  ├─ engine/ │  ├─ lenses/ │  ├─ omega.py │  └─ init.py ├─ examples/ │  └─ quick_omnia_test.py  # 10s smoke test ├─ pyproject.toml ├─ README.md └─ .gitignore
+OMNIA/
+├─ omnia/                     # Core engine
+│  ├─ engine/
+│  ├─ lenses/
+│  ├─ omega.py
+│  └─ __init__.py
+├─ examples/
+│  └─ quick_omnia_test.py     # ~10s smoke test
+├─ docs/
+├─ pyproject.toml
+├─ README.md
+└─ .gitignore
+
+Main areas:
+
+omnia/ -> core structural measurement engine
+
+examples/ -> runnable examples and smoke tests
+
+docs/ -> architectural and methodological notes
+
+
 
 ---
 
-## Installation (Editable)
+Installation (Editable)
 
 From the repository root:
 
-```bash
 pip install -e . -U
 
 Verify import:
@@ -86,7 +182,7 @@ python -c "import omnia; print('OK import omnia', omnia.__version__)"
 
 ---
 
-Quick Smoke Test (10 seconds)
+Quick Smoke Test
 
 Run:
 
@@ -103,26 +199,8 @@ the engine loads correctly
 
 the Omega pipeline executes
 
-no runtime coupling is required
+no external runtime coupling is required
 
-
-
----
-
-What OMNIA Is Not
-
-not a classifier
-
-not a judge
-
-not an alignment system
-
-not a safety layer
-
-not a truth oracle
-
-
-OMNIA measures structure only.
 
 
 ---
@@ -140,7 +218,7 @@ composable
 institution-agnostic
 
 
-Typical use cases:
+Typical use cases include:
 
 hallucination boundary detection
 
@@ -150,8 +228,86 @@ saturation / collapse detection
 
 evaluation of irreducible residuals
 
-research on invariance and limits
+research on invariance and structural limits
 
+post-hoc auditing of model outputs
+
+representation-dependent fragility sensing
+
+
+OMNIA is especially useful where outputs look acceptable on the surface but may remain structurally weak under transformation.
+
+
+---
+
+What OMNIA Is Not
+
+OMNIA is not:
+
+a classifier
+
+a judge
+
+an alignment system
+
+a training loop
+
+a semantic interpreter
+
+a truth oracle
+
+a replacement for domain-specific models
+
+
+OMNIA measures structure only.
+
+It does not replace reasoning. It does not replace interpretation. It does not replace decision.
+
+It measures structural behavior after an output already exists.
+
+
+---
+
+Scope and Boundary
+
+OMNIA operates on structural traces.
+
+It does not directly measure:
+
+pure meaning in itself
+
+pure interiority in itself
+
+final causation in itself
+
+metaphysical truth in itself
+
+
+It works on what can be rendered into comparable structural residues under controlled representational variation.
+
+Its boundary is not a weakness.
+
+It is what keeps the engine coherent.
+
+
+---
+
+Relationship to the Broader Ecosystem
+
+At a high level:
+
+OMNIABASE -> umbrella framework
+
+OMNIA -> Diagnostics / Structural Measurement branch
+
+omniabase-coordinate-discovery -> Coordinate Discovery branch
+
+omega-translator and related repos -> Cross-Representation Translation branch
+
+observer-suspension -> epistemic pre-layer
+
+
+OMNIA should therefore be read not as an isolated universal system, but as one operational branch inside a broader multirepresentational architecture.
 
 
 ---
@@ -166,8 +322,10 @@ Architecture: frozen
 
 OMNIA-LIMIT: defined
 
-No training loop by design
+Training loop: absent by design
 
+
+OMNIA is intended to remain bounded and structurally disciplined.
 
 
 ---
@@ -185,5 +343,6 @@ Structural measurement without narrative.
 
 License
 
-MIT License (or repository default)
+MIT License
+
 

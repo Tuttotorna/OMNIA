@@ -70,7 +70,7 @@ python examples/run_profiles_jsonl.py examples/demo_profiles.jsonl
 
 Save the results to file:
 
-python examples/run_profiles_jsonl.py examples/demo_profiles.jsonl -o examples/results.jsonl
+python examples/run_profiles_jsonl.py examples/demo_profiles.jsonl -o examples/demo_profiles_results.jsonl
 
 Minimal input example:
 
@@ -89,6 +89,50 @@ Example enriched output shape:
   "gate_status": "GO",
   "reason_code": "stable"
 }
+
+
+---
+
+Current mini-results
+
+The repository now includes a small bounded result surface beyond pure internal architecture.
+
+Demo profile result
+
+input: examples/demo_profiles.jsonl
+
+output: examples/demo_profiles_results.jsonl
+
+
+Surface-ok mini-result
+
+input: examples/surface_ok_cases.jsonl
+
+output: examples/surface_ok_results.jsonl
+
+summary: docs/SURFACE_OK_MINI_RESULT.md
+
+
+Canonical formula:
+
+surface_ok != always_GO
+
+LLM surface mini-result
+
+input: examples/llm_surface_cases.jsonl
+
+output: examples/llm_surface_results.jsonl
+
+summary: docs/LLM_SURFACE_MINI_RESULT.md
+
+
+Canonical formula:
+
+surface-readable LLM-like output != always structurally admissible
+
+Index of current mini-results:
+
+docs/MINI_RESULTS_INDEX.md
 
 
 ---
@@ -426,9 +470,9 @@ Main areas:
 
 omnia/ -> core structural measurement and gating logic
 
-examples/ -> runnable minimal examples and JSONL runner
+examples/ -> runnable minimal examples, runners, analyzers, and frozen result artifacts
 
-docs/ -> canonical scope, architecture, thresholds, output schema
+docs/ -> canonical scope, architecture, thresholds, output schema, and mini-result summaries
 
 tests/ -> canonical gate and profile tests
 
@@ -483,6 +527,20 @@ the canonical output schema is emitted
 
 ---
 
+Result Analysis
+
+Run the generic analyzer on any OMNIA results file:
+
+python examples/analyze_results.py --input examples/llm_surface_results.jsonl
+python examples/analyze_results.py --input examples/surface_ok_results.jsonl
+
+Run the LLM surface-specific analyzer:
+
+python examples/analyze_llm_surface_results.py
+
+
+---
+
 JSONL Batch Demo
 
 Run the canonical batch demo:
@@ -491,7 +549,7 @@ python examples/run_profiles_jsonl.py examples/demo_profiles.jsonl
 
 Save the results to file:
 
-python examples/run_profiles_jsonl.py examples/demo_profiles.jsonl -o examples/results.jsonl
+python examples/run_profiles_jsonl.py examples/demo_profiles.jsonl -o examples/demo_profiles_results.jsonl
 
 This processes one JSON object per line and emits canonical OMNIA results for each record.
 
@@ -627,6 +685,8 @@ limit logic: in scope
 
 bounded gate output: in scope
 
+frozen mini-results: present
+
 training loop: absent by design
 
 semantic interpretation: excluded by design
@@ -640,4 +700,3 @@ OMNIA is intended to remain bounded, readable, and structurally disciplined.
 License
 
 MIT License
-

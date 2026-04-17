@@ -35,6 +35,7 @@ It now contains bounded result artifacts that can be inspected and re-run.
 The following result files are now part of the repository state.
 
 ### Demo result
+
 ```text
 examples/demo_profiles_results.jsonl
 
@@ -84,6 +85,21 @@ docs/LLM_SURFACE_MINI_RESULT.md
 
 ---
 
+Support-response result
+
+examples/support_response_results.jsonl
+
+This result freezes the third domain-facing divergence surface:
+
+support-readable output != always structurally admissible
+
+The paired summary document is:
+
+docs/SUPPORT_RESPONSE_MINI_RESULT.md
+
+
+---
+
 3. Frozen summary artifacts
 
 The following result summaries are now part of the repository state:
@@ -91,6 +107,8 @@ The following result summaries are now part of the repository state:
 docs/SURFACE_OK_MINI_RESULT.md
 
 docs/LLM_SURFACE_MINI_RESULT.md
+
+docs/SUPPORT_RESPONSE_MINI_RESULT.md
 
 docs/MINI_RESULTS_INDEX.md
 
@@ -120,12 +138,14 @@ The current results show that OMNIA CORE v1 can already produce bounded divergen
 
 surface acceptability
 
+readable output quality
+
 structural admissibility
 
 
 This is the first external-readable signal of the project.
 
-The results demonstrate that the gate is not merely echoing readability or a surface label.
+The results demonstrate that the gate is not merely echoing readability, support-like phrasing, or a surface label.
 
 
 ---
@@ -193,7 +213,7 @@ This is the current operational meaning of the repository.
 
 The shortest correct formula for the current result state is:
 
-OMNIA now contains a runnable core, frozen result JSONL artifacts, frozen mini-result summaries, and a small reproducible divergence surface beyond pure internal architecture.
+OMNIA now contains a runnable core, frozen result JSONL artifacts, frozen mini-result summaries, and a small reproducible divergence surface across abstract, LLM-like, and support-response readable cases.
 
 
 ---

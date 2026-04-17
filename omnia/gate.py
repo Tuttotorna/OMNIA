@@ -85,10 +85,10 @@ def compute_gate_status(
     ):
         return "GO"
 
+    # UNSTABLE only for genuine collapse-level conditions
     if (
         omega_score < 0.30
         or iri_score >= 0.75
-        or (drift_score >= 0.70 and omega_score < 0.50)
         or (
             limit_triggered
             and omega_score < 0.30
@@ -97,6 +97,7 @@ def compute_gate_status(
     ):
         return "UNSTABLE"
 
+    # NO_GO for blocking but non-collapsed conditions
     if (
         limit_triggered
         or sei_score < 0.20

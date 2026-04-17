@@ -174,6 +174,23 @@ examples/llm_surface_results.jsonl
 
 ---
 
+D. Support-response run
+
+Input:
+
+examples/support_response_cases.jsonl
+
+Command:
+
+python examples/run_profiles_jsonl.py examples/support_response_cases.jsonl -o examples/support_response_results.jsonl
+
+Output:
+
+examples/support_response_results.jsonl
+
+
+---
+
 7. Frozen analysis runs
 
 Generic analyzer
@@ -186,6 +203,7 @@ Command pattern:
 
 python examples/analyze_results.py --input examples/surface_ok_results.jsonl
 python examples/analyze_results.py --input examples/llm_surface_results.jsonl
+python examples/analyze_results.py --input examples/support_response_results.jsonl
 python examples/analyze_results.py --input examples/demo_profiles_results.jsonl
 
 This prints:

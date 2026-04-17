@@ -1,3 +1,9 @@
+Nome file:
+
+docs/RESULTS_STATUS.md
+
+Contenuto completo da sostituire interamente:
+
 # RESULTS_STATUS.md
 
 ## Status
@@ -23,10 +29,11 @@ OMNIA CORE v1 now includes a minimal but real result surface composed of:
 - frozen result JSONL artifacts
 - frozen mini-result summaries
 - reproducible analysis scripts
+- reproducible rebuild scripts
 
 This means the repository no longer contains only architecture and code.
 
-It now contains bounded result artifacts that can be inspected and re-run.
+It now contains bounded result artifacts that can be inspected, re-run, rebuilt, and analyzed.
 
 ---
 
@@ -118,16 +125,22 @@ These files make the current mini-results readable without requiring direct insp
 
 ---
 
-4. Frozen analysis artifacts
+4. Frozen analysis and rebuild artifacts
 
-The following analysis scripts are now part of the repository state:
+The following result-processing scripts are now part of the repository state:
 
 examples/analyze_results.py
 
 examples/analyze_llm_surface_results.py
 
+examples/analyze_support_response_results.py
 
-These scripts make the mini-results re-runnable and inspectable from result files.
+examples/rebuild_all_results.py
+
+examples/rebuild_and_analyze_all.py
+
+
+These scripts make the mini-results re-runnable, rebuildable, and inspectable from repository-local result files.
 
 
 ---
@@ -202,6 +215,8 @@ with passing canonical tests
 with frozen mini-result artifacts
 
 with small but real divergence evidence
+
+with rebuildable and analyzable local result artifacts
 
 
 This is the current operational meaning of the repository.

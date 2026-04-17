@@ -28,33 +28,104 @@ OMNIA measures structure only.
 
 ---
 
-## Canonical Problem
+## 10-second quick start
 
-Many outputs look acceptable at surface level.
+Install from the repository root:
 
-Some are structurally stable.  
-Some are structurally fragile.  
-Some should not be extended further because structural continuation is already exhausted, degraded, or unjustified.
+```bash
+pip install -e . -U
 
-OMNIA exists to distinguish these cases **post hoc**.
+Run the minimal smoke test:
+
+python examples/quick_omnia_test.py
+
+Expected output pattern:
+
+{
+  "omega_score": 0.58,
+  "sei_score": 0.55,
+  "iri_score": 0.31,
+  "drift_score": 0.57,
+  "limit_triggered": false,
+  "gate_status": "RISK",
+  "reason_code": "high_drift"
+}
+
+followed by:
+
+OK: OMNIA core executed
+
 
 ---
 
-## Core Claim
+Minimal JSONL batch demo
+
+Canonical demo input is provided in:
+
+examples/demo_profiles.jsonl
+
+Run the batch demo:
+
+python examples/run_profiles_jsonl.py examples/demo_profiles.jsonl
+
+Save the results to file:
+
+python examples/run_profiles_jsonl.py examples/demo_profiles.jsonl -o examples/results.jsonl
+
+Minimal input example:
+
+{"case_id":"clean_admissible","omega_score":0.84,"sei_score":0.77,"iri_score":0.12,"drift_score":0.15}
+{"case_id":"surface_ok_but_fragile","omega_score":0.58,"sei_score":0.55,"iri_score":0.31,"drift_score":0.57}
+
+Example enriched output shape:
+
+{
+  "case_id": "clean_admissible",
+  "omega_score": 0.84,
+  "sei_score": 0.77,
+  "iri_score": 0.12,
+  "drift_score": 0.15,
+  "limit_triggered": false,
+  "gate_status": "GO",
+  "reason_code": "stable"
+}
+
+
+---
+
+Canonical Problem
+
+Many outputs look acceptable at surface level.
+
+Some are structurally stable.
+Some are structurally fragile.
+Some should not be extended further because structural continuation is already exhausted, degraded, or unjustified.
+
+OMNIA exists to distinguish these cases post hoc.
+
+
+---
+
+Core Claim
 
 The canonical claim of OMNIA is:
 
 > A post-hoc structural measurement layer can detect silent fragility in outputs that appear superficially acceptable, detect when structural continuation becomes unjustified, and convert the result into a bounded operational gate output.
 
+
+
 This is the maximal claim of the system.
 
 Anything broader than this is outside scope.
 
+
 ---
 
-## Core Principle
+Core Principle
 
-> **Structural stability is what survives controlled representational variation.**
+> Structural stability is what survives controlled representational variation.
+
+
 
 OMNIA does not begin from semantic interpretation.
 
@@ -62,37 +133,46 @@ OMNIA begins from structural behavior under transformation.
 
 It asks:
 
-- what remains structurally stable?
-- what drifts?
-- what degrades?
-- what becomes irrecoverable?
-- when does further continuation stop being admissible?
+what remains structurally stable?
 
-The result is a **bounded structural report**, not a semantic verdict.
+what drifts?
+
+what degrades?
+
+what becomes irrecoverable?
+
+when does further continuation stop being admissible?
+
+
+The result is a bounded structural report, not a semantic verdict.
+
 
 ---
 
-## Non-Negotiable Architectural Rule
+Non-Negotiable Architectural Rule
 
-**measurement != cognition != decision**
+measurement != cognition != decision
 
 This separation is mandatory.
 
-- **Measurement** asks what remains, what drifts, what saturates, and what collapses.
-- **Cognition** asks what those measurements mean inside a model, task, or domain.
-- **Decision** asks what action should follow.
+Measurement asks what remains, what drifts, what saturates, and what collapses.
 
-OMNIA belongs to the **measurement layer**.
+Cognition asks what those measurements mean inside a model, task, or domain.
 
-Its gate is a **bounded operational conversion layer** attached to the measurement result.
+Decision asks what action should follow.
+
+
+OMNIA belongs to the measurement layer.
+
+Its gate is a bounded operational conversion layer attached to the measurement result.
 
 OMNIA is not a cognition system and not an autonomous decision-maker.
 
+
 ---
 
-## Canonical Pipeline
+Canonical Pipeline
 
-```text
 input
 -> optional framing normalization
 -> structural lenses

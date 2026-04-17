@@ -1,8 +1,14 @@
+Nome file:
+
+docs/WORK_STATE.md
+
+Contenuto completo da sostituire interamente:
+
 # WORK_STATE.md
 
 ## Status
 
-This document freezes the current work state of OMNIA CORE v1 after the first bounded build-and-result phase.
+This document freezes the current work state of OMNIA CORE v1 after the first bounded build-and-result phase and the current phase 2 readable divergence extension.
 
 Its purpose is to record what now exists concretely in the repository, what has already been stabilized, and what the repository should now be considered to contain.
 
@@ -44,12 +50,14 @@ Current frozen result files:
 - `examples/surface_ok_results.jsonl`
 - `examples/llm_surface_results.jsonl`
 - `examples/support_response_results.jsonl`
+- `examples/rag_answer_results.jsonl`
 
 Current frozen mini-result summaries:
 
 - `docs/SURFACE_OK_MINI_RESULT.md`
 - `docs/LLM_SURFACE_MINI_RESULT.md`
 - `docs/SUPPORT_RESPONSE_MINI_RESULT.md`
+- `docs/RAG_ANSWER_MINI_RESULT.md`
 - `docs/MINI_RESULTS_INDEX.md`
 - `docs/RESULTS_STATUS.md`
 
@@ -68,8 +76,12 @@ Current reproducibility artifacts:
 
 - `docs/REPRODUCIBLE_RUNS.md`
 - `examples/rebuild_all_results.py`
+- `examples/rebuild_and_analyze_all.py`
 - `examples/analyze_results.py`
+- `examples/analyze_surface_ok_results.py`
 - `examples/analyze_llm_surface_results.py`
+- `examples/analyze_support_response_results.py`
+- `examples/analyze_rag_answer_results.py`
 
 This means the current frozen result layer is not merely descriptive.
 
@@ -85,6 +97,7 @@ The repository now contains a small but real evidence surface across:
 - abstract surface-ok cases
 - LLM-like surface-readable cases
 - support-response surface-readable cases
+- retrieval-augmented readable cases
 
 This is the current external-readable validation layer.
 
@@ -102,7 +115,7 @@ At the current state, OMNIA should be understood as:
 - with passing canonical tests
 - with frozen result JSONL artifacts
 - with frozen mini-result summaries
-- with reproducible rebuild and analysis scripts
+- with a reproducible local result pipeline
 
 This is the present meaning of the repository.
 
@@ -147,7 +160,7 @@ These remain outside the current stable work layer.
 The shortest correct formula for the current work state is:
 
 ```text
-OMNIA now contains a bounded runnable core, passing canonical tests, frozen mini-result artifacts, and a reproducible local result pipeline.
+OMNIA now contains a bounded runnable core, passing canonical tests, frozen mini-result artifacts, and a reproducible local result pipeline across multiple readable domains.
 
 
 ---

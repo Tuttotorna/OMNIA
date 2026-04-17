@@ -14,7 +14,7 @@ It only records the current small reproducible result chain already present in t
 
 ## 1. Current mini-results
 
-The repository currently contains four bounded result layers:
+The repository currently contains five bounded result layers:
 
 ### A. Demo profile result
 
@@ -119,6 +119,31 @@ support-readable output != always structurally admissible
 
 ---
 
+E. Retrieval-augmented answer mini-result
+
+Input:
+
+examples/rag_answer_cases.jsonl
+
+Output:
+
+examples/rag_answer_results.jsonl
+
+Summary:
+
+docs/RAG_ANSWER_MINI_RESULT.md
+
+Purpose:
+
+Show that retrieval-grounded readable outputs can remain structurally non-admissible.
+
+Canonical formula:
+
+retrieval-grounded readable output != always structurally admissible
+
+
+---
+
 2. Current analysis tools
 
 The repository currently contains lightweight result analyzers.
@@ -156,13 +181,24 @@ Produce a short report specifically for the support-response mini-result.
 
 ---
 
+Rebuild-all script
+
+examples/rebuild_all_results.py
+
+Purpose:
+
+Rebuild all frozen result JSONL artifacts from their canonical input files.
+
+
+---
+
 Rebuild-and-analyze orchestration script
 
 examples/rebuild_and_analyze_all.py
 
 Purpose:
 
-Rebuild all frozen result artifacts and run the current analysis surface in one bounded command.
+Rebuild all frozen result artifacts and run the current bounded analysis surface in one command.
 
 
 ---
@@ -214,6 +250,8 @@ general LLM evaluation coverage
 
 general support-system superiority
 
+general retrieval-system superiority
+
 
 It only records the current bounded mini-result surface.
 
@@ -230,6 +268,7 @@ internal runnable core
 + surface-ok divergence
 + LLM-like surface divergence
 + support-response divergence
++ retrieval-augmented divergence
 
 This is the current state of external-readable validation.
 
@@ -240,4 +279,4 @@ This is the current state of external-readable validation.
 
 The shortest correct formula for the current state is:
 
-OMNIA now has a runnable core, frozen mini-result artifacts, and a small reproducible divergence surface across abstract, LLM-like, and support-response readable cases.
+OMNIA now has a runnable core, frozen mini-result artifacts, and a small reproducible divergence surface across abstract, LLM-like, support-response, and retrieval-augmented readable cases.

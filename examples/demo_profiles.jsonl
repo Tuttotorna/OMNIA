@@ -1,0 +1,6 @@
+{"case_id":"clean_admissible","omega_score":0.84,"sei_score":0.77,"iri_score":0.12,"drift_score":0.15}
+{"case_id":"surface_ok_but_fragile","omega_score":0.58,"sei_score":0.55,"iri_score":0.31,"drift_score":0.57}
+{"case_id":"continuation_not_admissible","omega_score":0.43,"sei_score":0.16,"iri_score":0.44,"drift_score":0.49}
+{"case_id":"collapsed_profile","omega_score":0.18,"sei_score":0.09,"iri_score":0.87,"drift_score":0.82}
+{"case_id":"high_drift_block","omega_score":0.47,"sei_score":0.45,"iri_score":0.28,"drift_score":0.74}
+{"case_id":"extractability_exhausted","omega_score":0.52,"sei_score":0.12,"iri_score":0.33,"drift_score":0.34}

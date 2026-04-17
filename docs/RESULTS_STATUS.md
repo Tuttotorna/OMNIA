@@ -1,9 +1,3 @@
-Nome file:
-
-docs/RESULTS_STATUS.md
-
-Contenuto completo da sostituire interamente:
-
 # RESULTS_STATUS.md
 
 ## Status
@@ -107,6 +101,21 @@ docs/SUPPORT_RESPONSE_MINI_RESULT.md
 
 ---
 
+Retrieval-augmented answer result
+
+examples/rag_answer_results.jsonl
+
+This result freezes the fourth domain-facing divergence surface:
+
+retrieval-grounded readable output != always structurally admissible
+
+The paired summary document is:
+
+docs/RAG_ANSWER_MINI_RESULT.md
+
+
+---
+
 3. Frozen summary artifacts
 
 The following result summaries are now part of the repository state:
@@ -116,6 +125,8 @@ docs/SURFACE_OK_MINI_RESULT.md
 docs/LLM_SURFACE_MINI_RESULT.md
 
 docs/SUPPORT_RESPONSE_MINI_RESULT.md
+
+docs/RAG_ANSWER_MINI_RESULT.md
 
 docs/MINI_RESULTS_INDEX.md
 
@@ -131,9 +142,13 @@ The following result-processing scripts are now part of the repository state:
 
 examples/analyze_results.py
 
+examples/analyze_surface_ok_results.py
+
 examples/analyze_llm_surface_results.py
 
 examples/analyze_support_response_results.py
+
+examples/analyze_rag_answer_results.py
 
 examples/rebuild_all_results.py
 
@@ -158,7 +173,7 @@ structural admissibility
 
 This is the first external-readable signal of the project.
 
-The results demonstrate that the gate is not merely echoing readability, support-like phrasing, or a surface label.
+The results demonstrate that the gate is not merely echoing readability, support-like phrasing, retrieval-grounded phrasing, or a surface label.
 
 
 ---
@@ -228,7 +243,7 @@ This is the current operational meaning of the repository.
 
 The shortest correct formula for the current result state is:
 
-OMNIA now contains a runnable core, frozen result JSONL artifacts, frozen mini-result summaries, and a small reproducible divergence surface across abstract, LLM-like, and support-response readable cases.
+OMNIA now contains a runnable core, frozen result JSONL artifacts, frozen mini-result summaries, and a small reproducible divergence surface across abstract, LLM-like, support-response, and retrieval-augmented readable cases.
 
 
 ---

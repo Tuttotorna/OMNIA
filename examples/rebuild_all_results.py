@@ -31,6 +31,10 @@ JOBS = [
         Path("examples/support_response_cases.jsonl"),
         Path("examples/support_response_results.jsonl"),
     ),
+    (
+        Path("examples/rag_answer_cases.jsonl"),
+        Path("examples/rag_answer_results.jsonl"),
+    ),
 ]
 
 

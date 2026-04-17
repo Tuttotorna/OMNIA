@@ -1,9 +1,3 @@
-Nome file:
-
-docs/REPRODUCIBLE_RUNS.md
-
-Contenuto completo da sostituire interamente:
-
 # REPRODUCIBLE_RUNS.md
 
 ## Status

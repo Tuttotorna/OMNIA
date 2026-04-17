@@ -16,6 +16,7 @@ PYTHON = sys.executable
 
 REBUILD_SCRIPT = Path("examples/rebuild_all_results.py")
 GENERIC_ANALYZER = Path("examples/analyze_results.py")
+SURFACE_OK_ANALYZER = Path("examples/analyze_surface_ok_results.py")
 LLM_ANALYZER = Path("examples/analyze_llm_surface_results.py")
 SUPPORT_ANALYZER = Path("examples/analyze_support_response_results.py")
 RAG_ANALYZER = Path("examples/analyze_rag_answer_results.py")
@@ -41,6 +42,7 @@ def ensure_exists(path: Path) -> None:
 def main() -> int:
     ensure_exists(REBUILD_SCRIPT)
     ensure_exists(GENERIC_ANALYZER)
+    ensure_exists(SURFACE_OK_ANALYZER)
     ensure_exists(LLM_ANALYZER)
     ensure_exists(SUPPORT_ANALYZER)
     ensure_exists(RAG_ANALYZER)
@@ -65,6 +67,11 @@ def main() -> int:
         run([PYTHON, str(GENERIC_ANALYZER), "--input", str(result_file)])
 
     print("\n[4/4] Running domain-specific analyzers")
+
+    print("-" * 48)
+    print("ANALYZING: examples/surface_ok_results.jsonl (surface-ok-specific)")
+    print("-" * 48)
+    run([PYTHON, str(SURFACE_OK_ANALYZER)])
 
     print("-" * 48)
     print("ANALYZING: examples/llm_surface_results.jsonl (LLM-specific)")

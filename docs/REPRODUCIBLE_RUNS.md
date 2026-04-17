@@ -240,6 +240,21 @@ non-GO case list when case_id exists
 
 ---
 
+Surface-ok analyzer
+
+Script:
+
+examples/analyze_surface_ok_results.py
+
+Command:
+
+python examples/analyze_surface_ok_results.py
+
+This prints the bounded surface-ok mini-result summary.
+
+
+---
+
 LLM surface analyzer
 
 Script:
@@ -334,13 +349,16 @@ This script performs, in one bounded run:
 3. run the generic analyzer on all frozen result files
 
 
-4. run the LLM-specific analyzer
+4. run the surface-ok-specific analyzer
 
 
-5. run the support-response-specific analyzer
+5. run the LLM-specific analyzer
 
 
-6. run the retrieval-augmented-answer-specific analyzer
+6. run the support-response-specific analyzer
+
+
+7. run the retrieval-augmented-answer-specific analyzer
 
 
 

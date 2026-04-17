@@ -14,9 +14,10 @@ It only records the current small reproducible result chain already present in t
 
 ## 1. Current mini-results
 
-The repository currently contains three bounded result layers:
+The repository currently contains four bounded result layers:
 
 ### A. Demo profile result
+
 Input:
 ```text
 examples/demo_profiles.jsonl
@@ -25,7 +26,9 @@ Output:
 
 examples/demo_profiles_results.jsonl
 
-Purpose: A canonical profile-level check of the four gate outcomes:
+Purpose:
+
+A canonical profile-level check of the four gate outcomes:
 
 GO
 
@@ -55,7 +58,9 @@ Summary:
 
 docs/SURFACE_OK_MINI_RESULT.md
 
-Purpose: Show that surface acceptability does not imply structural admissibility.
+Purpose:
+
+Show that surface acceptability does not imply structural admissibility.
 
 Canonical formula:
 
@@ -78,7 +83,9 @@ Summary:
 
 docs/LLM_SURFACE_MINI_RESULT.md
 
-Purpose: Show that readable LLM-like outputs can remain structurally non-admissible.
+Purpose:
+
+Show that readable LLM-like outputs can remain structurally non-admissible.
 
 Canonical formula:
 
@@ -87,15 +94,42 @@ surface-readable LLM-like output != always structurally admissible
 
 ---
 
+D. Support-response mini-result
+
+Input:
+
+examples/support_response_cases.jsonl
+
+Output:
+
+examples/support_response_results.jsonl
+
+Summary:
+
+docs/SUPPORT_RESPONSE_MINI_RESULT.md
+
+Purpose:
+
+Show that support-readable outputs can remain structurally non-admissible.
+
+Canonical formula:
+
+support-readable output != always structurally admissible
+
+
+---
+
 2. Current analysis tools
 
-The repository currently contains two lightweight result analyzers.
+The repository currently contains lightweight result analyzers.
 
 Generic analyzer
 
 examples/analyze_results.py
 
-Purpose: Analyze any OMNIA JSONL results file that follows the canonical output schema.
+Purpose:
+
+Analyze any OMNIA JSONL results file that follows the canonical output schema.
 
 
 ---
@@ -104,7 +138,9 @@ LLM surface-specific analyzer
 
 examples/analyze_llm_surface_results.py
 
-Purpose: Produce a short report specifically for the LLM surface mini-result.
+Purpose:
+
+Produce a short report specifically for the LLM surface mini-result.
 
 
 ---
@@ -116,7 +152,7 @@ The minimal reproducible result flow is:
 input JSONL
 -> OMNIA JSONL runner
 -> results JSONL
--> short analysis report
+-> short analysis
 -> frozen mini-result document
 
 This is now the canonical bounded externalization path of OMNIA CORE v1.
@@ -154,6 +190,8 @@ semantic correctness
 
 general LLM evaluation coverage
 
+general support-system superiority
+
 
 It only records the current bounded mini-result surface.
 
@@ -169,6 +207,7 @@ internal runnable core
 + demo profile result
 + surface-ok divergence
 + LLM-like surface divergence
++ support-response divergence
 
 This is the current state of external-readable validation.
 
@@ -179,4 +218,4 @@ This is the current state of external-readable validation.
 
 The shortest correct formula for the current state is:
 
-OMNIA now has a runnable core, frozen mini-result artifacts, and a small reproducible divergence surface beyond pure internal architecture.
+OMNIA now has a runnable core, frozen mini-result artifacts, and a small reproducible divergence surface across abstract, LLM-like, and support-response readable cases.

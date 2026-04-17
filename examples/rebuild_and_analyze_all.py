@@ -24,6 +24,7 @@ RESULT_FILES = [
     Path("examples/surface_ok_results.jsonl"),
     Path("examples/llm_surface_results.jsonl"),
     Path("examples/support_response_results.jsonl"),
+    Path("examples/rag_answer_results.jsonl"),
 ]
 
 

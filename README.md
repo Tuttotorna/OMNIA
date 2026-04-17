@@ -44,7 +44,7 @@ OMNIA exists to distinguish these cases **post hoc**.
 
 The canonical claim of OMNIA is:
 
-> A post-hoc structural measurement layer can detect silent fragility in outputs that appear superficially acceptable, detect when structural continuation becomes unjustified, and convert that result into a bounded operational gate output.
+> A post-hoc structural measurement layer can detect silent fragility in outputs that appear superficially acceptable, detect when structural continuation becomes unjustified, and convert the result into a bounded operational gate output.
 
 This is the maximal claim of the system.
 
@@ -335,28 +335,22 @@ OMNIA should be read as the canonical structural measurement and gating core, no
 
 Repository Structure
 
-OMNIA/
-├─ omnia/                     # Core structural measurement and gating logic
-│  ├─ engine/
-│  ├─ lenses/
-│  ├─ omega.py
-│  └─ __init__.py
-├─ examples/
-│  └─ quick_omnia_test.py     # Minimal smoke test
-├─ docs/
-│  ├─ CORE_SCOPE.md
-│  └─ ...
-├─ pyproject.toml
-├─ README.md
-└─ .gitignore
+omnia/
+examples/
+docs/
+tests/
+pyproject.toml
+README.md
 
 Main areas:
 
-omnia/ -> core structural measurement logic
+omnia/ -> core structural measurement and gating logic
 
-examples/ -> runnable minimal examples
+examples/ -> runnable minimal examples and JSONL runner
 
-docs/ -> canonical scope and architecture notes
+docs/ -> canonical scope, architecture, thresholds, output schema
+
+tests/ -> canonical gate and profile tests
 
 
 
@@ -370,7 +364,7 @@ pip install -e . -U
 
 Verify import:
 
-python -c "import omnia; print('OK import omnia', omnia.__version__)"
+python -c "from omnia import evaluate_structural_profile; print('OK import omnia')"
 
 
 ---
@@ -383,17 +377,58 @@ python examples/quick_omnia_test.py
 
 Expected output pattern:
 
-Omega estimate: <value>
+{
+  "omega_score": 0.58,
+  "sei_score": 0.55,
+  "iri_score": 0.31,
+  "drift_score": 0.57,
+  "limit_triggered": false,
+  "gate_status": "RISK",
+  "reason_code": "high_drift"
+}
+
+followed by:
+
 OK: OMNIA core executed
 
 This confirms that:
 
-the engine loads correctly
+the package imports correctly
 
-the structural pipeline executes
+the core gate logic executes
 
-no external runtime coupling is required for the minimal test
+the canonical output schema is emitted
 
+
+
+---
+
+JSONL Batch Demo
+
+Run the canonical batch demo:
+
+python examples/run_profiles_jsonl.py examples/demo_profiles.jsonl
+
+Save the results to file:
+
+python examples/run_profiles_jsonl.py examples/demo_profiles.jsonl -o examples/results.jsonl
+
+This processes one JSON object per line and emits canonical OMNIA results for each record.
+
+
+---
+
+Tests
+
+Run the full test suite:
+
+pytest
+
+Or run the main subsets individually:
+
+pytest tests/test_gate.py
+pytest tests/test_demo_profiles.py
+pytest tests/test_import.py
 
 
 ---

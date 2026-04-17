@@ -1,3 +1,9 @@
+Nome file:
+
+docs/REPRODUCIBLE_RUNS.md
+
+Contenuto completo da sostituire interamente:
+
 # REPRODUCIBLE_RUNS.md
 
 ## Status
@@ -237,7 +243,33 @@ This prints the bounded LLM surface mini-result summary.
 
 ---
 
-8. Current reproducible artifact chain
+8. Rebuild all frozen result artifacts
+
+The canonical rebuild script is:
+
+examples/rebuild_all_results.py
+
+Command:
+
+python examples/rebuild_all_results.py
+
+This script rebuilds all frozen result JSONL artifacts from their canonical input files:
+
+examples/demo_profiles_results.jsonl
+
+examples/surface_ok_results.jsonl
+
+examples/llm_surface_results.jsonl
+
+examples/support_response_results.jsonl
+
+
+This is the shortest reproducible command for regenerating the current frozen mini-result artifact layer.
+
+
+---
+
+9. Current reproducible artifact chain
 
 The current canonical artifact chain is:
 
@@ -252,7 +284,7 @@ This is the current reproducible run surface of OMNIA CORE v1.
 
 ---
 
-9. What is reproducible now
+10. What is reproducible now
 
 The following are reproducible now:
 
@@ -270,13 +302,15 @@ frozen mini-result regeneration
 
 result analysis from frozen JSONL files
 
+rebuild of all current frozen result artifacts
+
 
 This is the current minimal reproducibility surface.
 
 
 ---
 
-10. What is not yet part of reproducible runs
+11. What is not yet part of reproducible runs
 
 The following are not yet part of the current reproducible run layer:
 
@@ -298,16 +332,16 @@ Those remain outside the current reproducible boundary.
 
 ---
 
-11. Canonical one-line formula
+12. Canonical one-line formula
 
 The shortest correct formula is:
 
-OMNIA CORE v1 currently supports reproducible install, test, smoke, JSONL run, frozen mini-result regeneration, and result analysis from repository-local artifacts.
+OMNIA CORE v1 currently supports reproducible install, test, smoke, JSONL run, frozen mini-result regeneration, full frozen artifact rebuild, and result analysis from repository-local artifacts.
 
 
 ---
 
-12. Final status
+13. Final status
 
 At the current state of the repository, OMNIA is no longer only readable.
 

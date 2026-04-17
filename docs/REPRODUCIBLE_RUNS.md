@@ -237,6 +237,21 @@ This prints the bounded LLM surface mini-result summary.
 
 ---
 
+Support-response analyzer
+
+Script:
+
+examples/analyze_support_response_results.py
+
+Command:
+
+python examples/analyze_support_response_results.py
+
+This prints the bounded support-response mini-result summary.
+
+
+---
+
 8. Rebuild all frozen result artifacts
 
 The canonical rebuild script is:
@@ -263,7 +278,37 @@ This is the shortest reproducible command for regenerating the current frozen mi
 
 ---
 
-9. Current reproducible artifact chain
+9. Rebuild and analyze all frozen artifacts
+
+The canonical orchestration script is:
+
+examples/rebuild_and_analyze_all.py
+
+Command:
+
+python examples/rebuild_and_analyze_all.py
+
+This script performs, in one bounded run:
+
+1. rebuild all frozen result JSONL artifacts
+
+
+2. verify that all rebuilt result files exist
+
+
+3. run the generic analyzer on all frozen result files
+
+
+4. run the LLM-specific analyzer
+
+
+
+This is the shortest end-to-end bounded reproducibility command currently supported by the repository.
+
+
+---
+
+10. Current reproducible artifact chain
 
 The current canonical artifact chain is:
 
@@ -278,7 +323,7 @@ This is the current reproducible run surface of OMNIA CORE v1.
 
 ---
 
-10. What is reproducible now
+11. What is reproducible now
 
 The following are reproducible now:
 
@@ -298,13 +343,15 @@ result analysis from frozen JSONL files
 
 rebuild of all current frozen result artifacts
 
+rebuild-and-analysis of the current frozen result surface
+
 
 This is the current minimal reproducibility surface.
 
 
 ---
 
-11. What is not yet part of reproducible runs
+12. What is not yet part of reproducible runs
 
 The following are not yet part of the current reproducible run layer:
 
@@ -326,16 +373,16 @@ Those remain outside the current reproducible boundary.
 
 ---
 
-12. Canonical one-line formula
+13. Canonical one-line formula
 
 The shortest correct formula is:
 
-OMNIA CORE v1 currently supports reproducible install, test, smoke, JSONL run, frozen mini-result regeneration, full frozen artifact rebuild, and result analysis from repository-local artifacts.
+OMNIA CORE v1 currently supports reproducible install, test, smoke, JSONL run, frozen mini-result regeneration, full frozen artifact rebuild, and bounded result analysis from repository-local artifacts.
 
 
 ---
 
-13. Final status
+14. Final status
 
 At the current state of the repository, OMNIA is no longer only readable.
 

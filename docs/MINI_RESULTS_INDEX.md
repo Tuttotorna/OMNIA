@@ -1,3 +1,9 @@
+Nome file:
+
+docs/MINI_RESULTS_INDEX.md
+
+Contenuto completo da sostituire interamente:
+
 # MINI_RESULTS_INDEX.md
 
 ## Status
@@ -177,6 +183,17 @@ examples/analyze_support_response_results.py
 Purpose:
 
 Produce a short report specifically for the support-response mini-result.
+
+
+---
+
+Retrieval-augmented answer-specific analyzer
+
+examples/analyze_rag_answer_results.py
+
+Purpose:
+
+Produce a short report specifically for the retrieval-augmented answer mini-result.
 
 
 ---

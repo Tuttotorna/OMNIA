@@ -18,6 +18,7 @@ REBUILD_SCRIPT = Path("examples/rebuild_all_results.py")
 GENERIC_ANALYZER = Path("examples/analyze_results.py")
 LLM_ANALYZER = Path("examples/analyze_llm_surface_results.py")
 SUPPORT_ANALYZER = Path("examples/analyze_support_response_results.py")
+RAG_ANALYZER = Path("examples/analyze_rag_answer_results.py")
 
 RESULT_FILES = [
     Path("examples/demo_profiles_results.jsonl"),
@@ -42,6 +43,7 @@ def main() -> int:
     ensure_exists(GENERIC_ANALYZER)
     ensure_exists(LLM_ANALYZER)
     ensure_exists(SUPPORT_ANALYZER)
+    ensure_exists(RAG_ANALYZER)
 
     print("=" * 48)
     print("OMNIA REBUILD AND ANALYZE ALL")
@@ -73,6 +75,11 @@ def main() -> int:
     print("ANALYZING: examples/support_response_results.jsonl (support-specific)")
     print("-" * 48)
     run([PYTHON, str(SUPPORT_ANALYZER)])
+
+    print("-" * 48)
+    print("ANALYZING: examples/rag_answer_results.jsonl (RAG-specific)")
+    print("-" * 48)
+    run([PYTHON, str(RAG_ANALYZER)])
 
     print("=" * 48)
     print("DONE: all frozen result artifacts rebuilt and analyzed")

@@ -5,8 +5,8 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "omnia"
 version = "0.1.0"
-description = "Unified structural measurement engine for invariance, drift, and epistemic limits."
-authors = [{name="Massimiliano Brighindi"}]
+description = "Post-hoc structural measurement and gating core for detecting silent fragility under bounded transformations."
+authors = [{ name = "Massimiliano Brighindi" }]
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = []

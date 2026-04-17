@@ -17,6 +17,7 @@ PYTHON = sys.executable
 REBUILD_SCRIPT = Path("examples/rebuild_all_results.py")
 GENERIC_ANALYZER = Path("examples/analyze_results.py")
 LLM_ANALYZER = Path("examples/analyze_llm_surface_results.py")
+SUPPORT_ANALYZER = Path("examples/analyze_support_response_results.py")
 
 RESULT_FILES = [
     Path("examples/demo_profiles_results.jsonl"),
@@ -39,31 +40,38 @@ def main() -> int:
     ensure_exists(REBUILD_SCRIPT)
     ensure_exists(GENERIC_ANALYZER)
     ensure_exists(LLM_ANALYZER)
+    ensure_exists(SUPPORT_ANALYZER)
 
     print("=" * 48)
     print("OMNIA REBUILD AND ANALYZE ALL")
     print("=" * 48)
 
-    print("\n[1/3] Rebuilding frozen result artifacts")
+    print("\n[1/4] Rebuilding frozen result artifacts")
     run([PYTHON, str(REBUILD_SCRIPT)])
 
-    print("\n[2/3] Verifying rebuilt result files")
+    print("\n[2/4] Verifying rebuilt result files")
     for result_file in RESULT_FILES:
         ensure_exists(result_file)
         print(f"- ok: {result_file}")
 
-    print("\n[3/3] Running analyzers")
-
+    print("\n[3/4] Running generic analyzer on all frozen results")
     for result_file in RESULT_FILES:
         print("-" * 48)
         print(f"ANALYZING: {result_file}")
         print("-" * 48)
         run([PYTHON, str(GENERIC_ANALYZER), "--input", str(result_file)])
 
+    print("\n[4/4] Running domain-specific analyzers")
+
     print("-" * 48)
     print("ANALYZING: examples/llm_surface_results.jsonl (LLM-specific)")
     print("-" * 48)
     run([PYTHON, str(LLM_ANALYZER)])
+
+    print("-" * 48)
+    print("ANALYZING: examples/support_response_results.jsonl (support-specific)")
+    print("-" * 48)
+    run([PYTHON, str(SUPPORT_ANALYZER)])
 
     print("=" * 48)
     print("DONE: all frozen result artifacts rebuilt and analyzed")

@@ -145,6 +145,28 @@ Produce a short report specifically for the LLM surface mini-result.
 
 ---
 
+Support-response-specific analyzer
+
+examples/analyze_support_response_results.py
+
+Purpose:
+
+Produce a short report specifically for the support-response mini-result.
+
+
+---
+
+Rebuild-and-analyze orchestration script
+
+examples/rebuild_and_analyze_all.py
+
+Purpose:
+
+Rebuild all frozen result artifacts and run the current analysis surface in one bounded command.
+
+
+---
+
 3. Canonical reproducible flow
 
 The minimal reproducible result flow is:

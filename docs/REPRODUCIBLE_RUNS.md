@@ -191,6 +191,23 @@ examples/support_response_results.jsonl
 
 ---
 
+E. Retrieval-augmented answer run
+
+Input:
+
+examples/rag_answer_cases.jsonl
+
+Command:
+
+python examples/run_profiles_jsonl.py examples/rag_answer_cases.jsonl -o examples/rag_answer_results.jsonl
+
+Output:
+
+examples/rag_answer_results.jsonl
+
+
+---
+
 7. Frozen analysis runs
 
 Generic analyzer
@@ -204,6 +221,7 @@ Command pattern:
 python examples/analyze_results.py --input examples/surface_ok_results.jsonl
 python examples/analyze_results.py --input examples/llm_surface_results.jsonl
 python examples/analyze_results.py --input examples/support_response_results.jsonl
+python examples/analyze_results.py --input examples/rag_answer_results.jsonl
 python examples/analyze_results.py --input examples/demo_profiles_results.jsonl
 
 This prints:
@@ -252,6 +270,21 @@ This prints the bounded support-response mini-result summary.
 
 ---
 
+Retrieval-augmented answer analyzer
+
+Script:
+
+examples/analyze_rag_answer_results.py
+
+Command:
+
+python examples/analyze_rag_answer_results.py
+
+This prints the bounded retrieval-augmented answer mini-result summary.
+
+
+---
+
 8. Rebuild all frozen result artifacts
 
 The canonical rebuild script is:
@@ -271,6 +304,8 @@ examples/surface_ok_results.jsonl
 examples/llm_surface_results.jsonl
 
 examples/support_response_results.jsonl
+
+examples/rag_answer_results.jsonl
 
 
 This is the shortest reproducible command for regenerating the current frozen mini-result artifact layer.
@@ -300,6 +335,12 @@ This script performs, in one bounded run:
 
 
 4. run the LLM-specific analyzer
+
+
+5. run the support-response-specific analyzer
+
+
+6. run the retrieval-augmented-answer-specific analyzer
 
 
 

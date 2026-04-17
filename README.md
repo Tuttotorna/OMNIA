@@ -143,6 +143,19 @@ Canonical formula:
 
 support-readable output != always structurally admissible
 
+Retrieval-augmented answer mini-result
+
+input: examples/rag_answer_cases.jsonl
+
+output: examples/rag_answer_results.jsonl
+
+summary: docs/RAG_ANSWER_MINI_RESULT.md
+
+
+Canonical formula:
+
+retrieval-grounded readable output != always structurally admissible
+
 Index of current mini-results:
 
 docs/MINI_RESULTS_INDEX.md
@@ -468,9 +481,9 @@ Main areas:
 
 omnia/ -> core structural measurement and gating logic
 
-examples/ -> runnable minimal examples, runners, analyzers, rebuild script, and frozen result artifacts
+examples/ -> runnable minimal examples, runners, analyzers, rebuild scripts, and frozen result artifacts
 
-docs/ -> canonical scope, architecture, thresholds, output schema, reproducibility, and mini-result summaries
+docs/ -> canonical scope, architecture, thresholds, output schema, reproducibility, work-state, phase-state, and mini-result summaries
 
 tests/ -> canonical gate and profile tests
 
@@ -532,11 +545,16 @@ Run the generic analyzer on any OMNIA results file:
 python examples/analyze_results.py --input examples/llm_surface_results.jsonl
 python examples/analyze_results.py --input examples/surface_ok_results.jsonl
 python examples/analyze_results.py --input examples/support_response_results.jsonl
+python examples/analyze_results.py --input examples/rag_answer_results.jsonl
 python examples/analyze_results.py --input examples/demo_profiles_results.jsonl
 
 Run the LLM surface-specific analyzer:
 
 python examples/analyze_llm_surface_results.py
+
+Run the support-response-specific analyzer:
+
+python examples/analyze_support_response_results.py
 
 
 ---
@@ -557,6 +575,12 @@ examples/llm_surface_results.jsonl
 
 examples/support_response_results.jsonl
 
+examples/rag_answer_results.jsonl
+
+
+Rebuild and analyze the current frozen result surface in one command:
+
+python examples/rebuild_and_analyze_all.py
 
 
 ---

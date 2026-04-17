@@ -1,3 +1,9 @@
+Nome file:
+
+README.md
+
+Contenuto completo da sostituire interamente:
+
 # OMNIA — Structural Measurement and Gating Core
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18379486.svg)](https://doi.org/10.5281/zenodo.18379486)
@@ -33,7 +39,7 @@ OMNIA measures structure only.
 Install from the repository root:
 
 ```bash
-pip install -e . -U
+pip install -e . -U --no-cache-dir
 
 Run the minimal smoke test:
 
@@ -130,6 +136,19 @@ Canonical formula:
 
 surface-readable LLM-like output != always structurally admissible
 
+Support-response mini-result
+
+input: examples/support_response_cases.jsonl
+
+output: examples/support_response_results.jsonl
+
+summary: docs/SUPPORT_RESPONSE_MINI_RESULT.md
+
+
+Canonical formula:
+
+support-readable output != always structurally admissible
+
 Index of current mini-results:
 
 docs/MINI_RESULTS_INDEX.md
@@ -137,35 +156,20 @@ docs/MINI_RESULTS_INDEX.md
 
 ---
 
-Canonical Problem
-
-Many outputs look acceptable at surface level.
-
-Some are structurally stable.
-Some are structurally fragile.
-Some should not be extended further because structural continuation is already exhausted, degraded, or unjustified.
-
-OMNIA exists to distinguish these cases post hoc.
-
-
----
-
-Core Claim
+Core claim
 
 The canonical claim of OMNIA is:
 
-> A post-hoc structural measurement layer can detect silent fragility in outputs that appear superficially acceptable, detect when structural continuation becomes unjustified, and convert the result into a bounded operational gate output.
+> A post-hoc structural measurement layer can detect silent fragility in outputs that appear superficially acceptable, detect when structural continuation becomes unjustified, and convert that result into a bounded operational gate output.
 
 
-
-This is the maximal claim of the system.
 
 Anything broader than this is outside scope.
 
 
 ---
 
-Core Principle
+Core principle
 
 > Structural stability is what survives controlled representational variation.
 
@@ -193,7 +197,7 @@ The result is a bounded structural report, not a semantic verdict.
 
 ---
 
-Non-Negotiable Architectural Rule
+Non-negotiable architectural rule
 
 measurement != cognition != decision
 
@@ -215,7 +219,7 @@ OMNIA is not a cognition system and not an autonomous decision-maker.
 
 ---
 
-Canonical Pipeline
+Canonical pipeline
 
 input
 -> optional framing normalization
@@ -230,7 +234,7 @@ This is the canonical v1 pipeline.
 
 ---
 
-Core Outputs
+Core outputs
 
 Every valid OMNIA run must produce these core outputs:
 
@@ -254,7 +258,7 @@ These outputs define the minimal readable structural profile of a case.
 
 ---
 
-Gate Outputs
+Gate outputs
 
 OMNIA allows only these bounded gate outcomes:
 
@@ -286,7 +290,7 @@ The structural profile is sufficiently degraded, inconsistent, or collapsed that
 
 ---
 
-Core Metrics
+Core metrics
 
 OMNIA is built around a bounded structural metric family:
 
@@ -304,7 +308,7 @@ OMNIA may internally use multiple lenses, but the canonical output layer remains
 
 ---
 
-Limit Layer
+Limit layer
 
 OMNIA includes a formal limit layer.
 
@@ -333,7 +337,7 @@ This is a structural boundary, not a metaphysical claim.
 
 ---
 
-What OMNIA Includes
+What OMNIA includes
 
 Inside the canonical scope of OMNIA:
 
@@ -359,7 +363,7 @@ machine-readable structured output
 
 ---
 
-What OMNIA Excludes
+What OMNIA excludes
 
 Outside the canonical scope of OMNIA:
 
@@ -397,7 +401,7 @@ If a component depends on one of these, it is not part of OMNIA core.
 
 ---
 
-Optional Upstream Components
+Optional upstream components
 
 Some modules may exist upstream of OMNIA, but they are not required parts of the canonical runtime.
 
@@ -426,7 +430,7 @@ If absent, OMNIA must still remain complete as a post-hoc structural measurement
 
 ---
 
-Repository Role
+Repository role
 
 This repository is the canonical product repository for OMNIA core.
 
@@ -457,7 +461,7 @@ OMNIA should be read as the canonical structural measurement and gating core, no
 
 ---
 
-Repository Structure
+Repository structure
 
 omnia/
 examples/
@@ -470,9 +474,9 @@ Main areas:
 
 omnia/ -> core structural measurement and gating logic
 
-examples/ -> runnable minimal examples, runners, analyzers, and frozen result artifacts
+examples/ -> runnable minimal examples, runners, analyzers, rebuild script, and frozen result artifacts
 
-docs/ -> canonical scope, architecture, thresholds, output schema, and mini-result summaries
+docs/ -> canonical scope, architecture, thresholds, output schema, reproducibility, and mini-result summaries
 
 tests/ -> canonical gate and profile tests
 
@@ -484,7 +488,7 @@ Installation
 
 From the repository root:
 
-pip install -e . -U
+pip install -e . -U --no-cache-dir
 
 Verify import:
 
@@ -493,7 +497,7 @@ python -c "from omnia import evaluate_structural_profile; print('OK import omnia
 
 ---
 
-Quick Smoke Test
+Quick smoke test
 
 Run:
 
@@ -527,12 +531,14 @@ the canonical output schema is emitted
 
 ---
 
-Result Analysis
+Result analysis
 
 Run the generic analyzer on any OMNIA results file:
 
 python examples/analyze_results.py --input examples/llm_surface_results.jsonl
 python examples/analyze_results.py --input examples/surface_ok_results.jsonl
+python examples/analyze_results.py --input examples/support_response_results.jsonl
+python examples/analyze_results.py --input examples/demo_profiles_results.jsonl
 
 Run the LLM surface-specific analyzer:
 
@@ -541,7 +547,27 @@ python examples/analyze_llm_surface_results.py
 
 ---
 
-JSONL Batch Demo
+Rebuild frozen result artifacts
+
+Rebuild all currently frozen result JSONL artifacts in one command:
+
+python examples/rebuild_all_results.py
+
+This regenerates:
+
+examples/demo_profiles_results.jsonl
+
+examples/surface_ok_results.jsonl
+
+examples/llm_surface_results.jsonl
+
+examples/support_response_results.jsonl
+
+
+
+---
+
+JSONL batch demo
 
 Run the canonical batch demo:
 
@@ -571,7 +597,7 @@ pytest tests/test_import.py
 
 ---
 
-Intended Use
+Intended use
 
 OMNIA is designed to be:
 
@@ -610,7 +636,7 @@ OMNIA is most useful where an output may look acceptable on the surface but rema
 
 ---
 
-Reproducibility Requirement
+Reproducibility requirement
 
 OMNIA must be reproducible.
 
@@ -632,7 +658,7 @@ If a result cannot be reproduced, it is not valid core behavior.
 
 ---
 
-Bounded-Use Principle
+Bounded-use principle
 
 OMNIA is valid only inside bounded use.
 
@@ -654,7 +680,7 @@ Any attempt to expand OMNIA into an unbounded general theory breaks the scope of
 
 ---
 
-Strong Non-Claims
+Strong non-claims
 
 OMNIA does not prove truth in the universal sense.
 
@@ -686,6 +712,8 @@ limit logic: in scope
 bounded gate output: in scope
 
 frozen mini-results: present
+
+rebuildable frozen result artifacts: present
 
 training loop: absent by design
 

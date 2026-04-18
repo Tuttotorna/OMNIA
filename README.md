@@ -7,32 +7,80 @@
 
 ---
 
-## What OMNIA is
+## Start here
 
-**OMNIA** is a **post-hoc structural measurement and gating system**.
+If only one entry point is needed, start here:
 
-Its task is to detect **structural fragility** in outputs that may appear acceptable on the surface, measure whether structural continuation remains admissible under controlled transformations, and convert the result into a bounded operational gate output.
+```text
+docs/FIRST_PUBLIC_CASE.md
 
-OMNIA operates **after inference**.
+That file contains the current primary public-facing case for OMNIA.
 
-It does **not**:
+It is the shortest path to understand:
 
-- interpret meaning
-- replace reasoning
-- optimize a model
-- train a model
-- act as a semantic judge
-- function as a truth oracle
+what OMNIA changes
 
-OMNIA measures structure only.
+why the case matters
+
+where the operational delta appears
+
+
+Everything else in the repository is secondary to that entry point.
+
 
 ---
 
-## 10-second quick start
+What OMNIA is
+
+OMNIA is a post-hoc structural measurement and gating system.
+
+Its task is to detect structural fragility in outputs that may appear acceptable on the surface, measure whether structural continuation remains admissible under controlled transformations, and convert the result into a bounded operational gate output.
+
+OMNIA operates after inference.
+
+It does not:
+
+interpret meaning
+
+replace reasoning
+
+optimize a model
+
+train a model
+
+act as a semantic judge
+
+function as a truth oracle
+
+
+OMNIA measures structure only.
+
+
+---
+
+Primary public case
+
+The current default public-facing case is:
+
+docs/FIRST_PUBLIC_CASE.md
+
+That case points to:
+
+examples/omnia_inevitability_case_v0/
+
+Core public formula:
+
+baseline_pass != safe_to_pass_forward
+
+This is the current strongest bounded external-facing claim in the repository.
+
+
+---
+
+10-second quick start
 
 Install from the repository root:
 
-```bash
 pip install -e . -U --no-cache-dir
 
 Run the minimal smoke test:
@@ -58,44 +106,27 @@ OK: OMNIA core executed
 
 ---
 
-Minimal JSONL batch demo
+First public case in one minute
 
-Canonical demo input is provided in:
+Run the primary public case:
 
-examples/demo_profiles.jsonl
+python examples/omnia_inevitability_case_v0/analyze_case.py
 
-Run the batch demo:
-
-python examples/run_profiles_jsonl.py examples/demo_profiles.jsonl
-
-Save the results to file:
-
-python examples/run_profiles_jsonl.py examples/demo_profiles.jsonl -o examples/demo_profiles_results.jsonl
-
-Minimal input example:
-
-{"case_id":"clean_admissible","omega_score":0.84,"sei_score":0.77,"iri_score":0.12,"drift_score":0.15}
-{"case_id":"surface_ok_but_fragile","omega_score":0.58,"sei_score":0.55,"iri_score":0.31,"drift_score":0.57}
-
-Example enriched output shape:
-
-{
-  "case_id": "clean_admissible",
-  "omega_score": 0.84,
-  "sei_score": 0.77,
-  "iri_score": 0.12,
-  "drift_score": 0.15,
-  "limit_triggered": false,
-  "gate_status": "GO",
-  "reason_code": "stable"
-}
+This is the shortest operational path through the repository if the goal is to understand why OMNIA matters.
 
 
 ---
 
 Current mini-results
 
-The repository now includes a small bounded result surface beyond pure internal architecture.
+The repository includes a bounded result surface beyond pure internal architecture.
+
+Primary public case
+
+entry point: docs/FIRST_PUBLIC_CASE.md
+
+directory: examples/omnia_inevitability_case_v0/
+
 
 Demo profile result
 
@@ -408,35 +439,6 @@ If a component depends on one of these, it is not part of OMNIA core.
 
 ---
 
-Optional upstream components
-
-Some modules may exist upstream of OMNIA, but they are not required parts of the canonical runtime.
-
-Examples include:
-
-framing normalization layers
-
-observer-framing reduction layers
-
-candidate-distribution instrumentation
-
-OMNIAMIND-style pre-output split / bifurcation probes
-
-
-These may be useful, but OMNIA must remain valid and runnable without them.
-
-OMNIAMIND
-
-OMNIAMIND is an optional upstream instrumentation module.
-
-It is not part of the required OMNIA runtime.
-
-If present, it may contribute additional pre-output structural signals.
-If absent, OMNIA must still remain complete as a post-hoc structural measurement and gating system.
-
-
----
-
 Repository role
 
 This repository is the canonical product repository for OMNIA core.
@@ -483,56 +485,9 @@ omnia/ -> core structural measurement and gating logic
 
 examples/ -> runnable minimal examples, runners, analyzers, rebuild scripts, and frozen result artifacts
 
-docs/ -> canonical scope, architecture, thresholds, output schema, reproducibility, work-state, phase-state, and mini-result summaries
+docs/ -> canonical scope, architecture, thresholds, output schema, reproducibility, public case, and mini-result summaries
 
 tests/ -> canonical gate and profile tests
-
-
-
----
-
-Installation
-
-From the repository root:
-
-pip install -e . -U --no-cache-dir
-
-Verify import:
-
-python -c "from omnia import evaluate_structural_profile; print('OK import omnia')"
-
-
----
-
-Quick smoke test
-
-Run:
-
-python examples/quick_omnia_test.py
-
-Expected output pattern:
-
-{
-  "omega_score": 0.58,
-  "sei_score": 0.55,
-  "iri_score": 0.31,
-  "drift_score": 0.57,
-  "limit_triggered": false,
-  "gate_status": "RISK",
-  "reason_code": "high_drift"
-}
-
-followed by:
-
-OK: OMNIA core executed
-
-This confirms that:
-
-the package imports correctly
-
-the core gate logic executes
-
-the canonical output schema is emitted
 
 
 
@@ -548,13 +503,12 @@ python examples/analyze_results.py --input examples/support_response_results.jso
 python examples/analyze_results.py --input examples/rag_answer_results.jsonl
 python examples/analyze_results.py --input examples/demo_profiles_results.jsonl
 
-Run the LLM surface-specific analyzer:
+Domain-specific analyzers:
 
+python examples/analyze_surface_ok_results.py
 python examples/analyze_llm_surface_results.py
-
-Run the support-response-specific analyzer:
-
 python examples/analyze_support_response_results.py
+python examples/analyze_rag_answer_results.py
 
 
 ---
@@ -565,37 +519,9 @@ Rebuild all currently frozen result JSONL artifacts in one command:
 
 python examples/rebuild_all_results.py
 
-This regenerates:
-
-examples/demo_profiles_results.jsonl
-
-examples/surface_ok_results.jsonl
-
-examples/llm_surface_results.jsonl
-
-examples/support_response_results.jsonl
-
-examples/rag_answer_results.jsonl
-
-
 Rebuild and analyze the current frozen result surface in one command:
 
 python examples/rebuild_and_analyze_all.py
-
-
----
-
-JSONL batch demo
-
-Run the canonical batch demo:
-
-python examples/run_profiles_jsonl.py examples/demo_profiles.jsonl
-
-Save the results to file:
-
-python examples/run_profiles_jsonl.py examples/demo_profiles.jsonl -o examples/demo_profiles_results.jsonl
-
-This processes one JSON object per line and emits canonical OMNIA results for each record.
 
 
 ---
@@ -732,6 +658,8 @@ bounded gate output: in scope
 frozen mini-results: present
 
 rebuildable frozen result artifacts: present
+
+first public case: present
 
 training loop: absent by design
 

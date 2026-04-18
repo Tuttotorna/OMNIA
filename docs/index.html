@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OMNIA - First Public Case</title>
+  <meta name="description" content="OMNIA is a post-hoc structural measurement and gating core for detecting silent fragility in surface-readable outputs.">
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --panel: #121922;
+      --text: #e8eef6;
+      --muted: #9fb0c3;
+      --line: #233041;
+      --accent: #8ab4ff;
+      --good: #7bd88f;
+      --warn: #ffd166;
+      --bad: #ff8c8c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    .wrap {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+    h1, h2, h3 { margin: 0 0 14px; }
+    h1 { font-size: 38px; line-height: 1.1; }
+    h2 { font-size: 24px; margin-top: 42px; }
+    h3 { font-size: 18px; margin-top: 28px; }
+    p { margin: 0 0 14px; }
+    .muted { color: var(--muted); }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      margin: 18px 0;
+    }
+    .hero {
+      padding: 28px;
+    }
+    .formula {
+      font-family: monospace;
+      font-size: 16px;
+      background: #0f141b;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 14px;
+      overflow-x: auto;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .stat {
+      background: #0f141b;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px;
+    }
+    .stat .label {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .stat .value {
+      font-size: 26px;
+      font-weight: bold;
+    }
+    .good { color: var(--good); }
+    .warn { color: var(--warn); }
+    .bad { color: var(--bad); }
+    code, pre {
+      font-family: Consolas, Monaco, monospace;
+      font-size: 14px;
+    }
+    pre {
+      background: #0f141b;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+    ul {
+      margin: 8px 0 16px 20px;
+      padding: 0;
+    }
+    li { margin: 6px 0; }
+    .cta {
+      display: inline-block;
+      margin-right: 10px;
+      margin-top: 10px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: #111826;
+      color: var(--text);
+    }
+    .small {
+      font-size: 13px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="panel hero">
+      <h1>OMNIA</h1>
+      <p class="muted">Post-hoc structural measurement and gating core.</p>
+      <p>
+        OMNIA does not judge meaning. It does not replace reasoning. It does not train a model.
+        It measures whether an output that looks acceptable on the surface remains structurally admissible under bounded variation.
+      </p>
+      <div class="formula">surface-readable output != always structurally admissible</div>
+      <p>
+        <a class="cta" href="https://github.com/Tuttotorna/OMNIA">Open repository</a>
+        <a class="cta" href="https://doi.org/10.5281/zenodo.18379486">Open DOI</a>
+      </p>
+    </div>
+
+    <h2>First public case</h2>
+    <div class="panel">
+      <p>
+        Chosen case set:
+        <code>examples/llm_surface_cases.jsonl</code>
+      </p>
+      <p>
+        Frozen result:
+        <code>examples/llm_surface_results.jsonl</code>
+      </p>
+      <p>
+        Summary:
+        <code>docs/LLM_SURFACE_MINI_RESULT.md</code>
+      </p>
+    </div>
+
+    <h2>Bounded result</h2>
+    <div class="grid">
+      <div class="stat">
+        <div class="label">Total cases</div>
+        <div class="value">8</div>
+      </div>
+      <div class="stat">
+        <div class="label">Surface-readable</div>
+        <div class="value">8</div>
+      </div>
+      <div class="stat">
+        <div class="label">GO</div>
+        <div class="value good">3</div>
+      </div>
+      <div class="stat">
+        <div class="label">Non-GO</div>
+        <div class="value bad">5</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <p><strong>Gate distribution</strong></p>
+      <pre>{
+  "GO": 3,
+  "RISK": 2,
+  "NO_GO": 2,
+  "UNSTABLE": 1
+}</pre>
+      <p>
+        In this bounded 8-case LLM-like readable set, OMNIA assigned only 3/8 cases to GO and flagged 5/8 as structurally non-GO.
+      </p>
+    </div>
+
+    <h2>Why this matters</h2>
+    <div class="panel">
+      <p>
+        A readable answer can still be structurally fragile.
+      </p>
+      <p>
+        OMNIA is a bounded gate for detecting that divergence after inference, without requiring semantic interpretation as part of the core.
+      </p>
+    </div>
+
+    <h2>Reproduce in one minute</h2>
+    <div class="panel">
+      <pre>pip install -e . -U --no-cache-dir
+python examples/run_profiles_jsonl.py examples/llm_surface_cases.jsonl -o examples/llm_surface_results.jsonl
+python examples/analyze_llm_surface_results.py</pre>
+      <p class="small">
+        Expected result: 8 surface-readable cases, 3 GO, 5 non-GO.
+      </p>
+    </div>
+
+    <h2>What this does not claim</h2>
+    <div class="panel">
+      <ul>
+        <li>Not a broad benchmark claim</li>
+        <li>Not a production-readiness claim</li>
+        <li>Not a semantic correctness claim</li>
+        <li>Not a safety guarantee</li>
+      </ul>
+      <p>
+        This page shows one bounded public case only.
+      </p>
+    </div>
+
+    <h2>Repository entry points</h2>
+    <div class="panel">
+      <ul>
+        <li><code>README.md</code></li>
+        <li><code>docs/FIRST_PUBLIC_CASE.md</code></li>
+        <li><code>docs/LLM_SURFACE_MINI_RESULT.md</code></li>
+        <li><code>docs/REPRODUCIBLE_RUNS.md</code></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

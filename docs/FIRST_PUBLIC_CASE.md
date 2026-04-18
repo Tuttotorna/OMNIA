@@ -1,4 +1,4 @@
-# FIRST_PUBLIC_CASE
+# FIRST_PUBLIC_CASE.md
 
 ## Status
 
@@ -8,12 +8,12 @@ Its purpose is simple:
 
 > show one bounded, readable, externally legible result with an explicit operational delta.
 
-Not the whole architecture.
-Not the whole ecosystem.
+Not the whole architecture.  
+Not the whole ecosystem.  
 Not every mini-result.
 
-One case.
-One claim.
+One case.  
+One claim.  
 One before/after change.
 
 ---
@@ -64,6 +64,10 @@ final_results.jsonl
 metrics.md
 
 analyze_case.py
+
+rebuild_case_outputs.py
+
+rebuild_and_analyze_case.py
 
 
 This is the canonical first public case of the repository.
@@ -214,6 +218,10 @@ Public-facing run commands
 Analyze the bounded inevitability case:
 
 python examples/omnia_inevitability_case_v0/analyze_case.py
+
+Rebuild derived artifacts and analyze the full case:
+
+python examples/omnia_inevitability_case_v0/rebuild_and_analyze_case.py
 
 Rebuild the broader frozen result surface:
 

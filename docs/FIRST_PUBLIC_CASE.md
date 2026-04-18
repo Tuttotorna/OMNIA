@@ -1,4 +1,4 @@
-# FIRST_PUBLIC_CASE.md
+# FIRST_PUBLIC_CASE
 
 ## Status
 

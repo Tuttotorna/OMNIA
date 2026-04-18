@@ -1,0 +1,8 @@
+{"case_id":"case_001","gate_status":"RISK","reason_code":"fragile","operational_action":"flag_for_review","action_rationale":"surface-acceptable output is structurally fragile and should not pass forward unchanged"}
+{"case_id":"case_002","gate_status":"RISK","reason_code":"high_drift","operational_action":"flag_for_review","action_rationale":"surface-readable output shows drift and should be reviewed before forwarding"}
+{"case_id":"case_003","gate_status":"NO_GO","reason_code":"limit_reached","operational_action":"block_and_escalate","action_rationale":"structural limit reached; output should not pass forward without escalation"}
+{"case_id":"case_004","gate_status":"NO_GO","reason_code":"high_drift","operational_action":"block_and_escalate","action_rationale":"drift is too high for safe forwarding under the bounded contract"}
+{"case_id":"case_005","gate_status":"RISK","reason_code":"high_drift","operational_action":"flag_for_review","action_rationale":"answer remains readable but drift makes unchanged forwarding unsafe"}
+{"case_id":"case_006","gate_status":"UNSTABLE","reason_code":"collapsed_profile","operational_action":"block_and_escalate","action_rationale":"collapsed structural profile makes the output operationally unreliable"}
+{"case_id":"case_007","gate_status":"RISK","reason_code":"high_drift","operational_action":"flag_for_review","action_rationale":"multiple acceptable-looking forms increase ambiguity and require review"}
+{"case_id":"case_008","gate_status":"NO_GO","reason_code":"high_drift","operational_action":"block_and_escalate","action_rationale":"boundary adherence is too weak for safe forwarding"}

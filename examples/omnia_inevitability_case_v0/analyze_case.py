@@ -2,7 +2,7 @@
 Analyze OMNIA inevitability case v0.
 
 Run:
-  python examples/omnia_inevitability_case_v0/analyze_case.py
+    python examples/omnia_inevitability_case_v0/analyze_case.py
 """
 
 from __future__ import annotations
@@ -36,10 +36,12 @@ def load_jsonl(path: Path) -> list[dict]:
                 raise ValueError(
                     f"{path} line {line_number}: invalid JSON: {exc.msg}"
                 ) from exc
+
             if not isinstance(row, dict):
                 raise ValueError(
                     f"{path} line {line_number}: JSON record must be an object"
                 )
+
             rows.append(row)
 
     return rows
@@ -74,9 +76,7 @@ def main() -> None:
     final_ids = set(final)
 
     if not (baseline_ids == score_ids == action_ids == final_ids):
-        raise ValueError(
-            "Case ID mismatch across inevitability case files"
-        )
+        raise ValueError("Case ID mismatch across inevitability case files")
 
     total_cases = len(baseline_ids)
 
@@ -109,30 +109,24 @@ def main() -> None:
     print(f"baseline_forwarded_count: {baseline_forwarded_count}")
     print(f"post_gate_forwarded_count: {post_gate_forwarded_count}")
     print(f"outcome_changed_count: {outcome_changed_count}")
-    print(
-        f"baseline_forwarded_rate: "
-        f"{baseline_forwarded_count}/{total_cases}"
-    )
-    print(
-        f"post_gate_forwarded_rate: "
-        f"{post_gate_forwarded_count}/{total_cases}"
-    )
+    print(f"baseline_forwarded_rate: {baseline_forwarded_count}/{total_cases}")
+    print(f"post_gate_forwarded_rate: {post_gate_forwarded_count}/{total_cases}")
     print(
         f"delta_forwarded: "
         f"{baseline_forwarded_count - post_gate_forwarded_count}"
     )
 
     print("\ngate_status_counts:")
-    for key, value in gate_status_counts.items():
-        print(f"- {key}: {value}")
+    for key in sorted(gate_status_counts):
+        print(f"- {key}: {gate_status_counts[key]}")
 
     print("\noperational_action_counts:")
-    for key, value in operational_action_counts.items():
-        print(f"- {key}: {value}")
+    for key in sorted(operational_action_counts):
+        print(f"- {key}: {operational_action_counts[key]}")
 
     print("\nfinal_outcome_counts:")
-    for key, value in final_outcome_counts.items():
-        print(f"- {key}: {value}")
+    for key in sorted(final_outcome_counts):
+        print(f"- {key}: {final_outcome_counts[key]}")
 
     print("\ncanonical_formula:")
     print("baseline_pass != safe_to_pass_forward")

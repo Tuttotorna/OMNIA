@@ -1,0 +1,8 @@
+{"case_id":"case_001","baseline_forwarded":true,"post_gate_forwarded":false,"post_gate_status":"flagged_for_review","outcome_changed":true,"final_outcome":"review_required"}
+{"case_id":"case_002","baseline_forwarded":true,"post_gate_forwarded":false,"post_gate_status":"flagged_for_review","outcome_changed":true,"final_outcome":"review_required"}
+{"case_id":"case_003","baseline_forwarded":true,"post_gate_forwarded":false,"post_gate_status":"blocked_and_escalated","outcome_changed":true,"final_outcome":"escalation_required"}
+{"case_id":"case_004","baseline_forwarded":true,"post_gate_forwarded":false,"post_gate_status":"blocked_and_escalated","outcome_changed":true,"final_outcome":"escalation_required"}
+{"case_id":"case_005","baseline_forwarded":true,"post_gate_forwarded":false,"post_gate_status":"flagged_for_review","outcome_changed":true,"final_outcome":"review_required"}
+{"case_id":"case_006","baseline_forwarded":true,"post_gate_forwarded":false,"post_gate_status":"blocked_and_escalated","outcome_changed":true,"final_outcome":"escalation_required"}
+{"case_id":"case_007","baseline_forwarded":true,"post_gate_forwarded":false,"post_gate_status":"flagged_for_review","outcome_changed":true,"final_outcome":"review_required"}
+{"case_id":"case_008","baseline_forwarded":true,"post_gate_forwarded":false,"post_gate_status":"blocked_and_escalated","outcome_changed":true,"final_outcome":"escalation_required"}

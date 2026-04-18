@@ -1,24 +1,12 @@
-Ricevuto.
-
-Da ora:
-
-niente altri file di stato
-
-niente altri indici
-
-niente altri mini-set quasi uguali
-
-niente consolidamento del consolidamento
-
 # FIRST_PUBLIC_CASE.md
 
-## OMNIA — First Public Case
+## Status
 
 This document defines the first public-facing case for OMNIA CORE v1.
 
 Its purpose is simple:
 
-> show one bounded, readable, externally legible result.
+> show one bounded, readable, externally legible result with an explicit operational delta.
 
 Not the whole architecture.
 Not the whole ecosystem.
@@ -26,20 +14,20 @@ Not every mini-result.
 
 One case.
 One claim.
-One readable divergence.
+One before/after change.
 
 ---
 
-## Core claim
+## Core public claim
 
 The first public claim is:
 
-> outputs that look acceptable on the surface are not always structurally admissible.
+> outputs that pass a naive baseline are not always safe to pass forward unchanged.
 
 In OMNIA terms:
 
 ```text
-surface-readable LLM-like output != always GO
+baseline_pass != safe_to_pass_forward
 
 This is the first public-facing claim because it is:
 
@@ -55,19 +43,28 @@ operationally relevant
 
 ---
 
-Chosen case set
+Chosen public case
 
-The chosen public case set is:
+The chosen public case is:
 
-examples/llm_surface_cases.jsonl
+examples/omnia_inevitability_case_v0/
 
-The paired frozen result artifact is:
+This directory contains the first bounded end-to-end inevitability case.
 
-examples/llm_surface_results.jsonl
+Its core files are:
 
-The paired summary is:
+baseline_results.jsonl
 
-docs/LLM_SURFACE_MINI_RESULT.md
+omnia_scores.jsonl
+
+gate_actions.jsonl
+
+final_results.jsonl
+
+metrics.md
+
+analyze_case.py
+
 
 This is the canonical first public case of the repository.
 
@@ -76,52 +73,68 @@ This is the canonical first public case of the repository.
 
 Why this case was chosen
 
-This case is the best first external-facing entry point because it is more legible than:
+Earlier mini-results proved readable divergence.
 
-pure score-only profiles
+That was useful, but still incomplete.
 
-abstract surface-ok labels
+This case was chosen because it adds the missing layer:
 
-internal architectural documents
+baseline
+-> OMNIA measurement
+-> external gate action
+-> changed operational outcome
 
+This makes the project easier to understand externally.
 
-Each record contains:
+It is no longer only:
 
-a task type
-
-a readable output text
-
-a surface note
-
-a bounded structural profile
-
-a canonical OMNIA gate result
+readable output vs structural admissibility
 
 
-This makes the divergence understandable without requiring prior knowledge of the whole system.
+It is now:
+
+naive pass vs gated intervention
+
+
+That is the first real necessity surface.
 
 
 ---
 
 Public result summary
 
-For this bounded 8-case set:
+For this bounded 8-case inevitability set:
 
-total_cases: 8
-surface_ok_true: 8
-gate_status_counts: {'GO': 3, 'RISK': 2, 'NO_GO': 2, 'UNSTABLE': 1}
-non_GO_ratio: 5/8
+baseline_accept_count = 8
+baseline_forwarded_count = 8
+post_gate_forwarded_count = 0
+outcome_changed_count = 8
+delta_forwarded = 8
+
+Frozen gate distribution:
+
+GO = 0
+RISK = 4
+NO_GO = 3
+UNSTABLE = 1
+
+Frozen action split:
+
+flagged_for_review = 4
+blocked_and_escalated = 4
 
 This means:
 
-all 8 cases are readable and surface-acceptable
+the naive baseline forwards all 8 cases
 
-only 3 of 8 are structurally admissible as GO
+the OMNIA-attached gate prevents unchanged forwarding in all 8 cases
 
-5 of 8 are structurally non-GO
+4 cases are redirected to review
+
+4 cases are redirected to escalation
 
 
-This is the first public divergence surface.
+This is the first public operational delta.
 
 
 ---
@@ -130,13 +143,13 @@ Public interpretation
 
 The intended public interpretation is minimal:
 
-> readability is not the same as structural admissibility.
+> a naive baseline can pass every case, while an OMNIA-attached gate can still prevent unsafe unchanged forwarding.
 
 
 
 Or more directly:
 
-> an answer can look acceptable and still fail a structural gate.
+> passing a baseline is not the same as being safe to pass forward.
 
 
 
@@ -147,21 +160,18 @@ Nothing larger is needed for the first public case.
 
 What this case proves
 
-This case proves that OMNIA can already do one public-facing thing:
+This case proves that OMNIA can already do one public-facing operational thing:
 
-separate surface-readable LLM-like outputs into:
+receive a bounded case set that passes a naive baseline
 
-GO
+separate those cases by structural admissibility
 
-RISK
+support different downstream actions
 
-NO_GO
-
-UNSTABLE
+change the operational path
 
 
-
-This shows that the gate does not merely echo readability.
+This shows that OMNIA is not merely a descriptive layer.
 
 That is enough for a first public case.
 
@@ -178,11 +188,11 @@ production readiness
 
 semantic correctness
 
-reasoning correctness
-
 universal truth claims
 
 broad safety claims
+
+large-scale deployment value
 
 
 It is one bounded public case only.
@@ -194,24 +204,28 @@ Canonical public formula
 
 The shortest correct public formula is:
 
-In a bounded 8-case LLM-like readable set, OMNIA assigned only 3/8 cases to GO and flagged 5/8 as structurally non-GO.
+In a bounded 8-case inevitability set, the naive baseline forwards 8/8 cases, while the OMNIA-attached gate forwards 0/8 unchanged, producing a full operational delta of 8.
 
 
 ---
 
 Public-facing run commands
 
-Rebuild the frozen result:
+Analyze the bounded inevitability case:
 
-python examples/run_profiles_jsonl.py examples/llm_surface_cases.jsonl -o examples/llm_surface_results.jsonl
+python examples/omnia_inevitability_case_v0/analyze_case.py
 
-Analyze the result:
+Rebuild the broader frozen result surface:
 
-python examples/analyze_llm_surface_results.py
+python examples/rebuild_and_analyze_all.py
 
-Or run the generic analyzer:
+Inspect the core public case files directly:
 
-python examples/analyze_results.py --input examples/llm_surface_results.jsonl
+examples/omnia_inevitability_case_v0/baseline_results.jsonl
+examples/omnia_inevitability_case_v0/omnia_scores.jsonl
+examples/omnia_inevitability_case_v0/gate_actions.jsonl
+examples/omnia_inevitability_case_v0/final_results.jsonl
+examples/omnia_inevitability_case_v0/metrics.md
 
 
 ---
@@ -224,9 +238,9 @@ From this point forward, OMNIA should not present all mini-results equally in pu
 
 The first default external reference should be:
 
-LLM surface mini-result
+OMNIA Inevitability Case v0
 
-Other result layers may remain in the repository, but this one is the main public entry point.
+Other result layers remain useful inside the repository, but this one is the main public entry point.
 
 
 ---
@@ -238,4 +252,3 @@ Do not expand public-facing communication by adding more equal-priority cases.
 Use one main case first.
 
 That case is now frozen here.
-

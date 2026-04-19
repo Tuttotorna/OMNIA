@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 from typing import Any, Dict, Iterable, List
 
@@ -25,6 +26,72 @@ def load_jsonl(path: Path) -> List[Dict[str, Any]]:
     return items
 
 
+def _normalize_spaces(text: str) -> str:
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def _strip_politeness(text: str) -> str:
+    patterns = [
+        r"\bthank you for (contacting us|your message|reaching out)\b[,. ]*",
+        r"\bwe understand (your concern|your frustration|how important this is)\b[,. ]*",
+        r"\bwe are sorry for the inconvenience\b[,. ]*",
+        r"\bwe appreciate your patience\b[,. ]*",
+        r"\byour issue is important to us\b[,. ]*",
+        r"\band we are here to help\b[,. ]*",
+    ]
+    out = text
+    for pattern in patterns:
+        out = re.sub(pattern, "", out, flags=re.IGNORECASE)
+    return _normalize_spaces(out.strip(" ,.-"))
+
+
+def _first_sentence(text: str) -> str:
+    parts = re.split(r"(?<=[.!?])\s+", _normalize_spaces(text))
+    return parts[0].strip() if parts and parts[0].strip() else _normalize_spaces(text)
+
+
+def _content_only(text: str) -> str:
+    text = _strip_politeness(text)
+    text = re.sub(r"\bplease\b", "", text, flags=re.IGNORECASE)
+    text = re.sub(r"\bkindly\b", "", text, flags=re.IGNORECASE)
+    return _normalize_spaces(text.strip(" ,.-"))
+
+
+def _compressed(text: str) -> str:
+    text = _content_only(text)
+    replacements = {
+        "your order is currently in transit and should arrive soon": "order in transit",
+        "refunds can take a few business days to appear depending on your bank": "refund delay depends on bank",
+        "your account has been locked due to unusual activity": "account locked",
+        "please reset your password to regain access": "reset password",
+        "your shipment may be delayed in transit": "shipment delayed",
+        "please allow a little more time and check tracking again soon": "wait and check tracking",
+        "your request is being reviewed and we will update you as soon as possible": "request under review",
+        "please confirm that your phone number or email is correct and request a new code": "check contact info and request new code",
+        "if the issue continues, contact support for manual verification": "contact support for manual verification",
+    }
+    lowered = text.lower()
+    for src, dst in replacements.items():
+        lowered = lowered.replace(src, dst)
+    return _normalize_spaces(lowered)
+
+
+def _remove_actionability(text: str) -> str:
+    out = re.sub(
+        r"\b(please|check again soon|contact support again if it still cannot be found|"
+        r"reset your password to regain access|try again|allow a little more time|"
+        r"check tracking again soon|contact support for manual verification)\b[,. ]*",
+        "",
+        text,
+        flags=re.IGNORECASE,
+    )
+    return _normalize_spaces(out.strip(" ,.-"))
+
+
+def _prompt_response_minimal(prompt: str, response: str) -> str:
+    return _normalize_spaces(f"{prompt.strip()} { _content_only(response) }")
+
+
 def build_case(item: Dict[str, Any]) -> Dict[str, Any]:
     prompt = item.get("prompt", "")
     response = item.get("response", "")
@@ -34,22 +101,31 @@ def build_case(item: Dict[str, Any]) -> Dict[str, Any]:
     if not isinstance(response, str):
         raise TypeError(f"case {item.get('case_id', '<unknown>')} has non-string response")
 
-    text = response.strip()
+    text = _normalize_spaces(response)
 
     variants = [
-        response,
-        response.strip(),
-        response.rstrip(" .,!?:;"),
-        response.lower(),
-        f"Answer: {response.strip()}",
-        f"Final answer: {response.strip()}",
-        f"{prompt.strip()} -> {response.strip()}",
+        text,
+        text.lower(),
+        _first_sentence(text),
+        _strip_politeness(text),
+        _content_only(text),
+        _compressed(text),
+        _remove_actionability(text),
+        _prompt_response_minimal(prompt, text),
     ]
+
+    cleaned: List[str] = []
+    seen = set()
+    for v in variants:
+        v = _normalize_spaces(v)
+        if v and v not in seen:
+            seen.add(v)
+            cleaned.append(v)
 
     return {
         "case_id": item["case_id"],
         "text": text,
-        "variants": variants,
+        "variants": cleaned,
     }
 
 

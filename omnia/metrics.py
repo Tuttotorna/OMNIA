@@ -1,128 +1,105 @@
-"""
-OMNIA — Unified Structural Metrics (deterministic, semantics-free)
-
-This module centralizes the core scalar metrics used across the repo.
-It is intentionally minimal: no I/O, no randomness, no model calls.
-
-Notes:
-- TruthΩ is treated as a measured scalar in [0,1].
-- Co⁺ and Score⁺ are monotone transforms used for reporting/ranking only.
-- Δ-coherence, κ-alignment, ε-drift are generic structural deltas.
-
-Author: Massimiliano Brighindi (MB-X.01)
-License: MIT
-"""
-
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Optional, Tuple
+from collections import Counter
+from typing import Iterable, List
 
 
-def _clamp01(x: float) -> float:
-    if x != x:  # NaN
-        return 0.0
+def _clip01(x: float) -> float:
     if x < 0.0:
         return 0.0
     if x > 1.0:
         return 1.0
-    return float(x)
+    return x
 
 
-def truth_omega(omega: float) -> float:
-    """
-    TruthΩ: structural invariance/coherence proxy.
-    For now it is a strict clamp; the measurement is produced elsewhere (lenses/engine).
-    """
-    return _clamp01(omega)
+def _safe_mean(values: Iterable[float]) -> float:
+    vals = [float(v) for v in values]
+    if not vals:
+        return 0.0
+    return sum(vals) / float(len(vals))
 
 
-def co_plus(truth_omega_value: float) -> float:
-    """
-    Co⁺: coherence-positive mapping.
-    Kept as identity to avoid hidden semantics; future versions may apply a monotone calibration.
-    """
-    return _clamp01(truth_omega_value)
+def _char_counter(text: str) -> Counter:
+    return Counter(text)
 
 
-def score_plus(co_plus_value: float) -> float:
-    """
-    Score⁺: reporting score.
-    Identity by design: OMNIA measures; downstream may decide how to use the score.
-    """
-    return _clamp01(co_plus_value)
+def _jaccard_chars(a: str, b: str) -> float:
+    sa = set(a)
+    sb = set(b)
+    union = sa | sb
+    if not union:
+        return 1.0
+    return len(sa & sb) / float(len(union))
 
 
-def delta_coherence(omega_a: float, omega_b: float) -> float:
-    """
-    Δ-coherence: signed structural delta.
-    Positive means B is more coherent than A.
-    """
-    return float(_clamp01(omega_b) - _clamp01(omega_a))
+def _length_similarity(a: str, b: str) -> float:
+    max_len = max(len(a), len(b))
+    if max_len == 0:
+        return 1.0
+    return 1.0 - (abs(len(a) - len(b)) / float(max_len))
 
 
-def kappa_alignment(omega_a: float, omega_b: float) -> float:
-    """
-    κ-alignment: similarity-like alignment in [0,1].
-    1.0 when equal, decreasing linearly with absolute difference.
-    """
-    a = _clamp01(omega_a)
-    b = _clamp01(omega_b)
-    return _clamp01(1.0 - abs(a - b))
+def _multiset_overlap(a: str, b: str) -> float:
+    ca = _char_counter(a)
+    cb = _char_counter(b)
+
+    total_a = sum(ca.values())
+    total_b = sum(cb.values())
+
+    if total_a == 0 and total_b == 0:
+        return 1.0
+
+    overlap = 0
+    for ch in set(ca) | set(cb):
+        overlap += min(ca.get(ch, 0), cb.get(ch, 0))
+
+    denom = max(total_a, total_b)
+    if denom == 0:
+        return 1.0
+    return overlap / float(denom)
 
 
-def epsilon_drift(omega_prev: float, omega_next: float) -> float:
-    """
-    ε-drift: absolute drift magnitude in [0,1].
-    """
-    p = _clamp01(omega_prev)
-    n = _clamp01(omega_next)
-    return abs(n - p)
+def _pair_similarity(a: str, b: str) -> float:
+    scores = [
+        _jaccard_chars(a, b),
+        _length_similarity(a, b),
+        _multiset_overlap(a, b),
+    ]
+    return _clip01(_safe_mean(scores))
 
 
-@dataclass(frozen=True)
-class MetricPack:
-    truth_omega: float
-    co_plus: float
-    score_plus: float
-    delta: float
-    kappa: float
-    eps_drift: float
+def compute_omega_score(baseline_text: str, variants: List[str]) -> float:
+    if not isinstance(baseline_text, str):
+        raise TypeError("baseline_text must be a string")
+    if not isinstance(variants, list):
+        raise TypeError("variants must be a list")
+
+    cleaned = [v for v in variants if isinstance(v, str) and v.strip()]
+    if not cleaned:
+        return 0.0
+
+    sims = [_pair_similarity(baseline_text, variant) for variant in cleaned]
+    return _clip01(_safe_mean(sims))
 
 
-def pack(
-    omega_a: float,
-    omega_b: Optional[float] = None,
-) -> MetricPack:
-    """
-    Create a consistent metric bundle.
-
-    If omega_b is None, deltas are computed against omega_a itself (zero deltas).
-    """
-    a = truth_omega(omega_a)
-    b = truth_omega(omega_b) if omega_b is not None else a
-
-    t = a
-    c = co_plus(t)
-    s = score_plus(c)
-
-    d = delta_coherence(a, b)
-    k = kappa_alignment(a, b)
-    e = epsilon_drift(a, b)
-
-    return MetricPack(
-        truth_omega=t,
-        co_plus=c,
-        score_plus=s,
-        delta=d,
-        kappa=k,
-        eps_drift=e,
-    )
+def compute_drift_score(baseline_text: str, variants: List[str]) -> float:
+    omega = compute_omega_score(baseline_text, variants)
+    return _clip01(1.0 - omega)
 
 
-def pack_pair(omega_a: float, omega_b: float) -> Tuple[MetricPack, MetricPack]:
-    """
-    Convenience: returns (pack(A vs B), pack(B vs A)).
-    """
-    return (pack(omega_a, omega_b), pack(omega_b, omega_a))
-```0
+def compute_sei_score(omega_score: float, variants: List[str]) -> float:
+    if not isinstance(variants, list):
+        raise TypeError("variants must be a list")
+
+    cleaned = [v for v in variants if isinstance(v, str) and v.strip()]
+    n = len(cleaned)
+
+    diversity_bonus = min(max(n - 1, 0), 4) / 4.0
+    score = 0.8 * float(omega_score) + 0.2 * diversity_bonus
+    return _clip01(score)
+
+
+def compute_iri_score(omega_score: float, drift_score: float) -> float:
+    omega_penalty = 1.0 - float(omega_score)
+    score = 0.5 * float(drift_score) + 0.5 * omega_penalty
+    return _clip01(score)

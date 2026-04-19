@@ -1,4 +1,4 @@
-# OMNIA - Structural Measurement Cor
+# OMNIA - Structural Measurement Core
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18379486.svg)](https://doi.org/10.5281/zenodo.18379486)
 

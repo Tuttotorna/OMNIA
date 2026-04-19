@@ -1,146 +1,178 @@
-# OMNIA CORE v1 — Architecture
+# OMNIA - Architecture
 
-## Status
+## Purpose
 
-This document defines the internal architecture of OMNIA CORE v1.
+OMNIA is a bounded post-hoc structural measurement core.
 
-Its purpose is to freeze the canonical mechanics of the core system:
+Its purpose is to measure whether an output remains structurally admissible under controlled transformations and convert that measurement into a bounded gate result.
 
-- what enters the pipeline
-- what the pipeline computes
-- how the limit layer works
-- how the gate layer works
-- what remains optional
-- what must remain invariant during implementation
+OMNIA is not an inference engine.
+OMNIA is not a reasoning engine.
+OMNIA is not a semantic evaluator.
+OMNIA is not a decision system.
 
-This document is not a manifesto.
-This document is not an ecosystem map.
-This document is the internal architecture of the canonical core.
+OMNIA belongs strictly to the measurement layer.
 
 ---
 
-## 1. Architectural identity
-
-OMNIA CORE v1 is a post-hoc structural measurement and gating system.
-
-It operates on already-produced outputs and evaluates their structural behavior under controlled transformations.
-
-Its architecture is bounded by one non-negotiable rule:
+## Non-negotiable boundary
 
 ```text
 measurement != cognition != decision
 
-OMNIA CORE belongs to the measurement layer.
+This boundary is mandatory.
 
-The gate is a bounded operational conversion layer attached to the measurement result.
+Measurement computes structural stability, fragility, saturation, irreversibility, and drift.
 
-No semantic interpretation is part of the core.
+Cognition interprets what those measurements mean inside a task or model context.
+
+Decision chooses what action to take.
+
+
+OMNIA performs measurement only.
+
+Its gate output is a bounded operational conversion of measurement, not an autonomous decision layer.
 
 
 ---
 
-2. Canonical pipeline
+Core architectural claim
+
+OMNIA operates on the following principle:
+
+structural stability = what survives controlled representational variation
+
+The system does not begin from semantics.
+
+It begins from observable structural behavior under admissible transformation.
+
+
+---
+
+Canonical pipeline
 
 input
 -> optional framing normalization
--> structural variants
--> structural lenses
--> core metrics
+-> controlled structural transformations
+-> structural comparison
+-> metric computation
 -> limit check
--> gate conversion
+-> bounded gate conversion
 -> structured report
 
-This is the canonical v1 pipeline.
+This is the canonical architecture of OMNIA core.
 
 
 ---
 
-3. Pipeline stages
+Pipeline stages
 
-3.1 Input
+1. Input
 
-The input is an already-existing output or trace to be evaluated.
+OMNIA receives a bounded input representation.
 
 Examples:
 
-model output text
+a model output
 
-structured output
+a formatted answer
 
-JSONL record
+a generated response
 
-bounded response candidate
+a retrieved answer
 
-comparable output variants
-
-adjacent states in a bounded sequence
+a structured text artifact
 
 
-OMNIA CORE v1 operates post hoc. It does not generate the input.
+The input is treated as a representation to be stress-tested structurally.
+
+OMNIA does not require hidden states. OMNIA does not require model internals. OMNIA does not require architecture-specific hooks.
 
 
 ---
 
-3.2 Optional framing normalization
+2. Optional framing normalization
 
-This stage is optional.
+A bounded normalization step may be applied before transformation.
 
-Its role is to reduce superficial framing noise before structural comparison.
+Its purpose is only to reduce irrelevant framing variation that would otherwise contaminate structural comparison.
 
-Examples may include:
+Examples:
 
 whitespace normalization
 
-casing normalization
+trivial formatting cleanup
 
-punctuation-light normalization
+canonical field ordering
 
-bounded formatting cleanup
+controlled output wrapping rules
 
 
-This stage is not semantic rewriting.
-
-If present, it must remain minimal, explicit, and reproducible.
-
-If absent, the core must still remain valid.
+Normalization must remain explicit and reproducible.
 
 
 ---
 
-3.3 Structural variants
+3. Controlled structural transformations
 
-The system constructs controlled structural variants of the input.
+OMNIA applies admissible controlled transformations to the input representation.
 
-These variants are not arbitrary paraphrases. They are bounded transformations inside an admissible transformation set.
+These transformations are not arbitrary.
 
-The purpose of the variant set is to test whether apparent stability survives controlled representational change.
-
-
----
-
-3.4 Structural lenses
-
-Each lens measures a structural aspect of the relation between the input and its transformed variants.
-
-Lenses may be simple or composite, but every lens must remain:
-
-bounded
+They must be:
 
 explicit
 
 reproducible
 
-non-semantic by design
+bounded
+
+inspectable
 
 
-The lens layer exists to expose structural residue, drift, extractability, and degradation.
+Examples include:
+
+surface reformatting
+
+compression of wording
+
+controlled paraphrase-like structural perturbation
+
+representation reshaping
+
+ordering variation within admissible constraints
+
+
+The purpose is to expose whether the apparent acceptability of an output depends too strongly on one surface form.
 
 
 ---
 
-3.5 Core metrics
+4. Structural comparison
 
-The lens outputs are aggregated into the canonical metric family:
+The transformed variants are compared against the baseline representation.
+
+This comparison is structural, not semantic.
+
+OMNIA asks:
+
+what remains stable
+
+what changes
+
+what degrades
+
+what becomes unrecoverable
+
+
+This stage produces the internal evidence surface used for scoring.
+
+
+---
+
+5. Metric computation
+
+The canonical OMNIA output layer is bounded to four metric roles:
 
 omega_score
 
@@ -151,27 +183,59 @@ iri_score
 drift_score
 
 
-These four metrics form the minimal structural profile of OMNIA CORE v1.
+omega_score
+
+Structural residue or stability under admissible transformations.
+
+sei_score
+
+Remaining structural extractability or degree of non-exhaustion.
+
+iri_score
+
+Irreversibility or non-recoverable structural degradation.
+
+drift_score
+
+Structural displacement or instability across compared states or variants.
+
+These metrics define the minimal structural profile of a case.
 
 
 ---
 
-3.6 Limit check
+6. Limit check
 
-The limit layer checks whether further structural continuation remains admissible inside the bounded transformation space.
+OMNIA includes a formal structural limit layer.
 
-This is a structural stopping condition.
+Its purpose is to detect when further continuation inside the admissible transformation space is no longer justified.
 
-It does not mean truth, safety, or solution completion in the broad sense.
+A triggered limit does not mean:
 
-It means only that further structural continuation is no longer justified inside scope.
+the system proved truth
+
+the task is solved
+
+the output is universally safe
+
+the system understood meaning
+
+
+A triggered limit means only:
+
+structural continuation inside scope is no longer admissible
+
+the analysis has reached exhaustion, collapse, or non-admissibility
+
+
+This is a bounded structural stop condition.
 
 
 ---
 
-3.7 Gate conversion
+7. Bounded gate conversion
 
-The gate layer converts the structural state into one bounded operational output:
+The structural profile is converted into one of four bounded gate states:
 
 GO
 
@@ -182,14 +246,30 @@ NO_GO
 UNSTABLE
 
 
-This is a conversion layer, not an autonomous decision system.
+GO
+
+Structural behavior remains admissible under tested conditions.
+
+RISK
+
+The case remains usable inside scope, but fragility or drift is elevated.
+
+NO_GO
+
+Structural continuation is not admissible under tested conditions.
+
+UNSTABLE
+
+The structural profile is sufficiently degraded or inconsistent that operational reliability cannot be assumed inside scope.
+
+This gate is not a general decision engine. It is a bounded operational output derived from the measured structural profile.
 
 
 ---
 
-3.8 Structured report
+8. Structured report
 
-Every valid run must emit a structured report containing:
+Every valid OMNIA run must produce a machine-readable report containing at least:
 
 omega_score
 
@@ -206,480 +286,149 @@ gate_status
 reason_code
 
 
-Optional metadata may be added, but these fields are mandatory.
+This report is the canonical output artifact of OMNIA core.
 
 
 ---
 
-4. Admissible transformation principle
+Architectural scope
 
-OMNIA CORE v1 does not operate over unlimited transformation freedom.
+OMNIA includes:
 
-It operates over a bounded admissible set.
+post-hoc structural measurement
 
-A transformation is admissible only if it is:
+controlled transformation logic
 
-explicit
+structural drift detection
 
-reproducible
+structural exhaustion detection
 
-structurally controlled
+structural irreversibility detection
 
-non-semantic by design
+formal limit triggering
 
-suitable for pairwise or grouped comparison
+bounded gate conversion
 
-
-The admissible set may evolve during implementation, but the principle must remain stable:
-
-OMNIA tests structural survival under bounded representational variation, not unconstrained rewriting.
+structured reporting
 
 
----
+OMNIA excludes:
 
-5. Canonical lens roles
+semantic interpretation
 
-The exact implementation may vary, but the canonical roles of the lens layer are fixed.
+truth adjudication in the universal sense
 
-5.1 Residue lens family
+reasoning replacement
 
-Measures what remains stable across controlled variants.
+model training
 
-This contributes primarily to:
+hidden-state dependence
 
-omega_score
+architecture-specific instrumentation as a requirement
 
+autonomous decision-making
 
-5.2 Drift lens family
+general safety certification
 
-Measures displacement, instability, or divergence across variants or adjacent states.
-
-This contributes primarily to:
-
-drift_score
+broader ecosystem ideology or genealogy
 
 
-5.3 Extractability lens family
-
-Measures whether additional structural signal remains available or whether the case is approaching exhaustion.
-
-This contributes primarily to:
-
-sei_score
-
-
-5.4 Irreversibility lens family
-
-Measures whether structural degradation has become non-recoverable under bounded continuation.
-
-This contributes primarily to:
-
-iri_score
-
-
-These four roles define the canonical measurement geometry of the core.
+If a component depends on excluded functions, it is outside OMNIA core.
 
 
 ---
 
-6. Core metrics
+Determinism and reproducibility
 
-6.1 omega_score
-
-omega_score measures structural residue or stability under the admissible transformation set.
-
-Interpretation:
-
-high omega_score -> stronger structural persistence
-
-low omega_score -> weak structural persistence or collapse under variation
-
-
-It does not measure truth in the universal sense. It measures structural survival inside scope.
-
-
----
-
-6.2 sei_score
-
-sei_score measures remaining structural extractability.
-
-Interpretation:
-
-high sei_score -> meaningful structural signal still remains available
-
-low sei_score -> structural continuation is approaching exhaustion
-
-
-This is the core exhaustion signal.
-
-
----
-
-6.3 iri_score
-
-iri_score measures structural irreversibility or non-recoverable degradation.
-
-Interpretation:
-
-low iri_score -> degradation remains limited or recoverable inside scope
-
-high iri_score -> degradation is increasingly non-recoverable
-
-
-This is the core loss signal.
-
-
----
-
-6.4 drift_score
-
-drift_score measures structural displacement, instability, or divergence across variants, adjacent states, or bounded comparisons.
-
-Interpretation:
-
-low drift_score -> lower structural displacement
-
-high drift_score -> stronger instability or divergence
-
-
-This is the core instability signal.
-
-
----
-
-7. Metric interpretation rule
-
-The metric family must be interpreted together.
-
-No single metric should be treated as the whole system.
-
-Canonical reading:
-
-omega_score -> persistence
-
-sei_score -> remaining extractability
-
-iri_score -> non-recoverable loss
-
-drift_score -> instability or displacement
-
-
-The architecture is multi-signal by design.
-
-
----
-
-8. Limit logic
-
-The limit layer exists to answer one question:
-
-is further structural continuation still admissible inside the bounded transformation space?
-
-The answer is encoded in:
-
-limit_triggered = false
-
-limit_triggered = true
-
-
-
----
-
-8.1 Meaning of limit_triggered = false
-
-A false limit means:
-
-structural continuation is still admissible inside scope
-
-exhaustion has not yet reached the stopping boundary
-
-the case remains open to bounded continuation
-
-
-It does not imply robustness. It only implies that the formal stopping boundary has not yet been crossed.
-
-
----
-
-8.2 Meaning of limit_triggered = true
-
-A true limit means:
-
-further structural continuation is no longer justified inside scope
-
-the case has reached exhaustion, collapse, or non-admissibility
-
-the bounded structural analysis must stop
-
-
-It does not imply:
-
-truth has been proven
-
-the task is solved
-
-the output is generally safe
-
-the system has understood meaning
-
-
-It is a structural stop condition only.
-
-
----
-
-9. Canonical gate logic
-
-The gate layer converts the structural profile into one bounded operational status.
-
-Allowed statuses:
-
-GO
-
-RISK
-
-NO_GO
-
-UNSTABLE
-
-
-
----
-
-9.1 GO
-
-Conditions, in canonical form:
-
-limit not triggered
-
-no critical collapse pattern
-
-structural profile remains admissible under tested conditions
-
-
-Interpretation:
-
-The case may pass forward inside the bounded use case.
-
-
----
-
-9.2 RISK
-
-Conditions, in canonical form:
-
-limit not triggered
-
-no full collapse
-
-fragility, drift, or degradation is materially present
-
-
-Interpretation:
-
-The case remains admissible, but should not be treated as clean or robust.
-
-
----
-
-9.3 NO_GO
-
-Conditions, in canonical form:
-
-structural continuation is not admissible under tested conditions
-
-or the profile crosses a blocking threshold without full instability collapse
-
-
-Interpretation:
-
-The case should not be accepted operationally inside the bounded use case.
-
-
----
-
-9.4 UNSTABLE
-
-Conditions, in canonical form:
-
-structural profile is degraded, inconsistent, collapsed, or non-reliable at core level
-
-
-Interpretation:
-
-The case cannot be treated as operationally reliable inside the bounded use case.
-
-
----
-
-10. Reason codes
-
-Every gate result must emit one explicit reason_code.
-
-The reason code must be:
-
-categorical
-
-short
-
-machine-readable
-
-traceable to the structural profile
-
-
-Illustrative examples:
-
-stable
-
-fragile
-
-high_drift
-
-low_extractability
-
-irreversible_loss
-
-limit_reached
-
-collapsed_profile
-
-
-The controlled vocabulary may be finalized during implementation, but one explicit reason code is mandatory.
-
-
----
-
-11. Minimal decision table
-
-This table is conceptual and canonical.
-
-Structural profile	limit_triggered	gate_status
-
-stable residue, acceptable drift, no exhaustion boundary	false	GO
-admissible but fragile / elevated drift / weakened extractability	false	RISK
-continuation no longer admissible	true or blocking profile	NO_GO
-collapsed / inconsistent / non-reliable structural profile	true or severe collapse	UNSTABLE
-
-
-Exact thresholding may be refined in implementation. The four-way logic must remain stable.
-
-
----
-
-12. Optional upstream modules
-
-Optional upstream modules may exist, but are not required parts of the canonical runtime.
-
-Examples:
-
-framing reduction modules
-
-observer decentering modules
-
-candidate-distribution instrumentation
-
-OMNIAMIND-style split / bifurcation probes
-
-
-These modules may enrich the signal surface.
-
-They must not become required dependencies of OMNIA CORE v1.
-
-
----
-
-13. Canonical role of OMNIAMIND
-
-OMNIAMIND is an optional upstream instrumentation layer.
-
-Its role is to provide pre-output structural probes, such as split or bifurcation-like signals, when available.
-
-It is not part of the required OMNIA CORE v1 runtime.
-
-OMNIA CORE v1 must remain complete without it.
-
-
----
-
-14. Reproducibility requirements
-
-OMNIA CORE v1 must remain reproducible.
+OMNIA must remain reproducible.
 
 This requires:
 
-explicit transformation logic
+explicit transformations
 
-explicit scoring logic
-
-documented thresholds
-
-deterministic or configuration-controlled behavior
+explicit thresholds
 
 serializable outputs
 
-inspectable reports
+inspectable scoring logic
+
+stable execution under fixed configuration
 
 
-If a result cannot be reproduced from the same input and same configuration, it is not valid core behavior.
-
-
----
-
-15. Bounded-use rule
-
-OMNIA CORE v1 is valid only inside bounded use.
-
-This means:
-
-bounded inputs
-
-bounded transformations
-
-bounded metrics
-
-bounded outputs
-
-bounded claims
-
-
-The architecture must not be stretched into an unbounded general theory.
-
-That would invalidate the core.
+If the same input and same configuration do not reproduce the same report, the behavior is not valid OMNIA core behavior.
 
 
 ---
 
-16. Implementation rule
+Minimal implementation shape
 
-The architecture must evolve by compression, not expansion.
+The minimal implementation of OMNIA should map to this structure:
 
-A new internal component belongs in the core only if it strengthens one of these four functions:
+omnia/
+  engine.py
+  transforms.py
+  metrics.py
+  limits.py
+  io.py
 
-structural measurement
+engine.py
 
-exhaustion detection
+Coordinates the full measurement pipeline.
 
-limit detection
+transforms.py
 
-gate conversion
+Defines admissible controlled transformations.
 
+metrics.py
 
-If it does not strengthen one of these four, it does not belong in the canonical core.
+Computes the canonical metric family.
+
+limits.py
+
+Implements the structural limit logic.
+
+io.py
+
+Handles parsing and report serialization.
+
+No file should silently absorb semantic interpretation or external cognition logic.
 
 
 ---
 
-17. Final architecture formula
+Repository role
 
-The shortest correct formula for OMNIA CORE v1 is:
+This repository is the canonical implementation repository of OMNIA core.
 
-post-hoc input
--> bounded structural variation
--> residue / extractability / irreversibility / drift
--> limit check
+Its function is narrow:
+
+define the core
+
+implement the core
+
+demonstrate the core
+
+validate the core
+
+
+It is not the repository of the full ecosystem.
+
+Historical, exploratory, genealogical, or cross-project material belongs elsewhere.
+
+
+---
+
+Final architectural summary
+
+OMNIA = bounded post-hoc structural measurement core
+
+More explicitly:
+
+representation
+-> controlled variation
+-> structural measurement
+-> limit detection
 -> bounded gate output
--> structured report
 
-This is the canonical architecture of OMNIA CORE v1.
+That is the entire architectural identity of OMNIA. Anything beyond that is outside scope.
 

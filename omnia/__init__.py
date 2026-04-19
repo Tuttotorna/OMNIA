@@ -1,14 +1,3 @@
-"""
-OMNIA CORE v1
-Post-hoc structural measurement and gating system.
-"""
+from omnia.core import run_omnia
 
-from .gate import OmniaResult, evaluate_structural_profile
-
-__all__ = [
-    "__version__",
-    "OmniaResult",
-    "evaluate_structural_profile",
-]
-
-__version__ = "0.1.0"
+__all__ = ["run_omnia"]

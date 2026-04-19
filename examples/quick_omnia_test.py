@@ -1,14 +1,13 @@
 import json
-from pathlib import Path
 
-from omnia.engine import run_omnia
+from omnia.core import run_omnia
 
 
 def main() -> None:
     """
     Minimal smoke test for OMNIA core.
 
-    This script exists only to verify that the canonical core:
+    This script verifies that the canonical core:
     - imports correctly
     - executes on a bounded sample input
     - returns the required output schema
@@ -67,4 +66,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

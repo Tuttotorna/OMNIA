@@ -18,13 +18,13 @@ def compute_limit_triggered(
     iri = float(iri_score)
     drift = float(drift_score)
 
-    if omega < 0.35:
+    if omega < 0.32:
         return True
-    if sei < 0.25:
+    if sei < 0.22:
         return True
-    if iri > 0.75:
+    if iri > 0.78:
         return True
-    if drift > 0.80:
+    if drift > 0.82:
         return True
 
     return False
@@ -52,14 +52,22 @@ def compute_gate_status(
     drift = float(drift_score)
 
     if limit_triggered:
-        if omega < 0.20 or iri > 0.90 or drift > 0.90:
+        if omega < 0.18 or iri > 0.90 or drift > 0.90:
             return "UNSTABLE"
         return "NO_GO"
 
-    if omega >= 0.75 and sei >= 0.50 and iri <= 0.40 and drift <= 0.35:
+    if omega >= 0.78 and sei >= 0.58 and iri <= 0.24 and drift <= 0.24:
         return "GO"
 
-    return "RISK"
+    if (
+        omega < 0.76
+        or drift >= 0.24
+        or iri >= 0.24
+        or sei < 0.58
+    ):
+        return "RISK"
+
+    return "GO"
 
 
 def compute_reason_code(
@@ -86,13 +94,13 @@ def compute_reason_code(
         return "unstable_profile"
 
     if gate_status == "NO_GO":
-        if omega < 0.35:
+        if omega < 0.32:
             return "low_omega"
-        if sei < 0.25:
+        if sei < 0.22:
             return "limit_exhaustion"
-        if iri > 0.75:
+        if iri > 0.78:
             return "high_iri"
-        if drift > 0.80:
+        if drift > 0.82:
             return "high_drift"
         if limit_triggered:
             return "limit_triggered"
@@ -101,13 +109,13 @@ def compute_reason_code(
     if gate_status == "GO":
         return "stable_profile"
 
-    if drift > 0.55:
+    if drift >= 0.26:
         return "high_drift"
-    if omega < 0.60:
+    if omega < 0.76:
         return "low_omega"
-    if iri > 0.45:
+    if iri >= 0.24:
         return "high_iri"
-    if sei < 0.45:
+    if sei < 0.58:
         return "low_sei"
 
     return "moderate_fragility"

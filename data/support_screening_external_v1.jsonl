@@ -1,4 +1,9 @@
 
+{"case_id":"support-016","source":"external_manual","prompt":"My refund was approved but the amount is still missing from my account.","response":"Refunds may take several business days to appear depending on your bank. Please check again shortly, and contact support if it still does not appear after that period.","label":"PASS"}
+{"case_id":"support-017","source":"external_manual","prompt":"Where is my order?","response":"Your order is being processed processed processed.","label":"FAIL"}
+{"case_id":"support-018","source":"external_manual","prompt":"I cannot access my account because the verification code never arrives.","response":"Please confirm that your phone number or email is correct and request a new code. If the issue continues, contact support for manual verification.","label":"PASS"}
+{"case_id":"support-019","source":"external_manual","prompt":"I was charged twice for the same subscription.","response":"We are sorry for the inconvenience and appreciate your patience while we review this.","label":"FAIL"}
+{"case_id":"support-020","source":"external_manual","prompt":"My package says delivered but I cannot find it anywhere.","response":"Thank you for contacting us. We understand your concern and are here to help.","label":"FAIL"}
 {"case_id":"support-011","source":"external_manual","prompt":"My package says delivered but I never received it.","response":"If your package shows as delivered but has not arrived, please check with neighbors or your building reception and contact support again if it still cannot be found.","label":"PASS"}
 {"case_id":"support-012","source":"external_manual","prompt":"I was charged twice for the same order.","response":"Thank you for your message. We understand your concern.","label":"FAIL"}
 {"case_id":"support-013","source":"external_manual","prompt":"My account is locked and I cannot reset the password.","response":"Please make sure you are using the correct reset link and try again.","label":"FAIL"}

@@ -1,199 +1,70 @@
-from __future__ import annotations
-
-from dataclasses import dataclass, asdict
 import json
+from pathlib import Path
 
-
-@dataclass
-class OmniaResult:
-    omega_score: float
-    sei_score: float
-    iri_score: float
-    drift_score: float
-    limit_triggered: bool
-    gate_status: str
-    reason_code: str
-
-
-def clamp01(value: float) -> float:
-    return max(0.0, min(1.0, value))
-
-
-def compute_limit_triggered(
-    omega_score: float,
-    sei_score: float,
-    iri_score: float,
-    drift_score: float,
-) -> bool:
-    exhaustion_boundary = sei_score < 0.20
-    critical_irreversible_loss = iri_score >= 0.75
-    collapse_tendency = (
-        omega_score < 0.30
-        and (
-            drift_score >= 0.70
-            or iri_score >= 0.50
-            or sei_score < 0.40
-        )
-    )
-    explicit_collapse_profile = (
-        omega_score < 0.30 and drift_score >= 0.70 and iri_score >= 0.50
-    )
-    return (
-        exhaustion_boundary
-        or critical_irreversible_loss
-        or collapse_tendency
-        or explicit_collapse_profile
-    )
-
-
-def select_reason_code(
-    omega_score: float,
-    sei_score: float,
-    iri_score: float,
-    drift_score: float,
-    limit_triggered: bool,
-    gate_status: str,
-) -> str:
-    # Severity priority:
-    # collapsed_profile > limit_reached > irreversible_loss
-    # > high_drift > low_extractability > fragile > stable
-
-    if gate_status == "GO":
-        return "stable"
-
-    if gate_status == "UNSTABLE":
-        if omega_score < 0.30 and drift_score >= 0.70 and iri_score >= 0.50:
-            return "collapsed_profile"
-        if iri_score >= 0.75:
-            return "irreversible_loss"
-        if limit_triggered:
-            return "limit_reached"
-        return "collapsed_profile"
-
-    if gate_status == "NO_GO":
-        if limit_triggered:
-            if omega_score < 0.30 and drift_score >= 0.70 and iri_score >= 0.50:
-                return "collapsed_profile"
-            if iri_score >= 0.75:
-                return "irreversible_loss"
-            return "limit_reached"
-        if iri_score >= 0.50:
-            return "irreversible_loss"
-        if drift_score >= 0.70:
-            return "high_drift"
-        return "low_extractability"
-
-    # gate_status == "RISK"
-    if drift_score >= 0.50:
-        return "high_drift"
-    if sei_score < 0.70:
-        return "low_extractability"
-    return "fragile"
-
-
-def compute_gate_status(
-    omega_score: float,
-    sei_score: float,
-    iri_score: float,
-    drift_score: float,
-    limit_triggered: bool,
-) -> str:
-    # GO
-    if (
-        not limit_triggered
-        and omega_score >= 0.75
-        and sei_score >= 0.70
-        and iri_score < 0.25
-        and drift_score < 0.25
-    ):
-        return "GO"
-
-    # UNSTABLE has strongest priority
-    if (
-        omega_score < 0.30
-        or iri_score >= 0.75
-        or (drift_score >= 0.70 and omega_score < 0.50)
-        or (
-            limit_triggered
-            and omega_score < 0.30
-            and (iri_score >= 0.50 or drift_score >= 0.70)
-        )
-    ):
-        return "UNSTABLE"
-
-    # NO_GO
-    if (
-        limit_triggered
-        or sei_score < 0.20
-        or drift_score >= 0.70
-        or iri_score >= 0.50
-    ):
-        return "NO_GO"
-
-    # Otherwise admissible but weakened
-    return "RISK"
-
-
-def evaluate_case(
-    omega_score: float,
-    sei_score: float,
-    iri_score: float,
-    drift_score: float,
-) -> OmniaResult:
-    omega_score = clamp01(omega_score)
-    sei_score = clamp01(sei_score)
-    iri_score = clamp01(iri_score)
-    drift_score = clamp01(drift_score)
-
-    limit_triggered = compute_limit_triggered(
-        omega_score=omega_score,
-        sei_score=sei_score,
-        iri_score=iri_score,
-        drift_score=drift_score,
-    )
-
-    gate_status = compute_gate_status(
-        omega_score=omega_score,
-        sei_score=sei_score,
-        iri_score=iri_score,
-        drift_score=drift_score,
-        limit_triggered=limit_triggered,
-    )
-
-    reason_code = select_reason_code(
-        omega_score=omega_score,
-        sei_score=sei_score,
-        iri_score=iri_score,
-        drift_score=drift_score,
-        limit_triggered=limit_triggered,
-        gate_status=gate_status,
-    )
-
-    return OmniaResult(
-        omega_score=omega_score,
-        sei_score=sei_score,
-        iri_score=iri_score,
-        drift_score=drift_score,
-        limit_triggered=limit_triggered,
-        gate_status=gate_status,
-        reason_code=reason_code,
-    )
+from omnia.engine import run_omnia
 
 
 def main() -> None:
-    # Minimal bounded demo profile:
-    # superficially acceptable but structurally weakened
-    result = evaluate_case(
-        omega_score=0.58,
-        sei_score=0.55,
-        iri_score=0.31,
-        drift_score=0.57,
-    )
+    """
+    Minimal smoke test for OMNIA core.
 
-    print("OMNIA CORE v1 quick smoke test")
-    print(json.dumps(asdict(result), indent=2))
+    This script exists only to verify that the canonical core:
+    - imports correctly
+    - executes on a bounded sample input
+    - returns the required output schema
+    """
+
+    sample_case = {
+        "case_id": "quick-smoke-001",
+        "text": "The answer is 4.",
+        "variants": [
+            "4",
+            "The answer is 4",
+            "Answer: 4"
+        ]
+    }
+
+    result = run_omnia(sample_case)
+
+    required_fields = {
+        "omega_score",
+        "sei_score",
+        "iri_score",
+        "drift_score",
+        "limit_triggered",
+        "gate_status",
+        "reason_code",
+    }
+
+    missing = required_fields - set(result.keys())
+    if missing:
+        missing_list = ", ".join(sorted(missing))
+        raise ValueError(f"OMNIA output missing required fields: {missing_list}")
+
+    numeric_fields = ("omega_score", "sei_score", "iri_score", "drift_score")
+    for field in numeric_fields:
+        value = result[field]
+        if not isinstance(value, (int, float)):
+            raise TypeError(f"{field} must be numeric, got {type(value).__name__}")
+        if not (0.0 <= float(value) <= 1.0):
+            raise ValueError(f"{field} must be in [0.0, 1.0], got {value}")
+
+    if not isinstance(result["limit_triggered"], bool):
+        raise TypeError("limit_triggered must be boolean")
+
+    allowed_gate_status = {"GO", "RISK", "NO_GO", "UNSTABLE"}
+    if result["gate_status"] not in allowed_gate_status:
+        raise ValueError(
+            f"gate_status must be one of {sorted(allowed_gate_status)}, got {result['gate_status']}"
+        )
+
+    if not isinstance(result["reason_code"], str) or not result["reason_code"].strip():
+        raise ValueError("reason_code must be a non-empty string")
+
+    print(json.dumps(result, indent=2, sort_keys=True))
     print("OK: OMNIA core executed")
 
 
 if __name__ == "__main__":
     main()
+

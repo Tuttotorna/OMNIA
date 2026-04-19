@@ -1,0 +1,5 @@
+{"case_id":"support-031","source":"external_manual","prompt":"My replacement item still has not shipped. What is happening?","response":"Your replacement order is still being processed. Please contact support if you do not receive a shipping update soon.","label":"PASS"}
+{"case_id":"support-032","source":"external_manual","prompt":"I cannot access my account because my old phone number is still linked to verification.","response":"We understand your concern and appreciate your patience.","label":"FAIL"}
+{"case_id":"support-033","source":"external_manual","prompt":"My refund was supposed to be completed last week but I still do not see it.","response":"Please check with your bank and contact support again if the refund still does not appear after a few business days.","label":"PASS"}
+{"case_id":"support-034","source":"external_manual","prompt":"Where is my order?","response":"Thank you for your message. Your order is important to us.","label":"FAIL"}
+{"case_id":"support-035","source":"external_manual","prompt":"I was billed again after canceling auto-renewal.","response":"Please contact support so this can be reviewed.","label":"FAIL"}

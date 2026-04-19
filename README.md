@@ -11,7 +11,7 @@
 
 OMNIA is a bounded post-hoc structural measurement core.
 
-Its task is to measure whether an output remains structurally admissible under controlled transformations and convert that measurement into a bounded gate result.
+It measures whether an output remains structurally admissible under controlled transformation and converts that measurement into a bounded gate result.
 
 OMNIA operates after inference.
 
@@ -30,23 +30,15 @@ OMNIA measures structure only.
 
 ## Start here
 
-If only one entry point is needed, start here:
-
 - [`docs/MINIMAL_PROOF.md`](./docs/MINIMAL_PROOF.md)
-
-If the goal is to check the validated current state of the repository, read:
-
 - [`docs/CORE_STATUS.md`](./docs/CORE_STATUS.md)
-
-If the goal is to understand the primary public-facing case, read:
-
 - [`docs/FIRST_PUBLIC_CASE.md`](./docs/FIRST_PUBLIC_CASE.md)
 
-These three files are the shortest path through the repository.
+These are the shortest entry points into the repository.
 
 ---
 
-## Current validated status
+## Current validated state
 
 Minimal OMNIA core is materially executable.
 
@@ -76,51 +68,23 @@ Verified smoke test output:
   "sei_score": 0.67557
 }
 
-Terminal confirmation:
-
 OK: OMNIA core executed
 
-This proves software-level existence of a minimal OMNIA core.
-It does not prove scientific closure or benchmark superiority.
+This is software-level proof that the minimal core exists.
+It is not proof of scientific closure or benchmark superiority.
 
 
 ---
 
 Core claim
 
-The canonical claim of OMNIA is narrow:
+OMNIA makes one bounded claim:
 
-> A bounded post-hoc structural measurement layer can detect silent fragility in outputs that appear superficially acceptable, detect when structural continuation becomes unjustified under controlled transformations, and convert that result into a bounded operational gate output.
-
-
-
-Anything broader than this is outside scope.
+> A post-hoc structural measurement layer can detect silent fragility in outputs that appear superficially acceptable, detect when structural continuation becomes unjustified under controlled transformations, and convert that result into a bounded operational gate output.
 
 
----
 
-Core principle
-
-Structural stability is what survives controlled representational variation.
-
-OMNIA does not begin from semantic interpretation.
-
-OMNIA begins from structural behavior under transformation.
-
-It asks:
-
-what remains stable
-
-what drifts
-
-what degrades
-
-what becomes irrecoverable
-
-when continuation stops being admissible
-
-
-The result is a bounded structural report, not a semantic verdict.
+Anything broader is outside scope.
 
 
 ---
@@ -140,8 +104,6 @@ Decision chooses what action should follow.
 
 OMNIA belongs strictly to the measurement layer.
 
-Its gate is a bounded operational conversion of measurement, not an autonomous decision layer.
-
 
 ---
 
@@ -156,12 +118,10 @@ input
 -> gate status
 -> bounded structural report
 
-This is the canonical minimal pipeline of OMNIA core.
-
 
 ---
 
-10-second quick start
+Quick start
 
 Install from repository root:
 
@@ -180,7 +140,7 @@ python examples/quick_omnia_test.py
 
 Canonical output contract
 
-Every valid OMNIA core run must return at least these fields:
+Every valid OMNIA core run must return at least:
 
 omega_score
 
@@ -204,7 +164,7 @@ This is the bounded structural report surface of OMNIA core.
 
 Gate outputs
 
-OMNIA allows only these bounded gate outcomes:
+Allowed gate outcomes:
 
 GO
 
@@ -215,21 +175,12 @@ NO_GO
 UNSTABLE
 
 
-GO
+GO means structural behavior remains admissible under tested conditions.
+RISK means the case remains admissible, but fragility or drift is elevated.
+NO_GO means structural continuation is not admissible under tested conditions.
+UNSTABLE means the structural profile is degraded enough that operational reliability cannot be assumed inside scope.
 
-Structural behavior remains admissible under tested conditions.
-
-RISK
-
-The case remains admissible, but fragility or drift is elevated.
-
-NO_GO
-
-Structural continuation is not admissible under tested conditions.
-
-UNSTABLE
-
-The structural profile is sufficiently degraded or inconsistent that operational reliability cannot be assumed inside scope.
+The gate is a bounded conversion of measurement, not autonomous decision.
 
 
 ---
@@ -247,16 +198,12 @@ iri_score - structural irreversibility / non-recoverable degradation
 drift_score - structural displacement or instability across variants
 
 
-These metrics define the minimal readable structural profile of a case.
-
 
 ---
 
 Limit layer
 
 OMNIA includes a formal limit layer.
-
-Its role is to detect when further structural continuation inside the admissible transformation space is no longer justified.
 
 A triggered limit does not mean:
 
@@ -269,21 +216,14 @@ the output is universally safe
 the system understood the problem
 
 
-A triggered limit means only:
-
-further structural continuation inside scope is not justified
-
-the analysis has reached exhaustion, collapse, or non-admissibility
-
-
-This is a structural stop condition, not a metaphysical claim.
+It means only that further structural continuation inside scope is not justified.
 
 
 ---
 
-What OMNIA includes
+Scope
 
-Inside canonical OMNIA scope:
+OMNIA includes:
 
 post-hoc structural measurement
 
@@ -307,17 +247,8 @@ machine-readable report generation
 
 deterministic or reproducible scoring logic
 
-rebuildable executable examples
 
-testable bounded behavior
-
-
-
----
-
-What OMNIA excludes
-
-Outside canonical OMNIA scope:
+OMNIA excludes:
 
 semantic reasoning
 
@@ -335,16 +266,10 @@ autonomous decision systems
 
 general safety certification
 
-broad ecosystem ideology
-
 manifesto layers
-
-cognition frameworks
 
 total theories of reality
 
-
-If a component depends on one of these, it is not OMNIA core.
 
 
 ---
@@ -362,7 +287,7 @@ Main areas:
 
 omnia/ -> core structural measurement logic
 
-examples/ -> runnable examples and frozen result artifacts
+examples/ -> runnable examples and bounded result artifacts
 
 docs/ -> architecture, scope, output schema, proof, status, public case
 
@@ -372,25 +297,21 @@ tests/ -> executable validation of core behavior
 
 ---
 
-Key repository documents
+Key documents
 
 docs/MINIMAL_PROOF.md
-shortest proof that the minimal core exists as working software
 
 docs/CORE_STATUS.md
-validated repository status and current execution result
 
 docs/FIRST_PUBLIC_CASE.md
-current primary public-facing case
 
 docs/ARCHITECTURE.md
-architectural boundary and pipeline
 
 docs/SCOPE.md
-canonical scope and exclusion rules
 
 docs/OUTPUT_SCHEMA.md
-canonical output contract
+
+docs/POSITIONING.md
 
 
 
@@ -398,7 +319,7 @@ canonical output contract
 
 Current examples
 
-The repository includes bounded runnable examples and result artifacts, including:
+Core examples and artifacts include:
 
 examples/quick_omnia_test.py
 
@@ -453,17 +374,6 @@ python examples/rebuild_and_analyze_all.py
 
 ---
 
-Tests
-
-Run the full core test suite:
-
-pytest -q tests
-
-The repository currently validates passing bounded core behavior through the test suite.
-
-
----
-
 Intended use
 
 OMNIA is designed to be:
@@ -498,12 +408,10 @@ bounded release gating
 representation-dependent fragility sensing
 
 
-OMNIA is useful where an output may look acceptable on the surface but remain structurally weak under controlled variation.
-
 
 ---
 
-Reproducibility requirement
+Reproducibility
 
 OMNIA must remain reproducible.
 
@@ -525,43 +433,22 @@ If a result cannot be reproduced, it is not valid OMNIA core evidence.
 
 ---
 
-Bounded-use principle
-
-OMNIA is valid only under bounded use.
-
-This requires:
-
-bounded inputs
-
-bounded transformations
-
-bounded metrics
-
-bounded outputs
-
-bounded claims
-
-
-Any attempt to expand OMNIA into an unbounded general theory breaks the scope of the system.
-
-
----
-
 Strong non-claims
 
-OMNIA does not prove truth in the universal sense.
+OMNIA does not:
 
-OMNIA does not solve reasoning.
+prove truth in the universal sense
 
-OMNIA does not replace task evaluation.
+solve reasoning
 
-OMNIA does not certify safety in the broad sense.
+replace task evaluation
 
-OMNIA does not explain meaning.
+certify safety in the broad sense
 
-OMNIA does not function as an autonomous decision-maker.
+explain meaning
 
-OMNIA does not require belief in any broader theoretical framework to remain valid inside scope.
+function as an autonomous decision-maker
+
 
 
 ---
@@ -583,16 +470,19 @@ demonstrate the core
 validate the core
 
 
-Historical branches, exploratory prototypes, and broader ecosystem material belong elsewhere.
+OMNIA should be read as a bounded structural measurement core, not as the entire ecosystem.
 
-For broader context and neighboring branches, see:
+
+---
+
+Broader context
+
+For broader ecosystem context, see:
 
 OMNIABASE
 
 lon-mirror
 
-
-OMNIA should be read as the canonical structural measurement core, not as the entire ecosystem.
 
 
 ---

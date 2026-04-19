@@ -1,0 +1,5 @@
+{"case_id":"support-001","source":"external_manual","prompt":"My order still has not arrived. Where is it?","response":"Your order is currently in transit and should arrive soon.","label":"PASS"}
+{"case_id":"support-002","source":"external_manual","prompt":"My refund was approved 4 days ago but I still do not see the money in my bank account. What should I do?","response":"Refunds can take a few business days to appear depending on your bank. Please check again soon.","label":"PASS"}
+{"case_id":"support-003","source":"external_manual","prompt":"My account is locked and I need access now.","response":"Your account has been locked due to unusual activity. Please reset your password to regain access.","label":"PASS"}
+{"case_id":"support-004","source":"external_manual","prompt":"Where is my order?","response":"The answer seems correct. The answer seems correct. The answer seems correct.","label":"FAIL"}
+{"case_id":"support-005","source":"external_manual","prompt":"I already contacted support twice and still have no update. This is very frustrating.","response":"We understand your frustration and appreciate your patience.","label":"FAIL"}

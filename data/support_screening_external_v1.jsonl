@@ -3,3 +3,8 @@
 {"case_id":"support-003","source":"external_manual","prompt":"My account is locked and I need access now.","response":"Your account has been locked due to unusual activity. Please reset your password to regain access.","label":"PASS"}
 {"case_id":"support-004","source":"external_manual","prompt":"Where is my order?","response":"The answer seems correct. The answer seems correct. The answer seems correct.","label":"FAIL"}
 {"case_id":"support-005","source":"external_manual","prompt":"I already contacted support twice and still have no update. This is very frustrating.","response":"We understand your frustration and appreciate your patience.","label":"FAIL"}
+{"case_id":"support-006","source":"external_manual","prompt":"Where is my order?","response":"Your order is on the way and should arrive soon.","label":"PASS"}
+{"case_id":"support-007","source":"external_manual","prompt":"My refund was approved but I still do not see it.","response":"Your refund has been approved. Please wait.","label":"FAIL"}
+{"case_id":"support-008","source":"external_manual","prompt":"My account is locked and I need access now.","response":"We are sorry for the inconvenience. Please try again later.","label":"FAIL"}
+{"case_id":"support-009","source":"external_manual","prompt":"I already contacted support twice and still have no update.","response":"I understand your frustration. Your request is being reviewed and we will update you as soon as possible.","label":"PASS"}
+{"case_id":"support-010","source":"external_manual","prompt":"Where is my order?","response":"Thank you for reaching out about your order. We understand how important this is.","label":"FAIL"}

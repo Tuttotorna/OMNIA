@@ -1,170 +1,82 @@
-# OMNIA - Structural Measurement Core
+# OMNIA v1.0 — Structural Measurement Engine
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18379486.svg)](https://doi.org/10.5281/zenodo.18379486)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19488048.svg)](https://doi.org/10.5281/zenodo.19488048)
 
 **Author:** Massimiliano Brighindi  
-**Contact:** brighissimo@gmail.com
+**Project:** MB-X.01
 
 ---
 
-## What OMNIA is
+## What OMNIA does
 
-OMNIA is a bounded post-hoc structural measurement core.
+OMNIA is a post-hoc structural measurement engine.
 
-It measures whether an output remains structurally admissible under controlled transformation and converts that measurement into a bounded gate result.
+It does not generate answers.  
+It does not interpret semantics.  
+It does not make decisions.
 
-OMNIA operates after inference.
-
-It does not:
-
-- interpret semantics
-- replace reasoning
-- train a model
-- optimize a model
-- act as a truth oracle
-- function as an autonomous decision-maker
-
-OMNIA measures structure only.
-
----
-
-## Start here
-
-- [`docs/MINIMAL_PROOF.md`](./docs/MINIMAL_PROOF.md)
-- [`docs/CORE_STATUS.md`](./docs/CORE_STATUS.md)
-- [`docs/FIRST_PUBLIC_CASE.md`](./docs/FIRST_PUBLIC_CASE.md)
-
-These are the shortest entry points into the repository.
-
----
-
-## Current validated state
-
-Minimal OMNIA core is materially executable.
-
-Validated state:
-
-- editable install works
-- canonical imports work
-- canonical output schema works
-- smoke test works
-- tests pass
-
-Verified test result:
+It measures whether an output remains structurally admissible under controlled variation.
 
 ```text
-47 passed in 0.14s
+Structural truth = invariance under transformation
 
-Verified smoke test output:
-
-{
-  "case_id": "quick-smoke-001",
-  "drift_score": 0.405538,
-  "gate_status": "RISK",
-  "iri_score": 0.405538,
-  "limit_triggered": false,
-  "omega_score": 0.594462,
-  "reason_code": "low_omega",
-  "sei_score": 0.67557
-}
-
-OK: OMNIA core executed
-
-This is software-level proof that the minimal core exists.
-It is not proof of scientific closure or benchmark superiority.
+If an output stays coherent under transformation, structure holds.
+If it drifts, exhausts itself, or collapses, OMNIA measures that failure.
 
 
 ---
 
 Core claim
 
-OMNIA makes one bounded claim:
+surface-readable output != always structurally admissible
 
-> A post-hoc structural measurement layer can detect silent fragility in outputs that appear superficially acceptable, detect when structural continuation becomes unjustified under controlled transformations, and convert that result into a bounded operational gate output.
+That is the entire point.
 
+A system can produce output that looks correct, fluent, and acceptable, while the underlying structure is already weak.
 
-
-Anything broader is outside scope.
-
-
----
-
-Non-negotiable boundary
-
-measurement != cognition != decision
-
-This is a hard architectural constraint.
-
-Measurement computes structural stability, fragility, saturation, irreversibility, and drift.
-
-Cognition interprets what those measurements mean in a task or model context.
-
-Decision chooses what action should follow.
-
-
-OMNIA belongs strictly to the measurement layer.
+OMNIA is designed to detect that gap.
 
 
 ---
 
-Canonical pipeline
+Architectural boundary
 
-input
--> optional framing normalization
--> controlled structural transformations
--> structural comparison
--> omega / sei / iri / drift
--> limit check
--> gate status
--> bounded structural report
+measurement != inference != decision
+
+OMNIA performs measurement only.
+
+It does not:
+
+replace a model
+
+infer intent
+
+interpret meaning
+
+make final decisions
 
 
----
-
-Quick start
-
-Install from repository root:
-
-pip install -e . -U --no-cache-dir
-
-Run tests:
-
-pytest -q tests
-
-Run minimal smoke test:
-
-python examples/quick_omnia_test.py
+It emits structural signals that an external layer may use.
 
 
 ---
 
-Canonical output contract
+What OMNIA returns
 
-Every valid OMNIA core run must return at least:
+Main outputs include:
 
-omega_score
+omega_score → structural coherence
 
-sei_score
+drift_score → instability under variation
 
-iri_score
+iri_score → irreversibility
 
-drift_score
+sei_score → remaining structural extractability
 
-limit_triggered
-
-gate_status
-
-reason_code
+gate_status → admissibility class
 
 
-This is the bounded structural report surface of OMNIA core.
-
-
----
-
-Gate outputs
-
-Allowed gate outcomes:
+Gate classes:
 
 GO
 
@@ -175,325 +87,205 @@ NO_GO
 UNSTABLE
 
 
-GO means structural behavior remains admissible under tested conditions.
-RISK means the case remains admissible, but fragility or drift is elevated.
-NO_GO means structural continuation is not admissible under tested conditions.
-UNSTABLE means the structural profile is degraded enough that operational reliability cannot be assumed inside scope.
+Interpretation:
 
-The gate is a bounded conversion of measurement, not autonomous decision.
+GO = structurally admissible
 
+RISK = readable but fragile
 
----
+NO_GO = readable but not structurally admissible
 
-Core metrics
-
-OMNIA uses a bounded structural metric family:
-
-omega_score - structural residue or stability under admissible transformations
-
-sei_score - remaining structural extractability / non-exhaustion
-
-iri_score - structural irreversibility / non-recoverable degradation
-
-drift_score - structural displacement or instability across variants
+UNSTABLE = collapse detected
 
 
 
 ---
 
-Limit layer
+Verified status
 
-OMNIA includes a formal limit layer.
+The repository has been executed end-to-end in a fresh Colab runtime.
 
-A triggered limit does not mean:
+Verified:
 
-truth has been proven
+clone: OK
 
-the task is solved
+install: OK
 
-the output is universally safe
+import: OK
 
-the system understood the problem
+tests: OK
+
+smoke example: OK
+
+frozen artifact rebuild: OK
+
+analyzers: OK
 
 
-It means only that further structural continuation inside scope is not justified.
+Test result:
+
+47 passed
+
+So this is not documentation-only.
+The repo runs.
+
+
+---
+
+Smoke result
+
+Verified smoke execution:
+
+{
+  "case_id": "quick-smoke-001",
+  "drift_score": 0.405538,
+  "gate_status": "RISK",
+  "iri_score": 0.405538,
+  "limit_triggered": false,
+  "omega_score": 0.594462,
+  "reason_code": "high_drift",
+  "sei_score": 0.67557
+}
+
+Meaning:
+
+OMNIA core executed correctly
+
+the case was not saturated
+
+the output was classified as RISK
+
+the dominant failure signal was high_drift
+
+
+
+---
+
+Main result
+
+Current frozen mini-suite summary:
+
+Dataset	Total	GO	RISK	NO_GO	UNSTABLE	non_GO	Ratio
+
+Surface OK	8	3	2	2	1	5	5/8
+LLM Surface	8	3	2	2	1	5	5/8
+Support Responses	8	3	2	2	1	5	5/8
+RAG Answers	8	3	2	2	1	5	5/8
+
+
+So the strongest current public statement is:
+
+In the current frozen mini-suite, 5 out of 8 surface-readable outputs are not GO.
+
+This is the value of the repository.
+
+Not that OMNIA writes better outputs.
+Not that OMNIA knows truth in the semantic sense.
+
+But this:
+
+OMNIA separates surface readability from structural admissibility.
+
+
+---
+
+Why it matters
+
+Most evaluation pipelines still confuse these layers:
+
+readable output
+
+correct-looking output
+
+structurally stable output
+
+
+They are not the same thing.
+
+An output can look fine and still be structurally weak.
+
+If a system cannot detect that difference, it is exposed to silent failure.
+
+OMNIA is built to operate there.
+
+
+---
+
+Quick start
+
+Clone:
+
+git clone https://github.com/Tuttotorna/OMNIA.git
+cd OMNIA
+
+Install:
+
+pip install -e .
+
+Run tests:
+
+pytest -q
+
+Run smoke example:
+
+python examples/quick_omnia_test.py
+
+Run full frozen rebuild + analysis:
+
+python examples/rebuild_and_analyze_all.py
+
+
+---
+
+Minimal formula
+
+Output can look fine.
+Structure can still fail.
+OMNIA measures that failure.
+measurement != inference != decision
 
 
 ---
 
 Scope
 
-OMNIA includes:
+What is justified now:
 
-post-hoc structural measurement
+the engine runs
 
-controlled structural transformations
+the tests pass
 
-structural comparison across bounded variants
+the examples run
 
-structural fragility detection
+the frozen suite is reproducible
 
-structural drift detection
-
-structural exhaustion detection
-
-structural irreversibility detection
-
-formal limit triggering
-
-bounded gate conversion
-
-machine-readable report generation
-
-deterministic or reproducible scoring logic
+the admissibility split is measurable
 
 
-OMNIA excludes:
+What is not justified now:
 
-semantic reasoning
+universal claims
 
-universal truth adjudication
+benchmark supremacy claims
 
-training-time optimization
+claims that OMNIA solves hallucinations in general
 
-model fine-tuning
+claims that OMNIA replaces reasoning or decision systems
 
-hidden-state introspection as a requirement
 
-architecture-specific instrumentation as a requirement
-
-autonomous decision systems
-
-general safety certification
-
-manifesto layers
-
-total theories of reality
-
+The strength of the project is not hype.
+It is boundary discipline.
 
 
 ---
 
-Repository structure
+Contact
 
-omnia/
-examples/
-docs/
-tests/
-pyproject.toml
-README.md
+Massimiliano Brighindi
+MB-X.01
 
-Main areas:
+GitHub:
+https://github.com/Tuttotorna/OMNIA
 
-omnia/ -> core structural measurement logic
-
-examples/ -> runnable examples and bounded result artifacts
-
-docs/ -> architecture, scope, output schema, proof, status, public case
-
-tests/ -> executable validation of core behavior
-
-
-
----
-
-Key documents
-
-docs/MINIMAL_PROOF.md
-
-docs/CORE_STATUS.md
-
-docs/FIRST_PUBLIC_CASE.md
-
-docs/ARCHITECTURE.md
-
-docs/SCOPE.md
-
-docs/OUTPUT_SCHEMA.md
-
-docs/POSITIONING.md
-
-
-
----
-
-Current examples
-
-Core examples and artifacts include:
-
-examples/quick_omnia_test.py
-
-examples/demo_profiles.jsonl
-
-examples/demo_profiles_results.jsonl
-
-examples/llm_surface_cases.jsonl
-
-examples/llm_surface_results.jsonl
-
-examples/support_response_cases.jsonl
-
-examples/support_response_results.jsonl
-
-examples/rag_answer_cases.jsonl
-
-examples/rag_answer_results.jsonl
-
-examples/surface_ok_cases.jsonl
-
-examples/surface_ok_results.jsonl
-
-examples/omnia_inevitability_case_v0/
-
-
-
----
-
-Result analysis
-
-Generic analyzer:
-
-python examples/analyze_results.py --input examples/llm_surface_results.jsonl
-python examples/analyze_results.py --input examples/surface_ok_results.jsonl
-python examples/analyze_results.py --input examples/support_response_results.jsonl
-python examples/analyze_results.py --input examples/rag_answer_results.jsonl
-python examples/analyze_results.py --input examples/demo_profiles_results.jsonl
-
-Domain-specific analyzers:
-
-python examples/analyze_surface_ok_results.py
-python examples/analyze_llm_surface_results.py
-python examples/analyze_support_response_results.py
-python examples/analyze_rag_answer_results.py
-
-Rebuild artifacts:
-
-python examples/rebuild_all_results.py
-python examples/rebuild_and_analyze_all.py
-
-
----
-
-Intended use
-
-OMNIA is designed to be:
-
-post-hoc
-
-bounded
-
-structural
-
-model-agnostic
-
-reproducible
-
-non-semantic by design
-
-
-Typical bounded use cases include:
-
-silent fragility detection in superficially acceptable outputs
-
-post-hoc auditing of generated outputs
-
-structural consistency checks
-
-structural drift detection
-
-structural exhaustion detection
-
-bounded release gating
-
-representation-dependent fragility sensing
-
-
-
----
-
-Reproducibility
-
-OMNIA must remain reproducible.
-
-This means:
-
-the same input under the same configuration must produce the same report
-
-transformation logic must be explicit
-
-thresholds must be documented
-
-outputs must be serializable
-
-scoring logic must be inspectable
-
-
-If a result cannot be reproduced, it is not valid OMNIA core evidence.
-
-
----
-
-Strong non-claims
-
-OMNIA does not:
-
-prove truth in the universal sense
-
-solve reasoning
-
-replace task evaluation
-
-certify safety in the broad sense
-
-explain meaning
-
-function as an autonomous decision-maker
-
-
-
----
-
-Repository role
-
-This repository is the canonical implementation repository for OMNIA core.
-
-Its function is narrow:
-
-define the core
-
-implement the core
-
-document the core
-
-demonstrate the core
-
-validate the core
-
-
-OMNIA should be read as a bounded structural measurement core, not as the entire ecosystem.
-
-
----
-
-Broader context
-
-For broader ecosystem context, see:
-
-OMNIABASE
-
-lon-mirror
-
-
-
----
-
-Status sentence
-
-OMNIA is now a real minimal executable structural measurement core.
-
-
----
-
-License
-
-MIT License
+DOI:
+10.5281/zenodo.19488048

@@ -61,19 +61,22 @@ def _compressed(text: str) -> str:
     text = _content_only(text)
     replacements = {
         "please reset your password using the account recovery link": "reset password via recovery link",
-        "if the reset does not work, contact support for manual verification": "contact support for manual verification",
-        "to regain access, contact support to update your verification method after identity review": "contact support to update verification method",
-        "please check your spam folder and request a new reset email": "check spam and request new reset email",
-        "if it still does not arrive, contact support for further assistance": "contact support for further assistance",
-        "please request a new verification code and check whether your contact method is correct": "request new verification code and check contact method",
-        "if the issue continues, contact support for manual verification": "contact support for manual verification",
-        "to recover access, contact support so your recovery email can be updated after identity verification": "contact support to update recovery email",
-        "please use the recovery flow again and contact support if the account remains inaccessible": "use recovery flow again and contact support",
-        "we are sorry for the inconvenience. please try again later.": "try again later",
+        "if the reset does not work, contact support for manual verification": "manual verification path",
+        "to regain access, contact support to update your verification method after identity review": "update verification via support after identity review",
+        "please check your spam folder and request a new reset email": "check spam and request reset email",
+        "if it still does not arrive, contact support for further assistance": "support escalation path",
+        "please request a new verification code and check whether your contact method is correct": "request code and verify contact method",
+        "if the issue continues, contact support for manual verification": "manual verification path",
+        "to recover access, contact support so your recovery email can be updated after identity verification": "update recovery email via support after identity verification",
+        "please use the recovery flow again and contact support if the account remains inaccessible": "retry recovery flow then support escalation",
+        "contact support to request a new return label if the previous one has expired": "request new return label via support",
+        "we are sorry for the inconvenience. please try again later.": "generic delay",
         "we appreciate your patience while we review this.": "review pending",
         "your request is important to us and we are reviewing it.": "review pending",
+        "your request is important to us and we are looking into it.": "review pending",
         "we understand your concern and appreciate your patience.": "generic reassurance",
         "thank you for your message. we understand your concern.": "generic reassurance",
+        "thank you for reaching out. we understand how important this is.": "generic reassurance",
     }
     lowered = text.lower()
     for src, dst in replacements.items():
@@ -81,20 +84,78 @@ def _compressed(text: str) -> str:
     return _normalize_spaces(lowered)
 
 
-def _remove_actionability(text: str) -> str:
-    out = re.sub(
-        r"\b(please|contact support for manual verification|contact support for further assistance|"
-        r"contact support to update your verification method after identity review|"
-        r"contact support so your recovery email can be updated after identity verification|"
-        r"contact support if the account remains inaccessible|"
-        r"request a new verification code|check whether your contact method is correct|"
-        r"check your spam folder|request a new reset email|reset your password using the account recovery link|"
-        r"use the recovery flow again|try again later)\b[,. ]*",
-        "",
-        text,
-        flags=re.IGNORECASE,
-    )
-    return _normalize_spaces(out.strip(" ,.-"))
+def _preserve_action_anchors(text: str) -> str:
+    """
+    Keep operational recovery/escalation anchors visible.
+    This is the key correction versus the previous runner.
+    """
+    lowered = text.lower()
+
+    anchors: List[str] = []
+    anchor_patterns = [
+        (r"\bmanual verification\b", "manual verification"),
+        (r"\bidentity verification\b", "identity verification"),
+        (r"\bcontact support\b", "contact support"),
+        (r"\brecovery link\b", "recovery link"),
+        (r"\brecovery flow\b", "recovery flow"),
+        (r"\breset email\b", "reset email"),
+        (r"\breset your password\b", "reset password"),
+        (r"\brequest a new verification code\b", "request verification code"),
+        (r"\bverification method\b", "verification method"),
+        (r"\brecovery email\b", "recovery email"),
+        (r"\bspam folder\b", "spam folder"),
+        (r"\bcontact method\b", "contact method"),
+        (r"\bupdate your verification method\b", "update verification method"),
+        (r"\bupdate your recovery email\b", "update recovery email"),
+    ]
+
+    for pattern, label in anchor_patterns:
+        if re.search(pattern, lowered):
+            anchors.append(label)
+
+    if not anchors:
+        return ""
+
+    return " ; ".join(sorted(set(anchors)))
+
+
+def _remove_padding_keep_actions(text: str) -> str:
+    """
+    Remove padding and softeners, but preserve operational actions.
+    """
+    out = _strip_politeness(text)
+    out = re.sub(r"\bplease\b", "", out, flags=re.IGNORECASE)
+    out = re.sub(r"\bkindly\b", "", out, flags=re.IGNORECASE)
+    out = _normalize_spaces(out.strip(" ,.-"))
+    return out
+
+
+def _generic_reassurance_shell(text: str) -> str:
+    """
+    Collapse generic reassurance/deflection into a stable hollow shell.
+    """
+    lowered = text.lower()
+
+    hollow_patterns = [
+        r"we are sorry for the inconvenience",
+        r"we appreciate your patience",
+        r"we understand your concern",
+        r"we understand how important this is",
+        r"your request is important to us",
+        r"we are reviewing this",
+        r"we are looking into it",
+        r"please try again later",
+    ]
+
+    hits: List[str] = []
+    for pattern in hollow_patterns:
+        if re.search(pattern, lowered):
+            hits.append(pattern)
+
+    if not hits:
+        return ""
+
+    return "generic reassurance shell"
 
 
 def _prompt_response_minimal(prompt: str, response: str) -> str:
@@ -113,7 +174,9 @@ def build_case(item: Dict[str, Any]) -> Dict[str, Any]:
         _strip_politeness(text),
         _content_only(text),
         _compressed(text),
-        _remove_actionability(text),
+        _remove_padding_keep_actions(text),
+        _preserve_action_anchors(text),
+        _generic_reassurance_shell(text),
         _prompt_response_minimal(prompt, text),
     ]
 

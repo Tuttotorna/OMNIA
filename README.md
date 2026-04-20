@@ -2,7 +2,7 @@ File: README.md
 
 # OMNIA - Structural Measurement Core
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18379486.svg)](https://doi.org/10.5281/zenodo.18379486)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19657671.svg)](https://doi.org/10.5281/zenodo.19657671)
 
 **Author:** Massimiliano Brighindi  
 **Contact:** brighissimo@gmail.com

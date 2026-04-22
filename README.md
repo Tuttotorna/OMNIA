@@ -1,5 +1,3 @@
-File: README.md
-
 # OMNIA - Structural Measurement Core
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19657671.svg)](https://doi.org/10.5281/zenodo.19657671)
@@ -11,23 +9,164 @@ File: README.md
 
 ## What OMNIA is
 
-OMNIA is a bounded post-hoc structural measurement core.
+OMNIA is a structural measurement core.
 
-It is not a model.  
-It is not a reasoning system.  
-It is not a semantic judge.  
-It is not an autonomous decision-maker.
+It does not try to act like a human judge.  
+It does not try to replace reasoning.  
+It does not try to declare absolute truth.
+
+OMNIA does one thing only:
+
+**it checks whether an output still holds together when its form is changed in controlled ways.**
+
+That is the whole idea.
+
+---
+
+## Why OMNIA exists
+
+Many outputs look good once.
+
+They may be:
+
+- polite
+- readable
+- well formatted
+- plausible
+- confident
+- apparently coherent
+
+and still be weak.
+
+A response can look fine on the surface and still fall apart when you rewrite it, perturb it slightly, or compare it with a nearby version.
+
+OMNIA exists to detect that hidden weakness.
+
+---
+
+## The shortest possible explanation
+
+OMNIA does not ask:
+
+> "Does this look right?"
+
+OMNIA asks:
+
+> "Does this still hold when I touch it?"
+
+If it still holds, that is a good sign.  
+If it starts drifting, weakening, or collapsing, that is a structural warning.
+
+OMNIA measures that warning.
+
+---
+
+## A simple example
+
+Imagine a model gives an answer that sounds correct.
+
+Now do something small:
+
+- rewrite the same request
+- change the wording
+- apply a nearby variation
+- compare the new response to the original one
+
+If the answer still behaves coherently, the structure is likely stronger.
+
+If it starts contradicting itself, losing force, or becoming hollow, the structure is weak.
+
+OMNIA is built to measure that difference.
+
+---
+
+## The minimal universal protocol
+
+OMNIA can be understood in four steps:
+
+### 1. Take an output
+An answer, response, representation, or structured object.
+
+### 2. Apply controlled transformation
+Change the form in a bounded way.
+
+### 3. Observe the response
+Check what remains stable, what drifts, and what breaks.
+
+### 4. Measure the structural profile
+Return bounded structural scores and a bounded gate result.
+
+That is OMNIA in its simplest universal form.
+
+---
+
+## What OMNIA measures
 
 OMNIA measures structure only.
 
-Its task is to evaluate what remains stable, what degrades, and what becomes fragile when an output is observed under controlled transformations.
+It does not measure semantic truth directly.  
+It does not decide what a model "really understands."  
+It does not replace human judgment.
 
-The core architectural rule is non-negotiable:
+It measures things like:
+
+- how much structure remains stable
+- how much structure becomes fragile
+- how much drift appears under variation
+- when further continuation stops being structurally justified
+
+In short:
+
+**OMNIA measures how much an output depends on its surface form, and how much structure survives when that form is changed.**
+
+---
+
+## The non-negotiable rule
+
+OMNIA is built on one strict boundary:
 
 ```text
 measurement != cognition != decision
 
-OMNIA belongs to the measurement layer only.
+This means:
+
+OMNIA measures
+
+another system may reason
+
+another layer may decide
+
+
+OMNIA must stay inside the measurement layer.
+
+That boundary is not a limitation.
+It is what keeps OMNIA clean.
+
+
+---
+
+What OMNIA does not do
+
+OMNIA does not:
+
+interpret semantics
+
+replace reasoning
+
+optimize a model
+
+train a model
+
+act as a truth oracle
+
+certify safety in the general sense
+
+function as a cognition system
+
+function as an autonomous decision-maker
+
+
+If a claim depends on any of the above, it is outside OMNIA core.
 
 
 ---
@@ -55,15 +194,41 @@ how much structure survives under transformation?
 
 how much degrades?
 
-when does continuation stop being structurally admissible?
+when does continuation stop being structurally justified?
 
 
-This makes OMNIA a structural sensor, not a content interpreter.
+That makes OMNIA a structural sensor, not a content interpreter.
 
 
 ---
 
-What OMNIA does
+What OMNIA is really checking
+
+OMNIA is not checking whether something sounds good.
+
+It is checking whether the output depends too much on the exact form in which it appears.
+
+That is the key distinction.
+
+A system can be:
+
+correct but fragile
+
+wrong but stable
+
+stable and useful
+
+unstable and misleading
+
+
+OMNIA does not collapse these into one number.
+
+It keeps structural behavior separate from semantic claims.
+
+
+---
+
+Canonical outputs
 
 OMNIA measures a bounded structural profile through four core outputs:
 
@@ -76,7 +241,7 @@ iri_score
 drift_score
 
 
-and converts that profile into a bounded gate layer:
+It then maps that profile into a bounded gate layer:
 
 GO
 
@@ -104,31 +269,126 @@ limit_triggered
 gate_status
 reason_code
 
+These are structural outputs only.
+
+They are not truth labels.
+They are not semantic judgments.
+They are not autonomous decisions.
+
 
 ---
 
-What OMNIA does not do
+What the scores mean
 
-OMNIA does not:
+omega_score
 
-interpret semantics
+How much structure still holds together under admissible transformation.
 
-replace reasoning
+sei_score
 
-optimize a model
+How much usable structure remains before the output becomes exhausted or hollow.
 
-train a model
+iri_score
 
-act as a truth oracle
+How much degradation is structurally irreversible.
 
-certify safety in the general sense
+drift_score
 
-function as a cognition system
+How far the output has moved away from its reference structural profile.
 
-function as a decision system
+These scores are not about meaning in the human sense.
+
+They are structural diagnostics.
 
 
-If a claim requires any of those, it is outside OMNIA core.
+---
+
+What the gate values mean
+
+GO
+
+The structural profile remains admissible under the tested bounded conditions.
+
+RISK
+
+The output is still readable, but shows enough weakness or drift to justify review.
+
+NO_GO
+
+The output is not structurally admissible under the tested bounded conditions.
+
+UNSTABLE
+
+The output is degraded enough that it should not be treated as operationally reliable inside scope.
+
+These gate values are measurement outputs.
+They are not final decisions by themselves.
+
+
+---
+
+Canonical pipeline
+
+The canonical pipeline is:
+
+input
+-> controlled structural transforms
+-> omega / sei / iri / drift
+-> limit check
+-> gate status
+-> bounded structural report
+
+This is the canonical v1 software path.
+
+
+---
+
+Limit logic
+
+OMNIA includes a bounded limit layer.
+
+A triggered limit means only this:
+
+further structural continuation inside scope is not justified
+
+It does not mean:
+
+truth has been proven
+
+the task is solved
+
+the output is universally unsafe
+
+the system has understood the problem
+
+
+OMNIA-LIMIT is about structural stopping, not metaphysics.
+
+
+---
+
+Why this matters in practice
+
+Many failures are not immediately visible.
+
+A system can:
+
+pass formatting checks
+
+look coherent
+
+sound helpful
+
+satisfy superficial evaluation
+
+appear acceptable at first glance
+
+
+and still be structurally weak.
+
+OMNIA is designed to expose that hidden weakness.
+
+It is most useful where an output looks acceptable on the surface but may still be hollow, unstable, or operationally weak under transformation.
 
 
 ---
@@ -137,7 +397,7 @@ Focused proof
 
 The strongest current public result is not a broad benchmark.
 
-It is a focused bounded proof on one failure family:
+It is a focused bounded proof on one concrete failure family:
 
 account_access_hollow_responses_v1
 
@@ -147,9 +407,10 @@ On the focused account-access hollow benchmark,
 OMNIA reduced false accepts from 14 to 7
 with no observed increase in false rejects.
 
-This is the current strongest narrow public claim.
+This is the strongest current narrow public claim.
 
-It does not prove general support-domain superiority. It does prove that, in a focused benchmark, OMNIA added useful review pressure on a real hollow-response failure family.
+It does not prove broad support-domain superiority.
+It does show that, in a focused benchmark, OMNIA added useful review pressure on a real hollow-response failure family.
 
 For the compact proof, read:
 
@@ -168,19 +429,19 @@ docs/ACCOUNT_ACCESS_HOLLOW_CASE_ANALYSIS_V1.md
 
 Start here
 
-If only one public entry point is needed, start here:
+If you want only one public entry point, start here:
 
 docs/FOCUSED_PROOF.md
 
 
-If the goal is to see the benchmark result in more detail, then read:
+If you want the focused result in more detail, read:
 
 docs/ACCOUNT_ACCESS_HOLLOW_RESULT_V1.md
 
 docs/ACCOUNT_ACCESS_HOLLOW_CASE_ANALYSIS_V1.md
 
 
-If the goal is to understand how broader validation was structured, read:
+If you want broader validation planning, read:
 
 docs/EXTERNAL_VALIDATION_PLAN.md
 
@@ -212,100 +473,19 @@ Focused benchmark
 OMNIA then moved to a focused benchmark on:
 
 polite
+
 readable
+
 surface-acceptable
+
 operationally hollow
+
 account-access responses
+
 
 That focused run produced the first clear bounded result.
 
-This is why the focused proof now matters more than the broad benchmark summaries.
-
-
----
-
-Canonical pipeline
-
-The canonical pipeline is:
-
-input
--> controlled structural transforms
--> omega / sei / iri / drift
--> limit check
--> gate status
--> bounded structural report
-
-This is the canonical v1 software path.
-
-
----
-
-Gate meanings
-
-GO
-
-The structural profile remains admissible under the tested bounded conditions.
-
-RISK
-
-The profile remains readable but shows enough fragility, drift, or weakness to justify review.
-
-NO_GO
-
-The profile is not structurally admissible under the tested bounded conditions.
-
-UNSTABLE
-
-The profile is degraded enough that it should not be treated as operationally reliable inside scope.
-
-These gate values are bounded outputs of measurement. They are not independent decisions.
-
-
----
-
-Core metrics
-
-omega_score
-
-Residual structural stability under admissible transformations.
-
-sei_score
-
-Remaining structural extractability. A lower SEI suggests exhaustion or weak remaining structure.
-
-iri_score
-
-Structural irreversibility. A higher IRI suggests non-recoverable degradation.
-
-drift_score
-
-Structural displacement under comparison and transformation.
-
-These metrics are not semantic scores. They are structural diagnostics.
-
-
----
-
-Limit logic
-
-OMNIA includes a bounded limit layer.
-
-A triggered limit means only this:
-
-further structural continuation inside scope is not justified
-
-It does not mean:
-
-truth has been proven
-
-the task is solved
-
-the output is universally unsafe
-
-the system has understood the problem
-
-
-OMNIA-LIMIT is about structural stopping, not metaphysics.
+This is why the focused proof currently matters more than the broad benchmark summaries.
 
 
 ---
@@ -405,7 +585,8 @@ A recent verified run passed all tests:
 
 47 passed
 
-This is software validity only. It is not external benchmark proof by itself.
+This proves software validity only.
+It is not external benchmark proof by itself.
 
 
 ---
@@ -598,14 +779,41 @@ universal filtering power
 
 Minimal public claim
 
-The current public claim should remain this narrow:
+The public claim should remain narrow:
 
 OMNIA is a bounded structural measurement core.
-Its strongest current result is a focused benchmark where it reduced false accepts
-on polite but operationally hollow account-access responses
-from 14 to 7 with no observed increase in false rejects.
+Its strongest current result is a focused benchmark where it reduced false accepts on polite but operationally hollow account-access responses from 14 to 7 with no observed increase in false rejects.
 
 Anything broader than this is not yet justified.
+
+
+---
+
+One-line definition
+
+OMNIA measures how much structure survives when form is changed in a controlled way.
+
+
+---
+
+Final boundary
+
+OMNIA is strongest when it stays inside its real role:
+
+measurement only
+
+no hidden semantics
+
+no fake omniscience
+
+no collapse into decision theater
+
+no claims beyond evidence
+
+
+That boundary is not a weakness.
+
+It is what keeps OMNIA clean.
 
 
 ---

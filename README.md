@@ -44,6 +44,25 @@ OMNIA exists to detect that hidden weakness.
 
 ---
 
+## A real result
+
+OMNIA is not just a theory.
+
+In one focused benchmark on **polite but operationally hollow account-access responses**, OMNIA reduced false accepts from **14 to 7**, with **no observed increase in false rejects**.
+
+This is a narrow result, not a universal claim.  
+But it shows the practical point:
+
+**a response can look acceptable and still be structurally weak.**
+
+OMNIA is built to detect that.
+
+For the compact proof, read:
+
+- `docs/FOCUSED_PROOF.md`
+
+---
+
 ## The shortest possible explanation
 
 OMNIA does not ask:
@@ -121,25 +140,63 @@ In short:
 
 ---
 
-## The non-negotiable rule
+## A concrete output example
+
+A minimal OMNIA run may return something like this:
+
+```json
+{
+  "omega_score": 0.594462,
+  "sei_score": 0.67557,
+  "iri_score": 0.405538,
+  "drift_score": 0.405538,
+  "limit_triggered": false,
+  "gate_status": "RISK",
+  "reason_code": "low_omega"
+}
+
+A human-readable interpretation would be:
+
+omega_score is not strong enough -> the structure is weaker than desired
+
+sei_score is still decent -> some usable structure remains
+
+iri_score is moderate -> some degradation is not easily recoverable
+
+drift_score is moderate -> the output moves too much under comparison
+
+limit_triggered = false -> structural continuation is still allowed
+
+gate_status = RISK -> the output is still readable, but weak enough to justify review
+
+
+This is the role of OMNIA:
+
+not to say "true" or "false", but to say whether the structure looks solid, weak, drifting, or unreliable under controlled variation.
+
+
+---
+
+The non-negotiable rule
 
 OMNIA is built on one strict boundary:
 
-```text
 measurement != cognition != decision
 
-This means:
+In practical terms:
 
-OMNIA measures
+measurement = OMNIA says what the structural profile looks like
 
-another system may reason
+cognition = another model or a human reasons about what that profile means
 
-another layer may decide
+decision = another layer decides whether to accept, review, retry, or block
 
 
-OMNIA must stay inside the measurement layer.
+So OMNIA does not do everything.
 
-That boundary is not a limitation.
+It stays inside the measurement layer.
+
+That is not a weakness.
 It is what keeps OMNIA clean.
 
 
@@ -393,43 +450,9 @@ It is most useful where an output looks acceptable on the surface but may still 
 
 ---
 
-Focused proof
-
-The strongest current public result is not a broad benchmark.
-
-It is a focused bounded proof on one concrete failure family:
-
-account_access_hollow_responses_v1
-
-Result:
-
-On the focused account-access hollow benchmark,
-OMNIA reduced false accepts from 14 to 7
-with no observed increase in false rejects.
-
-This is the strongest current narrow public claim.
-
-It does not prove broad support-domain superiority.
-It does show that, in a focused benchmark, OMNIA added useful review pressure on a real hollow-response failure family.
-
-For the compact proof, read:
-
-docs/FOCUSED_PROOF.md
-
-
-For the full result and case analysis, read:
-
-docs/ACCOUNT_ACCESS_HOLLOW_RESULT_V1.md
-
-docs/ACCOUNT_ACCESS_HOLLOW_CASE_ANALYSIS_V1.md
-
-
-
----
-
 Start here
 
-If you want only one public entry point, start here:
+If you want only one entry point, start here:
 
 docs/FOCUSED_PROOF.md
 

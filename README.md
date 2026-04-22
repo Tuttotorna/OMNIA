@@ -55,8 +55,6 @@ But it shows the practical point:
 
 **a response can look acceptable and still be structurally weak.**
 
-OMNIA is built to detect that.
-
 For the compact proof, read:
 
 - `docs/FOCUSED_PROOF.md`
@@ -96,6 +94,21 @@ If the answer still behaves coherently, the structure is likely stronger.
 If it starts contradicting itself, losing force, or becoming hollow, the structure is weak.
 
 OMNIA is built to measure that difference.
+
+---
+
+## What you see when you use OMNIA
+
+In practice, OMNIA works like this:
+
+- you take an output
+- you apply controlled variation
+- you compare the structural response
+- OMNIA returns scores and a gate result
+- the result tells you whether the output looks structurally solid, weak, drifting, or unstable
+
+OMNIA does **not** tell you absolute truth.  
+It tells you whether structural review is justified.
 
 ---
 
@@ -353,9 +366,8 @@ drift_score
 
 How far the output has moved away from its reference structural profile.
 
-These scores are not about meaning in the human sense.
-
-They are structural diagnostics.
+These scores are structural diagnostics.
+They are not semantic scores.
 
 
 ---

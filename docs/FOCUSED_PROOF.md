@@ -37,11 +37,8 @@ It treated readable non-empty responses as acceptable.
 Result:
 
 total FAIL cases: 14
-
 false accepts: 14
-
 false accept rate: 1.0
-
 
 So the baseline passed every hollow failure.
 
@@ -53,11 +50,8 @@ What OMNIA did
 Using the same dataset and the same baseline, adding OMNIA changed the result:
 
 false accepts: 14 -> 7
-
 false accept rate: 1.0 -> 0.5
-
 false rejects: 0 -> 0
-
 
 So OMNIA cut the false-accept surface in half without rejecting any of the acceptable PASS cases.
 
@@ -76,7 +70,7 @@ polite
 
 apparently acceptable
 
-but operationally hollow
+operationally hollow
 
 
 Typical pattern:
@@ -94,7 +88,9 @@ no actionable access instruction
 
 Example pattern:
 
-We are sorry for the inconvenience. Please try again later.
+> We are sorry for the inconvenience. Please try again later.
+
+
 
 In an account-access scenario, that is surface-clean but materially weak.
 
@@ -161,6 +157,34 @@ OMNIA is not yet broadly validated.
 But on the focused account-access hollow benchmark, it showed a clear bounded result:
 
 false accepts cut in half
-with no false reject increase
+
+no false reject increase
+
 
 That is the first focused public proof that OMNIA can add operational value on a real failure family.
+
+### Giudizio secco sul testo
+La sostanza è buona.  
+Il claim è finalmente **ristretto**, **misurabile** e **difendibile**.
+
+La cosa giusta è proprio questa: **non vendere universalità, vendere delta misurato su un failure family preciso**.
+
+### Un miglioramento ulteriore
+Per renderlo ancora più forte, sotto questa frase:
+
+> That is the current proof.
+
+aggiungerei una mini tabella numerica.  
+Molto più leggibile per chi arriva da fuori.
+
+Versione da inserire:
+
+```md
+## Result table
+
+| Metric | Baseline | Baseline + OMNIA |
+|---|---:|---:|
+| False accepts | 14 | 7 |
+| False accept rate | 1.0 | 0.5 |
+| False rejects | 0 | 0 |
+

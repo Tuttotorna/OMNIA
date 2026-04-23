@@ -44,20 +44,49 @@ OMNIA exists to detect that hidden weakness.
 
 ---
 
-## A real result
+## Focused proof (reproducible)
 
 OMNIA is not just a theory.
 
-In one focused benchmark on **polite but operationally hollow account-access responses**, OMNIA reduced false accepts from **14 to 7**, with **no observed increase in false rejects**.
+In one focused benchmark on operationally hollow account-access responses, OMNIA reduced false accepts from **14 to 7**, with **no observed increase in false rejects**.
 
 This is a narrow result, not a universal claim.  
 But it shows the practical point:
 
 **a response can look acceptable and still be structurally weak.**
 
+### Focused benchmark summary
+
+- total cases: 20
+- FAIL cases: 14
+- PASS cases: 6
+
+### Baseline
+
+- false accepts: 14
+- false accept rate: 1.0
+- false rejects: 0
+
+### Baseline + OMNIA
+
+- false accepts: 7
+- false accept rate: 0.5
+- false rejects: 0
+- intercepted to review: 7
+
+### Result
+
+OMNIA reduced false accepts by 50% without increasing false rejects, by shifting structurally weak responses from automatic pass to review.
+
 For the compact proof, read:
 
-- `docs/FOCUSED_PROOF.md`
+- [`docs/FOCUSED_PROOF.md`](./docs/FOCUSED_PROOF.md)
+
+For the focused result in more detail, read:
+
+- [`docs/ACCOUNT_ACCESS_HOLLOW_RESULT_V1.md`](./docs/ACCOUNT_ACCESS_HOLLOW_RESULT_V1.md)
+- [`docs/ACCOUNT_ACCESS_HOLLOW_CASE_ANALYSIS_V1.md`](./docs/ACCOUNT_ACCESS_HOLLOW_CASE_ANALYSIS_V1.md)
+- [`docs/ACCOUNT_ACCESS_HOLLOW_ERROR_ANALYSIS_V1.md`](./docs/ACCOUNT_ACCESS_HOLLOW_ERROR_ANALYSIS_V1.md)
 
 ---
 
@@ -114,18 +143,22 @@ It tells you whether structural review is justified.
 
 ## The minimal universal protocol
 
-OMNIA can be understood in four steps:
+OMNIA can be understood in four steps.
 
 ### 1. Take an output
+
 An answer, response, representation, or structured object.
 
 ### 2. Apply controlled transformation
+
 Change the form in a bounded way.
 
 ### 3. Observe the response
+
 Check what remains stable, what drifts, and what breaks.
 
 ### 4. Measure the structural profile
+
 Return bounded structural scores and a bounded gate result.
 
 That is OMNIA in its simplest universal form.
@@ -137,7 +170,7 @@ That is OMNIA in its simplest universal form.
 OMNIA measures structure only.
 
 It does not measure semantic truth directly.  
-It does not decide what a model "really understands."  
+It does not decide what a model really understands.  
 It does not replace human judgment.
 
 It measures things like:
@@ -332,12 +365,19 @@ reason_code
 So the canonical minimal output surface is:
 
 omega_score
+
 sei_score
+
 iri_score
+
 drift_score
+
 limit_triggered
+
 gate_status
+
 reason_code
+
 
 These are structural outputs only.
 
@@ -469,13 +509,6 @@ If you want only one entry point, start here:
 docs/FOCUSED_PROOF.md
 
 
-If you want the focused result in more detail, read:
-
-docs/ACCOUNT_ACCESS_HOLLOW_RESULT_V1.md
-
-docs/ACCOUNT_ACCESS_HOLLOW_CASE_ANALYSIS_V1.md
-
-
 If you want broader validation planning, read:
 
 docs/EXTERNAL_VALIDATION_PLAN.md
@@ -496,9 +529,9 @@ Those runs showed:
 
 a real signal
 
-but weak generalization
+weak generalization
 
-and limited coverage
+limited coverage
 
 
 So the broad claim remains narrow.
@@ -816,8 +849,9 @@ Minimal public claim
 
 The public claim should remain narrow:
 
-OMNIA is a bounded structural measurement core.
-Its strongest current result is a focused benchmark where it reduced false accepts on polite but operationally hollow account-access responses from 14 to 7 with no observed increase in false rejects.
+> OMNIA is a bounded structural measurement core. Its strongest current result is a focused benchmark where it reduced false accepts on operationally hollow account-access responses from 14 to 7 with no observed increase in false rejects.
+
+
 
 Anything broader than this is not yet justified.
 

@@ -23,22 +23,40 @@ A weak surface baseline tends to let these responses pass because they are not b
 
 ---
 
-## What the baseline did
+## Focused benchmark
 
-In the focused benchmark:
+The focused benchmark is:
 
 ```text
 account_access_hollow_responses_v1
 
-the baseline was intentionally weak.
+It contains account-access responses that can appear acceptable at surface level while remaining materially weak as recovery guidance.
+
+The benchmark used in the public run contained:
+
+total cases: 20
+total FAIL labels: 14
+total PASS labels: 6
+
+
+---
+
+What the baseline did
+
+The baseline was intentionally weak.
 
 It treated readable non-empty responses as acceptable.
 
-Result:
+Observed result:
 
-total FAIL cases: 14
 false accepts: 14
 false accept rate: 1.0
+false rejects: 0
+false reject rate: 0.0
+review count: 0
+review rate: 0.0
+true accepts: 6
+true rejects: 0
 
 So the baseline passed every hollow failure.
 
@@ -47,13 +65,40 @@ So the baseline passed every hollow failure.
 
 What OMNIA did
 
-Using the same dataset and the same baseline, adding OMNIA changed the result:
+Using the same dataset and the same baseline, adding OMNIA changed the result to:
 
-false accepts: 14 -> 7
-false accept rate: 1.0 -> 0.5
-false rejects: 0 -> 0
+false accepts: 7
+false accept rate: 0.5
+false rejects: 0
+false reject rate: 0.0
+review count: 7
+review rate: 0.35
+true accepts: 6
+true rejects: 7
 
-So OMNIA cut the false-accept surface in half without rejecting any of the acceptable PASS cases.
+So OMNIA reduced false accepts by half without increasing false rejects.
+
+More precisely, OMNIA intercepted 7 failure cases that the baseline would otherwise have allowed to pass automatically, shifting them into review.
+
+
+---
+
+Result table
+
+Metric	Baseline	Baseline + OMNIA
+
+Total cases	20	20
+Total FAIL labels	14	14
+Total PASS labels	6	6
+False accepts	14	7
+False accept rate	1.0	0.5
+False rejects	0	0
+False reject rate	0.0	0.0
+Review count	0	7
+Review rate	0.0	0.35
+True accepts	6	6
+True rejects	0	7
+
 
 
 ---
@@ -105,7 +150,7 @@ a frozen dataset
 
 a fixed baseline
 
-a fixed mapping
+a fixed evaluation mapping
 
 a measurable delta
 
@@ -121,7 +166,7 @@ What this proves
 
 It proves this narrow statement:
 
-> On a focused benchmark of polite but operationally hollow account-access responses, OMNIA reduced false accepts from 14 to 7 with no observed increase in false rejects.
+> On a focused benchmark of operationally hollow account-access responses, OMNIA reduced false accepts from 14 to 7 by shifting 7 failure cases from automatic pass to review, with no observed increase in false rejects.
 
 
 
@@ -160,31 +205,7 @@ false accepts cut in half
 
 no false reject increase
 
+7 failure cases intercepted before automatic acceptance
+
 
 That is the first focused public proof that OMNIA can add operational value on a real failure family.
-
-### Giudizio secco sul testo
-La sostanza è buona.  
-Il claim è finalmente **ristretto**, **misurabile** e **difendibile**.
-
-La cosa giusta è proprio questa: **non vendere universalità, vendere delta misurato su un failure family preciso**.
-
-### Un miglioramento ulteriore
-Per renderlo ancora più forte, sotto questa frase:
-
-> That is the current proof.
-
-aggiungerei una mini tabella numerica.  
-Molto più leggibile per chi arriva da fuori.
-
-Versione da inserire:
-
-```md
-## Result table
-
-| Metric | Baseline | Baseline + OMNIA |
-|---|---:|---:|
-| False accepts | 14 | 7 |
-| False accept rate | 1.0 | 0.5 |
-| False rejects | 0 | 0 |
-

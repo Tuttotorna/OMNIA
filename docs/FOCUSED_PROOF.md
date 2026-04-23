@@ -1,5 +1,3 @@
-File: docs/FOCUSED_PROOF.md
-
 # OMNIA - Focused Proof
 
 ## Problem

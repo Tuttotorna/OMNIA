@@ -1,0 +1,15 @@
+{"id":"v3_000","task":"qa","prompt":"Answer with only the final answer. What year comes after 2017?","output":"2020","expected":"2018","verdict":"semantic_error","correct":false}
+{"id":"v3_001","task":"qa","prompt":"Answer with only the final answer. What is the capital of France?","output":"london","expected":"Paris","verdict":"semantic_error","correct":false}
+{"id":"v3_002","task":"qa","prompt":"Answer with only the final answer. What city is the capital of Italy?","output":"rome","expected":"Rome","verdict":"correct","correct":true}
+{"id":"v3_003","task":"qa","prompt":"Answer with only the final answer. Which city is written here: Naples?","output":"rome","expected":"Naples","verdict":"semantic_error","correct":false}
+{"id":"v3_004","task":"reasoning","prompt":"Answer with only the final number. What is 18 + 7?","output":"0","expected":"25","verdict":"semantic_error","correct":false}
+{"id":"v3_005","task":"reasoning","prompt":"Answer with only the final number. What is 12 + 18?","output":"0","expected":"30","verdict":"semantic_error","correct":false}
+{"id":"v3_006","task":"reasoning","prompt":"Answer with only the final number. What is 19 + 4?","output":"0","expected":"23","verdict":"semantic_error","correct":false}
+{"id":"v3_007","task":"reasoning","prompt":"Answer with only the final number. A shop has 30 items, sells 10, then receives 5. How many now?","output":"5","expected":"25","verdict":"semantic_error","correct":false}
+{"id":"v3_008","task":"rag","prompt":"Context: The company was founded in 2015. Its first product launched in 2018. Question: when did the first product launch? Answer only.","output":"2018","expected":"2018","verdict":"correct","correct":true}
+{"id":"v3_009","task":"rag","prompt":"Context: The company was founded in 2015. Its first product launched in 2018. Question: when was the company founded? Answer only.","output":"2015","expected":"2015","verdict":"correct","correct":true}
+{"id":"v3_010","task":"rag","prompt":"Context: Anna Verdi prepared the draft. Marco Neri signed the contract. Question: who signed the contract? Answer only.","output":"Anna Verdi","expected":"Marco Neri","verdict":"semantic_error","correct":false}
+{"id":"v3_011","task":"rag","prompt":"Context: Anna Verdi prepared the draft. Marco Neri signed the contract. Question: who prepared the draft? Answer only.","output":"Anna Verdi","expected":"Anna Verdi","verdict":"correct","correct":true}
+{"id":"v3_012","task":"rag","prompt":"Context: The 2021 summit was held in Paris. The 2022 summit moved to Berlin. Question: which city hosted the 2021 summit? Answer only.","output":"Paris","expected":"Paris","verdict":"correct","correct":true}
+{"id":"v3_013","task":"rag","prompt":"Context: The 2021 summit was held in Paris. The 2022 summit moved to Berlin. Question: which city hosted the 2022 summit? Answer only.","output":"Berlin","expected":"Berlin","verdict":"correct","correct":true}
+{"id":"v3_014","task":"reasoning","prompt":"Answer with only the final number. A box contains 14 apples

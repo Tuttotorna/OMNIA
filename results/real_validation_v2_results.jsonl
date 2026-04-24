@@ -1,0 +1,8 @@
+{"id":"real_000","task":"qa","prompt":"Answer with only the final answer. What year comes after 2017?","output":"2020","expected":"2018","verdict":"semantic_error","correct":false}
+{"id":"real_001","task":"qa","prompt":"Answer with only the final answer. What is the capital of France?","output":"london","expected":"Paris","verdict":"semantic_error","correct":false}
+{"id":"real_002","task":"reasoning","prompt":"Answer with only the final number. What is 18 + 7?","output":"0","expected":"25","verdict":"semantic_error","correct":false}
+{"id":"real_003","task":"reasoning","prompt":"Answer with only the final number. A shop has 30 items, sells 10, then receives 5. How many now?","output":"5","expected":"25","verdict":"semantic_error","correct":false}
+{"id":"real_004","task":"rag","prompt":"Context: The company was founded in 2015. Its first product launched in 2018. Question: when did the first product launch? Answer only.","output":"2018","expected":"2018","verdict":"correct","correct":true}
+{"id":"real_005","task":"rag","prompt":"Context: Anna Verdi prepared the draft. Marco Neri signed the contract. Question: who signed the contract? Answer only.","output":"Anna Verdi","expected":"Marco Neri","verdict":"semantic_error","correct":false}
+{"id":"real_006","task":"reasoning","prompt":"Answer with only the final number. What is 12 + 18?","output":"0","expected":"30","verdict":"semantic_error","correct":false}
+{"id":"real_007","task":"qa","prompt":"Answer with only the final answer. What city is the capital of Italy?","output":"rome","expected":"Rome","verdict":"semantic_error","correct":false}

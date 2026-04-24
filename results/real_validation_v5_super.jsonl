@@ -12,4 +12,5 @@
 {"id":"v3_011","task":"rag","prompt":"Context: Anna Verdi prepared the draft. Marco Neri signed the contract. Question: who prepared the draft? Answer only.","output":"Anna Verdi","expected":"Anna Verdi","verdict":"correct","correct":true}
 {"id":"v3_012","task":"rag","prompt":"Context: The 2021 summit was held in Paris. The 2022 summit moved to Berlin. Question: which city hosted the 2021 summit? Answer only.","output":"Paris","expected":"Paris","verdict":"correct","correct":true}
 {"id":"v3_013","task":"rag","prompt":"Context: The 2021 summit was held in Paris. The 2022 summit moved to Berlin. Question: which city hosted the 2022 summit? Answer only.","output":"Berlin","expected":"Berlin","verdict":"correct","correct":true}
-{"id":"v3_014","task":"reasoning","prompt":"Answer with only the final number. A box contains 14 apples
+{"id":"v3_014","task":"reasoning","prompt":"Answer with only the final number. A box contains 14 apples and 11 more are added. How many apples are in the box?","output":"14","expected":"25","verdict":"semantic_error","correct":false}
+{"id":"v3_015","task":"reasoning","prompt":"Answer with only the final number. A runner completes 12 km in the morning and 13 km in the evening. Total?","output":"13","expected":"25","verdict":"semantic_error","correct":false}

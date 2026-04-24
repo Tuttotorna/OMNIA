@@ -1,0 +1,20 @@
+{"id":"hard_000","task":"reasoning","prompt":"Answer with only the final number. A box has 12 red balls and 8 blue balls. 5 red balls are removed. How many balls remain?","expected":"15"}
+{"id":"hard_001","task":"reasoning","prompt":"Answer with only the final number. A store had 45 items. It sold 12, received 7, then sold 5 more. How many items remain?","expected":"35"}
+{"id":"hard_002","task":"reasoning","prompt":"Answer with only the final number. If 3 notebooks cost 18 dollars total, how much do 5 notebooks cost at the same price each?","expected":"30"}
+{"id":"hard_003","task":"reasoning","prompt":"Answer with only the final number. A train leaves at 10:15 and arrives at 11:05. How many minutes is the trip?","expected":"50"}
+{"id":"hard_004","task":"reasoning","prompt":"Answer with only the final number. There are 4 boxes with 6 pencils each. 3 pencils are lost. How many pencils remain?","expected":"21"}
+{"id":"hard_005","task":"qa","prompt":"Answer with only the final answer. Which word is the city in this sentence: The conference was held in Lisbon after moving from Madrid.","expected":"Lisbon"}
+{"id":"hard_006","task":"qa","prompt":"Answer with only the final answer. Which person signed the document: Anna drafted it, Luca checked it, and Marco signed it.","expected":"Marco"}
+{"id":"hard_007","task":"qa","prompt":"Answer with only the final answer. Which year is the launch year: Founded in 2014, tested in 2017, launched in 2019.","expected":"2019"}
+{"id":"hard_008","task":"qa","prompt":"Answer with only the final answer. Which country has Berlin as its capital?","expected":"Germany"}
+{"id":"hard_009","task":"qa","prompt":"Answer with only the final answer. Which number is larger: 0.8 or 0.75?","expected":"0.8"}
+{"id":"hard_010","task":"rag","prompt":"Context: The 2020 event was held in Turin. The 2021 event moved to Milan. The 2022 event returned to Turin. Question: where was the 2021 event held? Answer only.","expected":"Milan"}
+{"id":"hard_011","task":"rag","prompt":"Context: Elena wrote the first memo. Paolo reviewed it. Sara approved the final version. Question: who approved the final version? Answer only.","expected":"Sara"}
+{"id":"hard_012","task":"rag","prompt":"Context: The device was designed in 2016, prototyped in 2018, and released in 2021. Question: when was the device prototyped? Answer only.","expected":"2018"}
+{"id":"hard_013","task":"rag","prompt":"Context: The book was announced in Rome, edited in Paris, and published in Berlin. Question: where was the book published? Answer only.","expected":"Berlin"}
+{"id":"hard_014","task":"rag","prompt":"Context: Package A weighs 12 kg. Package B weighs 7 kg. Package C weighs 20 kg. Question: which package weighs 7 kg? Answer only.","expected":"Package B"}
+{"id":"hard_015","task":"rag","prompt":"Context: The contract starts on March 3 and ends on March 17. Question: what is the end date? Answer only.","expected":"March 17"}
+{"id":"hard_016","task":"reasoning","prompt":"Answer with only the final number. A farmer has 30 apples. He gives away half, then buys 6 more. How many apples does he have?","expected":"21"}
+{"id":"hard_017","task":"reasoning","prompt":"Answer with only the final number. If a ticket costs 9 dollars, how much do 4 tickets cost after a 6 dollar discount on the total?","expected":"30"}
+{"id":"hard_018","task":"qa","prompt":"Answer with only the final answer. In the sequence Monday, Tuesday, Wednesday, what comes after Tuesday?","expected":"Wednesday"}
+{"id":"hard_019","task":"rag","prompt":"Context: The red key opens the garage. The blue key opens the office. The green key opens the lab. Question: which key opens the office? Answer only.","expected":"blue key"}

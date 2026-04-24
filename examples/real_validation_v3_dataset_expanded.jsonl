@@ -1,0 +1,20 @@
+{"id":"exp_000","task":"qa","prompt":"Answer with only the final answer. What year comes after 2019?","expected":"2020"}
+{"id":"exp_001","task":"qa","prompt":"Answer with only the final answer. What is the capital of Germany?","expected":"Berlin"}
+{"id":"exp_002","task":"qa","prompt":"Answer with only the final answer. What is the capital of Spain?","expected":"Madrid"}
+{"id":"exp_003","task":"reasoning","prompt":"Answer with only the final number. What is 25 + 5?","expected":"30"}
+{"id":"exp_004","task":"reasoning","prompt":"Answer with only the final number. What is 40 - 15?","expected":"25"}
+{"id":"exp_005","task":"reasoning","prompt":"Answer with only the final number. What is 6 * 7?","expected":"42"}
+{"id":"exp_006","task":"reasoning","prompt":"Answer with only the final number. What is 81 / 9?","expected":"9"}
+{"id":"exp_007","task":"reasoning","prompt":"Answer with only the final number. A store has 50 items, sells 20, then receives 10. How many now?","expected":"40"}
+{"id":"exp_008","task":"rag","prompt":"Context: The book was published in 2001. It became popular in 2005. Question: when was the book published? Answer only.","expected":"2001"}
+{"id":"exp_009","task":"rag","prompt":"Context: The book was published in 2001. It became popular in 2005. Question: when did it become popular? Answer only.","expected":"2005"}
+{"id":"exp_010","task":"rag","prompt":"Context: Luca Rossi wrote the report. Anna Bianchi reviewed it. Question: who wrote the report? Answer only.","expected":"Luca Rossi"}
+{"id":"exp_011","task":"rag","prompt":"Context: Luca Rossi wrote the report. Anna Bianchi reviewed it. Question: who reviewed it? Answer only.","expected":"Anna Bianchi"}
+{"id":"exp_012","task":"qa","prompt":"Answer with only the final answer. What is the capital of Italy?","expected":"Rome"}
+{"id":"exp_013","task":"qa","prompt":"Answer with only the final answer. What is the capital of Portugal?","expected":"Lisbon"}
+{"id":"exp_014","task":"reasoning","prompt":"Answer with only the final number. What is 13 + 17?","expected":"30"}
+{"id":"exp_015","task":"reasoning","prompt":"Answer with only the final number. What is 100 - 60?","expected":"40"}
+{"id":"exp_016","task":"reasoning","prompt":"Answer with only the final number. What is 8 * 8?","expected":"64"}
+{"id":"exp_017","task":"reasoning","prompt":"Answer with only the final number. What is 144 / 12?","expected":"12"}
+{"id":"exp_018","task":"rag","prompt":"Context: The meeting was held in Paris in 2020 and in Rome in 2021. Question: where was the meeting in 2021? Answer only.","expected":"Rome"}
+{"id":"exp_019","task":"rag","prompt":"Context: The meeting was held in Paris in 2020 and in Rome in 2021. Question: where was the meeting in 2020? Answer only.","expected":"Paris"}

@@ -21,6 +21,30 @@ OMNIA does one thing only:
 
 That is the whole idea.
 
+___
+
+## Real Validation V7
+
+OMNIA includes a minimal real-model validation showing structural gate behavior on controlled QA, reasoning, and RAG cases.
+
+- Model: `google/flan-t5-base`
+- Cases: `16`
+- Accuracy: `6/16`
+- OMNIA Gate V7:
+  - GO: `6`
+  - NO_GO: `10`
+  - TP: `10`
+  - FN: `0`
+  - FP: `0`
+
+This run shows that OMNIA can act as a structural validation layer over real model outputs: all observed errors were flagged, and no correct output was blocked.
+
+See:
+
+- [`README_REAL_VALIDATION_V7.md`](./README_REAL_VALIDATION_V7.md)
+- [`docs/REAL_VALIDATION_V7_SUPER_OMNIA.md`](./docs/REAL_VALIDATION_V7_SUPER_OMNIA.md)
+- [`examples/real_validation_v3_dataset_expanded.jsonl`](./examples/real_validation_v3_dataset_expanded.jsonl)
+
 ---
 
 ## Why OMNIA exists

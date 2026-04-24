@@ -200,112 +200,89 @@ A minimal OMNIA run may return something like this:
   "gate_status": "RISK",
   "reason_code": "low_omega"
 }
+```
 
 A human-readable interpretation would be:
 
-omega_score is not strong enough -> the structure is weaker than desired
-
-sei_score is still decent -> some usable structure remains
-
-iri_score is moderate -> some degradation is not easily recoverable
-
-drift_score is moderate -> the output moves too much under comparison
-
-limit_triggered = false -> structural continuation is still allowed
-
-gate_status = RISK -> the output is still readable, but weak enough to justify review
-
+- `omega_score` is not strong enough: the structure is weaker than desired.
+- `sei_score` is still decent: some usable structure remains.
+- `iri_score` is moderate: some degradation is not easily recoverable.
+- `drift_score` is moderate: the output moves too much under comparison.
+- `limit_triggered = false`: structural continuation is still allowed.
+- `gate_status = RISK`: the output is still readable, but weak enough to justify review.
 
 This is the role of OMNIA:
 
 not to say "true" or "false", but to say whether the structure looks solid, weak, drifting, or unreliable under controlled variation.
 
-
 ---
 
-The non-negotiable rule
+## The non-negotiable rule
 
 OMNIA is built on one strict boundary:
 
+```text
 measurement != cognition != decision
+```
 
 In practical terms:
 
-measurement = OMNIA says what the structural profile looks like
-
-cognition = another model or a human reasons about what that profile means
-
-decision = another layer decides whether to accept, review, retry, or block
-
+- measurement = OMNIA says what the structural profile looks like
+- cognition = another model or a human reasons about what that profile means
+- decision = another layer decides whether to accept, review, retry, or block
 
 So OMNIA does not do everything.
 
 It stays inside the measurement layer.
 
-That is not a weakness.
+That is not a weakness.  
 It is what keeps OMNIA clean.
-
 
 ---
 
-What OMNIA does not do
+## What OMNIA does not do
 
 OMNIA does not:
 
-interpret semantics
-
-replace reasoning
-
-optimize a model
-
-train a model
-
-act as a truth oracle
-
-certify safety in the general sense
-
-function as a cognition system
-
-function as an autonomous decision-maker
-
+- interpret semantics
+- replace reasoning
+- optimize a model
+- train a model
+- act as a truth oracle
+- certify safety in the general sense
+- function as a cognition system
+- function as an autonomous decision-maker
 
 If a claim depends on any of the above, it is outside OMNIA core.
 
-
 ---
 
-Core principle
+## Core principle
 
 OMNIA starts from one bounded principle:
 
+```text
 structural stability = what survives controlled representational variation
+```
 
 It does not ask:
 
-is this semantically correct?
-
-is this universally true?
-
-does the model understand the task?
-
+- is this semantically correct?
+- is this universally true?
+- does the model understand the task?
 
 It asks:
 
-how much does this output depend on its surface form?
-
-how much structure survives under transformation?
-
-how much degrades?
-
-when does continuation stop being structurally justified?
-
+- how much does this output depend on its surface form?
+- how much structure survives under transformation?
+- how much degrades?
+- when does continuation stop being structurally justified?
 
 That makes OMNIA a structural sensor, not a content interpreter.
 
-
 ---
 
-What OMNIA is really checking
+## What OMNIA is really checking
 
 OMNIA is not checking whether something sounds good.
 
@@ -315,183 +292,151 @@ That is the key distinction.
 
 A system can be:
 
-correct but fragile
-
-wrong but stable
-
-stable and useful
-
-unstable and misleading
-
+- correct but fragile
+- wrong but stable
+- stable and useful
+- unstable and misleading
 
 OMNIA does not collapse these into one number.
 
 It keeps structural behavior separate from semantic claims.
 
-
 ---
 
-Canonical outputs
+## Canonical outputs
 
 OMNIA measures a bounded structural profile through four core outputs:
 
-omega_score
-
-sei_score
-
-iri_score
-
-drift_score
-
+- `omega_score`
+- `sei_score`
+- `iri_score`
+- `drift_score`
 
 It then maps that profile into a bounded gate layer:
 
-GO
-
-RISK
-
-NO_GO
-
-UNSTABLE
-
+- `GO`
+- `RISK`
+- `NO_GO`
+- `UNSTABLE`
 
 Every valid OMNIA run also returns:
 
-limit_triggered
-
-reason_code
-
+- `limit_triggered`
+- `reason_code`
 
 So the canonical minimal output surface is:
 
-omega_score
-
-sei_score
-
-iri_score
-
-drift_score
-
-limit_triggered
-
-gate_status
-
-reason_code
-
+- `omega_score`
+- `sei_score`
+- `iri_score`
+- `drift_score`
+- `limit_triggered`
+- `gate_status`
+- `reason_code`
 
 These are structural outputs only.
 
-They are not truth labels.
-They are not semantic judgments.
+They are not truth labels.  
+They are not semantic judgments.  
 They are not autonomous decisions.
-
 
 ---
 
-What the scores mean
+## What the scores mean
 
-omega_score
+### `omega_score`
 
 How much structure still holds together under admissible transformation.
 
-sei_score
+### `sei_score`
 
 How much usable structure remains before the output becomes exhausted or hollow.
 
-iri_score
+### `iri_score`
 
 How much degradation is structurally irreversible.
 
-drift_score
+### `drift_score`
 
 How far the output has moved away from its reference structural profile.
 
-These scores are structural diagnostics.
+These scores are structural diagnostics.  
 They are not semantic scores.
-
 
 ---
 
-What the gate values mean
+## What the gate values mean
 
-GO
+### `GO`
 
 The structural profile remains admissible under the tested bounded conditions.
 
-RISK
+### `RISK`
 
 The output is still readable, but shows enough weakness or drift to justify review.
 
-NO_GO
+### `NO_GO`
 
 The output is not structurally admissible under the tested bounded conditions.
 
-UNSTABLE
+### `UNSTABLE`
 
 The output is degraded enough that it should not be treated as operationally reliable inside scope.
 
-These gate values are measurement outputs.
+These gate values are measurement outputs.  
 They are not final decisions by themselves.
-
 
 ---
 
-Canonical pipeline
+## Canonical pipeline
 
 The canonical pipeline is:
 
+```text
 input
 -> controlled structural transforms
 -> omega / sei / iri / drift
 -> limit check
 -> gate status
 -> bounded structural report
+```
 
 This is the canonical v1 software path.
 
-
 ---
 
-Limit logic
+## Limit logic
 
 OMNIA includes a bounded limit layer.
 
 A triggered limit means only this:
 
+```text
 further structural continuation inside scope is not justified
+```
 
 It does not mean:
 
-truth has been proven
-
-the task is solved
-
-the output is universally unsafe
-
-the system has understood the problem
-
+- truth has been proven
+- the task is solved
+- the output is universally unsafe
+- the system has understood the problem
 
 OMNIA-LIMIT is about structural stopping, not metaphysics.
 
-
 ---
 
-Why this matters in practice
+## Why this matters in practice
 
 Many failures are not immediately visible.
 
 A system can:
 
-pass formatting checks
-
-look coherent
-
-sound helpful
-
-satisfy superficial evaluation
-
-appear acceptable at first glance
-
+- pass formatting checks
+- look coherent
+- sound helpful
+- satisfy superficial evaluation
+- appear acceptable at first glance
 
 and still be structurally weak.
 
@@ -499,66 +444,52 @@ OMNIA is designed to expose that hidden weakness.
 
 It is most useful where an output looks acceptable on the surface but may still be hollow, unstable, or operationally weak under transformation.
 
-
 ---
 
-Start here
+## Start here
 
 If you want only one entry point, start here:
 
-docs/FOCUSED_PROOF.md
-
+- [`docs/FOCUSED_PROOF.md`](./docs/FOCUSED_PROOF.md)
 
 If you want broader validation planning, read:
 
-docs/EXTERNAL_VALIDATION_PLAN.md
-
-docs/BENCHMARK_V2_PLAN.md
-
-
+- [`docs/EXTERNAL_VALIDATION_PLAN.md`](./docs/EXTERNAL_VALIDATION_PLAN.md)
+- [`docs/BENCHMARK_V2_PLAN.md`](./docs/BENCHMARK_V2_PLAN.md)
 
 ---
 
-Current public benchmark state
+## Current public benchmark state
 
-Broader support-style benchmarks
+### Broader support-style benchmarks
 
 OMNIA has already been tested on broader support-style frozen sets.
 
 Those runs showed:
 
-a real signal
-
-weak generalization
-
-limited coverage
-
+- a real signal
+- weak generalization
+- limited coverage
 
 So the broad claim remains narrow.
 
-Focused benchmark
+### Focused benchmark
 
 OMNIA then moved to a focused benchmark on:
 
-polite
-
-readable
-
-surface-acceptable
-
-operationally hollow
-
-account-access responses
-
+- polite
+- readable
+- surface-acceptable
+- operationally hollow
+- account-access responses
 
 That focused run produced the first clear bounded result.
 
 This is why the focused proof currently matters more than the broad benchmark summaries.
 
-
 ---
 
-Repository role
+## Repository role
 
 This repository is the canonical product repository for OMNIA core.
 
@@ -566,64 +497,59 @@ Its role is narrower than the broader ecosystem.
 
 This repository exists to:
 
-define the core
-
-implement the core
-
-test the core
-
-document the core
-
-validate bounded external behavior
-
+- define the core
+- implement the core
+- test the core
+- document the core
+- validate bounded external behavior
 
 Historical, conceptual, or ecosystem-level material may exist elsewhere.
 
 OMNIA should be read as the core structural measurement layer, not as the whole ecosystem.
 
-
 ---
 
-Repository structure
+## Repository structure
 
+```text
 omnia/
 examples/
 docs/
 tests/
 pyproject.toml
 README.md
+```
 
 Main areas:
 
-omnia/ -> structural measurement logic
-
-examples/ -> runnable benchmark scripts and result generators
-
-docs/ -> scope, validation plans, results, focused proof
-
-tests/ -> bounded core behavior tests
-
-
+- `omnia/` -> structural measurement logic
+- `examples/` -> runnable benchmark scripts and result generators
+- `docs/` -> scope, validation plans, results, focused proof
+- `tests/` -> bounded core behavior tests
 
 ---
 
-Installation
+## Installation
 
 From repository root:
 
+```bash
 pip install -e . -U --no-cache-dir
-
+```
 
 ---
 
-Minimal smoke test
+## Minimal smoke test
 
 Run:
 
+```bash
 python examples/quick_omnia_test.py
+```
 
 Expected pattern:
 
+```json
 {
   "omega_score": 0.594462,
   "sei_score": 0.67557,
@@ -633,260 +559,195 @@ Expected pattern:
   "gate_status": "RISK",
   "reason_code": "low_omega"
 }
+```
 
 followed by:
 
+```text
 OK: OMNIA core executed
+```
 
 This confirms that the minimal executable core is alive.
 
-
 ---
 
-Tests
+## Tests
 
 Run the test suite:
 
+```bash
 pytest -q tests
+```
 
 A recent verified run passed all tests:
 
+```text
 47 passed
+```
 
-This proves software validity only.
+This proves software validity only.  
 It is not external benchmark proof by itself.
 
+---
+
+## Focused benchmark artifacts
+
+### Dataset
+
+- `data/account_access_hollow_responses_v1.jsonl`
+
+### Baseline runner
+
+- `examples/run_baseline_account_access_hollow_v1.py`
+
+### OMNIA runner
+
+- `examples/run_omnia_account_access_hollow_v1.py`
+
+### Combined evaluation
+
+- `examples/evaluate_baseline_plus_omnia_account_access_hollow_v1.py`
+
+### Case inspection
+
+- `examples/inspect_omnia_review_cases_account_access_hollow_v1.py`
+
+### Documents
+
+- `docs/FOCUSED_PROOF.md`
+- `docs/ACCOUNT_ACCESS_HOLLOW_RESULT_V1.md`
+- `docs/ACCOUNT_ACCESS_HOLLOW_CASE_ANALYSIS_V1.md`
+- `docs/ACCOUNT_ACCESS_HOLLOW_ERROR_ANALYSIS_V1.md`
 
 ---
 
-Focused benchmark artifacts
+## Broader benchmark artifacts
 
-Dataset
+### Validation plans
 
-data/account_access_hollow_responses_v1.jsonl
+- `docs/EXTERNAL_VALIDATION_PLAN.md`
+- `docs/EXTERNAL_DATASET_SPEC.md`
+- `docs/BASELINE_SPEC.md`
+- `docs/OMNIA_GATE_MAPPING.md`
+- `docs/LABELING_POLICY.md`
+- `docs/BENCHMARK_V2_PLAN.md`
 
+### Broader support-style dataset family
 
-Baseline runner
+- `data/support_screening_external_v1.jsonl`
+- `data/support_screening_external_v2.jsonl`
 
-examples/run_baseline_account_access_hollow_v1.py
+### Broader support-style runners
 
+- `examples/run_baseline_support_screening.py`
+- `examples/run_omnia_support_screening.py`
+- `examples/evaluate_baseline_plus_omnia_support_screening.py`
+- `examples/inspect_omnia_review_cases.py`
 
-OMNIA runner
+### V2 runners
 
-examples/run_omnia_account_access_hollow_v1.py
-
-
-Combined evaluation
-
-examples/evaluate_baseline_plus_omnia_account_access_hollow_v1.py
-
-
-Case inspection
-
-examples/inspect_omnia_review_cases_account_access_hollow_v1.py
-
-
-Documents
-
-docs/FOCUSED_PROOF.md
-
-docs/ACCOUNT_ACCESS_HOLLOW_RESULT_V1.md
-
-docs/ACCOUNT_ACCESS_HOLLOW_CASE_ANALYSIS_V1.md
-
-docs/ACCOUNT_ACCESS_HOLLOW_ERROR_ANALYSIS_V1.md
-
-
+- `examples/run_baseline_support_screening_v2.py`
+- `examples/run_omnia_support_screening_v2.py`
+- `examples/evaluate_baseline_plus_omnia_support_screening_v2.py`
+- `examples/inspect_omnia_review_cases_v2.py`
 
 ---
 
-Broader benchmark artifacts
-
-Validation plans
-
-docs/EXTERNAL_VALIDATION_PLAN.md
-
-docs/EXTERNAL_DATASET_SPEC.md
-
-docs/BASELINE_SPEC.md
-
-docs/OMNIA_GATE_MAPPING.md
-
-docs/LABELING_POLICY.md
-
-docs/BENCHMARK_V2_PLAN.md
-
-
-Broader support-style dataset family
-
-data/support_screening_external_v1.jsonl
-
-data/support_screening_external_v2.jsonl
-
-
-Broader support-style runners
-
-examples/run_baseline_support_screening.py
-
-examples/run_omnia_support_screening.py
-
-examples/evaluate_baseline_plus_omnia_support_screening.py
-
-examples/inspect_omnia_review_cases.py
-
-
-V2 runners
-
-examples/run_baseline_support_screening_v2.py
-
-examples/run_omnia_support_screening_v2.py
-
-examples/evaluate_baseline_plus_omnia_support_screening_v2.py
-
-examples/inspect_omnia_review_cases_v2.py
-
-
-
----
-
-Intended use
+## Intended use
 
 OMNIA is designed to be:
 
-post-hoc
-
-bounded
-
-deterministic
-
-structural
-
-composable
-
-model-agnostic
-
-non-semantic by design
-
+- post-hoc
+- bounded
+- deterministic
+- structural
+- composable
+- model-agnostic
+- non-semantic by design
 
 Typical bounded uses include:
 
-hollow-response detection
-
-structural fragility sensing
-
-post-hoc output review
-
-admissibility screening
-
-silent failure pressure
-
-structural drift inspection
-
+- hollow-response detection
+- structural fragility sensing
+- post-hoc output review
+- admissibility screening
+- silent failure pressure
+- structural drift inspection
 
 It is most useful where a response looks acceptable on the surface but may still be weak under transformation.
 
-
 ---
 
-Reproducibility rule
+## Reproducibility rule
 
 OMNIA is only meaningful if the result can be reproduced.
 
 That requires:
 
-frozen dataset
-
-frozen scripts
-
-frozen labeling policy
-
-frozen gate mapping
-
-fixed metric interpretation
-
-machine-readable outputs
-
+- frozen dataset
+- frozen scripts
+- frozen labeling policy
+- frozen gate mapping
+- fixed metric interpretation
+- machine-readable outputs
 
 If the setup is not reproducible, the claim is not valid core evidence.
 
-
 ---
 
-What is currently proved
+## What is currently proved
 
 Currently proved:
 
-the core runs
-
-the core is testable
-
-the core emits bounded structural outputs
-
-broader benchmarks show a small real signal
-
-focused account-access hollow benchmarking shows a stronger bounded signal
-
-tuned transforms can improve selectivity within that narrow family
-
+- the core runs
+- the core is testable
+- the core emits bounded structural outputs
+- broader benchmarks show a small real signal
+- focused account-access hollow benchmarking shows a stronger bounded signal
+- tuned transforms can improve selectivity within that narrow family
 
 Not proved:
 
-broad external validity
-
-general support-domain superiority
-
-cross-domain transfer
-
-production readiness
-
-universal filtering power
-
-
+- broad external validity
+- general support-domain superiority
+- cross-domain transfer
+- production readiness
+- universal filtering power
 
 ---
 
-Minimal public claim
+## Minimal public claim
 
 The public claim should remain narrow:
 
 > OMNIA is a bounded structural measurement core. Its strongest current result is a focused benchmark where it reduced false accepts on operationally hollow account-access responses from 14 to 7 with no observed increase in false rejects.
 
-
-
 Anything broader than this is not yet justified.
-
 
 ---
 
-One-line definition
+## One-line definition
 
 OMNIA measures how much structure survives when form is changed in a controlled way.
 
-
 ---
 
-Final boundary
+## Final boundary
 
 OMNIA is strongest when it stays inside its real role:
 
-measurement only
-
-no hidden semantics
-
-no fake omniscience
-
-no collapse into decision theater
-
-no claims beyond evidence
-
+- measurement only
+- no hidden semantics
+- no fake omniscience
+- no collapse into decision theater
+- no claims beyond evidence
 
 That boundary is not a weakness.
 
 It is what keeps OMNIA clean.
 
-
 ---
 
-License
+## License
 
 MIT License

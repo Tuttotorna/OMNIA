@@ -1,0 +1,20 @@
+{"id":"bal_000","task":"reasoning","difficulty":"easy","prompt":"Answer with only the final number. What is 12 + 8?","expected":"20"}
+{"id":"bal_001","task":"reasoning","difficulty":"easy","prompt":"Answer with only the final number. What is 30 - 7?","expected":"23"}
+{"id":"bal_002","task":"reasoning","difficulty":"easy","prompt":"Answer with only the final number. What is 6 * 5?","expected":"30"}
+{"id":"bal_003","task":"reasoning","difficulty":"easy","prompt":"Answer with only the final number. What is 40 / 8?","expected":"5"}
+{"id":"bal_004","task":"reasoning","difficulty":"easy","prompt":"Answer with only the final number. A box has 10 apples and 5 oranges. How many fruits are there?","expected":"15"}
+{"id":"bal_005","task":"reasoning","difficulty":"easy","prompt":"Answer with only the final number. A shop has 20 items and sells 6. How many remain?","expected":"14"}
+{"id":"bal_006","task":"reasoning","difficulty":"easy","prompt":"Answer with only the final number. A runner runs 3 km each day for 4 days. Total distance?","expected":"12"}
+{"id":"bal_007","task":"reasoning","difficulty":"easy","prompt":"Answer with only the final number. A book costs 7 dollars. How much do 3 books cost?","expected":"21"}
+{"id":"bal_008","task":"reasoning","difficulty":"easy","prompt":"Answer with only the final number. There are 4 bags with 6 candies each. How many candies total?","expected":"24"}
+{"id":"bal_009","task":"reasoning","difficulty":"easy","prompt":"Answer with only the final number. A class has 18 students and 2 arrive late. How many students are there now?","expected":"20"}
+{"id":"bal_010","task":"reasoning","difficulty":"trap","prompt":"Answer with only the final number. A wallet has 50 euros. 18 euros are spent, then 12 euros are added. How many euros are in the wallet?","expected":"44"}
+{"id":"bal_011","task":"reasoning","difficulty":"trap","prompt":"Answer with only the final number. A tank has 60 liters of water. One third leaks out. How many liters remain?","expected":"40"}
+{"id":"bal_012","task":"reasoning","difficulty":"trap","prompt":"Answer with only the final number. A museum had 120 visitors in the morning and 85 in the afternoon. 40 left before closing. How many visitors were there in total before closing?","expected":"205"}
+{"id":"bal_013","task":"reasoning","difficulty":"trap","prompt":"Answer with only the final number. A class has 28 students. One quarter are absent. How many students are present?","expected":"21"}
+{"id":"bal_014","task":"reasoning","difficulty":"trap","prompt":"Answer with only the final number. A cyclist rides 18 km, rests, then rides 12 km back along the same road. What is the total distance ridden?","expected":"30"}
+{"id":"bal_015","task":"reasoning","difficulty":"trap","prompt":"Answer with only the final number. A box contains 9 packs. Each pack has 4 cards. 7 cards are damaged. How many usable cards remain?","expected":"29"}
+{"id":"bal_016","task":"reasoning","difficulty":"trap","prompt":"Answer with only the final number. A farmer has 30 apples. He gives away half, then buys 6 more. How many apples does he have?","expected":"21"}
+{"id":"bal_017","task":"reasoning","difficulty":"trap","prompt":"Answer with only the final number. If a ticket costs 9 dollars, how much do 4 tickets cost after a 6 dollar discount on the total?","expected":"30"}
+{"id":"bal_018","task":"reasoning","difficulty":"trap","prompt":"Answer with only the final number. A train leaves at 10:15 and arrives at 11:05. How many minutes is the trip?","expected":"50"}
+{"id":"bal_019","task":"reasoning","difficulty":"trap","prompt":"Answer with only the final number. A recipe needs 250 grams of flour per cake. How many grams are needed for 3 cakes?","expected":"750"}

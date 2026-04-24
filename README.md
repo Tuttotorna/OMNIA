@@ -1,6 +1,6 @@
 # OMNIA - Structural Measurement Core
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19706488.svg)](https://doi.org/10.5281/zenodo.19706488)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19725235.svg)](https://doi.org/10.5281/zenodo.19725235)
 
 **Author:** Massimiliano Brighindi  
 **Contact:** brighissimo@gmail.com

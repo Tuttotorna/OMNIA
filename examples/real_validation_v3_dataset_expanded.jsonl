@@ -1,20 +1,16 @@
-{"id":"exp_000","task":"qa","prompt":"Answer with only the final answer. What year comes after 2019?","expected":"2020"}
-{"id":"exp_001","task":"qa","prompt":"Answer with only the final answer. What is the capital of Germany?","expected":"Berlin"}
-{"id":"exp_002","task":"qa","prompt":"Answer with only the final answer. What is the capital of Spain?","expected":"Madrid"}
-{"id":"exp_003","task":"reasoning","prompt":"Answer with only the final number. What is 25 + 5?","expected":"30"}
-{"id":"exp_004","task":"reasoning","prompt":"Answer with only the final number. What is 40 - 15?","expected":"25"}
-{"id":"exp_005","task":"reasoning","prompt":"Answer with only the final number. What is 6 * 7?","expected":"42"}
-{"id":"exp_006","task":"reasoning","prompt":"Answer with only the final number. What is 81 / 9?","expected":"9"}
-{"id":"exp_007","task":"reasoning","prompt":"Answer with only the final number. A store has 50 items, sells 20, then receives 10. How many now?","expected":"40"}
-{"id":"exp_008","task":"rag","prompt":"Context: The book was published in 2001. It became popular in 2005. Question: when was the book published? Answer only.","expected":"2001"}
-{"id":"exp_009","task":"rag","prompt":"Context: The book was published in 2001. It became popular in 2005. Question: when did it become popular? Answer only.","expected":"2005"}
-{"id":"exp_010","task":"rag","prompt":"Context: Luca Rossi wrote the report. Anna Bianchi reviewed it. Question: who wrote the report? Answer only.","expected":"Luca Rossi"}
-{"id":"exp_011","task":"rag","prompt":"Context: Luca Rossi wrote the report. Anna Bianchi reviewed it. Question: who reviewed it? Answer only.","expected":"Anna Bianchi"}
-{"id":"exp_012","task":"qa","prompt":"Answer with only the final answer. What is the capital of Italy?","expected":"Rome"}
-{"id":"exp_013","task":"qa","prompt":"Answer with only the final answer. What is the capital of Portugal?","expected":"Lisbon"}
-{"id":"exp_014","task":"reasoning","prompt":"Answer with only the final number. What is 13 + 17?","expected":"30"}
-{"id":"exp_015","task":"reasoning","prompt":"Answer with only the final number. What is 100 - 60?","expected":"40"}
-{"id":"exp_016","task":"reasoning","prompt":"Answer with only the final number. What is 8 * 8?","expected":"64"}
-{"id":"exp_017","task":"reasoning","prompt":"Answer with only the final number. What is 144 / 12?","expected":"12"}
-{"id":"exp_018","task":"rag","prompt":"Context: The meeting was held in Paris in 2020 and in Rome in 2021. Question: where was the meeting in 2021? Answer only.","expected":"Rome"}
-{"id":"exp_019","task":"rag","prompt":"Context: The meeting was held in Paris in 2020 and in Rome in 2021. Question: where was the meeting in 2020? Answer only.","expected":"Paris"}
+{"id":"v3_000","task":"qa","prompt":"Answer with only the final answer. What year comes after 2017?","output":"2020","expected":"2018"}
+{"id":"v3_001","task":"qa","prompt":"Answer with only the final answer. What is the capital of France?","output":"london","expected":"Paris"}
+{"id":"v3_002","task":"qa","prompt":"Answer with only the final answer. What city is the capital of Italy?","output":"rome","expected":"Rome"}
+{"id":"v3_003","task":"qa","prompt":"Answer with only the final answer. Which city is written here: Naples?","output":"rome","expected":"Naples"}
+{"id":"v3_004","task":"reasoning","prompt":"Answer with only the final number. What is 18 + 7?","output":"0","expected":"25"}
+{"id":"v3_005","task":"reasoning","prompt":"Answer with only the final number. What is 12 + 18?","output":"0","expected":"30"}
+{"id":"v3_006","task":"reasoning","prompt":"Answer with only the final number. What is 19 + 4?","output":"0","expected":"23"}
+{"id":"v3_007","task":"reasoning","prompt":"Answer with only the final number. A shop has 30 items, sells 10, then receives 5. How many now?","output":"5","expected":"25"}
+{"id":"v3_008","task":"rag","prompt":"Context: The company was founded in 2015. Its first product launched in 2018. Question: when did the first product launch? Answer only.","output":"2018","expected":"2018"}
+{"id":"v3_009","task":"rag","prompt":"Context: The company was founded in 2015. Its first product launched in 2018. Question: when was the company founded? Answer only.","output":"2015","expected":"2015"}
+{"id":"v3_010","task":"rag","prompt":"Context: Anna Verdi prepared the draft. Marco Neri signed the contract. Question: who signed the contract? Answer only.","output":"Anna Verdi","expected":"Marco Neri"}
+{"id":"v3_011","task":"rag","prompt":"Context: Anna Verdi prepared the draft. Marco Neri signed the contract. Question: who prepared the draft? Answer only.","output":"Anna Verdi","expected":"Anna Verdi"}
+{"id":"v3_012","task":"rag","prompt":"Context: The 2021 summit was held in Paris. The 2022 summit moved to Berlin. Question: which city hosted the 2021 summit? Answer only.","output":"Paris","expected":"Paris"}
+{"id":"v3_013","task":"rag","prompt":"Context: The 2021 summit was held in Paris. The 2022 summit moved to Berlin. Question: which city hosted the 2022 summit? Answer only.","output":"Berlin","expected":"Berlin"}
+{"id":"v3_014","task":"reasoning","prompt":"Answer with only the final number. A box contains 14 apples and 11 more are added. How many apples are in the box?","output":"14","expected":"25"}
+{"id":"v3_015","task":"reasoning","prompt":"Answer with only the final number. A runner completes 12 km in the morning and 13 km in the evening. Total?","output":"13","expected":"25"}

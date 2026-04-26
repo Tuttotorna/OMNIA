@@ -1,0 +1,602 @@
+[
+  {
+    "id": "034",
+    "prompt": "Compute 19 + 23.",
+    "text": "25 1 0 13",
+    "raw_opi": 0.16133069828722002,
+    "corrected_opi": 0.03226613965744401,
+    "length": 4,
+    "num_sentences": 1,
+    "has_duplication": false
+  },
+  {
+    "id": "009",
+    "prompt": "What is JSON?",
+    "text": "LDL",
+    "raw_opi": 0.5487132352941176,
+    "corrected_opi": 0.027435661764705882,
+    "length": 1,
+    "num_sentences": 1,
+    "has_duplication": false
+  },
+  {
+    "id": "018",
+    "prompt": "Solve: 27 * 14.",
+    "text": "9-12 + 1-12 11.5 8-7 (1). 35 3-3 7-11",
+    "raw_opi": 0.034130284130284134,
+    "corrected_opi": 0.02730422730422731,
+    "length": 9,
+    "num_sentences": 3,
+    "has_duplication": false
+  },
+  {
+    "id": "028",
+    "prompt": "What is 2 + 2?",
+    "text": "B",
+    "raw_opi": 0.530952380952381,
+    "corrected_opi": 0.02654761904761905,
+    "length": 1,
+    "num_sentences": 1,
+    "has_duplication": false
+  },
+  {
+    "id": "030",
+    "prompt": "Compute 19 + 23.",
+    "text": "25-5 2 3 5 20 7 5 5 6) 32 7.30 (2 1 18 21s",
+    "raw_opi": 0.02498028457330783,
+    "corrected_opi": 0.019984227658646266,
+    "length": 15,
+    "num_sentences": 2,
+    "has_duplication": false
+  },
+  {
+    "id": "027",
+    "prompt": "Solve: 27 * 14.",
+    "text": "48 -1 7+25",
+    "raw_opi": 0.06962285902503294,
+    "corrected_opi": 0.010443428853754941,
+    "length": 3,
+    "num_sentences": 1,
+    "has_duplication": false
+  },
+  {
+    "id": "023",
+    "prompt": "Write a Python function that reverses a string.",
+    "text": "Replay A - A (",
+    "raw_opi": 0.03421257391845627,
+    "corrected_opi": 0.008553143479614068,
+    "length": 5,
+    "num_sentences": 1,
+    "has_duplication": false
+  },
+  {
+    "id": "049",
+    "prompt": "Give a short answer: 100/4.",
+    "text": "30 366+361 in 1858-25765 for 784m 263",
+    "raw_opi": 0.02332172342621259,
+    "corrected_opi": 0.008162603199174407,
+    "length": 7,
+    "num_sentences": 1,
+    "has_duplication": false
+  },
+  {
+    "id": "032",
+    "prompt": "Sort this list: [5,2,9,1].",
+    "text": "UwfHau 05352: |ifr 48516 2x16 2sg 2bis 2o",
+    "raw_opi": 0.02024047774483888,
+    "corrected_opi": 0.008096191097935553,
+    "length": 8,
+    "num_sentences": 1,
+    "has_duplication": false
+  },
+  {
+    "id": "033",
+    "prompt": "Give a short definition of entropy.",
+    "text": "(Mhoolimski = hij lis. [hug del + orin/w = abmc1_of, ja.m: Hyati ;] | Gbe = T(((MHspythend.vr=",
+    "raw_opi": 0.006567653182577822,
+    "corrected_opi": 0.005254122546062258,
+    "length": 17,
+    "num_sentences": 4,
+    "has_duplication": false
+  },
+  {
+    "id": "012",
+    "prompt": "Solve: 27 * 14.",
+    "text": "23-162-852P.3611_B",
+    "raw_opi": 0.050700718530196455,
+    "corrected_opi": 0.005070071853019646,
+    "length": 1,
+    "num_sentences": 2,
+    "has_duplication": false
+  },
+  {
+    "id": "053",
+    "prompt": "What is JSON?",
+    "text": "PHODEY(RZISODESION DEPT - \"Hey I did love k..HyPHENNOEDES \"\") with THAN_WARE and the like!! MARYSYVENSION is not as the sole domain from his father \"'\". T",
+    "raw_opi": 0.005160604002533018,
+    "corrected_opi": 0.004128483202026414,
+    "length": 26,
+    "num_sentences": 3,
+    "has_duplication": false
+  },
+  {
+    "id": "029",
+    "prompt": "Return only the number: 7*8.",
+    "text": "5)=(2-and2-year+1 and 1/21) in number 3.",
+    "raw_opi": 0.012078190841876243,
+    "corrected_opi": 0.003623457252562873,
+    "length": 6,
+    "num_sentences": 1,
+    "has_duplication": false
+  },
+  {
+    "id": "000",
+    "prompt": "Return a valid JSON with keys name and age.",
+    "text": "no file code at present had required encryption between 64 bit, because they required several %32",
+    "raw_opi": 0.008837081050309541,
+    "corrected_opi": 0.0035348324201238167,
+    "length": 16,
+    "num_sentences": 1,
+    "has_duplication": false
+  },
+  {
+    "id": "013",
+    "prompt": "Explain why the sky is blue.",
+    "text": "red makes blue streak red",
+    "raw_opi": 0.012857999700104969,
+    "corrected_opi": 0.0032144999250262422,
+    "length": 5,
+    "num_sentences": 1,
+    "has_duplication": false
+  },
+  {
+    "id": "003",
+    "prompt": "Write a Python function that reverses a string.",
+    "text": "toadic function for istransform input in input_toatocode as #isdv//2()+*inalinerel(4)1e.propos (if \".1w\" means hi!1)*adveise(=nyr ==\"\", or ab",
+    "raw_opi": 0.0038738205196277783,
+    "corrected_opi": 0.003099056415702223,
+    "length": 16,
+    "num_sentences": 3,
+    "has_duplication": false
+  },
+  {
+    "id": "038",
+    "prompt": "Return a valid JSON with keys name and age.",
+    "text": "Bless is good as was and needs only BS. So let no problem figuring, otherwise when calling BPS(lone exception #14)...never remember and use A",
+    "raw_opi": 0.003844404812714672,
+    "corrected_opi": 0.003075523850171738,
+    "length": 24,
+    "num_sentences": 3,
+    "has_duplication": false
+  },
+  {
+    "id": "011",
+    "prompt": "What is the capital of Germany?",
+    "text": "imibel-sermenl inmis",
+    "raw_opi": 0.01983204348933249,
+    "corrected_opi": 0.0019832043489332487,
+    "length": 2,
+    "num_sentences": 1,
+    "has_duplication": false
+  },
+  {
+    "id": "037",
+    "prompt": "Explain photosynthesis.",
+    "text": "Some of phototranspnoxises",
+    "raw_opi": 0.012993663424697904,
+    "corrected_opi": 0.0019490495137046858,
+    "length": 3,
+    "num_sentences": 1,
+    "has_duplication": false
+  },
+  {
+    "id": "044",
+    "prompt": "What is the capital of France?",
+    "text": "louviacáil (châteaux) 1784219 314-33-6869 415–1859 644,768,2979 1148884769 16181,3744; 1096 france 224445378:191615 185561 124",
+    "raw_opi": 0.004338983128174392,
+    "corrected_opi": 0.001735593251269757,
+    "length": 13,
+    "num_sentences": 1,
+    "has_duplication": false
+  },
+  {
+    "id": "057",
+    "prompt": "Write a Python function that reverses a string.",
+    "text": "indent deyreset (re-suic); when nore (mnl)/enddrited(), which will indyts the set back \"Surch and run with \"Lost/Bit\". [sorrier ?|erase of keys",
+    "raw_opi": 0.0021430999882660535,
+    "corrected_opi": 0.001714479990612843,
+    "length": 21,
+    "num_sentences": 2,
+    "has_duplication": false
+  },
+  {
+    "id": "026",
+    "prompt": "Is water wet?",
+    "text": "I mean well before long so they would turn grey again rather wet – sometimes for me and not necessarily  so water might evaporate again",
+    "raw_opi": 0.004277548171588894,
+    "corrected_opi": 0.0017110192686355576,
+    "length": 25,
+    "num_sentences": 1,
+    "has_duplication": false
+  },
+  {
+    "id": "036",
+    "prompt": "Explain why the sky is blue.",
+    "text": "it may show tonally or other areas due its location not yet visible below sea' that may",
+    "raw_opi": 0.004021876323586623,
+    "corrected_opi": 0.0016087505294346495,
+    "length": 17,
+    "num_sentences": 1,
+    "has_duplication": false
+  },
+  {
+    "id": "031",
+    "prompt": "Is water wet?",
+    "text": "I did enjoy watching rain storm downrivous, and then noticed me shaking quickly enough as others tried too hard! However with your normal efforts I began washing that with iron at four months... but... and there that time is to add that to washing",
+    "raw_opi": 0.0013307387884092011,
+    "corrected_opi": 0.001064591030727361,
+    "length": 44,
+    "num_sentences": 3,
+    "has_duplication": false
+  },
+  {
+    "id": "051",
+    "prompt": "Write a one-line answer: 9*9.",
+    "text": "4/8/10",
+    "raw_opi": 0.020112781954887214,
+    "corrected_opi": 0.0010056390977443608,
+    "length": 1,
+    "num_sentences": 1,
+    "has_duplication": false
+  },
+  {
+    "id": "004",
+    "prompt": "Write a Python function that reverses a string.",
+    "text": "C3 (dash() but lexh=1 and end_to()[6; and count(1)?r+1) = set 'p:i2a?ch else an input",
+    "raw_opi": 0.0024648785927453096,
+    "corrected_opi": 0.0009859514370981239,
+    "length": 14,
+    "num_sentences": 1,
+    "has_duplication": false
+  },
+  {
+    "id": "046",
+    "prompt": "Return a valid JSON with keys name and age.",
+    "text": "Not the TCM type without code; is using Windows Server'? Use Python 5/8/Raison and invent this program of sorts only. No JNS codes must work using those types because some users want inherently-low levels for JH. Either donator code with each entry is necessary",
+    "raw_opi": 0.0011553012964049263,
+    "corrected_opi": 0.0009242410371239411,
+    "length": 44,
+    "num_sentences": 3,
+    "has_duplication": false
+  },
+  {
+    "id": "058",
+    "prompt": "What is the largest planet?",
+    "text": "aument of greatness duchesn de mars 19:51 or sunburn 14 us century devalland in castillon 10 3 uticin 3 stara galentinel of",
+    "raw_opi": 0.0022329349119129894,
+    "corrected_opi": 0.0008931739647651958,
+    "length": 22,
+    "num_sentences": 1,
+    "has_duplication": false
+  },
+  {
+    "id": "006",
+    "prompt": "Return a valid JSON with keys name and age.",
+    "text": "213573674434135738612928543473836127931",
+    "raw_opi": 0.017071723426212587,
+    "corrected_opi": 0.0008535861713106293,
+    "length": 1,
+    "num_sentences": 1,
+    "has_duplication": false
+  },
+  {
+    "id": "047",
+    "prompt": "Explain photosynthesis.",
+    "text": "Preservive effects produce all cells back in plant preservated, then cells continue causing tumor to occur in young organism in fronteerobacter. If growth defects induced through sunlight make more food which affect an egg egg then pronocyte failure, followed and cells will require some kind-odd",
+    "raw_opi": 0.001032054790949849,
+    "corrected_opi": 0.0008256438327598792,
+    "length": 45,
+    "num_sentences": 2,
+    "has_duplication": false
+  },
+  {
+    "id": "017",
+    "prompt": "Write a one-line answer: 9*9.",
+    "text": "16-page (a), 3-8-10. Several hundred thousand more in two pieces could never reach 505. Seven billion — more? One year away. In twenty cities near Washington–Caironia are scattered among an expansive region based everywhere with all other cultural communities of an entirely indigenous territory situated to the",
+    "raw_opi": 0.0009604677568487748,
+    "corrected_opi": 0.0007683742054790199,
+    "length": 47,
+    "num_sentences": 4,
+    "has_duplication": false
+  },
+  {
+    "id": "010",
+    "prompt": "Return only the number: 7*8.",
+    "text": "32347514907476794756437796869276",
+    "raw_opi": 0.014622937449024407,
+    "corrected_opi": 0.0007311468724512204,
+    "length": 1,
+    "num_sentences": 1,
+    "has_duplication": false
+  },
+  {
+    "id": "015",
+    "prompt": "Write a Python function that reverses a string.",
+    "text": "Python.imo_declaryClick/Tell = A&E while Not(emiO=1)=Nevere;NotIf(mnifdny[x,wx,dv;-N =N+7)+1?orLeedingLextend",
+    "raw_opi": 0.0009914360375289331,
+    "corrected_opi": 0.00059486162251736,
+    "length": 6,
+    "num_sentences": 2,
+    "has_duplication": false
+  },
+  {
+    "id": "007",
+    "prompt": "Give a short answer: 100/4.",
+    "text": "44,305,452 is 36 3/4 to 34435 (.248) = 46.00% AVOUNDY 63%: 12 * 21/20 96.3; 42 27.5/5 20",
+    "raw_opi": 0.0007377771708092277,
+    "corrected_opi": 0.0005902217366473821,
+    "length": 18,
+    "num_sentences": 5,
+    "has_duplication": false
+  },
+  {
+    "id": "001",
+    "prompt": "Solve: 27 * 14.",
+    "text": "306-10-733-60-1810",
+    "raw_opi": 0.010438773344651951,
+    "corrected_opi": 0.0005219386672325976,
+    "length": 1,
+    "num_sentences": 1,
+    "has_duplication": false
+  },
+  {
+    "id": "043",
+    "prompt": "What is the capital of Germany?",
+    "text": "einpzig.err, wie üblich als bei einem von überdurchschnittlichsten Storen umgibt vorm die Kompagans die meisten",
+    "raw_opi": 0.0004757752672681784,
+    "corrected_opi": 0.00038062021381454276,
+    "length": 15,
+    "num_sentences": 2,
+    "has_duplication": false
+  },
+  {
+    "id": "019",
+    "prompt": "Give a short answer: 100/4.",
+    "text": "65/376/765/16363/5271614/563024/13569/6675482521/4392851/565/718544171/197528",
+    "raw_opi": 0.007349858214378486,
+    "corrected_opi": 0.00036749291071892434,
+    "length": 1,
+    "num_sentences": 1,
+    "has_duplication": false
+  },
+  {
+    "id": "041",
+    "prompt": "Write a one-line answer: 9*9.",
+    "text": "13 (J/13, 311)-1=31 2))-33)*18] f4ac 4nc/soh 3oot 1o",
+    "raw_opi": 0.0008708272859216252,
+    "corrected_opi": 0.00034833091436865007,
+    "length": 8,
+    "num_sentences": 1,
+    "has_duplication": false
+  },
+  {
+    "id": "024",
+    "prompt": "What is the capital of France?",
+    "text": "perlas frémain portandencroyoninho au nord-monesteján bruisein, belain., barriehwontbeinyi.strikingdendomsonsmildonstolypcicinám",
+    "raw_opi": 0.00040516866174760964,
+    "corrected_opi": 0.00032413492939808774,
+    "length": 8,
+    "num_sentences": 3,
+    "has_duplication": false
+  },
+  {
+    "id": "014",
+    "prompt": "Give a short definition of entropy.",
+    "text": "Anticyclity tolerganth.cll",
+    "raw_opi": 0.0012771392081736901,
+    "corrected_opi": 0.00025542784163473805,
+    "length": 2,
+    "num_sentences": 2,
+    "has_duplication": false
+  },
+  {
+    "id": "020",
+    "prompt": "Give a short definition of entropy.",
+    "text": "Adil and the world began being destroyed each single  100 block block years and began becoming too restrictive. Most new building houses begin decries-oggestion",
+    "raw_opi": 0.0002870201451984262,
+    "corrected_opi": 0.000229616116158741,
+    "length": 24,
+    "num_sentences": 2,
+    "has_duplication": false
+  },
+  {
+    "id": "050",
+    "prompt": "What is the largest planet?",
+    "text": "solarium degresion area norther africa galaxy bepandonaiostro-ship usterpis-geal and bjl chowf. earth proberoescow 234c dreiscon 476.e-commissante gerontyl",
+    "raw_opi": 0.0002517589036502897,
+    "corrected_opi": 0.0002014071229202318,
+    "length": 17,
+    "num_sentences": 3,
+    "has_duplication": false
+  },
+  {
+    "id": "056",
+    "prompt": "What is the capital of Germany?",
+    "text": "der Plindschberg Castle für Stadt de Hamburg (prussia 2) auf einem herrlichhelf Meer verwöhn nütz der herrlicher Insel",
+    "raw_opi": 0.00047593171719860147,
+    "corrected_opi": 0.0001903726868794406,
+    "length": 18,
+    "num_sentences": 1,
+    "has_duplication": false
+  },
+  {
+    "id": "008",
+    "prompt": "Explain why the sky is blue.",
+    "text": "Blue in many shades shows darker clouds throughout times; and blackness helps bright red look and feel while yellow or violet becomes very faint due from high blue conditions (a dark matter as snow)! The light from night will make people light like blue all days after their arrival.... as the only choice is this: not rain",
+    "raw_opi": 0.00020349995427884626,
+    "corrected_opi": 0.00016279996342307703,
+    "length": 57,
+    "num_sentences": 2,
+    "has_duplication": false
+  },
+  {
+    "id": "042",
+    "prompt": "Is water wet?",
+    "text": "A hot shower day brings to four an outdoor room with direct visibility down across one from swimming-pubble walls by cars into their spaces (at various parts- in between. for several other instalments as air of heat allows to make waves/graily turns upon and around all these) water to evaporate over",
+    "raw_opi": 0.0001462701127061042,
+    "corrected_opi": 0.00011701609016488338,
+    "length": 51,
+    "num_sentences": 2,
+    "has_duplication": false
+  },
+  {
+    "id": "045",
+    "prompt": "Give a short answer: 100/4.",
+    "text": "95-97 and 478 cm'12 1/2 for male pairs *",
+    "raw_opi": 0.00028360748723766337,
+    "corrected_opi": 0.00011344299489506535,
+    "length": 9,
+    "num_sentences": 1,
+    "has_duplication": false
+  },
+  {
+    "id": "005",
+    "prompt": "Sort this list: [5,2,9,1].",
+    "text": "[[20)7'01-5 [10-138cp; [8; 16-6)6:12\"&(21-14]2 in 16). The price price tag that stands will not depend until, possibly after testing with both liquidates on you two to test one alone from your two first",
+    "raw_opi": 9.314395418456335e-05,
+    "corrected_opi": 7.451516334765069e-05,
+    "length": 33,
+    "num_sentences": 2,
+    "has_duplication": false
+  },
+  {
+    "id": "035",
+    "prompt": "Return a valid JSON with keys name and age.",
+    "text": "2xx4l15A and \"H.Zcius/Chroniu008S8ComwXH\". Both characters on both hands' back, with all remaining symbols from those key packs appearing inside those packs has only slipped after. E3'2nd right handed person",
+    "raw_opi": 9.041840202977654e-05,
+    "corrected_opi": 7.233472162382123e-05,
+    "length": 29,
+    "num_sentences": 4,
+    "has_duplication": false
+  },
+  {
+    "id": "055",
+    "prompt": "Explain why the sky is blue.",
+    "text": "You notice you' in and about you even slightly inside what happens upon every lighthouse scene of all around to darkened earth buildings before and on from this sunbutterstorm' (if at whole and for no indication the whole matter) The storm becomes your direct contact around time passing with any sky and that causes him",
+    "raw_opi": 0.0001528121806856535,
+    "corrected_opi": 6.11248722742614e-05,
+    "length": 55,
+    "num_sentences": 1,
+    "has_duplication": false
+  },
+  {
+    "id": "059",
+    "prompt": "Explain why the sky is blue.",
+    "text": "brighten red light shining down across some room floor (if all your window pan goes out from). Why can do many rooms leave them black all but now what it think is there doeth no windows yet let go douse all out doors?! Well ow why are venet in the air?! how",
+    "raw_opi": 6.015751935282954e-05,
+    "corrected_opi": 4.812601548226364e-05,
+    "length": 52,
+    "num_sentences": 2,
+    "has_duplication": false
+  },
+  {
+    "id": "025",
+    "prompt": "What is JSON?",
+    "text": "(The Law That Innoculate Indicatory is more accurate:)-LR=indicant",
+    "raw_opi": 0.00011140819964349392,
+    "corrected_opi": 4.456327985739757e-05,
+    "length": 8,
+    "num_sentences": 1,
+    "has_duplication": false
+  },
+  {
+    "id": "016",
+    "prompt": "Summarize: AI is transforming industries.",
+    "text": "Industry was driven only on artificial languages while social mobility brought on from being called AI with the common & technology standards expected under future EU laws or industry regulation under 21 EU and the Federal Agreement concerning digitalization technologies; so even this process in reducing consumer health for people who lack their genetic means is key",
+    "raw_opi": 0.00010302239749033137,
+    "corrected_opi": 4.120895899613255e-05,
+    "length": 57,
+    "num_sentences": 1,
+    "has_duplication": false
+  },
+  {
+    "id": "040",
+    "prompt": "Give the final answer only: 12 * 12.",
+    "text": "4a-1 2а0-4-6 8p/2 1d-2-5 = 48 1a81 2* 6 4b-41 (2b6+13) 1i22 * 1410= 1q+1/2-4 9p-6d 2k+-28t(v2og+131",
+    "raw_opi": 9.612611746611602e-05,
+    "corrected_opi": 3.845044698644641e-05,
+    "length": 17,
+    "num_sentences": 1,
+    "has_duplication": false
+  },
+  {
+    "id": "022",
+    "prompt": "Return only the number: 7*8.",
+    "text": "6 is true the remainder comes with 3 people *7 the majority were the lowest and 8 have one thing at mind is 7 The reason 3 things get one second for 4 girls with 6 different gender identity in school gives three other guys 8 more. = 13-14 noone really seems hung around while sleeping to the two",
+    "raw_opi": 3.8835956917978426e-05,
+    "corrected_opi": 3.106876553438274e-05,
+    "length": 59,
+    "num_sentences": 2,
+    "has_duplication": false
+  },
+  {
+    "id": "054",
+    "prompt": "Give a short definition of entropy.",
+    "text": "Arguson = Pneumann. Hlamer: Infergument de factogen = F2 and Hel. * C8 | E= 10 = 12 S[r/\".xyter-b-1].(e+1spx-x1s/j2) or",
+    "raw_opi": 3.415300546448074e-05,
+    "corrected_opi": 2.732240437158459e-05,
+    "length": 20,
+    "num_sentences": 5,
+    "has_duplication": false
+  },
+  {
+    "id": "002",
+    "prompt": "Is water wet?",
+    "text": "waters around mid joges occur after high summers for temperatures lasting about 95Cs Fahrde, low at between 2000Bn to between 60,700-360c Fahrge Celsius Celsius and 72 a month Fahrre (1977-01 - 171 Celsius C), average Fahrke Fahrgel to less temperature",
+    "raw_opi": 0.0,
+    "corrected_opi": 0.0,
+    "length": 40,
+    "num_sentences": 1,
+    "has_duplication": false
+  },
+  {
+    "id": "021",
+    "prompt": "Give a short answer: 100/4.",
+    "text": "26 centum 100% per head is sufficient since 27% by 2004 with 357% increase each side for 2007-10 is due due 2 percentage drop over last year in 98 cases, at 50%, 10",
+    "raw_opi": 0.0,
+    "corrected_opi": 0.0,
+    "length": 33,
+    "num_sentences": 1,
+    "has_duplication": false
+  },
+  {
+    "id": "039",
+    "prompt": "Give the final answer only: 12 * 12.",
+    "text": "35/31 in terms deposition or change into la doma is just denommmeración la pervaspàa de datile que apareco nuorista un corrosotro cueste por un montiano cueste nuoli se pare de le concerios para con la temperatura estill",
+    "raw_opi": 0.0,
+    "corrected_opi": 0.0,
+    "length": 37,
+    "num_sentences": 1,
+    "has_duplication": false
+  },
+  {
+    "id": "048",
+    "prompt": "Explain why the sky is blue.",
+    "text": "During some dayfall no snow causes if seen or feel cold the clouds flow toward earth for as few seconds each time reflected & cloud like blue; the temperature of sunlight causes precipits but cannot take water",
+    "raw_opi": 0.0,
+    "corrected_opi": 0.0,
+    "length": 37,
+    "num_sentences": 1,
+    "has_duplication": false
+  },
+  {
+    "id": "052",
+    "prompt": "Give the final answer only: 12 * 12.",
+    "text": "9 in an eight to do 3 = 14 4 on 20 lard",
+    "raw_opi": 0.0,
+    "corrected_opi": 0.0,
+    "length": 13,
+    "num_sentences": 1,
+    "has_duplication": false
+  }
+]

@@ -1,12 +1,13 @@
 # ============================================================
-# OMNIA — V12 TRIAGE DEMO (REAL USE-CASE)
+# OMNIA — V12 TRIAGE DEMO
 # ============================================================
 #
-# Goal:
-# Show practical value of OMNIA as a triage layer.
+# Purpose:
+# Demonstrate practical use of corrected ObserverPerturbation
+# as a triage / prioritization layer.
 #
-# Instead of detecting all errors, OMNIA ranks outputs
-# so that reviewing top-k finds more inconsistencies.
+# OMNIA does not decide correctness.
+# OMNIA ranks structurally suspicious outputs for review.
 #
 # ============================================================
 
@@ -21,15 +22,15 @@ from omnia.lenses.observer_perturbation import (
     o_reformat_bullets,
 )
 
+
 # ============================================================
-# DATASET (30 LLM-like outputs)
-# label = 1 → problematic (contradiction / drift / inconsistency)
-# label = 0 → stable
+# DATASET
+# label = 0 -> stable
+# label = 1 -> problematic / inconsistent
 # ============================================================
 
 def build_dataset():
     return [
-
         # --- STABLE ---
         {"label": 0, "text": "The result is 42."},
         {"label": 0, "text": "Paris is the capital of France."},
@@ -47,7 +48,7 @@ def build_dataset():
         {"label": 0, "text": "The function runs in linear time."},
         {"label": 0, "text": "Earth orbits the Sun."},
 
-        # --- PROBLEMATIC ---
+        # --- PROBLEMATIC / INCONSISTENT ---
         {"label": 1, "text": "The result is 42. The result is 41."},
         {"label": 1, "text": "Paris is the capital of France. The capital is Lyon."},
         {"label": 1, "text": "2 + 2 equals 4. 2 + 2 equals 5."},
@@ -65,6 +66,7 @@ def build_dataset():
         {"label": 1, "text": "Earth orbits the Sun. The Sun orbits the Earth."},
     ]
 
+
 # ============================================================
 # OBSERVERS
 # ============================================================
@@ -77,8 +79,9 @@ def get_observers():
         o_reformat_bullets(),
     ]
 
+
 # ============================================================
-# FEATURES + CORRECTION
+# FEATURES / CORRECTION
 # ============================================================
 
 def extract_features(text):
@@ -91,11 +94,21 @@ def extract_features(text):
         "has_duplication": len(set(sentences)) < len(sentences),
     }
 
-def corrected_opi(opi, f):
-    length_factor = min(1.0, f["length"] / 8.0)
-    structure_factor = min(1.0, f["num_sentences"] / 2.0)
-    duplication_factor = 1.2 if f["has_duplication"] else 0.8
+
+def corrected_opi(opi, features):
+    """
+    Corrected Observer Perturbation score.
+
+    Raw OPI is sensitive to short / rigid structures.
+    The correction reduces that false-positive mode.
+    """
+
+    length_factor = min(1.0, features["length"] / 8.0)
+    structure_factor = min(1.0, features["num_sentences"] / 2.0)
+    duplication_factor = 1.2 if features["has_duplication"] else 0.8
+
     return opi * length_factor * structure_factor * duplication_factor
+
 
 # ============================================================
 # RUN
@@ -110,24 +123,27 @@ def run():
     for item in build_dataset():
         text = item["text"]
 
-        opi_vals = []
-        for obs in observers:
-            out = lens.measure(x=text, observer=obs)
-            d = asdict(out) if is_dataclass(out) else vars(out)
-            opi_vals.append(d["opi"])
+        opi_values = []
 
-        raw = sum(opi_vals) / len(opi_vals)
-        f = extract_features(text)
-        corr = corrected_opi(raw, f)
+        for observer in observers:
+            out = lens.measure(x=text, observer=observer)
+            d = asdict(out) if is_dataclass(out) else vars(out)
+            opi_values.append(d["opi"])
+
+        raw_opi = sum(opi_values) / len(opi_values)
+        features = extract_features(text)
+        corr_opi = corrected_opi(raw_opi, features)
 
         rows.append({
             "label": item["label"],
             "text": text,
-            "raw_opi": raw,
-            "corrected_opi": corr,
+            "raw_opi": raw_opi,
+            "corrected_opi": corr_opi,
+            **features,
         })
 
     return rows
+
 
 # ============================================================
 # TRIAGE METRIC
@@ -145,6 +161,22 @@ def triage_score(ranked, k):
         "precision": found / k,
     }
 
+
+# ============================================================
+# SAVE
+# ============================================================
+
+def save(raw_ranked, corrected_ranked, summary):
+    with open("results/observer_perturbation_v12_summary.json", "w", encoding="utf-8") as f:
+        json.dump(summary, f, indent=2, ensure_ascii=False)
+
+    with open("results/observer_perturbation_v12_raw_ranked.json", "w", encoding="utf-8") as f:
+        json.dump(raw_ranked, f, indent=2, ensure_ascii=False)
+
+    with open("results/observer_perturbation_v12_corrected_ranked.json", "w", encoding="utf-8") as f:
+        json.dump(corrected_ranked, f, indent=2, ensure_ascii=False)
+
+
 # ============================================================
 # MAIN
 # ============================================================
@@ -155,27 +187,37 @@ def main():
     rows = run()
 
     raw_ranked = sorted(rows, key=lambda x: x["raw_opi"], reverse=True)
-    corr_ranked = sorted(rows, key=lambda x: x["corrected_opi"], reverse=True)
+    corrected_ranked = sorted(rows, key=lambda x: x["corrected_opi"], reverse=True)
 
-    print("RAW TRIAGE:")
-    for k in [5, 10]:
-        print(f"top{k}:", triage_score(raw_ranked, k))
+    summary = {
+        "raw_top5": triage_score(raw_ranked, 5),
+        "raw_top10": triage_score(raw_ranked, 10),
+        "corrected_top5": triage_score(corrected_ranked, 5),
+        "corrected_top10": triage_score(corrected_ranked, 10),
+    }
 
-    print("\nCORRECTED TRIAGE:")
-    for k in [5, 10]:
-        print(f"top{k}:", triage_score(corr_ranked, k))
+    print(json.dumps(summary, indent=2))
 
-    print("\nTOP 5 CORRECTED:")
-    for r in corr_ranked[:5]:
-        print(f"{r['corrected_opi']:.6f} | label={r['label']} | {r['text']}")
+    print("\n=== TOP 10 RAW ===")
+    for r in raw_ranked[:10]:
+        print(f"{r['raw_opi']:.6f} | label={r['label']} | {r['text']}")
 
-    with open("results_observer_perturbation_v12_summary.json", "w") as f:
-        json.dump({
-            "raw_top5": triage_score(raw_ranked, 5),
-            "raw_top10": triage_score(raw_ranked, 10),
-            "corrected_top5": triage_score(corr_ranked, 5),
-            "corrected_top10": triage_score(corr_ranked, 10),
-        }, f, indent=2)
+    print("\n=== TOP 10 CORRECTED ===")
+    for r in corrected_ranked[:10]:
+        print(
+            f"{r['corrected_opi']:.6f} | raw={r['raw_opi']:.6f} | "
+            f"label={r['label']} | len={r['length']} | "
+            f"sent={r['num_sentences']} | dup={r['has_duplication']} | "
+            f"{r['text']}"
+        )
+
+    save(raw_ranked, corrected_ranked, summary)
+
+    print("\nSaved:")
+    print("- results/observer_perturbation_v12_summary.json")
+    print("- results/observer_perturbation_v12_raw_ranked.json")
+    print("- results/observer_perturbation_v12_corrected_ranked.json")
+
 
 if __name__ == "__main__":
     main()

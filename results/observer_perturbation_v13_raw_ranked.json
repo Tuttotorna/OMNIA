@@ -1,0 +1,14 @@
+[
+  {"id":"s_25","text":"2 + 2 equals 4.","raw_opi":0.03769,"corrected_opi":0.009422,"length":5,"num_sentences":1,"has_duplication":false},
+  {"id":"s_26","text":"2 + 2 equals 4.","raw_opi":0.03769,"corrected_opi":0.009422,"length":5,"num_sentences":1,"has_duplication":false},
+  {"id":"s_27","text":"2 + 2 equals 4.","raw_opi":0.03769,"corrected_opi":0.009422,"length":5,"num_sentences":1,"has_duplication":false},
+  {"id":"s_28","text":"2 + 2 equals 4.","raw_opi":0.03769,"corrected_opi":0.009422,"length":5,"num_sentences":1,"has_duplication":false},
+  {"id":"s_29","text":"2 + 2 equals 4.","raw_opi":0.03769,"corrected_opi":0.009422,"length":5,"num_sentences":1,"has_duplication":false},
+
+  {"id":"p_12","text":"The result is 64. The result is 42.","raw_opi":0.027256,"corrected_opi":0.021805,"length":8,"num_sentences":2,"has_duplication":false},
+  {"id":"p_13","text":"Final answer: 31. Final answer: 17.","raw_opi":0.020499,"corrected_opi":0.012299,"length":6,"num_sentences":2,"has_duplication":false},
+  {"id":"p_4","text":"Water freezes at 0°C. It freezes at 10°C.","raw_opi":0.021966,"corrected_opi":0.017573,"length":8,"num_sentences":2,"has_duplication":false},
+
+  {"id":"s_0","text":"The result is 42.","raw_opi":0.025538,"corrected_opi":0.005108,"length":4,"num_sentences":1,"has_duplication":false},
+  {"id":"s_1","text":"Final answer: 17.","raw_opi":0.025538,"corrected_opi":0.003831,"length":3,"num_sentences":1,"has_duplication":false}
+]

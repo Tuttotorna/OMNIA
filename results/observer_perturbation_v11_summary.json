@@ -1,0 +1,36 @@
+{
+  "raw": {
+    "top3": {
+      "tp": 2,
+      "precision": 0.6666666666666666,
+      "recall": 0.2
+    },
+    "top5": {
+      "tp": 2,
+      "precision": 0.4,
+      "recall": 0.2
+    },
+    "top10": {
+      "tp": 5,
+      "precision": 0.5,
+      "recall": 0.5
+    }
+  },
+  "corrected": {
+    "top3": {
+      "tp": 3,
+      "precision": 1.0,
+      "recall": 0.3
+    },
+    "top5": {
+      "tp": 4,
+      "precision": 0.8,
+      "recall": 0.4
+    },
+    "top10": {
+      "tp": 6,
+      "precision": 0.6,
+      "recall": 0.6
+    }
+  }
+}

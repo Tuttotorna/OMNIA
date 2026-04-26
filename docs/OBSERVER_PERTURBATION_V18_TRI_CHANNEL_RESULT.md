@@ -1,11 +1,3 @@
-Terzo file.
-
-Nome file:
-
-docs/OBSERVER_PERTURBATION_V18_TRI_CHANNEL_RESULT.md
-
-Contenuto completo:
-
 # OMNIA — V18 Tri-Channel Structural Triage
 
 ## Purpose

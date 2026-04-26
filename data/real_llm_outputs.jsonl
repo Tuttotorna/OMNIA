@@ -1,0 +1,10 @@
+{"id":"001","text":"The answer is 42."}
+{"id":"002","text":"The result is 42. The result is 41."}
+{"id":"003","text":"Paris is the capital of France."}
+{"id":"004","text":"Paris is the capital of France. The capital is Lyon."}
+{"id":"005","text":"2 + 2 equals 4."}
+{"id":"006","text":"2 + 2 equals 4. 2 + 2 equals 5."}
+{"id":"007","text":"The output is valid JSON."}
+{"id":"008","text":"The output is valid JSON. The output is not valid JSON."}
+{"id":"009","text":"The function returns a sorted list."}
+{"id":"010","text":"The function returns a sorted list. It returns unsorted data."}

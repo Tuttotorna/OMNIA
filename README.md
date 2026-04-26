@@ -15,11 +15,11 @@ It does not judge meaning.
 It does not replace reasoning.  
 It does not declare truth.
 
-OMNIA measures whether an output is structurally admissible under controlled conditions.
+OMNIA measures whether an output remains structurally admissible under controlled transformations, constraints, or observer perturbations.
 
 In one sentence:
 
-> OMNIA measures whether an output still holds together when its form, constraints, or nearby representation changes.
+> OMNIA measures how much structure survives when form, constraints, or nearby representation changes.
 
 ---
 
@@ -29,10 +29,24 @@ In one sentence:
 structural validity != semantic correctness
 
 OMNIA measures structural validity.
-
 It does not measure semantic truth.
 
 This boundary is intentional.
+
+OMNIA is not a truth oracle.
+OMNIA is not a semantic evaluator.
+OMNIA is not a final decision system.
+
+
+---
+
+Non-Negotiable Rule
+
+measurement != inference != decision
+
+OMNIA stays inside the measurement layer.
+
+That is what keeps it clean.
 
 
 ---
@@ -55,6 +69,8 @@ structurally hollow responses
 
 mismatch between requested output contract and produced output
 
+instability under observer perturbation
+
 
 Examples:
 
@@ -68,7 +84,7 @@ long explanation -> invalid if scalar answer required
 
 What OMNIA does not detect
 
-OMNIA does not detect pure semantic errors when the answer is well-formed.
+OMNIA does not detect pure semantic errors when the answer is structurally well-formed.
 
 Examples:
 
@@ -91,13 +107,43 @@ It is the boundary of the system.
 
 Correct System Role
 
-OMNIA is not a final judge.
-
 The correct pipeline is:
 
 LLM -> OMNIA -> Semantic Evaluator -> Decision
 
-OMNIA removes structurally invalid outputs before semantic evaluation or operational decision.
+OMNIA removes structurally invalid, unstable, incomplete, or malformed outputs before semantic evaluation or operational decision.
+
+
+---
+
+Minimal External Signal
+
+OMNIA now includes a minimal reproducible signal test for observer-induced structural instability.
+
+See:
+
+docs/OBSERVER_PERTURBATION_RESULT.md
+
+Runner:
+
+examples/observer_perturbation_signal_test.py
+
+Result summary:
+
+Stable avg OPI:    ~0.0016
+Unstable avg OPI:  ~0.0062
+
+Stable avg ratio:    ~0.089
+Unstable avg ratio:  ~0.284
+
+Interpretation:
+
+> Internally unstable outputs change more under observer perturbation than stable outputs.
+
+
+
+This is not a universal proof.
+It is a minimal reproducible signal showing that a real OMNIA lens can separate stable from unstable structures.
 
 
 ---
@@ -176,7 +222,7 @@ This closed the observed V8 failure modes.
 
 External Attack Slice
 
-A separate synthetic attack set was used to test whether V9 generalized beyond the previous dataset.
+A separate synthetic attack set tested whether V9 generalized beyond the previous dataset.
 
 Result:
 
@@ -211,11 +257,12 @@ Read:
 
 docs/OMNIA_SCOPE_BOUNDARY_V1.md
 
-
 Core conclusion:
 
-OMNIA is not a universal error detector.
+> OMNIA is not a universal error detector.
 OMNIA is a structural filter layer.
+
+
 
 
 ---
@@ -237,6 +284,8 @@ post-hoc output review
 pre-deployment structural gates
 
 detection of hollow or malformed responses
+
+observer-perturbation analysis
 
 
 OMNIA is especially relevant where an answer may look acceptable but fail structurally.
@@ -269,19 +318,12 @@ Canonical Outputs
 OMNIA produces bounded structural diagnostics such as:
 
 omega_score
-
 sei_score
-
 iri_score
-
 drift_score
-
 limit_triggered
-
 gate_status
-
 reason_code
-
 
 Typical gate values:
 
@@ -311,18 +353,9 @@ Minimal Example Output
 
 Interpretation:
 
-The output is readable, but structurally weak enough to justify review.
+> The output is readable, but structurally weak enough to justify review.
 
 
----
-
-Non-Negotiable Rule
-
-measurement != inference != decision
-
-OMNIA stays inside the measurement layer.
-
-That is what keeps it clean.
 
 
 ---
@@ -341,19 +374,13 @@ tests/      -> core behavior tests
 Key Documents
 
 docs/OMNIA_SCOPE_BOUNDARY_V1.md
-
+docs/OBSERVER_PERTURBATION_RESULT.md
 docs/REAL_VALIDATION_V9_STRUCTURAL_COMPLETENESS.md
-
 docs/REAL_VALIDATION_V9_EXTERNAL_ATTACK.md
-
 docs/REAL_VALIDATION_V9_GSM8K_SLICE.md
-
 docs/REAL_VALIDATION_V9_GSM8K_REAL.md
-
 docs/OMNIA_V8_FAILURE_ANALYSIS.md
-
 docs/FOCUSED_PROOF.md
-
 
 
 ---
@@ -374,6 +401,26 @@ python examples/quick_omnia_test.py
 Expected ending:
 
 OK: OMNIA core executed
+
+
+---
+
+Observer Perturbation Signal Test
+
+Run:
+
+python examples/observer_perturbation_signal_test.py
+
+Expected direction:
+
+unstable avg OPI > stable avg OPI
+unstable avg ratio > stable avg ratio
+
+This test uses the real OMNIA ObserverPerturbation lens.
+
+It does not use an external model.
+It does not use semantic labels during measurement.
+It measures structural change under observer transformations.
 
 
 ---
@@ -417,7 +464,7 @@ Current Public Claim
 
 The correct public claim is narrow:
 
-> OMNIA is a bounded structural measurement core. It detects structural invalidity, incompleteness, drift, and malformed outputs. It does not detect semantic truth. Current results show strong behavior on controlled structural validation tasks, while pure semantic QA remains outside its standalone scope.
+> OMNIA is a bounded structural measurement core. It detects structural invalidity, incompleteness, drift, malformed outputs, and observer-perturbation instability. It does not detect semantic truth. Current results show strong behavior on controlled structural validation tasks, while pure semantic QA remains outside its standalone scope.
 
 
 
@@ -426,7 +473,7 @@ The correct public claim is narrow:
 
 One-Line Definition
 
-OMNIA measures how much structure survives when form is changed or constrained.
+OMNIA measures how much structure survives when form, constraints, or observer framing changes.
 
 
 ---

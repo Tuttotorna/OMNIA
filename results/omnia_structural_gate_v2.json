@@ -1,0 +1,737 @@
+{
+  "summary": {
+    "total": 60,
+    "counts": {
+      "PASS": 25,
+      "REVIEW": 26,
+      "REJECT": 9
+    },
+    "ratios": {
+      "PASS": 0.4166666666666667,
+      "REVIEW": 0.43333333333333335,
+      "REJECT": 0.15
+    }
+  },
+  "rows": [
+    {
+      "id": "0000",
+      "prompt": "What is 2 + 2?",
+      "text": "can range 30 grams depending wholly. 8 square cookies on sugar are great",
+      "gate": "PASS",
+      "features": {
+        "length": 13,
+        "digit_density": 0.041666666666666664,
+        "symbol_density": 0.013888888888888888,
+        "malformed": 1
+      }
+    },
+    {
+      "id": "0001",
+      "prompt": "What is 2 + 2?",
+      "text": "weights 1 1lbs = 2 for person ratio; in",
+      "gate": "PASS",
+      "features": {
+        "length": 9,
+        "digit_density": 0.07692307692307693,
+        "symbol_density": 0.05128205128205128,
+        "malformed": 2
+      }
+    },
+    {
+      "id": "0002",
+      "prompt": "What is 2 + 2?",
+      "text": "11s and 29 hours on Wednesday 13/11/207s 13/04 at 11:00 Eastern Time St Andrew Woodsley Home On 61/234 BY 307 By 237-45-342-4933 Sick eyes/yokennarda: 25 + 32 4 4",
+      "gate": "REVIEW",
+      "features": {
+        "length": 29,
+        "digit_density": 0.2777777777777778,
+        "symbol_density": 0.06790123456790123,
+        "malformed": 7
+      }
+    },
+    {
+      "id": "0003",
+      "prompt": "What is 2 + 2?",
+      "text": "two zero",
+      "gate": "REJECT",
+      "features": {
+        "length": 2,
+        "digit_density": 0.0,
+        "symbol_density": 0.0,
+        "malformed": 0
+      }
+    },
+    {
+      "id": "0004",
+      "prompt": "What is 2 + 2?",
+      "text": "2x",
+      "gate": "REJECT",
+      "features": {
+        "length": 1,
+        "digit_density": 0.5,
+        "symbol_density": 0.0,
+        "malformed": 0
+      }
+    },
+    {
+      "id": "0005",
+      "prompt": "Solve: 27 * 14.",
+      "text": "2-7 with one last runouts he should stop working quickly. We asked 3 tests I did this... it won in... We both left, after some rough talking after me left!! lol He says that that she did ill so all of them do just that no! This person and all I heard just",
+      "gate": "REVIEW",
+      "features": {
+        "length": 53,
+        "digit_density": 0.011764705882352941,
+        "symbol_density": 0.047058823529411764,
+        "malformed": 7
+      }
+    },
+    {
+      "id": "0006",
+      "prompt": "Solve: 27 * 14.",
+      "text": "12+4-17/4=21-0114&flightDaywatchealy&candality.ce ---l=1?0!5|3 else'=\"5\",20 for an 8oin' list=\"Fife_Not\".357,043 http.",
+      "gate": "REVIEW",
+      "features": {
+        "length": 8,
+        "digit_density": 0.22033898305084745,
+        "symbol_density": 0.23728813559322035,
+        "malformed": 6
+      }
+    },
+    {
+      "id": "0007",
+      "prompt": "Solve: 27 * 14.",
+      "text": "226291545912954596993711929611903611129441 003015344148452874295246990 00",
+      "gate": "PASS",
+      "features": {
+        "length": 3,
+        "digit_density": 0.9726027397260274,
+        "symbol_density": 0.0,
+        "malformed": 0
+      }
+    },
+    {
+      "id": "0008",
+      "prompt": "Solve: 27 * 14.",
+      "text": "305-815",
+      "gate": "REJECT",
+      "features": {
+        "length": 1,
+        "digit_density": 0.8571428571428571,
+        "symbol_density": 0.14285714285714285,
+        "malformed": 1
+      }
+    },
+    {
+      "id": "0009",
+      "prompt": "Solve: 27 * 14.",
+      "text": "19-6 to give way 7A-2B m2D to go the third course the eighth course I saw no result until this year the first 2 times there at The South High (ihr in) at 2/3 of (fifty years early it looks great sc), 3-5 at Sanger",
+      "gate": "REVIEW",
+      "features": {
+        "length": 45,
+        "digit_density": 0.051643192488262914,
+        "symbol_density": 0.04225352112676056,
+        "malformed": 8
+      }
+    },
+    {
+      "id": "0010",
+      "prompt": "Explain why the sky is blue.",
+      "text": "The sunlight falls into some window to create ray waves for all visible lighting objects between these blue frames at Earth and into distant location between all seven to one person whose bodies look completely frozen away or overthrown into sunlight upon receiving another film is called for as an air in absorbing space away at distance it receive shelter",
+      "gate": "PASS",
+      "features": {
+        "length": 60,
+        "digit_density": 0.0,
+        "symbol_density": 0.0,
+        "malformed": 0
+      }
+    },
+    {
+      "id": "0011",
+      "prompt": "Explain why the sky is blue.",
+      "text": "White leaves appear bright once that afternoon light makes fall! These blue signs of an offy-type are an expression about bright orange on sunny days here of New Years evening or during summertime outside Christmas days as seen by those visiting early December and later Sunday'et sun for all in his room...even colder",
+      "gate": "REVIEW",
+      "features": {
+        "length": 53,
+        "digit_density": 0.0,
+        "symbol_density": 0.018867924528301886,
+        "malformed": 4
+      }
+    },
+    {
+      "id": "0012",
+      "prompt": "Explain why the sky is blue.",
+      "text": "you' need sunshine to live for most the first . to help light this weather and survive when night sky brings clouds throughout their entirety that night because its all weather cloud has rounded away so fast which provides beautiful scenery in full.. it comes all the second day they fall before snow slumbling on its",
+      "gate": "PASS",
+      "features": {
+        "length": 56,
+        "digit_density": 0.0,
+        "symbol_density": 0.012618296529968454,
+        "malformed": 3
+      }
+    },
+    {
+      "id": "0013",
+      "prompt": "Explain why the sky is blue.",
+      "text": "an artificial glow does make one look artificial or something",
+      "gate": "PASS",
+      "features": {
+        "length": 10,
+        "digit_density": 0.0,
+        "symbol_density": 0.0,
+        "malformed": 0
+      }
+    },
+    {
+      "id": "0014",
+      "prompt": "Explain why the sky is blue.",
+      "text": "blue makes most likely redness like rainbow to go everywhere; its most common colour blue when darker black does it out of frame again without",
+      "gate": "PASS",
+      "features": {
+        "length": 25,
+        "digit_density": 0.0,
+        "symbol_density": 0.007042253521126761,
+        "malformed": 1
+      }
+    },
+    {
+      "id": "0015",
+      "prompt": "Give a short answer: 100/4.",
+      "text": "251 minutes 40s in. 90",
+      "gate": "REVIEW",
+      "features": {
+        "length": 5,
+        "digit_density": 0.3181818181818182,
+        "symbol_density": 0.045454545454545456,
+        "malformed": 1
+      }
+    },
+    {
+      "id": "0016",
+      "prompt": "Give a short answer: 100/4.",
+      "text": "13-5 for six consecutive seasons: 10-0-6 at 5-13 1-13 1-2 9/5 5-6 2-4 * 33 1-10 12 1-7-8-9 10/42 7.14 of 15/7 18 9/6 3 of 5/6 6-6 9.11 8.",
+      "gate": "REVIEW",
+      "features": {
+        "length": 30,
+        "digit_density": 0.40145985401459855,
+        "symbol_density": 0.1678832116788321,
+        "malformed": 20
+      }
+    },
+    {
+      "id": "0017",
+      "prompt": "Give a short answer: 100/4.",
+      "text": "75-75 on 1 dollar bills is $20 worth as big price riseers may gain through savings when bank account surplus decrease happens at bank with inflation increase. Account rates below the 4 inch high bill is up to 32%! *Mon, tax rise goes off 26% while increases fall back 30 percentage rate over last",
+      "gate": "REVIEW",
+      "features": {
+        "length": 54,
+        "digit_density": 0.0472972972972973,
+        "symbol_density": 0.02702702702702703,
+        "malformed": 6
+      }
+    },
+    {
+      "id": "0018",
+      "prompt": "Give a short answer: 100/4.",
+      "text": "364-936159050231",
+      "gate": "REJECT",
+      "features": {
+        "length": 1,
+        "digit_density": 0.9375,
+        "symbol_density": 0.0625,
+        "malformed": 1
+      }
+    },
+    {
+      "id": "0019",
+      "prompt": "Give a short answer: 100/4.",
+      "text": "90/775/668 (option one) -- 18:36 PM-855 (553:49, 667-7680]",
+      "gate": "REVIEW",
+      "features": {
+        "length": 8,
+        "digit_density": 0.46551724137931033,
+        "symbol_density": 0.22413793103448276,
+        "malformed": 8
+      }
+    },
+    {
+      "id": "0020",
+      "prompt": "Write a Python function that reverses a string.",
+      "text": "strreadLpvClgTtNUMlStr1FbkYN NexansprstreamEricForloofDiminWKoWxnofollow()AkfClauseOisReduce",
+      "gate": "REJECT",
+      "features": {
+        "length": 2,
+        "digit_density": 0.010869565217391304,
+        "symbol_density": 0.021739130434782608,
+        "malformed": 1
+      }
+    },
+    {
+      "id": "0021",
+      "prompt": "Write a Python function that reverses a string.",
+      "text": "while() [string for type into vow cells while_transposition=Count” atenses in leonin[ordiny]>Count”] atexactiso() annrre_nudex de-convergénes paroxyis .numsydders",
+      "gate": "REVIEW",
+      "features": {
+        "length": 16,
+        "digit_density": 0.0,
+        "symbol_density": 0.09876543209876543,
+        "malformed": 8
+      }
+    },
+    {
+      "id": "0022",
+      "prompt": "Write a Python function that reverses a string.",
+      "text": "Uf() or VrVert",
+      "gate": "REVIEW",
+      "features": {
+        "length": 3,
+        "digit_density": 0.0,
+        "symbol_density": 0.14285714285714285,
+        "malformed": 1
+      }
+    },
+    {
+      "id": "0023",
+      "prompt": "Write a Python function that reverses a string.",
+      "text": "leyx = adget() while for example sienjo_j5 in reverse type denot=j-enerveenifednoo: diator=-1 continue; diador #i=-1 continue as me:-*cf:d cls",
+      "gate": "REVIEW",
+      "features": {
+        "length": 19,
+        "digit_density": 0.02112676056338028,
+        "symbol_density": 0.11971830985915492,
+        "malformed": 8
+      }
+    },
+    {
+      "id": "0024",
+      "prompt": "Write a Python function that reverses a string.",
+      "text": "T1.sort for co.whdequence to find CO:toc + stride (http-1 outtion= edile_preval-1",
+      "gate": "REVIEW",
+      "features": {
+        "length": 11,
+        "digit_density": 0.037037037037037035,
+        "symbol_density": 0.1111111111111111,
+        "malformed": 7
+      }
+    },
+    {
+      "id": "0025",
+      "prompt": "Return a valid JSON with keys name and age.",
+      "text": "1. You see ? 1. Use, type in EML files",
+      "gate": "REVIEW",
+      "features": {
+        "length": 10,
+        "digit_density": 0.05263157894736842,
+        "symbol_density": 0.10526315789473684,
+        "malformed": 4
+      }
+    },
+    {
+      "id": "0026",
+      "prompt": "Return a valid JSON with keys name and age.",
+      "text": "2 and 2 do 5 have as",
+      "gate": "PASS",
+      "features": {
+        "length": 7,
+        "digit_density": 0.15,
+        "symbol_density": 0.0,
+        "malformed": 0
+      }
+    },
+    {
+      "id": "0027",
+      "prompt": "Return a valid JSON with keys name and age.",
+      "text": "Eachert",
+      "gate": "REJECT",
+      "features": {
+        "length": 1,
+        "digit_density": 0.0,
+        "symbol_density": 0.0,
+        "malformed": 0
+      }
+    },
+    {
+      "id": "0028",
+      "prompt": "Return a valid JSON with keys name and age.",
+      "text": "sanwisenes.v junitorsyday 1s2.00pnceotamitors_or.year5 &quott",
+      "gate": "REVIEW",
+      "features": {
+        "length": 4,
+        "digit_density": 0.08196721311475409,
+        "symbol_density": 0.08196721311475409,
+        "malformed": 3
+      }
+    },
+    {
+      "id": "0029",
+      "prompt": "Return a valid JSON with keys name and age.",
+      "text": "One in 10 had more of this item being lost; all is said right so there're enough bits left next when they see them but none was removed so nothing looks possible nor will let down from our world by it that you do nothing to steal ass happen on both pieces at night before we turn them upside into",
+      "gate": "PASS",
+      "features": {
+        "length": 60,
+        "digit_density": 0.006756756756756757,
+        "symbol_density": 0.006756756756756757,
+        "malformed": 2
+      }
+    },
+    {
+      "id": "0030",
+      "prompt": "What is the capital of France?",
+      "text": "toile",
+      "gate": "REJECT",
+      "features": {
+        "length": 1,
+        "digit_density": 0.0,
+        "symbol_density": 0.0,
+        "malformed": 0
+      }
+    },
+    {
+      "id": "0031",
+      "prompt": "What is the capital of France?",
+      "text": "alcalde portlau province al",
+      "gate": "PASS",
+      "features": {
+        "length": 4,
+        "digit_density": 0.0,
+        "symbol_density": 0.0,
+        "malformed": 0
+      }
+    },
+    {
+      "id": "0032",
+      "prompt": "What is the capital of France?",
+      "text": "surnalinx distant frettely isles of côte",
+      "gate": "PASS",
+      "features": {
+        "length": 6,
+        "digit_density": 0.0,
+        "symbol_density": 0.0,
+        "malformed": 0
+      }
+    },
+    {
+      "id": "0033",
+      "prompt": "What is the capital of France?",
+      "text": "perrierivo diicrochitum nollaria frettagoviva frettare arcánge andrzalaria convendonico citynulus county desde holier city (n c) france [mundan",
+      "gate": "PASS",
+      "features": {
+        "length": 17,
+        "digit_density": 0.0,
+        "symbol_density": 0.02097902097902098,
+        "malformed": 3
+      }
+    },
+    {
+      "id": "0034",
+      "prompt": "What is the capital of France?",
+      "text": "de pequez piqueir. quines des quartier inmes avec",
+      "gate": "PASS",
+      "features": {
+        "length": 8,
+        "digit_density": 0.0,
+        "symbol_density": 0.02040816326530612,
+        "malformed": 1
+      }
+    },
+    {
+      "id": "0035",
+      "prompt": "Define entropy in one sentence.",
+      "text": "the rate the change occurs makes when reflected through that source change itself over different areas, some not enough knowledge was in keeping by all elements to get around change for several reasons and thus can produce and fix that process on another piece oneself tento recurrent rate one and numular",
+      "gate": "PASS",
+      "features": {
+        "length": 51,
+        "digit_density": 0.0,
+        "symbol_density": 0.003278688524590164,
+        "malformed": 1
+      }
+    },
+    {
+      "id": "0036",
+      "prompt": "Define entropy in one sentence.",
+      "text": "The percentage point greater on exponential distribution scales than from its original peak rate increase in its value chain unit would go between 5 by 5 because there are limits set after exponential magnitude as to where the index coordinate states were compute as well until this type occurs from 2001 and 2006 are over 60% (for 2001) although data available",
+      "gate": "PASS",
+      "features": {
+        "length": 61,
+        "digit_density": 0.0443213296398892,
+        "symbol_density": 0.008310249307479225,
+        "malformed": 3
+      }
+    },
+    {
+      "id": "0037",
+      "prompt": "Define entropy in one sentence.",
+      "text": "equilibrium or increase an rate depends off of physical pressure phencumbing over chemical phases using electrical equation lines at higher kinetic velocity that control electrical motion all.",
+      "gate": "PASS",
+      "features": {
+        "length": 27,
+        "digit_density": 0.0,
+        "symbol_density": 0.005208333333333333,
+        "malformed": 1
+      }
+    },
+    {
+      "id": "0038",
+      "prompt": "Define entropy in one sentence.",
+      "text": "T3 is not very flexible since friction does get to open space from two poles so space of infinite rotation does NOT appear parallel between four vertical square systems that get from four-tangled motion which only the left turns one point and third out at least partially it cannot do many times per clock cycle for four circles on",
+      "gate": "PASS",
+      "features": {
+        "length": 59,
+        "digit_density": 0.0030211480362537764,
+        "symbol_density": 0.0030211480362537764,
+        "malformed": 1
+      }
+    },
+    {
+      "id": "0039",
+      "prompt": "Define entropy in one sentence.",
+      "text": "Inditex | Paralysis Of Ebolika Factiken Fact Implication Factive Definition Test In",
+      "gate": "PASS",
+      "features": {
+        "length": 12,
+        "digit_density": 0.0,
+        "symbol_density": 0.012048192771084338,
+        "malformed": 1
+      }
+    },
+    {
+      "id": "0040",
+      "prompt": "Sort this list: [5,2,9,1].",
+      "text": "(1): E). 3(5)iv(1) to I(2)(2) by E (abid 1). 2. D), 1. 6 [3,49.5—2. 5. 1-1 C] for Neptarchic architecture that extend around 10 000 miles long (175,000 +2), including the most visited place along Central-North New",
+      "gate": "REVIEW",
+      "features": {
+        "length": 37,
+        "digit_density": 0.14084507042253522,
+        "symbol_density": 0.1596244131455399,
+        "malformed": 16
+      }
+    },
+    {
+      "id": "0041",
+      "prompt": "Sort this list: [5,2,9,1].",
+      "text": "[65)._[sutonation/tamperia_responsives for my watch&v;d=\"1000.\"101017,bgqm)].nu ...nd:50",
+      "gate": "REVIEW",
+      "features": {
+        "length": 5,
+        "digit_density": 0.1590909090909091,
+        "symbol_density": 0.23863636363636365,
+        "malformed": 3
+      }
+    },
+    {
+      "id": "0042",
+      "prompt": "Sort this list: [5,2,9,1].",
+      "text": "4",
+      "gate": "REJECT",
+      "features": {
+        "length": 1,
+        "digit_density": 1.0,
+        "symbol_density": 0.0,
+        "malformed": 0
+      }
+    },
+    {
+      "id": "0043",
+      "prompt": "Sort this list: [5,2,9,1].",
+      "text": "A general report (of any party, category No 560 of 2001 and 298 filed documents/public affairs statements filed by spouse prior infringement allegations), may relate only from research purposes -- please inform committee secretary prior(substanter'' summary/complication Statement with other data contained and for purposes consistent without our",
+      "gate": "REVIEW",
+      "features": {
+        "length": 47,
+        "digit_density": 0.028901734104046242,
+        "symbol_density": 0.031791907514450865,
+        "malformed": 7
+      }
+    },
+    {
+      "id": "0044",
+      "prompt": "Sort this list: [5,2,9,1].",
+      "text": "(3)]-(2). 343(7)).]]/IV: 76617, 44789 = 1] (2791–231, 17674 and 234), but (141917 or 109811a199)2ev7nh 84790.647[",
+      "gate": "REVIEW",
+      "features": {
+        "length": 15,
+        "digit_density": 0.504424778761062,
+        "symbol_density": 0.23893805309734514,
+        "malformed": 10
+      }
+    },
+    {
+      "id": "0045",
+      "prompt": "What is the largest planet?",
+      "text": "crovaggien galaxy galaxy usylef.gians staring star trek willon orsberga world wide and giants as planet the maid be the tall white rhino which had never survived solar eclipse its very bright f, soyone may become hot when their demise falls on this",
+      "gate": "PASS",
+      "features": {
+        "length": 42,
+        "digit_density": 0.0,
+        "symbol_density": 0.008064516129032258,
+        "malformed": 2
+      }
+    },
+    {
+      "id": "0046",
+      "prompt": "What is the largest planet?",
+      "text": "world stockiest pac arqua disiprolifeswish, wokkein pac amiluriotamu and silkas en alcanjadoreland all",
+      "gate": "PASS",
+      "features": {
+        "length": 13,
+        "digit_density": 0.0,
+        "symbol_density": 0.00980392156862745,
+        "malformed": 1
+      }
+    },
+    {
+      "id": "0047",
+      "prompt": "What is the largest planet?",
+      "text": "earth, noringam islands-oakam rivers",
+      "gate": "REVIEW",
+      "features": {
+        "length": 4,
+        "digit_density": 0.0,
+        "symbol_density": 0.05555555555555555,
+        "malformed": 2
+      }
+    },
+    {
+      "id": "0048",
+      "prompt": "What is the largest planet?",
+      "text": "supercrackus, metrascope or asotype with zero other details listed cannality range in numbers not less accurately found near skylticed starlike place. this would occur under the following chart (czephaly moon). nothing is discovered. nor shall anything take effect over heres",
+      "gate": "REVIEW",
+      "features": {
+        "length": 40,
+        "digit_density": 0.0,
+        "symbol_density": 0.02181818181818182,
+        "malformed": 5
+      }
+    },
+    {
+      "id": "0049",
+      "prompt": "What is the largest planet?",
+      "text": "the celeb helin in anscorrupt or beurusidenhtus noturn or alge",
+      "gate": "PASS",
+      "features": {
+        "length": 10,
+        "digit_density": 0.0,
+        "symbol_density": 0.0,
+        "malformed": 0
+      }
+    },
+    {
+      "id": "0050",
+      "prompt": "Explain photosynthesis in two sentences.",
+      "text": "Plant organism can detect various genetic amplification results such such",
+      "gate": "PASS",
+      "features": {
+        "length": 10,
+        "digit_density": 0.0,
+        "symbol_density": 0.0,
+        "malformed": 0
+      }
+    },
+    {
+      "id": "0051",
+      "prompt": "Explain photosynthesis in two sentences.",
+      "text": "Plant cell reactions occur according as numbers with which proteins were produced on the first starchy surface to promote and form proletates photosynthesis into RNA. Plant and non-nzygwinist viruses respond in slow light patterns at all for energy or waste. There need the protein sequence known but cannot reach DNA but",
+      "gate": "PASS",
+      "features": {
+        "length": 51,
+        "digit_density": 0.0,
+        "symbol_density": 0.009345794392523364,
+        "malformed": 3
+      }
+    },
+    {
+      "id": "0052",
+      "prompt": "Explain photosynthesis in two sentences.",
+      "text": "Plant plants cause metabolic deficit cells cells of small cell in vitriels are prostatic microtradielles producing the nutrients of their living environment where genes were first used against bacteria (RNA in the fruit in both organism)..plant mammals like cats should only voluntarily carry vitamins sothat are tonged above tissues can",
+      "gate": "PASS",
+      "features": {
+        "length": 50,
+        "digit_density": 0.0,
+        "symbol_density": 0.011869436201780416,
+        "malformed": 2
+      }
+    },
+    {
+      "id": "0053",
+      "prompt": "Explain photosynthesis in two sentences.",
+      "text": "They assemble oxygen trapping inuit systems while respirated, keeping Earth. As carbons and sugar, organic gases have been exposed to climate, climate food has shown strong energy for growth process including light carbonate fuel consumption from heat exhaust fumel. The final explanation here indicates how this was produced by heating",
+      "gate": "REVIEW",
+      "features": {
+        "length": 50,
+        "digit_density": 0.0,
+        "symbol_density": 0.01488095238095238,
+        "malformed": 5
+      }
+    },
+    {
+      "id": "0054",
+      "prompt": "Explain photosynthesis in two sentences.",
+      "text": "Semen layers become saturated without the aid molecules, while tissue masses break them on each wall and fuse down completely during energy changes",
+      "gate": "PASS",
+      "features": {
+        "length": 23,
+        "digit_density": 0.0,
+        "symbol_density": 0.006802721088435374,
+        "malformed": 1
+      }
+    },
+    {
+      "id": "0055",
+      "prompt": "Write a one-line answer: 9*9.",
+      "text": "3 | 27- 05 September | 03/04, 1:30 -4 3-8 Nov 2008 4 11-22 | 17-10 15 Nov 2012. 9-4:05 PM 3 3r",
+      "gate": "REVIEW",
+      "features": {
+        "length": 23,
+        "digit_density": 0.425531914893617,
+        "symbol_density": 0.14893617021276595,
+        "malformed": 12
+      }
+    },
+    {
+      "id": "0056",
+      "prompt": "Write a one-line answer: 9*9.",
+      "text": "13 -2",
+      "gate": "REJECT",
+      "features": {
+        "length": 2,
+        "digit_density": 0.6,
+        "symbol_density": 0.2,
+        "malformed": 1
+      }
+    },
+    {
+      "id": "0057",
+      "prompt": "Write a one-line answer: 9*9.",
+      "text": "#21:13-3!- #33edejk4Kcfz/Jwemy/BevPleanz/IvanWimfred and other questions at 4 (e.r)A.jC #16? (Ngac/hcwd,",
+      "gate": "REVIEW",
+      "features": {
+        "length": 10,
+        "digit_density": 0.10576923076923077,
+        "symbol_density": 0.17307692307692307,
+        "malformed": 5
+      }
+    },
+    {
+      "id": "0058",
+      "prompt": "Write a one-line answer: 9*9.",
+      "text": "1/2 inch in between coat marks, 3 square panin strand batting style pants...tyram #101217, if nothing! it 'starz of love-gandine will give one to win' or just play their final battle like...goal from...they'really",
+      "gate": "REVIEW",
+      "features": {
+        "length": 33,
+        "digit_density": 0.04225352112676056,
+        "symbol_density": 0.08450704225352113,
+        "malformed": 10
+      }
+    },
+    {
+      "id": "0059",
+      "prompt": "Write a one-line answer: 9*9.",
+      "text": "3-11.08 in 2.69.83 4/7 9.7 16 7/16 16.43 9.3 22 414-35 89 7/11 25 3/7 29 4 5/1 12.45 5/19 15 1/4 8.10 24 23 5/1 23/4 9/4 27 17 3/4 34 1/4 9.0 17 4-0.5 14 5/1",
+      "gate": "REVIEW",
+      "features": {
+        "length": 38,
+        "digit_density": 0.5859872611464968,
+        "symbol_density": 0.16560509554140126,
+        "malformed": 23
+      }
+    }
+  ]
+}

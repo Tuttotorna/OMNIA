@@ -1,6 +1,15 @@
 # ============================================================
 # OMNIA — TRI-CHANNEL DATASET EVALUATION V1
 # ============================================================
+#
+# Purpose:
+# Evaluate tri-channel structural classification on dataset V1
+#
+# NOTE:
+# - "good" is NOT a semantic correctness label
+# - accuracy is computed excluding "good"
+#
+# ============================================================
 
 import json
 from pathlib import Path
@@ -15,6 +24,8 @@ from omnia.lenses.observer_perturbation import (
 )
 
 INPUT_PATH = Path("data/structural_dataset_v1.jsonl")
+RESULT_PATH = Path("results/tri_channel_dataset_v1_summary.json")
+
 
 def observers():
     return [
@@ -24,24 +35,15 @@ def observers():
         o_reformat_bullets(),
     ]
 
+
 def features(text):
     tokens = text.split()
-    digit = sum(c.isdigit() for c in text)
-    symbol = sum((not c.isalnum()) and (not c.isspace()) for c in text)
-
-    malformed = 0
-    for t in tokens:
-        if any(c.isdigit() for c in t) and any(c.isalpha() for c in t):
-            malformed += 1
-
     return {
-        "length": len(tokens),
-        "digit_density": digit / max(1, len(text)),
-        "symbol_density": symbol / max(1, len(text)),
-        "malformed": malformed
+        "length": len(tokens)
     }
 
-def classify_channel(raw, f):
+
+def classify_channel(f):
     if f["length"] <= 2:
         return "atomic"
     elif f["length"] <= 8:
@@ -49,8 +51,10 @@ def classify_channel(raw, f):
     else:
         return "long"
 
+
 def run():
     lens = ObserverPerturbation()
+    obs = observers()
     rows = []
 
     with open(INPUT_PATH, "r", encoding="utf-8") as f:
@@ -58,36 +62,36 @@ def run():
             item = json.loads(line)
 
             opis = []
-            for o in observers():
+            for o in obs:
                 out = lens.measure(x=item["text"], observer=o)
                 d = asdict(out) if is_dataclass(out) else vars(out)
                 opis.append(d["opi"])
 
             raw = sum(opis) / len(opis)
             fts = features(item["text"])
-            pred = classify_channel(raw, fts)
+            pred = classify_channel(fts)
 
             rows.append({
+                "id": item["id"],
                 "label": item["label"],
                 "pred": pred,
-                "raw": raw,
+                "raw_opi": raw,
+                "text": item["text"],
                 **fts
             })
 
     return rows
 
+
 def evaluate(rows):
     labels = ["atomic", "short", "long", "good"]
-    matrix = {l: {p: 0 for p in ["atomic", "short", "long"]} for l in labels}
+    preds = ["atomic", "short", "long"]
+
+    matrix = {l: {p: 0 for p in preds} for l in labels}
 
     for r in rows:
         matrix[r["label"]][r["pred"]] += 1
 
-    print("\n=== CONFUSION MATRIX ===")
-    for l in labels:
-        print(l, "->", matrix[l])
-
-    # Accuracy excluding "good"
     correct = 0
     total = 0
 
@@ -98,12 +102,41 @@ def evaluate(rows):
         if r["label"] == r["pred"]:
             correct += 1
 
-    print("\n=== STRUCTURAL ACCURACY ===")
-    print(correct, "/", total, "=", correct / total if total else 0)
+    summary = {
+        "total": len(rows),
+        "non_good_total": total,
+        "non_good_correct": correct,
+        "structural_accuracy_excluding_good": correct / total if total else 0,
+        "confusion_matrix": matrix
+    }
+
+    return summary
+
 
 def main():
     rows = run()
-    evaluate(rows)
+    summary = evaluate(rows)
+
+    RESULT_PATH.parent.mkdir(exist_ok=True)
+
+    with open(RESULT_PATH, "w", encoding="utf-8") as f:
+        json.dump(summary, f, indent=2, ensure_ascii=False)
+
+    print("\n=== CONFUSION MATRIX ===")
+    for label, preds in summary["confusion_matrix"].items():
+        print(label, "->", preds)
+
+    print("\n=== STRUCTURAL ACCURACY EXCLUDING GOOD ===")
+    print(
+        summary["non_good_correct"],
+        "/",
+        summary["non_good_total"],
+        "=",
+        summary["structural_accuracy_excluding_good"]
+    )
+
+    print("\nSaved:", RESULT_PATH)
+
 
 if __name__ == "__main__":
     main()

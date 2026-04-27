@@ -569,7 +569,7 @@ Evaluator:
 
 examples/evaluate_real_outputs_v1.py
 
-Result:
+Colab Validation Run V1 result:
 
 total  = 60
 atomic = 9  (15%)
@@ -578,11 +578,12 @@ long   = 42 (70%)
 
 Interpretation:
 
-flan-t5-small produces mostly long incoherent structural drift
+the tested local model produced mostly long incoherent structural drift
 
-Document:
+Documents:
 
 docs/REAL_STRUCTURAL_ANALYSIS_V1.md
+docs/COLAB_VALIDATION_RUN_V1.md
 
 
 ---
@@ -614,25 +615,32 @@ Runner:
 
 examples/omnia_structural_gate_v1.py
 
-Result:
+Colab Validation Run V1 result:
 
 total = 60
 
-PASS   = 24 (40.0%)
-REVIEW = 28 (46.7%)
-REJECT = 8  (13.3%)
+PASS   = 19 (31.7%)
+REVIEW = 32 (53.3%)
+REJECT = 9  (15.0%)
 
 Interpretation:
 
 the gate does not pass everything
 the gate does not reject everything
-the gate routes almost half of real outputs to REVIEW
+the gate routes most generated real outputs to REVIEW or REJECT
 atomic collapse is rejected
 long drift is partially captured
 
 Document:
 
 docs/OMNIA_STRUCTURAL_GATE_V1_RESULT.md
+docs/COLAB_VALIDATION_RUN_V1.md
+
+Important note:
+
+These results depend on the generated local-model output dataset.
+If data/real_structural_dataset_v1.jsonl is regenerated, exact PASS / REVIEW / REJECT counts may change.
+For frozen comparison, use committed result files in results/.
 
 
 ---
@@ -654,31 +662,39 @@ Reports:
 results/structural_gate_v2_report.json
 results/omnia_structural_gate_v2.json
 
-Result:
+Colab Validation Run V1 training report:
+
+precision    recall  f1-score   support
+
+        PASS       0.83      0.83      0.83         6
+      REJECT       0.75      1.00      0.86         3
+      REVIEW       1.00      0.89      0.94         9
+
+    accuracy                           0.89        18
+   macro avg       0.86      0.91      0.88        18
+weighted avg       0.90      0.89      0.89        18
+
+Colab Validation Run V1 execution result:
 
 V1:
-PASS   = 24
-REVIEW = 27
+PASS   = 19
+REVIEW = 32
 REJECT = 9
 
 V2:
-PASS   = 25
-REVIEW = 26
-REJECT = 9
+PASS   = 19
+REVIEW = 31
+REJECT = 10
 
 Delta:
-PASS   +1
+PASS    0
 REVIEW -1
-REJECT  0
-
-Training report:
-
-accuracy = 0.94
+REJECT +1
 
 Correct interpretation:
 
-V2 learns the V1 structural gate behavior with high fidelity
-and slightly smooths the decision boundary
+V2 learns an approximation of the V1 structural gate behavior
+and produces a close routing distribution on the generated dataset.
 
 Boundary:
 
@@ -838,6 +854,39 @@ OMNIA is a structural filter layer.
 
 ---
 
+Colab Validation Run V1
+
+OMNIA includes a recorded Google Colab validation run.
+
+Document:
+
+docs/COLAB_VALIDATION_RUN_V1.md
+
+The run confirms:
+
+clone/install/test path                 -> OK
+core software tests                     -> OK
+quick OMNIA execution                   -> OK
+corrected OPI V11 ranking improvement   -> OK
+synthetic structural dataset generation -> OK
+tri-channel structural evaluation       -> OK
+real local-model output collection      -> OK
+real structural analysis                -> OK
+structural gate V1                      -> OK
+structural gate V2 training/execution   -> OK
+
+Correct claim supported by this run:
+
+OMNIA can be reproduced in a clean Colab environment and can execute its current structural measurement, observer perturbation, tri-channel diagnostic, and structural gate workflows.
+
+Boundary:
+
+This does not prove semantic truth detection, universal contradiction detection,
+final decision correctness, or production reliability.
+
+
+---
+
 Where OMNIA is useful
 
 OMNIA is useful when systems require:
@@ -933,7 +982,7 @@ Minimal Example Output
   "drift_score": 0.405538,
   "limit_triggered": false,
   "gate_status": "RISK",
-  "reason_code": "low_omega"
+  "reason_code": "high_drift"
 }
 
 Interpretation:
@@ -960,6 +1009,7 @@ tests/      -> core behavior tests
 Key Documents
 
 VALIDATION_SUMMARY.md
+docs/COLAB_VALIDATION_RUN_V1.md
 docs/FOCUSED_PROOF.md
 docs/OMNIA_SCOPE_BOUNDARY_V1.md
 docs/BOUNDARY_TEST_V1.md
@@ -1028,6 +1078,8 @@ CORRECTED precision@5 = 0.8
 
 Tri-Channel / Gate Tests
 
+Some validation scripts require generated datasets.
+
 Generate synthetic structural dataset:
 
 python examples/generate_structural_dataset_v1.py
@@ -1035,10 +1087,6 @@ python examples/generate_structural_dataset_v1.py
 Evaluate tri-channel dataset:
 
 python examples/evaluate_tri_channel_dataset_v1.py
-
-Train tri-channel classifier:
-
-python examples/train_tri_channel_classifier_v1.py
 
 Collect real local-model outputs:
 
@@ -1058,6 +1106,29 @@ python examples/train_structural_gate_v2.py
 
 Run learned structural gate:
 
+python examples/use_structural_gate_v2.py
+
+Optional tri-channel classifier:
+
+python examples/train_tri_channel_classifier_v1.py
+
+
+---
+
+Required Execution Order
+
+Use this order for the full Colab-style validation path:
+
+python examples/quick_omnia_test.py
+python examples/observer_perturbation_signal_test_v11_llm_outputs.py
+
+python examples/generate_structural_dataset_v1.py
+python examples/evaluate_tri_channel_dataset_v1.py
+
+python examples/collect_real_outputs_v1.py
+python examples/evaluate_real_outputs_v1.py
+python examples/omnia_structural_gate_v1.py
+python examples/train_structural_gate_v2.py
 python examples/use_structural_gate_v2.py
 
 
@@ -1094,6 +1165,27 @@ clear scope boundary
 
 
 Without reproducibility, the claim is not evidence.
+
+
+---
+
+Generated Dataset Note
+
+Some results depend on generated local-model outputs.
+
+If this file is regenerated:
+
+data/real_structural_dataset_v1.jsonl
+
+then exact downstream counts may change, including:
+
+PASS / REVIEW / REJECT
+atomic / short / long
+V2 train/test metrics
+
+For frozen comparison, use committed result files in:
+
+results/
 
 
 ---

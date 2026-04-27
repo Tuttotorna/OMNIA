@@ -1,0 +1,49 @@
+{
+  "labels": ["atomic", "short", "long"],
+  "classification_report": {
+    "atomic": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 22
+    },
+    "short": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 22
+    },
+    "long": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 22
+    },
+    "accuracy": 1.0,
+    "macro avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 66
+    },
+    "weighted avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 66
+    }
+  },
+  "confusion_matrix": [
+    [22, 0, 0],
+    [0, 22, 0],
+    [0, 0, 22]
+  ],
+  "feature_importance": {
+    "length": 0.4573,
+    "digit_density": 0.2724,
+    "symbol_density": 0.2452,
+    "malformed": 0.0251
+  },
+  "train_size": 152,
+  "test_size": 66
+}

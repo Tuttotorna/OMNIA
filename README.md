@@ -455,8 +455,14 @@ A single suspicion score was not sufficient.
 Structural failure separated into three regimes:
 
 1. atomic malformed
+
+
 2. short malformed
+
+
 3. long incoherent
+
+
 
 Files:
 
@@ -653,7 +659,7 @@ Runner:
 
 examples/use_structural_gate_v2.py
 
-Report:
+Reports:
 
 results/structural_gate_v2_report.json
 results/omnia_structural_gate_v2.json
@@ -703,6 +709,9 @@ python examples/train_structural_gate_v2.py
 Current Empirical Status
 
 OMNIA has been tested across several controlled validation stages.
+
+
+---
 
 Structural Gate V7
 
@@ -798,7 +807,27 @@ On GSM8K-style and real GSM8K slices, V9 correctly rejected structurally invalid
 
 However, some runs were highly imbalanced because the tested model produced very few correct answers.
 
-Therefore these runs show failure detection capability, but are not sufficient as full positive-selectivity proof.
+Therefore these runs show failure detection capability, but they are not sufficient as full positive-selectivity proof.
+
+
+---
+
+Boundary Test V1
+
+OMNIA includes a boundary test protocol defining what the system must detect and what it must not pretend to detect.
+
+Document:
+
+docs/BOUNDARY_TEST_V1.md
+
+Core distinction:
+
+structure changes      -> OMNIA may change
+semantic truth changes -> OMNIA should not change by itself
+
+This test protects the main boundary:
+
+structural validity != semantic correctness
 
 
 ---
@@ -866,7 +895,7 @@ final operational decisions
 production contradiction detection by itself
 
 
-These require a semantic evaluator, another model, ground truth, or human review.
+These require a semantic evaluator, another model, ground truth, external verifier, or human review.
 
 
 ---
@@ -941,6 +970,8 @@ tests/      -> core behavior tests
 Key Documents
 
 docs/OMNIA_SCOPE_BOUNDARY_V1.md
+docs/BOUNDARY_TEST_V1.md
+docs/VALIDATION_SUMMARY.md
 docs/OBSERVER_PERTURBATION_RESULT.md
 docs/OBSERVER_PERTURBATION_V7_RESULT.md
 docs/OBSERVER_PERTURBATION_V8_RESULT.md

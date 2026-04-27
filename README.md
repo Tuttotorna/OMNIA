@@ -27,6 +27,7 @@ In one sentence:
 
 ```text
 structural validity != semantic correctness
+measurement != inference != decision
 
 OMNIA measures structural validity.
 
@@ -44,13 +45,6 @@ a final decision system
 
 a contradiction detector by itself
 
-
-
----
-
-Non-Negotiable Rule
-
-measurement != inference != decision
 
 OMNIA stays inside the measurement layer.
 
@@ -165,8 +159,6 @@ It is a minimal reproducible signal showing that a real OMNIA lens can separate 
 ---
 
 Observer Perturbation — Validation Path
-
-This section summarizes the empirical validation path of the ObserverPerturbation signal.
 
 The goal is not to claim universal correctness.
 
@@ -297,8 +289,6 @@ Example false positive:
 Conclusion:
 
 OPI can confuse structural rigidity with contradiction-like instability
-
-This explains the V8 false positives.
 
 Files:
 
@@ -969,9 +959,10 @@ tests/      -> core behavior tests
 
 Key Documents
 
+VALIDATION_SUMMARY.md
+docs/FOCUSED_PROOF.md
 docs/OMNIA_SCOPE_BOUNDARY_V1.md
 docs/BOUNDARY_TEST_V1.md
-docs/VALIDATION_SUMMARY.md
 docs/OBSERVER_PERTURBATION_RESULT.md
 docs/OBSERVER_PERTURBATION_V7_RESULT.md
 docs/OBSERVER_PERTURBATION_V8_RESULT.md
@@ -989,7 +980,6 @@ docs/REAL_VALIDATION_V9_EXTERNAL_ATTACK.md
 docs/REAL_VALIDATION_V9_GSM8K_SLICE.md
 docs/REAL_VALIDATION_V9_GSM8K_REAL.md
 docs/OMNIA_V8_FAILURE_ANALYSIS.md
-docs/FOCUSED_PROOF.md
 
 
 ---

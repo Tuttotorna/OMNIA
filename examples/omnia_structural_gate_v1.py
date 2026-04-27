@@ -1,6 +1,22 @@
 # ============================================================
 # OMNIA — STRUCTURAL GATE V1
 # ============================================================
+#
+# Purpose:
+# Apply a minimal structural gate to real local-model outputs.
+#
+# Input:
+# data/real_structural_dataset_v1.jsonl
+#
+# Output:
+# results/omnia_structural_gate_v1.json
+#
+# Gate values:
+# - PASS
+# - REVIEW
+# - REJECT
+#
+# ============================================================
 
 import json
 from pathlib import Path
@@ -9,9 +25,6 @@ INPUT_PATH = Path("data/real_structural_dataset_v1.jsonl")
 OUTPUT_PATH = Path("results/omnia_structural_gate_v1.json")
 
 
-# -----------------------------
-# FEATURE EXTRACTION
-# -----------------------------
 def features(text):
     tokens = text.split()
     length = len(tokens)
@@ -23,8 +36,7 @@ def features(text):
 
     digit_density = digits / total_chars
     symbol_density = symbols / total_chars
-
-    malformed = sum(1 for t in tokens if not t.isalnum())
+    malformed = sum(1 for token in tokens if not token.isalnum())
 
     return {
         "length": length,
@@ -34,37 +46,30 @@ def features(text):
     }
 
 
-# -----------------------------
-# STRUCTURAL CLASS
-# -----------------------------
-def classify(f):
-    if f["length"] <= 2:
+def classify(feature_row):
+    if feature_row["length"] <= 2:
         return "atomic"
-    if f["length"] <= 8:
+
+    if feature_row["length"] <= 8:
         return "short"
+
     return "long"
 
 
-# -----------------------------
-# GATE LOGIC
-# -----------------------------
-def gate_decision(f, cls):
-    # HARD FAIL
-    if cls == "atomic":
+def gate_decision(feature_row, structural_class):
+    if structural_class == "atomic":
         return "REJECT"
 
-    # SHORT instability
-    if cls == "short":
-        if f["malformed"] > 0 or f["symbol_density"] > 0.15:
+    if structural_class == "short":
+        if feature_row["malformed"] > 0 or feature_row["symbol_density"] > 0.15:
             return "REVIEW"
         return "PASS"
 
-    # LONG drift detection
-    if cls == "long":
+    if structural_class == "long":
         if (
-            f["digit_density"] > 0.20
-            or f["symbol_density"] > 0.20
-            or f["malformed"] > 3
+            feature_row["digit_density"] > 0.20
+            or feature_row["symbol_density"] > 0.20
+            or feature_row["malformed"] > 3
         ):
             return "REVIEW"
         return "PASS"
@@ -72,10 +77,10 @@ def gate_decision(f, cls):
     return "PASS"
 
 
-# -----------------------------
-# RUN
-# -----------------------------
 def run():
+    if not INPUT_PATH.exists():
+        raise FileNotFoundError(INPUT_PATH)
+
     rows = []
 
     with open(INPUT_PATH, "r", encoding="utf-8") as f:
@@ -83,45 +88,54 @@ def run():
             item = json.loads(line)
             text = item["text"]
 
-            fts = features(text)
-            cls = classify(fts)
-            decision = gate_decision(fts, cls)
+            feature_row = features(text)
+            structural_class = classify(feature_row)
+            decision = gate_decision(feature_row, structural_class)
 
             rows.append({
                 "id": item["id"],
                 "prompt": item["prompt"],
                 "text": text,
-                "class": cls,
+                "class": structural_class,
                 "gate": decision,
-                **fts
+                **feature_row,
             })
 
     return rows
 
 
-# -----------------------------
-# SUMMARY
-# -----------------------------
 def summarize(rows):
-    counts = {"PASS": 0, "REVIEW": 0, "REJECT": 0}
-    class_counts = {"atomic": 0, "short": 0, "long": 0}
+    gate_counts = {
+        "PASS": 0,
+        "REVIEW": 0,
+        "REJECT": 0,
+    }
 
-    for r in rows:
-        counts[r["gate"]] += 1
-        class_counts[r["class"]] += 1
+    class_counts = {
+        "atomic": 0,
+        "short": 0,
+        "long": 0,
+    }
+
+    for row in rows:
+        gate_counts[row["gate"]] += 1
+        class_counts[row["class"]] += 1
 
     total = len(rows)
 
     return {
         "total": total,
-        "gate_counts": counts,
-        "class_counts": class_counts
+        "gate_counts": gate_counts,
+        "gate_ratios": {
+            key: value / total for key, value in gate_counts.items()
+        },
+        "class_counts": class_counts,
+        "class_ratios": {
+            key: value / total for key, value in class_counts.items()
+        },
     }
 
 
-# -----------------------------
-# MAIN
-# -----------------------------
 def main():
     rows = run()
     summary = summarize(rows)
@@ -130,14 +144,15 @@ def main():
     print(json.dumps(summary, indent=2))
 
     print("\nSample decisions:")
-    for r in rows[:10]:
+    for row in rows[:15]:
         print(
-            f"{r['gate']:6s} | {r['class']:6s} | "
-            f"len={r['length']:2d} "
-            f"dig={r['digit_density']:.3f} "
-            f"sym={r['symbol_density']:.3f} "
-            f"mal={r['malformed']} | "
-            f"{r['text'][:80]}"
+            f"{row['gate']:6s} | "
+            f"{row['class']:6s} | "
+            f"len={row['length']:2d} "
+            f"dig={row['digit_density']:.3f} "
+            f"sym={row['symbol_density']:.3f} "
+            f"mal={row['malformed']} | "
+            f"{row['text'][:90]}"
         )
 
     OUTPUT_PATH.parent.mkdir(exist_ok=True)
@@ -145,7 +160,7 @@ def main():
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump({
             "summary": summary,
-            "rows": rows
+            "rows": rows,
         }, f, indent=2, ensure_ascii=False)
 
     print("\nSaved:")

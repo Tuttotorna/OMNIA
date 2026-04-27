@@ -1,19 +1,30 @@
 # ============================================================
 # OMNIA — TRI-CHANNEL CLASSIFIER TRAINING V1
 # ============================================================
+#
+# Purpose:
+# Train a simple classifier to distinguish structural regimes:
+#
+# - atomic
+# - short
+# - long
+#
+# NOTE:
+# The "good" class is excluded from this classifier because it is not
+# a structural failure regime.
+#
+# ============================================================
 
 import json
 from pathlib import Path
 
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import classification_report
+from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.ensemble import RandomForestClassifier
 
 INPUT_PATH = Path("data/structural_dataset_v1.jsonl")
+RESULT_PATH = Path("results/tri_channel_classifier_v1_summary.json")
 
-# ------------------------------------------------------------
-# FEATURE EXTRACTION
-# ------------------------------------------------------------
 
 def extract_features(text):
     tokens = text.split()
@@ -22,64 +33,109 @@ def extract_features(text):
     symbol = sum((not c.isalnum()) and (not c.isspace()) for c in text)
 
     malformed = 0
-    for t in tokens:
-        if any(c.isdigit() for c in t) and any(c.isalpha() for c in t):
+    for token in tokens:
+        has_alpha = any(c.isalpha() for c in token)
+        has_digit = any(c.isdigit() for c in token)
+        has_symbol = any((not c.isalnum()) for c in token)
+
+        if (has_alpha and has_digit) or (has_symbol and len(token) > 3):
             malformed += 1
 
     return [
-        len(tokens),                 # length
-        digit / max(1, len(text)),   # digit density
-        symbol / max(1, len(text)),  # symbol density
-        malformed                   # malformed tokens
+        len(tokens),
+        digit / max(1, len(text)),
+        symbol / max(1, len(text)),
+        malformed,
     ]
 
-# ------------------------------------------------------------
-# LOAD DATA
-# ------------------------------------------------------------
 
-X = []
-y = []
+def load_data():
+    x = []
+    y = []
 
-with open(INPUT_PATH, "r", encoding="utf-8") as f:
-    for line in f:
-        item = json.loads(line)
+    with open(INPUT_PATH, "r", encoding="utf-8") as f:
+        for line in f:
+            item = json.loads(line)
 
-        if item["label"] == "good":
-            continue  # exclude
+            if item["label"] == "good":
+                continue
 
-        X.append(extract_features(item["text"]))
-        y.append(item["label"])
+            x.append(extract_features(item["text"]))
+            y.append(item["label"])
 
-# ------------------------------------------------------------
-# SPLIT
-# ------------------------------------------------------------
+    return x, y
 
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.3, random_state=42
-)
 
-# ------------------------------------------------------------
-# TRAIN
-# ------------------------------------------------------------
+def main():
+    x, y = load_data()
 
-clf = RandomForestClassifier(n_estimators=100, random_state=42)
-clf.fit(X_train, y_train)
+    x_train, x_test, y_train, y_test = train_test_split(
+        x,
+        y,
+        test_size=0.30,
+        random_state=42,
+        stratify=y,
+    )
 
-# ------------------------------------------------------------
-# EVALUATE
-# ------------------------------------------------------------
+    clf = RandomForestClassifier(
+        n_estimators=100,
+        random_state=42,
+    )
 
-y_pred = clf.predict(X_test)
+    clf.fit(x_train, y_train)
+    y_pred = clf.predict(x_test)
 
-print("\n=== CLASSIFICATION REPORT ===\n")
-print(classification_report(y_test, y_pred))
+    labels = ["atomic", "short", "long"]
 
-# ------------------------------------------------------------
-# FEATURE IMPORTANCE
-# ------------------------------------------------------------
+    report = classification_report(
+        y_test,
+        y_pred,
+        labels=labels,
+        output_dict=True,
+        zero_division=0,
+    )
 
-features = ["length", "digit_density", "symbol_density", "malformed"]
+    matrix = confusion_matrix(y_test, y_pred, labels=labels)
 
-print("\n=== FEATURE IMPORTANCE ===\n")
-for name, score in zip(features, clf.feature_importances_):
-    print(f"{name}: {score:.4f}")
+    feature_names = [
+        "length",
+        "digit_density",
+        "symbol_density",
+        "malformed",
+    ]
+
+    importance = {
+        name: float(score)
+        for name, score in zip(feature_names, clf.feature_importances_)
+    }
+
+    summary = {
+        "labels": labels,
+        "classification_report": report,
+        "confusion_matrix": matrix.tolist(),
+        "feature_importance": importance,
+        "train_size": len(x_train),
+        "test_size": len(x_test),
+    }
+
+    RESULT_PATH.parent.mkdir(exist_ok=True)
+
+    with open(RESULT_PATH, "w", encoding="utf-8") as f:
+        json.dump(summary, f, indent=2, ensure_ascii=False)
+
+    print("\n=== CLASSIFICATION REPORT ===\n")
+    print(classification_report(y_test, y_pred, labels=labels, zero_division=0))
+
+    print("\n=== CONFUSION MATRIX ===")
+    print(labels)
+    print(matrix)
+
+    print("\n=== FEATURE IMPORTANCE ===")
+    for name, score in importance.items():
+        print(f"{name}: {score:.4f}")
+
+    print("\nSaved:", RESULT_PATH)
+
+
+if __name__ == "__main__":
+    main()

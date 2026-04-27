@@ -1,0 +1,28 @@
+{
+  "total": 300,
+  "non_good_total": 218,
+  "non_good_correct": 176,
+  "structural_accuracy_excluding_good": 0.8073394495412844,
+  "confusion_matrix": {
+    "atomic": {
+      "atomic": 74,
+      "short": 0,
+      "long": 0
+    },
+    "short": {
+      "atomic": 30,
+      "short": 41,
+      "long": 0
+    },
+    "long": {
+      "atomic": 0,
+      "short": 12,
+      "long": 61
+    },
+    "good": {
+      "atomic": 0,
+      "short": 82,
+      "long": 0
+    }
+  }
+}

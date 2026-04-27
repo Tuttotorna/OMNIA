@@ -1,0 +1,21 @@
+{
+  "summary": {
+    "total": 60,
+    "counts": {
+      "atomic": 9,
+      "short": 9,
+      "long": 42
+    },
+    "ratios": {
+      "atomic": 0.15,
+      "short": 0.15,
+      "long": 0.7
+    }
+  },
+  "notes": {
+    "interpretation": "Most real outputs fall into the long incoherent regime.",
+    "key_signal": "High long ratio (0.7) indicates structural drift under generation.",
+    "atomic_fraction": "Non-zero atomic outputs indicate collapse to minimal tokens.",
+    "short_fraction": "Short malformed outputs represent unstable intermediate states."
+  }
+}

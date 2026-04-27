@@ -3,14 +3,14 @@
 # ============================================================
 #
 # Purpose:
-# Generate a dataset of REAL model outputs (not synthetic)
+# Generate a dataset of real model outputs using a local model.
 #
 # Output:
 # data/real_structural_dataset_v1.jsonl
 #
-# NOTE:
+# Notes:
 # - No labels
-# - Raw outputs only
+# - Raw model outputs only
 # - Structural analysis happens later
 #
 # ============================================================
@@ -18,14 +18,10 @@
 import json
 from pathlib import Path
 
-from transformers import pipeline
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
 OUTPUT_PATH = Path("data/real_structural_dataset_v1.jsonl")
 OUTPUT_PATH.parent.mkdir(exist_ok=True)
-
-# ------------------------------------------------------------
-# PROMPTS (REAL TASKS)
-# ------------------------------------------------------------
 
 PROMPTS = [
     "What is 2 + 2?",
@@ -42,65 +38,47 @@ PROMPTS = [
     "Write a one-line answer: 9*9.",
 ]
 
-# ------------------------------------------------------------
-# MODEL
-# ------------------------------------------------------------
 
-def load_model():
-    return pipeline(
-        "text2text-generation",
-        model="google/flan-t5-small"
-    )
+def main():
+    print("Loading model...")
+    tokenizer = AutoTokenizer.from_pretrained("google/flan-t5-small")
+    model = AutoModelForSeq2SeqLM.from_pretrained("google/flan-t5-small")
 
-# ------------------------------------------------------------
-# GENERATION
-# ------------------------------------------------------------
-
-def generate_outputs(generator, n_per_prompt=5):
     rows = []
     idx = 0
 
+    print("Generating outputs...")
+
     for prompt in PROMPTS:
-        for _ in range(n_per_prompt):
-            try:
-                out = generator(prompt, max_length=64, do_sample=True)[0]["generated_text"]
-            except Exception as e:
-                out = f"ERROR: {str(e)}"
+        for _ in range(5):
+            inputs = tokenizer(prompt, return_tensors="pt")
+            outputs = model.generate(
+                **inputs,
+                max_new_tokens=64,
+                do_sample=True,
+                temperature=0.7,
+            )
+
+            text = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
             rows.append({
                 "id": f"{idx:04d}",
                 "prompt": prompt,
-                "text": out
+                "text": text,
             })
 
             idx += 1
 
-    return rows
-
-# ------------------------------------------------------------
-# SAVE
-# ------------------------------------------------------------
-
-def save(rows):
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
-        for r in rows:
-            f.write(json.dumps(r, ensure_ascii=False) + "\n")
-
-# ------------------------------------------------------------
-# MAIN
-# ------------------------------------------------------------
-
-def main():
-    print("Loading model...")
-    generator = load_model()
-
-    print("Generating outputs...")
-    rows = generate_outputs(generator, n_per_prompt=5)
-
-    save(rows)
+        for row in rows:
+            f.write(json.dumps(row, ensure_ascii=False) + "\n")
 
     print("Saved:", OUTPUT_PATH)
     print("Total rows:", len(rows))
+
+    print("\nPreview:")
+    for row in rows[:10]:
+        print(json.dumps(row, ensure_ascii=False))
 
 
 if __name__ == "__main__":

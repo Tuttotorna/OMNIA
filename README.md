@@ -7,6 +7,97 @@
 
 ---
 
+# Ecosystem Structure
+
+```text
+LON-MIRROR
+|
+├── CORE
+|   ├── OMNIA
+|   ├── omnia-limit
+|   └── OMNIA-RADAR
+|
+├── REPRESENTATION
+|   └── OMNIABASE
+|
+└── APPLICATIONS
+    ├── OMNIA-SECURITY
+    ├── OMNIA-CRYPTO
+    └── OMNIAMIND
+
+Root
+
+LON-MIRROR
+
+
+Canonical ecosystem hub, lineage map, navigation layer, and coordination entry point.
+
+Core
+
+OMNIA
+
+
+Core structural measurement framework.
+
+omnia-limit
+
+
+Structural stopping conditions, saturation, irreducibility, and limit behavior.
+
+OMNIA-RADAR
+
+
+Structural drift surfacing and trajectory visualization layer.
+
+Representation
+
+OMNIABASE
+
+
+Multi-base structural representation and invariance exploration layer.
+
+Applications
+
+OMNIA-SECURITY
+
+
+Bounded structural diagnostics for security-relevant systems.
+
+OMNIA-CRYPTO
+
+
+Bounded structural diagnostics for cryptographic behavior.
+
+OMNIAMIND
+
+
+Bounded structural diagnostics for cognitive and reasoning-related behavior.
+
+Architectural Separation
+
+LON-MIRROR
+=
+ecosystem hub
+
+OMNIA
+=
+core structural measurement layer
+
+Other repositories
+=
+representation layers,
+limit layers,
+visualization layers,
+or bounded domain verticalizations.
+
+Core Boundary
+
+measurement != inference != decision
+
+
+
+---
+
 ## What OMNIA is
 
 OMNIA is a structural measurement core.

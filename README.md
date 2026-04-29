@@ -1220,8 +1220,6 @@ No decision theater.
 No claims beyond evidence.
 
 ---
-Incolla questa stessa sezione in fondo al README di ogni repo.
-
 ---
 
 # Ecosystem Structure
@@ -1241,57 +1239,59 @@ LON-MIRROR
     ├── OMNIA-SECURITY
     ├── OMNIA-CRYPTO
     └── OMNIAMIND
+```
 
-Root
+## Root
 
-LON-MIRROR
-
+- [LON-MIRROR](https://github.com/Tuttotorna/lon-mirror)
 
 Canonical ecosystem hub, lineage map, navigation layer, and coordination entry point.
 
-Core
+---
 
-OMNIA
+## Core
 
+- [OMNIA](https://github.com/Tuttotorna/OMNIA)
 
 Core structural measurement framework.
 
-omnia-limit
-
+- [omnia-limit](https://github.com/Tuttotorna/omnia-limit)
 
 Structural stopping conditions, saturation, irreducibility, and limit behavior.
 
-OMNIA-RADAR
-
+- [OMNIA-RADAR](https://github.com/Tuttotorna/OMNIA-RADAR)
 
 Structural drift surfacing and trajectory visualization layer.
 
-Representation
+---
 
-OMNIABASE
+## Representation
 
+- [OMNIABASE](https://github.com/Tuttotorna/OMNIABASE)
 
 Multi-base structural representation and invariance exploration layer.
 
-Applications
+---
 
-OMNIA-SECURITY
+## Applications
 
+- [OMNIA-SECURITY](https://github.com/Tuttotorna/OMNIA-SECURITY)
 
 Bounded structural diagnostics for security-relevant systems.
 
-OMNIA-CRYPTO
-
+- [OMNIA-CRYPTO](https://github.com/Tuttotorna/OMNIA-CRYPTO)
 
 Bounded structural diagnostics for cryptographic behavior.
 
-OMNIAMIND
-
+- [OMNIAMIND](https://github.com/Tuttotorna/OMNIAMIND)
 
 Bounded structural diagnostics for cognitive and reasoning-related behavior.
 
-Architectural Separation
+---
 
+# Architectural Separation
+
+```text
 LON-MIRROR
 =
 ecosystem hub
@@ -1306,8 +1306,12 @@ representation layers,
 limit layers,
 visualization layers,
 or bounded domain verticalizations.
+```
 
-Core Boundary
+---
 
+# Core Boundary
+
+```text
 measurement != inference != decision
-
+```

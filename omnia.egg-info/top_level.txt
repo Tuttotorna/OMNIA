@@ -1,7 +1,0 @@
-data
-docs
-examples
-github
-omnia
-results
-tests

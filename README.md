@@ -2,1363 +2,280 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19820729.svg)](https://doi.org/10.5281/zenodo.19820729)
 
-**Author:** Massimiliano Brighindi  
-**Contact:** brighissimo@gmail.com
+**OMNIA** is a post-hoc structural measurement core.
+
+It measures structural behavior after an output, answer, trajectory, or representation already exists.
+
+It is not a model.
+It is not a semantic judge.
+It is not a truth oracle.
+It is not a final decision system.
+
+OMNIA measures structural admissibility, coherence, fragility, invariance, instability, and degradation under controlled transformations or perturbations.
+
+Core boundary:
+
+```text
+measurement != inference != decision
+```
 
 ---
 
 ## What OMNIA is
 
-OMNIA is a structural measurement core.
+OMNIA is a structural measurement layer.
 
-It does not judge meaning.  
-It does not replace reasoning.  
-It does not declare truth.
+It evaluates whether a produced structure remains stable, admissible, or degraded under structural pressure.
 
-OMNIA measures whether an output remains structurally admissible under controlled transformations, constraints, or observer perturbations.
+It can measure signals such as:
+
+- structural coherence
+- fragility
+- invariance under transformation
+- instability under perturbation
+- irreversibility
+- saturation or exhaustion
+- compatibility with an expected output contract
+- observer-induced structural drift
 
 In one sentence:
 
-> OMNIA measures how much structure survives when form, constraints, or nearby representation changes.
+> OMNIA measures how much structure survives when form, constraints, observer frame, or nearby representation changes.
 
 ---
 
-## Core Boundary
+## What OMNIA is not
+
+OMNIA is not:
+
+- a semantic correctness evaluator
+- a truth engine
+- a reasoning engine
+- a contradiction detector by itself
+- a replacement for domain expertise
+- a final decision system
+- a claim that structural validity equals truth
+
+A structurally valid output can still be semantically wrong.
+
+A semantically correct output can still be structurally fragile.
+
+This distinction is intentional.
+
+---
+
+## Core boundary
 
 ```text
 structural validity != semantic correctness
 measurement != inference != decision
-
-OMNIA measures structural validity.
-
-It does not measure semantic truth.
-
-This boundary is intentional.
-
-OMNIA is not:
-
-a truth oracle
-
-a semantic evaluator
-
-a final decision system
-
-a contradiction detector by itself
-
+```
 
 OMNIA stays inside the measurement layer.
 
-That is what keeps it clean.
+It can produce signals.
 
+It can expose fragility.
 
----
+It can recommend that a pipeline stop, continue, retry, or escalate through an external gate.
 
-What OMNIA detects
-
-OMNIA is strongest when failures are structural:
-
-incomplete outputs
-
-malformed answers
-
-format violations
-
-expression instead of final answer
-
-unstable output under variation
-
-structurally hollow responses
-
-mismatch between requested output contract and produced output
-
-instability under observer perturbation
-
-atomic collapse
-
-short malformed output
-
-long incoherent drift
-
-
-Examples:
-
-"5 * 3 ="          -> incomplete
-"5 * 3 = 15"      -> not final-only
-"blue"            -> incomplete if expected contract is "blue key"
-long explanation  -> invalid if scalar answer required
-"LDL"             -> atomic malformed output
-
+But OMNIA does not decide final truth.
 
 ---
 
-What OMNIA does not detect
+## Correct system role
 
-OMNIA does not detect pure semantic errors when the answer is structurally well-formed.
+The correct pipeline is:
+
+```text
+Input / output / trajectory
+  ↓
+OMNIA structural measurement
+  ↓
+External semantic evaluator or domain layer
+  ↓
+External decision layer
+```
+
+OMNIA removes or flags structurally invalid, unstable, incomplete, collapsed, or malformed outputs before semantic evaluation or operational decision.
+
+---
+
+## What OMNIA detects well
+
+OMNIA is strongest when failures are structural.
 
 Examples:
 
+- incomplete outputs
+- malformed answers
+- format violations
+- expression instead of final answer
+- unstable output under variation
+- structurally hollow responses
+- mismatch between requested output contract and produced output
+- instability under observer perturbation
+- atomic collapse
+- short malformed output
+- long incoherent drift
+
+Examples of structural failures:
+
+```text
+"5 * 3 ="       -> incomplete
+"5 * 3 = 15"   -> not final-only if scalar final answer was required
+"blue"         -> incomplete if expected contract is "blue key"
+"LDL"          -> atomic malformed output
+```
+
+---
+
+## What OMNIA does not detect by itself
+
+OMNIA does not reliably detect pure semantic errors when the answer is structurally well-formed.
+
+Examples:
+
+```text
 "2" instead of "4"
 "wolf" instead of "dog"
 "blue" instead of "black"
+```
 
-These answers may be wrong, but structurally valid.
+These answers may be wrong, but structurally admissible.
 
 OMNIA may return:
 
+```text
 GO
+```
 
 This is not a bug.
 
 It is the boundary of the system.
 
-
 ---
 
-Correct System Role
+## Validation status
 
-The correct pipeline is:
+The repository contains executable validation and diagnostic material.
 
-LLM -> OMNIA -> Semantic Evaluator -> Decision
-
-OMNIA removes structurally invalid, unstable, incomplete, collapsed, or malformed outputs before semantic evaluation or operational decision.
-
-
----
-
-Minimal External Signal
-
-OMNIA includes a minimal reproducible signal test for observer-induced structural instability.
-
-Runner:
-
-examples/observer_perturbation_signal_test.py
-
-Document:
-
-docs/OBSERVER_PERTURBATION_RESULT.md
-
-Result summary:
-
-Stable avg OPI:      ~0.0016
-Unstable avg OPI:    ~0.0062
-
-Stable avg ratio:    ~0.089
-Unstable avg ratio:  ~0.284
-
-Interpretation:
-
-> Internally unstable outputs change more under observer perturbation than stable outputs.
-
-
-
-This is not a universal proof.
-
-It is a minimal reproducible signal showing that a real OMNIA lens can separate stable from unstable structures under controlled conditions.
-
-
----
-
-Observer Perturbation — Validation Path
-
-The goal is not to claim universal correctness.
-
-The goal is to show:
-
-where the signal fails
-
-why it fails
-
-how it can be improved
-
-whether the improvement generalizes
-
-
-
----
-
-V6 — Failure on Realistic Classification
-
-V6 tested raw ObserverPerturbation on realistic labeled outputs.
-
-Result:
-
-OMNIA:
-  TP: 4
-  FP: 5
-  TN: 5
-  FN: 6
-
-Baseline:
-  TP: 9
-  FP: 1
-  TN: 9
-  FN: 1
-
-Conclusion:
-
-raw OPI is not a reliable classifier
-
-The simple baseline outperformed OMNIA.
-
-This failure is important because it defines the limit of the raw signal.
-
-Files:
-
-examples/observer_perturbation_signal_test_v6_real_labeled.py
-results/observer_perturbation_v6_summary.json
-
-
----
-
-V7 — Keyword-Free Signal
-
-V7 removed obvious lexical cues.
-
-Result:
-
-OMNIA:
-  TP: 5
-  FP: 5
-  TN: 5
-  FN: 5
-
-Baseline:
-  TP: 0
-  FP: 0
-  TN: 10
-  FN: 10
-
-Conclusion:
-
-baseline collapses
-OMNIA retains partial signal
-
-This shows that ObserverPerturbation is not reducible to simple keyword detection.
-
-Files:
-
-examples/observer_perturbation_signal_test_v7_keyword_free.py
-results/observer_perturbation_v7_summary.json
-docs/OBSERVER_PERTURBATION_V7_RESULT.md
-
-
----
-
-V8 — Ranking Signal
-
-V8 tested whether OPI works better as a ranking mechanism than as a binary classifier.
-
-Result:
-
-precision@3  = 0.6667
-precision@5  = 0.8
-precision@10 = 0.5
-
-Mean separation failed:
-
-stable_mean_opi        = 0.017268491609918033
-contradictory_mean_opi = 0.015723120024641747
-
-Conclusion:
-
-classification -> weak
-ranking        -> useful
-
-Files:
-
-examples/observer_perturbation_signal_test_v8_ranking.py
-results/observer_perturbation_v8_summary.json
-results/observer_perturbation_v8_ranked.json
-docs/OBSERVER_PERTURBATION_V8_RESULT.md
-
-
----
-
-V9 — False Positive Analysis
-
-V9 analyzed why stable cases ranked too high.
-
-Key discovery:
-
-short, rigid structures can produce high raw OPI
-
-Example false positive:
-
-"2 + 2 equals 4."
-
-Conclusion:
-
-OPI can confuse structural rigidity with contradiction-like instability
-
-Files:
-
-examples/observer_perturbation_signal_test_v9_false_positive_analysis.py
-results/observer_perturbation_v9_ranked.json
-results/observer_perturbation_v9_analysis.json
-
-
----
-
-V10 — Corrected Signal
-
-V10 introduced a simple correction:
-
-corrected_opi = raw_opi × length_factor × structure_factor × duplication_factor
-
-Purpose:
-
-penalize short outputs
-
-penalize single-sentence outputs
-
-reduce rigid false positives
-
-
-Result:
-
-top3:
-  precision: 1.0
-  recall:    0.3
-
-top5:
-  precision: 1.0
-  recall:    0.5
-
-top10:
-  precision: 0.6
-  recall:    0.6
-
-Comparison:
-
-V8 precision@5  = 0.8
-V10 precision@5 = 1.0
-
-Conclusion:
-
-false positives significantly reduced
-ranking quality improved
-
-Files:
-
-examples/observer_perturbation_signal_test_v10_corrected.py
-results/observer_perturbation_v10_summary.json
-results/observer_perturbation_v10_ranked.json
-docs/OBSERVER_PERTURBATION_V10_RESULT.md
-
-
----
-
-V11 — Realistic LLM-like Outputs
-
-V11 tested whether the correction generalizes beyond the synthetic V7/V8 setup.
-
-Result:
-
-RAW:
-
-top3:
-  precision: 0.6667
-  recall:    0.2
-
-top5:
-  precision: 0.4
-  recall:    0.2
-
-top10:
-  precision: 0.5
-  recall:    0.5
-
-
-CORRECTED:
-
-top3:
-  precision: 1.0
-  recall:    0.3
-
-top5:
-  precision: 0.8
-  recall:    0.4
-
-top10:
-  precision: 0.6
-  recall:    0.6
-
-Key result:
-
-RAW precision@5       = 0.4
-CORRECTED precision@5 = 0.8
-
-Conclusion:
-
-corrected OPI improves top-k prioritization on realistic LLM-like outputs
-
-Files:
-
-examples/observer_perturbation_signal_test_v11_llm_outputs.py
-results/observer_perturbation_v11_raw_ranked.json
-results/observer_perturbation_v11_corrected_ranked.json
-results/observer_perturbation_v11_summary.json
-docs/OBSERVER_PERTURBATION_V11_RESULT.md
-
-
----
-
-V14 — Real Local-Model Outputs
-
-V14 applied OMNIA to real outputs generated by a local model.
-
-Dataset:
-
-data/real_llm_outputs_v14_local_flan_t5_small.jsonl
-
-Runner:
-
-examples/observer_perturbation_real_outputs_v14.py
-
-Result:
-
-corrected_opi surfaces several structurally degraded generations
-in the top-ranked subset
-
-Boundary:
-
-does not capture all malformed outputs
-
-Conclusion:
-
-corrected_opi is useful as a degradation triage signal,
-not as a complete detector
-
-Document:
-
-docs/OBSERVER_PERTURBATION_V14_REAL_OUTPUTS_RESULT.md
-
-
----
-
-V18 — Tri-Channel Structural Diagnostic
-
-V18 is the key conceptual result.
-
-A single suspicion score was not sufficient.
-
-Structural failure separated into three regimes:
-
-1. atomic malformed
-
-
-2. short malformed
-
-
-3. long incoherent
-
-
-
-Files:
-
-examples/observer_perturbation_real_outputs_v18_tri_channel.py
-results/observer_perturbation_v18_tri_channel_summary.json
-docs/OBSERVER_PERTURBATION_V18_TRI_CHANNEL_RESULT.md
-docs/OMNIA_V18_FINAL_POSITION.md
-
-Conclusion:
-
-structural failure is not one-dimensional
-
-Correct claim:
-
-> OMNIA can decompose structural failure into distinct regimes. Mapping these regimes into a stable decision gate requires larger-scale calibration and cannot be reliably achieved by small manual threshold tuning alone.
-
-
-
-
----
-
-Tri-Channel Dataset Validation
-
-OMNIA includes a synthetic structural dataset to validate the tri-channel decomposition.
-
-Generator:
-
-examples/generate_structural_dataset_v1.py
-
-Dataset:
-
-data/structural_dataset_v1.jsonl
-
-Evaluator:
-
-examples/evaluate_tri_channel_dataset_v1.py
-
-Result:
-
-total = 300
-
-atomic -> { atomic: 74, short: 0,  long: 0 }
-short  -> { atomic: 30, short: 41, long: 0 }
-long   -> { atomic: 0,  short: 12, long: 61 }
-good   -> { atomic: 0,  short: 82, long: 0 }
-
-structural accuracy excluding good:
-176 / 218 = 0.8073
-
-Interpretation:
-
-atomic detection -> very strong
-long detection   -> strong
-short regime     -> ambiguous
-
-Document:
-
-docs/TRI_CHANNEL_DATASET_V1_RESULT.md
-
-
----
-
-Tri-Channel Classifier V1
-
-A simple learned classifier was trained on the structural dataset.
-
-Trainer:
-
-examples/train_tri_channel_classifier_v1.py
-
-Result:
-
-precision = 1.00
-recall    = 1.00
-f1-score  = 1.00
-accuracy  = 1.00
-
-Feature importance:
-
-length           -> 0.4573
-digit_density    -> 0.2724
-symbol_density   -> 0.2452
-malformed        -> 0.0251
-
-Correct claim:
-
-On a controlled synthetic structural dataset,
-tri-channel regimes are perfectly separable using simple structural features.
-
-Boundary:
-
-synthetic success is not proof of real-world performance
-
-Document:
-
-docs/TRI_CHANNEL_CLASSIFIER_V1_RESULT.md
-
-
----
-
-Real Output Structural Analysis
-
-OMNIA was tested on real outputs generated by a local model.
-
-Collector:
-
-examples/collect_real_outputs_v1.py
-
-Dataset:
-
-data/real_structural_dataset_v1.jsonl
-
-Evaluator:
-
-examples/evaluate_real_outputs_v1.py
-
-Colab Validation Run V1 result:
-
-total  = 60
-atomic = 9  (15%)
-short  = 9  (15%)
-long   = 42 (70%)
-
-Interpretation:
-
-the tested local model produced mostly long incoherent structural drift
-
-Documents:
-
-docs/REAL_STRUCTURAL_ANALYSIS_V1.md
-docs/COLAB_VALIDATION_RUN_V1.md
-
-
----
-
-Structural Gate
-
-OMNIA now includes a minimal structural intervention layer.
-
-This is the transition from:
-
-structural observation -> structural intervention
-
-Gate outputs:
-
-PASS
-REVIEW
-REJECT
-
-These are not final truth decisions.
-
-They are structural routing states.
-
-
----
-
-Structural Gate V1 — Rule-Based
-
-Runner:
-
-examples/omnia_structural_gate_v1.py
-
-Colab Validation Run V1 result:
-
-total = 60
-
-PASS   = 19 (31.7%)
-REVIEW = 32 (53.3%)
-REJECT = 9  (15.0%)
-
-Interpretation:
-
-the gate does not pass everything
-the gate does not reject everything
-the gate routes most generated real outputs to REVIEW or REJECT
-atomic collapse is rejected
-long drift is partially captured
-
-Document:
-
-docs/OMNIA_STRUCTURAL_GATE_V1_RESULT.md
-docs/COLAB_VALIDATION_RUN_V1.md
-
-Important note:
-
-These results depend on the generated local-model output dataset.
-If data/real_structural_dataset_v1.jsonl is regenerated, exact PASS / REVIEW / REJECT counts may change.
-For frozen comparison, use committed result files in results/.
-
-
----
-
-Structural Gate V2 — Learned Gate
-
-V2 trains a learned classifier to replicate and smooth the V1 gate behavior.
-
-Trainer:
-
-examples/train_structural_gate_v2.py
-
-Runner:
-
-examples/use_structural_gate_v2.py
-
-Reports:
-
-results/structural_gate_v2_report.json
-results/omnia_structural_gate_v2.json
-
-Colab Validation Run V1 training report:
-
-precision    recall  f1-score   support
-
-        PASS       0.83      0.83      0.83         6
-      REJECT       0.75      1.00      0.86         3
-      REVIEW       1.00      0.89      0.94         9
-
-    accuracy                           0.89        18
-   macro avg       0.86      0.91      0.88        18
-weighted avg       0.90      0.89      0.89        18
-
-Colab Validation Run V1 execution result:
-
-V1:
-PASS   = 19
-REVIEW = 32
-REJECT = 9
-
-V2:
-PASS   = 19
-REVIEW = 31
-REJECT = 10
-
-Delta:
-PASS    0
-REVIEW -1
-REJECT +1
-
-Correct interpretation:
-
-V2 learns an approximation of the V1 structural gate behavior
-and produces a close routing distribution on the generated dataset.
-
-Boundary:
-
-V2 is not yet an independently discovered decision system.
-It is a learned approximation of the V1 rule-based structural gate.
-
-Do not commit the generated binary model unless needed:
-
-models/structural_gate_v2.pkl
-
-It can be regenerated by running:
-
-python examples/train_structural_gate_v2.py
-
-
----
-
-Current Empirical Status
-
-OMNIA has been tested across several controlled validation stages.
-
-
----
-
-Structural Gate V7
-
-Initial gate on controlled QA, reasoning, and RAG cases.
-
-Result:
-
-TP: 10
-FN: 0
-FP: 0
-TN: 6
-
-V7 performed well on the initial small dataset.
-
-
----
-
-Harder Dataset
-
-A harder dataset exposed a failure:
-
-V7 recall collapsed to 0.25
-
-This showed that the early gate was too shallow.
-
-
----
-
-Structural Gate V8
-
-V8 added structural mismatch detection.
-
-Result on harder data:
-
-TP: 11
-FN: 1
-FP: 0
-TN: 8
-Recall:    0.917
-Precision: 1.000
-
-
----
-
-Structural Completeness V9
-
-V9 added structural completeness detection:
-
-final-answer enforcement
-
-expression detection
-
-answer completeness / granularity check
-
-
-Result:
-
-TP: 12
-FN: 0
-FP: 0
-TN: 8
-Recall:    1.000
-Precision: 1.000
-
-This closed the observed V8 failure modes.
-
-
----
-
-External Attack Slice
-
-A separate synthetic attack set tested whether V9 generalized beyond the previous dataset.
-
-Result:
-
-TP: 9
-FN: 0
-FP: 0
-TN: 11
-Recall:    1.000
-Precision: 1.000
-
-This is evidence of cross-pattern robustness, not universal validity.
-
-
----
-
-GSM8K-style / GSM8K Real Slices
-
-OMNIA was also tested on arithmetic reasoning slices.
-
-On GSM8K-style and real GSM8K slices, V9 correctly rejected structurally invalid or wrong numeric outputs.
-
-However, some runs were highly imbalanced because the tested model produced very few correct answers.
-
-Therefore these runs show failure detection capability, but they are not sufficient as full positive-selectivity proof.
-
-
----
-
-Boundary Test V1
-
-OMNIA includes a boundary test protocol defining what the system must detect and what it must not pretend to detect.
-
-Document:
-
-docs/BOUNDARY_TEST_V1.md
-
-Core distinction:
-
-structure changes      -> OMNIA may change
-semantic truth changes -> OMNIA should not change by itself
-
-This test protects the main boundary:
-
-structural validity != semantic correctness
-
-
----
-
-Scope Boundary
-
-Read:
-
-docs/OMNIA_SCOPE_BOUNDARY_V1.md
-
-Core conclusion:
-
-> OMNIA is not a universal error detector.
-OMNIA is a structural filter layer.
-
-
-
-
----
-
-Colab Validation Run V1
-
-OMNIA includes a recorded Google Colab validation run.
-
-Document:
-
-docs/COLAB_VALIDATION_RUN_V1.md
-
-The run confirms:
-
-clone/install/test path                 -> OK
-core software tests                     -> OK
-quick OMNIA execution                   -> OK
-corrected OPI V11 ranking improvement   -> OK
-synthetic structural dataset generation -> OK
-tri-channel structural evaluation       -> OK
-real local-model output collection      -> OK
-real structural analysis                -> OK
-structural gate V1                      -> OK
-structural gate V2 training/execution   -> OK
-
-Correct claim supported by this run:
-
-OMNIA can be reproduced in a clean Colab environment and can execute its current structural measurement, observer perturbation, tri-channel diagnostic, and structural gate workflows.
-
-Boundary:
-
-This does not prove semantic truth detection, universal contradiction detection,
-final decision correctness, or production reliability.
-
-
----
-
-Where OMNIA is useful
-
-OMNIA is useful when systems require:
-
-structured outputs
-
-final-only answers
-
-JSON or schema compliance
-
-stable behavior under variation
-
-post-hoc output review
-
-pre-deployment structural gates
-
-detection of hollow or malformed responses
-
-observer-perturbation analysis
-
-top-k triage of structurally suspicious outputs
-
-structural routing: PASS / REVIEW / REJECT
-
-
-OMNIA is especially relevant where an answer may look acceptable but fail structurally.
-
-
----
-
-Where OMNIA is not sufficient
-
-OMNIA is not sufficient for:
-
-pure QA correctness
-
-truth verification
-
-semantic reasoning validation
-
-factuality checking
-
-final operational decisions
-
-production contradiction detection by itself
-
-
-These require a semantic evaluator, another model, ground truth, external verifier, or human review.
-
-
----
-
-Canonical Outputs
-
-OMNIA produces bounded structural diagnostics such as:
-
-omega_score
-sei_score
-iri_score
-drift_score
-limit_triggered
-gate_status
-reason_code
-opi
-corrected_opi
-atomic_score
-short_score
-long_score
-
-Typical gate values:
-
-GO
-RISK
-NO_GO
-UNSTABLE
-PASS
-REVIEW
-REJECT
-
-These are measurement or routing outputs.
-
-They are not final truth decisions.
-
-
----
-
-Minimal Example Output
-
-{
-  "omega_score": 0.594462,
-  "sei_score": 0.67557,
-  "iri_score": 0.405538,
-  "drift_score": 0.405538,
-  "limit_triggered": false,
-  "gate_status": "RISK",
-  "reason_code": "high_drift"
-}
-
-Interpretation:
-
-> The output is readable, but structurally weak enough to justify review.
-
-
-
-
----
-
-Repository Structure
-
-omnia/      -> structural measurement logic
-examples/   -> validation datasets and runners
-data/       -> frozen datasets
-results/    -> frozen experimental outputs
-docs/       -> reports, scope, validation notes
-tests/      -> core behavior tests
-
-
----
-
-Key Documents
-
-VALIDATION_SUMMARY.md
-docs/COLAB_VALIDATION_RUN_V1.md
-docs/FOCUSED_PROOF.md
-docs/OMNIA_SCOPE_BOUNDARY_V1.md
-docs/BOUNDARY_TEST_V1.md
-docs/OBSERVER_PERTURBATION_RESULT.md
-docs/OBSERVER_PERTURBATION_V7_RESULT.md
-docs/OBSERVER_PERTURBATION_V8_RESULT.md
-docs/OBSERVER_PERTURBATION_V10_RESULT.md
-docs/OBSERVER_PERTURBATION_V11_RESULT.md
-docs/OBSERVER_PERTURBATION_V14_REAL_OUTPUTS_RESULT.md
-docs/OBSERVER_PERTURBATION_V18_TRI_CHANNEL_RESULT.md
-docs/OMNIA_V18_FINAL_POSITION.md
-docs/TRI_CHANNEL_DATASET_V1_RESULT.md
-docs/TRI_CHANNEL_CLASSIFIER_V1_RESULT.md
-docs/REAL_STRUCTURAL_ANALYSIS_V1.md
-docs/OMNIA_STRUCTURAL_GATE_V1_RESULT.md
-docs/REAL_VALIDATION_V9_STRUCTURAL_COMPLETENESS.md
-docs/REAL_VALIDATION_V9_EXTERNAL_ATTACK.md
-docs/REAL_VALIDATION_V9_GSM8K_SLICE.md
-docs/REAL_VALIDATION_V9_GSM8K_REAL.md
-docs/OMNIA_V8_FAILURE_ANALYSIS.md
-
-
----
-
-Installation
-
-From repository root:
-
-pip install -e . -U --no-cache-dir
-
-
----
-
-Smoke Test
-
-python examples/quick_omnia_test.py
-
-Expected ending:
-
-OK: OMNIA core executed
-
-
----
-
-Observer Perturbation Tests
-
-Minimal signal:
-
-python examples/observer_perturbation_signal_test.py
-
-Corrected realistic test:
-
-python examples/observer_perturbation_signal_test_v11_llm_outputs.py
-
-Expected V11 direction:
-
-corrected precision@5 > raw precision@5
-
-Observed:
-
-RAW precision@5       = 0.4
-CORRECTED precision@5 = 0.8
-
-
----
-
-Tri-Channel / Gate Tests
-
-Some validation scripts require generated datasets.
-
-Generate synthetic structural dataset:
-
-python examples/generate_structural_dataset_v1.py
-
-Evaluate tri-channel dataset:
-
-python examples/evaluate_tri_channel_dataset_v1.py
-
-Collect real local-model outputs:
-
-python examples/collect_real_outputs_v1.py
-
-Evaluate real outputs:
-
-python examples/evaluate_real_outputs_v1.py
-
-Run rule-based structural gate:
-
-python examples/omnia_structural_gate_v1.py
-
-Train learned structural gate:
-
-python examples/train_structural_gate_v2.py
-
-Run learned structural gate:
-
-python examples/use_structural_gate_v2.py
-
-Optional tri-channel classifier:
-
-python examples/train_tri_channel_classifier_v1.py
-
-
----
-
-Required Execution Order
-
-Use this order for the full Colab-style validation path:
-
-python examples/quick_omnia_test.py
-python examples/observer_perturbation_signal_test_v11_llm_outputs.py
-
-python examples/generate_structural_dataset_v1.py
-python examples/evaluate_tri_channel_dataset_v1.py
-
-python examples/collect_real_outputs_v1.py
-python examples/evaluate_real_outputs_v1.py
-python examples/omnia_structural_gate_v1.py
-python examples/train_structural_gate_v2.py
-python examples/use_structural_gate_v2.py
-
-
----
-
-Tests
-
-pytest -q tests
-
-Recent verified run:
-
-47 passed
-
-This proves software consistency only.
-
-It is not external scientific validation by itself.
-
-
----
-
-Reproducibility Rule
-
-An OMNIA claim is valid only if it includes:
-
-frozen dataset
-
-frozen runner
-
-frozen result file
-
-explicit metric interpretation
-
-clear scope boundary
-
-
-Without reproducibility, the claim is not evidence.
-
-
----
-
-Generated Dataset Note
-
-Some results depend on generated local-model outputs.
-
-If this file is regenerated:
-
-data/real_structural_dataset_v1.jsonl
-
-then exact downstream counts may change, including:
-
-PASS / REVIEW / REJECT
-atomic / short / long
-V2 train/test metrics
-
-For frozen comparison, use committed result files in:
-
-results/
-
-
----
-
-Current Public Claim
-
-The correct public claim is narrow:
-
-> OMNIA is a bounded structural measurement core. It detects structural invalidity, incompleteness, drift, malformed outputs, observer-perturbation instability, and structural failure regimes. It does not detect semantic truth. Current results show strong behavior on controlled structural validation tasks, while pure semantic QA remains outside its standalone scope. ObserverPerturbation is best treated as a triage/ranking signal, not a final contradiction detector. The structural gate is an intervention layer for routing outputs to PASS / REVIEW / REJECT, not a final decision system.
-
-
-
-
----
-
-One-Line Definition
-
-OMNIA measures how much structure survives when form, constraints, or observer framing changes.
-
-
----
-
-Final Boundary
-
-OMNIA is strongest when it stays inside its real role:
-
-structural measurement only
-
-No hidden semantics.
-No truth oracle.
-No decision theater.
-No claims beyond evidence.
-
----
-
+Current package sanity check:
 
 ```text
-LON-MIRROR
-|
-├── CORE
-|   ├── OMNIA
-|   ├── OMNIA-INVARIANCE
-|   ├── omnia-limit
-|   └── OMNIA-RADAR
-|
-├── RESEARCH
-|   ├── OMNIA-CONSTANT
-|   └── OMNIA-THREE-BODY
-|
-├── REPRESENTATION
-|   └── OMNIABASE
-|
-└── APPLICATIONS
-    ├── OMNIA-SECURITY
-    ├── OMNIA-CRYPTO
-    └── OMNIAMIND
+import omnia        OK
+pip install -e .    OK
+pytest              47 passed
+```
 
-Root
+This means the repository is technically executable in a clean environment.
 
-LON-MIRROR
+It does not mean OMNIA is universally valid.
 
+It means the current package, tests, and examples are operational.
 
-Canonical ecosystem hub, lineage map, navigation layer, and coordination entry point.
+See:
 
+- [`VALIDATION_SUMMARY.md`](VALIDATION_SUMMARY.md)
+- [`README_REAL_VALIDATION_V7.md`](README_REAL_VALIDATION_V7.md)
+- [`docs/REPOSITORY_STATUS.md`](docs/REPOSITORY_STATUS.md)
+- [`docs/REPRODUCIBLE_RUNS.md`](docs/REPRODUCIBLE_RUNS.md)
+- [`docs/RESULTS_STATUS.md`](docs/RESULTS_STATUS.md)
 
 ---
 
-Core
+## Minimal usage
 
-OMNIA
+Clone and test:
 
+```bash
+git clone https://github.com/Tuttotorna/OMNIA.git
+cd OMNIA
+python -m pip install -e .
+python -m pytest -q
+```
 
-Core structural measurement framework.
+Run a minimal example:
 
-OMNIA-INVARIANCE
-
-
-Core validation and invariance-testing repository.
-Focuses on structural invariance, perturbation behavior, and controlled evidence around Ω under transformation.
-
-omnia-limit
-
-
-Structural stopping conditions, saturation, irreducibility, and limit behavior.
-
-OMNIA-RADAR
-
-
-Structural drift surfacing and trajectory visualization layer.
-
+```bash
+python examples/quick_omnia_test.py
+```
 
 ---
 
-Research
+## Repository structure
 
-OMNIA-CONSTANT
-
-
-Post-analysis and falsification repository for Ω-region behavior.
-Current focus: whether observed Ω corridors behave as structural transition regimes or collapse as measurement artifacts.
-No universal structural constant is declared.
-
-OMNIA-THREE-BODY
-
-
-Experimental dynamics repository for multi-body structural interaction tests.
-Focuses on instability, trajectory interaction, and non-trivial structural behavior under interacting perturbations.
-
+```text
+omnia/       core package
+docs/        documentation and validation reports
+examples/    runnable experiments and result builders
+tests/       test suite
+results/     stored validation outputs
+data/        datasets and input records
+```
 
 ---
 
-Representation
+## Main documentation
 
-OMNIABASE
-
-
-Multi-base structural representation and invariance exploration layer.
-
-
----
-
-Applications
-
-OMNIA-SECURITY
-
-
-Bounded structural diagnostics for security-relevant systems.
-
-OMNIA-CRYPTO
-
-
-Bounded structural diagnostics for cryptographic behavior.
-
-OMNIAMIND
-
-
-Bounded structural diagnostics for cognitive and reasoning-related behavior.
-
+- [`MASTER_POSITION.md`](MASTER_POSITION.md)
+- [`CORE_SCOPE.md`](CORE_SCOPE.md)
+- [`VALIDATION_SUMMARY.md`](VALIDATION_SUMMARY.md)
+- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)
+- [`docs/SCOPE.md`](docs/SCOPE.md)
+- [`docs/CORE_STATUS.md`](docs/CORE_STATUS.md)
+- [`docs/OMNIA_SCOPE_BOUNDARY_V1.md`](docs/OMNIA_SCOPE_BOUNDARY_V1.md)
+- [`docs/OMNIA_WHERE_IT_WORKS_V1.md`](docs/OMNIA_WHERE_IT_WORKS_V1.md)
+- [`docs/REPOSITORY_STATUS.md`](docs/REPOSITORY_STATUS.md)
 
 ---
 
-Architectural Separation
+## Relation to the MB-X.01 / L.O.N. ecosystem
 
-LON-MIRROR
-=
-ecosystem hub
+OMNIA is the structural measurement core inside the MB-X.01 / L.O.N. ecosystem.
 
-OMNIA
-=
-core structural measurement layer
+A clean ecosystem reading is:
 
-OMNIA-INVARIANCE
-=
-core invariance validation layer
+```text
+OMNIAMIND  = orchestration of cognitive / reasoning flow
+OMNIA      = structural measurement core
+OMNIA-LIMIT = stop / continue / retry / escalate boundary
+Decision   = external human or system layer
+```
 
-OMNIA-CONSTANT
-=
-post-analysis / falsification layer for Ω-region behavior
-
-OMNIA-THREE-BODY
-=
-experimental structural dynamics layer
-
-Other repositories
-=
-representation layers,
-limit layers,
-visualization layers,
-or bounded domain verticalizations.
-
+OMNIA must remain measurement-only.
 
 ---
 
-Core Boundary
+## Citation
 
+If you reference this repository, use the archived Zenodo record:
+
+```text
+DOI: 10.5281/zenodo.19820729
+https://doi.org/10.5281/zenodo.19820729
+```
+
+Citation metadata is available in:
+
+- [`CITATION.cff`](CITATION.cff)
+
+---
+
+## Summary
+
+OMNIA is a structural measurement core.
+
+It measures structural behavior after the fact.
+
+It does not infer truth.
+
+It does not replace semantic evaluation.
+
+It does not make final decisions.
+
+Its central boundary is:
+
+```text
 measurement != inference != decision
+```

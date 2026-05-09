@@ -279,3 +279,19 @@ Its central boundary is:
 ```text
 measurement != inference != decision
 ```
+
+---
+
+## OMNIA — Public Boundary
+
+- OMNIA is a post-hoc structural measurement engine.
+- OMNIA is not a truth oracle.
+- OMNIA is not a semantic judge.
+- OMNIA is not a decision engine.
+- OMNIA does not infer meaning.
+- OMNIA does not decide truth.
+- OMNIA does not replace external review.
+- measurement != inference != decision
+- decision remains external
+
+This section is a public boundary clarification. It does not change the repository core logic.

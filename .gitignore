@@ -12,3 +12,8 @@ dist/
 *.egg-info/
 # Python generated package metadata
 omnia.egg-info/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/

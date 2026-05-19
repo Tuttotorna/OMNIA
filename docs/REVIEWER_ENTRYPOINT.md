@@ -86,6 +86,7 @@ Recommended reading order:
 3. docs/SILENT_FAILURE_GATE_DEMO.md
 4. examples/silent_failure_gate_demo.py
 5. docs/MINIMAL_REPRODUCIBLE_RESULT.md
+docs/KNOWN_LIMITS_AND_FAILURE_CASES.md
 6. VALIDATION_SUMMARY.md
 ```
 
@@ -200,6 +201,38 @@ That means:
 ```text
 the output looks acceptable at the surface level
 but degrades under controlled structural perturbation
+```
+
+---
+
+## Known limits and failure cases
+
+Known limits and expected failure modes are documented here:
+
+```text
+docs/KNOWN_LIMITS_AND_FAILURE_CASES.md
+```
+
+A reviewer should especially check these boundary cases:
+
+```text
+semantically wrong but structurally stable -> possible GO
+semantically correct but structurally fragile -> possible RISK
+collapsed or malformed output -> possible STOP
+```
+
+The core rule is:
+
+```text
+structural validity != semantic correctness
+```
+
+Therefore:
+
+```text
+GO   != true
+RISK != false
+STOP != global failure
 ```
 
 ---

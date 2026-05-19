@@ -36,6 +36,7 @@ measurement != inference != decision
 If this is your first contact with OMNIA, start with:
 
 - [`docs/REVIEWER_ENTRYPOINT.md`](docs/REVIEWER_ENTRYPOINT.md)
+- [`docs/KNOWN_LIMITS_AND_FAILURE_CASES.md`](docs/KNOWN_LIMITS_AND_FAILURE_CASES.md)
 - [`docs/MINIMAL_REPRODUCIBLE_RESULT.md`](docs/MINIMAL_REPRODUCIBLE_RESULT.md)
 - [`docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md`](docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md)
 - [`CORE_SCOPE.md`](CORE_SCOPE.md)
@@ -492,6 +493,34 @@ OMNIA decides deployment
 ```
 
 OMNIA should be understood as a pre-semantic or parallel structural gate.
+
+---
+
+## Known limits and failure cases
+
+OMNIA explicitly records known limits and expected failure modes here:
+
+- [`docs/KNOWN_LIMITS_AND_FAILURE_CASES.md`](docs/KNOWN_LIMITS_AND_FAILURE_CASES.md)
+
+Core rule:
+
+```text
+structural validity != semantic correctness
+```
+
+This means:
+
+```text
+GO   != true
+RISK != false
+STOP != global failure
+```
+
+The boundary remains:
+
+```text
+measurement != inference != decision
+```
 
 ---
 

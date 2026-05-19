@@ -124,8 +124,8 @@ Recommended reading order:
 4. docs/SILENT_FAILURE_GATE_DEMO.md
 5. examples/silent_failure_gate_demo.py
 6. docs/MINIMAL_REPRODUCIBLE_RESULT.md
-docs/KNOWN_LIMITS_AND_FAILURE_CASES.md
-7. VALIDATION_SUMMARY.md
+7. docs/KNOWN_LIMITS_AND_FAILURE_CASES.md
+8. VALIDATION_SUMMARY.md
 ```
 
 Minimal path:

@@ -85,7 +85,8 @@ Recommended reading order:
 2. docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md
 3. docs/SILENT_FAILURE_GATE_DEMO.md
 4. examples/silent_failure_gate_demo.py
-5. VALIDATION_SUMMARY.md
+5. docs/MINIMAL_REPRODUCIBLE_RESULT.md
+6. VALIDATION_SUMMARY.md
 ```
 
 Minimal path:
@@ -135,6 +136,35 @@ fragile_output -> Surface PASS -> OMNIA RISK
 ```
 
 This is the silent failure pattern.
+
+---
+
+## Minimal reproducible result
+
+The current minimal reproducible result is recorded in:
+
+```text
+docs/MINIMAL_REPRODUCIBLE_RESULT.md
+```
+
+It preserves the current executable pattern:
+
+```text
+stable_output    -> Surface PASS -> OMNIA GO
+fragile_output   -> Surface PASS -> OMNIA RISK
+collapsed_output -> Surface FAIL -> OMNIA STOP
+pytest           -> 47 passed
+```
+
+The central reviewer-facing result is:
+
+```text
+fragile_output:
+  Surface check: PASS
+  OMNIA structural gate: RISK
+```
+
+This is the smallest reproducible demonstration of the silent failure pattern.
 
 ---
 

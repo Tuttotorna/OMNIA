@@ -36,6 +36,7 @@ measurement != inference != decision
 If this is your first contact with OMNIA, start with:
 
 - [`docs/REVIEWER_ENTRYPOINT.md`](docs/REVIEWER_ENTRYPOINT.md)
+- [`docs/MINIMAL_REPRODUCIBLE_RESULT.md`](docs/MINIMAL_REPRODUCIBLE_RESULT.md)
 - [`docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md`](docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md)
 - [`CORE_SCOPE.md`](CORE_SCOPE.md)
 - [`MASTER_POSITION.md`](MASTER_POSITION.md)
@@ -491,6 +492,31 @@ OMNIA decides deployment
 ```
 
 OMNIA should be understood as a pre-semantic or parallel structural gate.
+
+---
+
+## Minimal reproducible result
+
+The current minimal reproducible result is documented here:
+
+- [`docs/MINIMAL_REPRODUCIBLE_RESULT.md`](docs/MINIMAL_REPRODUCIBLE_RESULT.md)
+
+Core pattern:
+
+```text
+stable_output    -> Surface PASS -> OMNIA GO
+fragile_output   -> Surface PASS -> OMNIA RISK
+collapsed_output -> Surface FAIL -> OMNIA STOP
+pytest           -> 47 passed
+```
+
+The central result is:
+
+```text
+fragile_output -> Surface PASS -> OMNIA RISK
+```
+
+This records the smallest reproducible demonstration of the silent failure pattern.
 
 ---
 

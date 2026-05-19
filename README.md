@@ -458,6 +458,56 @@ OMNIA should be understood as a pre-semantic or parallel structural gate.
 
 ---
 
+## Silent Failure Gate demo
+
+OMNIA includes a minimal demo showing the core distinction:
+
+```text
+surface-valid output != structurally stable output
+```
+
+Demo file:
+
+- [`examples/silent_failure_gate_demo.py`](examples/silent_failure_gate_demo.py)
+
+Documentation:
+
+- [`docs/SILENT_FAILURE_GATE_DEMO.md`](docs/SILENT_FAILURE_GATE_DEMO.md)
+
+Run from the repository root:
+
+```bash
+python examples/silent_failure_gate_demo.py
+```
+
+Expected conceptual pattern:
+
+```text
+stable_output    -> Surface PASS -> OMNIA GO
+fragile_output   -> Surface PASS -> OMNIA RISK
+collapsed_output -> Surface FAIL -> OMNIA STOP
+```
+
+The central case is:
+
+```text
+fragile_output -> Surface PASS -> OMNIA RISK
+```
+
+This demonstrates the silent failure pattern: an output can pass surface checks while degrading under controlled structural perturbation.
+
+The demo does not prove semantic correctness.
+
+It emits structural signal only.
+
+The boundary remains:
+
+```text
+measurement != inference != decision
+```
+
+---
+
 ## Minimal usage
 
 Clone and test:

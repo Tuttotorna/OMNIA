@@ -35,6 +35,7 @@ measurement != inference != decision
 
 If this is your first contact with OMNIA, start with:
 
+- [`docs/REVIEWER_ENTRYPOINT.md`](docs/REVIEWER_ENTRYPOINT.md)
 - [`docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md`](docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md)
 - [`CORE_SCOPE.md`](CORE_SCOPE.md)
 - [`MASTER_POSITION.md`](MASTER_POSITION.md)
@@ -56,6 +57,41 @@ OMNIA decides whether an output is true.
 OMNIA does not decide truth.
 
 OMNIA measures structural behavior.
+
+---
+
+## Reviewer path
+
+For external reviewers, use:
+
+```text
+README.md
+  -> docs/REVIEWER_ENTRYPOINT.md
+  -> examples/silent_failure_gate_demo.py
+  -> docs/SILENT_FAILURE_GATE_DEMO.md
+  -> VALIDATION_SUMMARY.md
+```
+
+Minimal run:
+
+```bash
+python examples/silent_failure_gate_demo.py
+python -m pytest -q
+```
+
+Expected pattern:
+
+```text
+stable_output    -> Surface PASS -> OMNIA GO
+fragile_output   -> Surface PASS -> OMNIA RISK
+collapsed_output -> Surface FAIL -> OMNIA STOP
+```
+
+Core boundary:
+
+```text
+measurement != inference != decision
+```
 
 ---
 

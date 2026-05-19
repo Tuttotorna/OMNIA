@@ -35,6 +35,7 @@ measurement != inference != decision
 
 If this is your first contact with OMNIA, start with:
 
+- [`docs/PUBLIC_REVIEW_PACKAGE.md`](docs/PUBLIC_REVIEW_PACKAGE.md)
 - [`docs/REVIEWER_ENTRYPOINT.md`](docs/REVIEWER_ENTRYPOINT.md)
 - [`docs/KNOWN_LIMITS_AND_FAILURE_CASES.md`](docs/KNOWN_LIMITS_AND_FAILURE_CASES.md)
 - [`docs/MINIMAL_REPRODUCIBLE_RESULT.md`](docs/MINIMAL_REPRODUCIBLE_RESULT.md)
@@ -59,6 +60,40 @@ OMNIA decides whether an output is true.
 OMNIA does not decide truth.
 
 OMNIA measures structural behavior.
+
+---
+
+## Public review package
+
+OMNIA provides a public review package here:
+
+- [`docs/PUBLIC_REVIEW_PACKAGE.md`](docs/PUBLIC_REVIEW_PACKAGE.md)
+
+This package collects the minimal material needed to inspect, run, review, and falsify the current OMNIA position.
+
+It includes:
+
+```text
+positioning
+reviewer entrypoint
+executable demo
+demo documentation
+minimal reproducible result
+known limits and failure cases
+validation summary
+```
+
+Core review result:
+
+```text
+fragile_output -> Surface PASS -> OMNIA RISK
+```
+
+Core boundary:
+
+```text
+measurement != inference != decision
+```
 
 ---
 

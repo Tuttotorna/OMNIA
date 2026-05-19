@@ -76,18 +76,56 @@ OMNIA emits structural signals only.
 
 ---
 
+## Public review package
+
+The complete public review package is available here:
+
+```text
+docs/PUBLIC_REVIEW_PACKAGE.md
+```
+
+This package collects the minimal material needed to review OMNIA:
+
+```text
+README.md
+docs/REVIEWER_ENTRYPOINT.md
+docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md
+examples/silent_failure_gate_demo.py
+docs/SILENT_FAILURE_GATE_DEMO.md
+docs/MINIMAL_REPRODUCIBLE_RESULT.md
+docs/KNOWN_LIMITS_AND_FAILURE_CASES.md
+VALIDATION_SUMMARY.md
+```
+
+The central result to inspect remains:
+
+```text
+fragile_output:
+  Surface check: PASS
+  OMNIA structural gate: RISK
+```
+
+The boundary remains:
+
+```text
+measurement != inference != decision
+```
+
+---
+
 ## What to read first
 
 Recommended reading order:
 
 ```text
-1. README.md
-2. docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md
-3. docs/SILENT_FAILURE_GATE_DEMO.md
-4. examples/silent_failure_gate_demo.py
-5. docs/MINIMAL_REPRODUCIBLE_RESULT.md
+1. docs/PUBLIC_REVIEW_PACKAGE.md
+2. README.md
+3. docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md
+4. docs/SILENT_FAILURE_GATE_DEMO.md
+5. examples/silent_failure_gate_demo.py
+6. docs/MINIMAL_REPRODUCIBLE_RESULT.md
 docs/KNOWN_LIMITS_AND_FAILURE_CASES.md
-6. VALIDATION_SUMMARY.md
+7. VALIDATION_SUMMARY.md
 ```
 
 Minimal path:

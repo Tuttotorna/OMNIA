@@ -1,21 +1,5 @@
 # OMNIA
 
-## DOI
-
-[![DOI](https://zenodo.org/badge/1142595417.svg)](https://zenodo.org/badge/latestdoi/1142595417)
-
-Release DOI:
-
-    10.5281/zenodo.19820729
-
-Zenodo latest DOI link:
-
-    https://doi.org/10.5281/zenodo.19820729
-
-GitHub release:
-
-    https://github.com/Tuttotorna/OMNIA/releases/tag/v1.0.0
-
 **Core structural measurement engine.**
 
 OMNIA is the core measurement engine of the MB-X.01 / OMNIA ecosystem.

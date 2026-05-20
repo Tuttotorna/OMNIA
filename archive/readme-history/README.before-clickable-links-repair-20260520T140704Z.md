@@ -145,8 +145,7 @@ For public validation artifacts, start here:
 
     measurement != inference != decision
 
----
-
 ## License
 
 MIT.
+

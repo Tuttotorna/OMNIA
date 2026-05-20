@@ -110,18 +110,6 @@ The third is outside OMNIA.
 
 ---
 
-## Ecosystem entry point
-
-For the full ecosystem map, start here:
-
-[lon-mirror](https://github.com/Tuttotorna/lon-mirror)
-
-For public validation artifacts, start here:
-
-[OMNIA-VALIDATION](https://github.com/Tuttotorna/OMNIA-VALIDATION)
-
----
-
 ## Related repositories
 
 | Repository | Role |
@@ -139,11 +127,17 @@ For public validation artifacts, start here:
 | [OMNIA-SECURITY](https://github.com/Tuttotorna/OMNIA-SECURITY) | Bounded structural security diagnostics |
 | [OMNIA-CRYPTO](https://github.com/Tuttotorna/OMNIA-CRYPTO) | Bounded structural crypto diagnostics |
 
+## Ecosystem entry point
+
+For the full ecosystem map, start here:
+
+[lon-mirror](https://github.com/Tuttotorna/lon-mirror)
+
+For public validation artifacts, start here:
+
+[OMNIA-VALIDATION](https://github.com/Tuttotorna/OMNIA-VALIDATION)
+
 ---
-
-## Boundary and smoke-test required terms
-
-    measurement != inference != decision
 
 ## License
 

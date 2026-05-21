@@ -1,0 +1,25 @@
+{
+  "repository": "OMNIA",
+  "owner": "Tuttotorna",
+  "ecosystem": "MB-X.01 / OMNIA",
+  "role": "Core post-hoc structural measurement engine.",
+  "status": "core",
+  "contract": "Measures structural stability, drift, invariance and admissibility signals; it does not infer semantic truth or make decisions.",
+  "boundary": "measurement != inference != decision",
+  "backbone": [
+    "OMNIA",
+    "omnia-limit",
+    "OMNIA-VALIDATION"
+  ],
+  "satellites": [
+    "OMNIABASE",
+    "OMNIA-RADAR",
+    "OMNIA-SECURITY",
+    "OMNIA-CRYPTO",
+    "OMNIAMIND",
+    "OMNIA-THREE-BODY",
+    "OMNIA-INVARIANCE",
+    "OMNIA-CONSTANT"
+  ],
+  "last_hardening_pass_utc": "2026-05-21T14:03:44Z"
+}

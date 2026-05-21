@@ -221,3 +221,14 @@ measurement != inference != decision
 ```
 
 This repository is part of the MB-X.01 / OMNIA ecosystem. Its outputs must be read as structural measurement, validation, detection, orchestration or adapter artifacts according to the repository role. They are not autonomous semantic truth claims and they do not make external decisions.
+
+<!-- OMNIA_PUBLIC_CLAIM_BOUNDARY_V1 -->
+
+## Public Claim Boundary
+
+~~~text
+measurement != inference != decision
+~~~
+
+This repository is part of the MB-X.01 / OMNIA ecosystem. Its outputs are structural measurement or validation artifacts, not semantic truth claims or autonomous decisions.
+

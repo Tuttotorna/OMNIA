@@ -15,7 +15,7 @@ a post-hoc structural stability gate for AI outputs
 not as:
 
 ```text
-a truth oracle
+a truth measurement layer
 a semantic evaluator
 a benchmark replacement
 a final decision system
@@ -531,14 +531,14 @@ This claim is bounded and testable.
 OMNIA does not claim:
 
 ```text
-to prove truth
+to measures structural stability
 to detect all hallucinations
 to replace benchmarks
 to replace semantic evaluation
 to replace human judgment
 to guarantee safety
 to solve reasoning
-to be artificial consciousness
+to be structural cognition claim
 to be a universal intelligence layer
 ```
 

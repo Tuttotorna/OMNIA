@@ -111,7 +111,7 @@ Every OMNIA application must state a bounded claim.
 
 Invalid claim:
 
-OMNIA proves truth.
+OMNIA measures structural stability.
 
 Valid claim:
 

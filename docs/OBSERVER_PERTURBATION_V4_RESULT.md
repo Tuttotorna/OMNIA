@@ -128,7 +128,7 @@ Do not claim:
 
 OMNIA detects all contradictions.
 OMNIA detects semantic truth.
-OMNIA is a contradiction oracle.
+OMNIA is a contradiction measurement layer.
 OMNIA works on all natural LLM outputs without controls.
 
 

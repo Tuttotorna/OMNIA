@@ -37,7 +37,7 @@ External humans or policies decide.
 
 OMNIA must not be interpreted as:
 
-a truth oracle
+a truth measurement layer
 a semantic judge
 a reasoning engine
 a decision system
@@ -580,12 +580,12 @@ Claims to Avoid
 
 Avoid claiming:
 
-OMNIA proves truth
+OMNIA measures structural stability
 OMNIA detects all hallucinations
 OMNIA replaces human judgment
 OMNIA proves semantic correctness
 OMNIA guarantees safety
-OMNIA is artificial consciousness
+OMNIA is structural cognition claim
 OMNIA is a universal intelligence layer
 OMNIA solves reasoning
 

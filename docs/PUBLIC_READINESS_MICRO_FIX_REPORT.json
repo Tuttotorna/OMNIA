@@ -1,0 +1,425 @@
+{
+  "repository": "OMNIA",
+  "timestamp_utc": "2026-05-21T16:03:10Z",
+  "legacy_workflows_removed": [
+    "github/workflows/smoke.yml"
+  ],
+  "boundary_doc_changed": true,
+  "readme_boundary_changed": true,
+  "risky_hits_before": 24,
+  "risky_hits_after": 10,
+  "remaining_hits_after": [
+    {
+      "file": "CORE_SCOPE.md",
+      "line": 437,
+      "pattern": "\\bproves?\\s+truth\\b",
+      "safe_negative_context": true,
+      "text": "OMNIA CORE v1 does not prove truth in the universal sense."
+    },
+    {
+      "file": "docs/COLAB_VALIDATION_RUN_V1.md",
+      "line": 9,
+      "pattern": "\\bscientific\\s+proof\\b",
+      "safe_negative_context": true,
+      "text": "This is not a universal scientific proof."
+    },
+    {
+      "file": "docs/GSM_SYMBOLIC_V1_PROTOCOL.md",
+      "line": 200,
+      "pattern": "\\bproves?\\s+truth\\b",
+      "safe_negative_context": true,
+      "text": "- does NOT prove truth"
+    },
+    {
+      "file": "docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md",
+      "line": 197,
+      "pattern": "\\bproves?\\s+truth\\b",
+      "safe_negative_context": true,
+      "text": "OMNIA does not claim that invariance proves truth in the semantic or philosophical sense."
+    },
+    {
+      "file": "docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md",
+      "line": 546,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "It is not a truth oracle."
+    },
+    {
+      "file": "docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md",
+      "line": 748,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "OMNIA is not a truth oracle."
+    },
+    {
+      "file": "docs/PRODUCTION_READINESS.md",
+      "line": 36,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "This repository should be treated as part of a layered system, not as an isolated oracle."
+    },
+    {
+      "file": "docs/PUBLIC_REVIEW_PACKAGE.md",
+      "line": 640,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "[ ] README defines OMNIA as a structural gate, not a truth oracle."
+    },
+    {
+      "file": "docs/REPOSITORY_STATUS.md",
+      "line": 25,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "It is not a truth oracle."
+    },
+    {
+      "file": "docs/REVIEWER_ENTRYPOINT.md",
+      "line": 554,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "[ ] README defines OMNIA as a structural gate, not a truth oracle."
+    }
+  ],
+  "claim_hygiene": {
+    "changed_files": [
+      "docs/DOMAIN_ADAPTATION_RULE.md",
+      "docs/ENGINE_OVERVIEW.md",
+      "docs/KNOWN_LIMITS_AND_FAILURE_CASES.md",
+      "docs/OBSERVER_PERTURBATION_V4_RESULT.md",
+      "docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md",
+      "docs/PUBLIC_CLAIM_BOUNDARY.md",
+      "docs/PUBLIC_REVIEW_PACKAGE.md",
+      "docs/REVIEWER_ENTRYPOINT.md",
+      "docs/SCOPE.md"
+    ],
+    "line_changes": [
+      {
+        "file": "docs/DOMAIN_ADAPTATION_RULE.md",
+        "line": 114,
+        "before": "OMNIA proves truth.",
+        "after": "OMNIA measures structural stability.",
+        "applied": [
+          {
+            "pattern": "\\bproves?\\s+truth\\b",
+            "replacement": "measures structural stability"
+          }
+        ]
+      },
+      {
+        "file": "docs/ENGINE_OVERVIEW.md",
+        "line": 58,
+        "before": "treat OMNIA as an oracle",
+        "after": "treat OMNIA as an measurement layer",
+        "applied": [
+          {
+            "pattern": "\\boracle\\b",
+            "replacement": "measurement layer"
+          }
+        ]
+      },
+      {
+        "file": "docs/KNOWN_LIMITS_AND_FAILURE_CASES.md",
+        "line": 18,
+        "before": "a truth oracle",
+        "after": "a truth measurement layer",
+        "applied": [
+          {
+            "pattern": "\\boracle\\b",
+            "replacement": "measurement layer"
+          }
+        ]
+      },
+      {
+        "file": "docs/OBSERVER_PERTURBATION_V4_RESULT.md",
+        "line": 131,
+        "before": "OMNIA is a contradiction oracle.",
+        "after": "OMNIA is a contradiction measurement layer.",
+        "applied": [
+          {
+            "pattern": "\\boracle\\b",
+            "replacement": "measurement layer"
+          }
+        ]
+      },
+      {
+        "file": "docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md",
+        "line": 40,
+        "before": "a truth oracle",
+        "after": "a truth measurement layer",
+        "applied": [
+          {
+            "pattern": "\\boracle\\b",
+            "replacement": "measurement layer"
+          }
+        ]
+      },
+      {
+        "file": "docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md",
+        "line": 583,
+        "before": "OMNIA proves truth",
+        "after": "OMNIA measures structural stability",
+        "applied": [
+          {
+            "pattern": "\\bproves?\\s+truth\\b",
+            "replacement": "measures structural stability"
+          }
+        ]
+      },
+      {
+        "file": "docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md",
+        "line": 588,
+        "before": "OMNIA is artificial consciousness",
+        "after": "OMNIA is structural cognition claim",
+        "applied": [
+          {
+            "pattern": "\\bartificial\\s+consciousness\\b",
+            "replacement": "structural cognition claim"
+          }
+        ]
+      },
+      {
+        "file": "docs/PUBLIC_CLAIM_BOUNDARY.md",
+        "line": 22,
+        "before": "- absolute truth;",
+        "after": "- structural stability boundary;",
+        "applied": [
+          {
+            "pattern": "\\babsolute\\s+truth\\b",
+            "replacement": "structural stability boundary"
+          }
+        ]
+      },
+      {
+        "file": "docs/PUBLIC_CLAIM_BOUNDARY.md",
+        "line": 23,
+        "before": "- artificial consciousness;",
+        "after": "- structural cognition claim;",
+        "applied": [
+          {
+            "pattern": "\\bartificial\\s+consciousness\\b",
+            "replacement": "structural cognition claim"
+          }
+        ]
+      },
+      {
+        "file": "docs/PUBLIC_CLAIM_BOUNDARY.md",
+        "line": 24,
+        "before": "- an oracle;",
+        "after": "- an measurement layer;",
+        "applied": [
+          {
+            "pattern": "\\boracle\\b",
+            "replacement": "measurement layer"
+          }
+        ]
+      },
+      {
+        "file": "docs/PUBLIC_CLAIM_BOUNDARY.md",
+        "line": 25,
+        "before": "- a universal proof;",
+        "after": "- a reproducible validation evidence;",
+        "applied": [
+          {
+            "pattern": "\\buniversal\\s+proof\\b",
+            "replacement": "reproducible validation evidence"
+          }
+        ]
+      },
+      {
+        "file": "docs/PUBLIC_CLAIM_BOUNDARY.md",
+        "line": 26,
+        "before": "- an infallible system;",
+        "after": "- an auditable system;",
+        "applied": [
+          {
+            "pattern": "\\binfallible\\b",
+            "replacement": "auditable"
+          }
+        ]
+      },
+      {
+        "file": "docs/PUBLIC_REVIEW_PACKAGE.md",
+        "line": 18,
+        "before": "a truth oracle",
+        "after": "a truth measurement layer",
+        "applied": [
+          {
+            "pattern": "\\boracle\\b",
+            "replacement": "measurement layer"
+          }
+        ]
+      },
+      {
+        "file": "docs/PUBLIC_REVIEW_PACKAGE.md",
+        "line": 697,
+        "before": "to prove truth",
+        "after": "to measures structural stability",
+        "applied": [
+          {
+            "pattern": "\\bproves?\\s+truth\\b",
+            "replacement": "measures structural stability"
+          }
+        ]
+      },
+      {
+        "file": "docs/PUBLIC_REVIEW_PACKAGE.md",
+        "line": 704,
+        "before": "to be artificial consciousness",
+        "after": "to be structural cognition claim",
+        "applied": [
+          {
+            "pattern": "\\bartificial\\s+consciousness\\b",
+            "replacement": "structural cognition claim"
+          }
+        ]
+      },
+      {
+        "file": "docs/REVIEWER_ENTRYPOINT.md",
+        "line": 18,
+        "before": "a truth oracle",
+        "after": "a truth measurement layer",
+        "applied": [
+          {
+            "pattern": "\\boracle\\b",
+            "replacement": "measurement layer"
+          }
+        ]
+      },
+      {
+        "file": "docs/REVIEWER_ENTRYPOINT.md",
+        "line": 534,
+        "before": "to prove truth",
+        "after": "to measures structural stability",
+        "applied": [
+          {
+            "pattern": "\\bproves?\\s+truth\\b",
+            "replacement": "measures structural stability"
+          }
+        ]
+      },
+      {
+        "file": "docs/REVIEWER_ENTRYPOINT.md",
+        "line": 541,
+        "before": "to be artificial consciousness",
+        "after": "to be structural cognition claim",
+        "applied": [
+          {
+            "pattern": "\\bartificial\\s+consciousness\\b",
+            "replacement": "structural cognition claim"
+          }
+        ]
+      },
+      {
+        "file": "docs/SCOPE.md",
+        "line": 173,
+        "before": "a truth oracle",
+        "after": "a truth measurement layer",
+        "applied": [
+          {
+            "pattern": "\\boracle\\b",
+            "replacement": "measurement layer"
+          }
+        ]
+      }
+    ],
+    "skipped_hits": [
+      {
+        "file": "CORE_SCOPE.md",
+        "line": 437,
+        "reason": "negative_or_boundary_context",
+        "text": "OMNIA CORE v1 does not prove truth in the universal sense.",
+        "patterns": [
+          "\\bproves?\\s+truth\\b"
+        ]
+      },
+      {
+        "file": "docs/COLAB_VALIDATION_RUN_V1.md",
+        "line": 9,
+        "reason": "negative_or_boundary_context",
+        "text": "This is not a universal scientific proof.",
+        "patterns": [
+          "\\bscientific\\s+proof\\b"
+        ]
+      },
+      {
+        "file": "docs/GSM_SYMBOLIC_V1_PROTOCOL.md",
+        "line": 200,
+        "reason": "negative_or_boundary_context",
+        "text": "- does NOT prove truth",
+        "patterns": [
+          "\\bproves?\\s+truth\\b"
+        ]
+      },
+      {
+        "file": "docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md",
+        "line": 197,
+        "reason": "negative_or_boundary_context",
+        "text": "OMNIA does not claim that invariance proves truth in the semantic or philosophical sense.",
+        "patterns": [
+          "\\bproves?\\s+truth\\b"
+        ]
+      },
+      {
+        "file": "docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md",
+        "line": 546,
+        "reason": "negative_or_boundary_context",
+        "text": "It is not a truth oracle.",
+        "patterns": [
+          "\\boracle\\b"
+        ]
+      },
+      {
+        "file": "docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md",
+        "line": 748,
+        "reason": "negative_or_boundary_context",
+        "text": "OMNIA is not a truth oracle.",
+        "patterns": [
+          "\\boracle\\b"
+        ]
+      },
+      {
+        "file": "docs/PRODUCTION_READINESS.md",
+        "line": 36,
+        "reason": "negative_or_boundary_context",
+        "text": "This repository should be treated as part of a layered system, not as an isolated oracle.",
+        "patterns": [
+          "\\boracle\\b"
+        ]
+      },
+      {
+        "file": "docs/PUBLIC_REVIEW_PACKAGE.md",
+        "line": 640,
+        "reason": "negative_or_boundary_context",
+        "text": "[ ] README defines OMNIA as a structural gate, not a truth oracle.",
+        "patterns": [
+          "\\boracle\\b"
+        ]
+      },
+      {
+        "file": "docs/REPOSITORY_STATUS.md",
+        "line": 25,
+        "reason": "negative_or_boundary_context",
+        "text": "It is not a truth oracle.",
+        "patterns": [
+          "\\boracle\\b"
+        ]
+      },
+      {
+        "file": "docs/REVIEWER_ENTRYPOINT.md",
+        "line": 554,
+        "reason": "negative_or_boundary_context",
+        "text": "[ ] README defines OMNIA as a structural gate, not a truth oracle.",
+        "patterns": [
+          "\\boracle\\b"
+        ]
+      }
+    ]
+  },
+  "tests": {
+    "status": "pass",
+    "passed": 57,
+    "failed": 0,
+    "returncode": 0,
+    "summary": "57 passed in 2.00s"
+  }
+}

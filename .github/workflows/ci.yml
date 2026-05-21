@@ -33,10 +33,15 @@ jobs:
         shell: bash
         run: |
           python -m pip install --upgrade pip
-      python -m pip install pytest
-      python -m pip install -e .
+          python -m pip install pytest
+          python -m pip install -e .
 
-      - name: Run tests
+      - name: Run required DOI ownership test
         shell: bash
         run: |
-          pytest -q
+          python -m pytest -q tests/test_doi_ownership.py
+
+      - name: Run full test suite
+        shell: bash
+        run: |
+          python -m pytest -q

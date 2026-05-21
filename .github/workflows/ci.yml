@@ -16,11 +16,24 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      PYTHONPATH: ${{ github.workspace }}
+      OMNIA_SOURCE_DIR: ${{ github.workspace }}/_backbone/OMNIA
+      PYTHONPATH: ${{ github.workspace }}:${{ github.workspace }}/_backbone/OMNIA:${{ github.workspace }}/_backbone/omnia-limit:${{ github.workspace }}/_backbone/OMNIA-INVARIANCE
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Checkout omnia-limit backbone
+        uses: actions/checkout@v4
+        with:
+          repository: Tuttotorna/omnia-limit
+          path: _backbone/omnia-limit
+
+      - name: Checkout OMNIA-INVARIANCE backbone
+        uses: actions/checkout@v4
+        with:
+          repository: Tuttotorna/OMNIA-INVARIANCE
+          path: _backbone/OMNIA-INVARIANCE
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -32,14 +45,34 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install pytest numpy matplotlib jsonschema
 
-      - name: Install current package
+      - name: Install backbone packages
         run: |
-          python -m pip install -e .
+          if [ -d _backbone/omnia-limit ]; then
+            python -m pip install -e _backbone/omnia-limit
+          fi
+          if [ -d _backbone/OMNIA ]; then
+            python -m pip install -e _backbone/OMNIA
+          fi
+          if [ -d _backbone/OMNIA-INVARIANCE ]; then
+            python -m pip install -e _backbone/OMNIA-INVARIANCE
+          fi
+
+      - name: Install current package when package metadata exists
+        run: |
+          if [ -f pyproject.toml ] || [ -f setup.py ]; then
+            python -m pip install -e .
+          else
+            echo "No Python package metadata found; skipping editable install."
+          fi
 
       - name: Run required DOI ownership test
         run: |
           python -m pytest -q tests/test_doi_ownership.py
 
-      - name: Run full test suite
+      - name: Run tests when tests exist
         run: |
-          python -m pytest -q
+          if [ -d tests ]; then
+            python -m pytest -q
+          else
+            echo "No tests directory found; CI passes as documentation-only repository."
+          fi

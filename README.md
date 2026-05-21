@@ -1,3 +1,20 @@
+<!-- DOI OWNERSHIP AUDIT:START -->
+
+## DOI ownership audit
+
+This repository uses strict DOI ownership by exact repository identity.
+
+OMNIA != OMNIA-VALIDATION
+OMNIA DOI != OMNIA-VALIDATION DOI
+repo_name substring match is forbidden for DOI ownership
+exact repository identity is required for DOI ownership
+this_repository: Tuttotorna/OMNIA
+this_repository_doi: 10.5281/zenodo.20322683
+other_repository: Tuttotorna/OMNIA-VALIDATION
+other_repository_doi: 10.5281/zenodo.20322696
+
+<!-- DOI OWNERSHIP AUDIT:END -->
+
 <!-- MB-X.01 LON RELEASE:START -->
 
 ## MB-X.01 / L.O.N. release state
@@ -5,7 +22,7 @@
 Repository: Tuttotorna/OMNIA
 Release tag: v2026.05.21
 Release commit: 335ea50
-Release DOI: 10.5281/zenodo.20322696
+Release DOI: 10.5281/zenodo.20322683
 
 Boundary:
 
@@ -13,6 +30,8 @@ measurement != validation
 validation != orchestration
 orchestration != decision
 decision != measurement
+DOI ownership != substring match
+OMNIA != OMNIA-VALIDATION
 
 <!-- MB-X.01 LON RELEASE:END -->
 
@@ -22,14 +41,22 @@ decision != measurement
 
 ## DOI
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281%2Fzenodo.20322696.svg)](https://doi.org/10.5281/zenodo.20322696)
+[![DOI](https://zenodo.org/badge/DOI/10.5281%2Fzenodo.20322683.svg)](https://doi.org/10.5281/zenodo.20322683)
 
 Zenodo DOI badge for this repository.
 
 Repository: Tuttotorna/OMNIA
 GitHub repository id: 1142595417
 Release tag: v2026.05.21
-Latest release DOI: 10.5281/zenodo.20322696
+Release commit: 335ea50
+Latest release DOI: 10.5281/zenodo.20322683
+
+Ownership rule:
+
+exact repository identity is required for DOI ownership
+repo_name substring match is forbidden for DOI ownership
+OMNIA != OMNIA-VALIDATION
+OMNIA DOI != OMNIA-VALIDATION DOI
 
 <!-- ZENODO DOI:END -->
 

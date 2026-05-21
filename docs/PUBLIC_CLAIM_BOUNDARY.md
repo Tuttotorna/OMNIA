@@ -19,10 +19,10 @@ This repository may describe structural measurement, structural stability, valid
 This repository must not be presented as:
 
 - semantic truth;
-- structural stability boundary;
-- structural cognition claim;
-- an measurement layer;
-- a reproducible validation evidence;
+- absolute semantic-truth authority;
+- structural cognition layer;
+- a measurement layer;
+- reproducible validation evidence;
 - an auditable system;
 - a guarantee of security;
 - an autonomous decision engine.

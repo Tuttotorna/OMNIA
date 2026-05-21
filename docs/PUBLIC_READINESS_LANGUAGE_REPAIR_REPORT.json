@@ -1,0 +1,1047 @@
+{
+  "repository": "OMNIA",
+  "timestamp_utc": "2026-05-21T16:32:15Z",
+  "risky_hits_before": 39,
+  "risky_hits_after": 39,
+  "risky_hits_before_items": [
+    {
+      "file": "CORE_SCOPE.md",
+      "line": 437,
+      "pattern": "\\bproves?\\s+truth\\b",
+      "safe_negative_context": true,
+      "text": "OMNIA CORE v1 does not prove truth in the universal sense."
+    },
+    {
+      "file": "docs/COLAB_VALIDATION_RUN_V1.md",
+      "line": 9,
+      "pattern": "\\bscientific\\s+proof\\b",
+      "safe_negative_context": true,
+      "text": "This is not a universal scientific proof."
+    },
+    {
+      "file": "docs/GSM_SYMBOLIC_V1_PROTOCOL.md",
+      "line": 200,
+      "pattern": "\\bproves?\\s+truth\\b",
+      "safe_negative_context": true,
+      "text": "- does NOT prove truth"
+    },
+    {
+      "file": "docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md",
+      "line": 197,
+      "pattern": "\\bproves?\\s+truth\\b",
+      "safe_negative_context": true,
+      "text": "OMNIA does not claim that invariance proves truth in the semantic or philosophical sense."
+    },
+    {
+      "file": "docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md",
+      "line": 546,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "It is not a truth oracle."
+    },
+    {
+      "file": "docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md",
+      "line": 748,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "OMNIA is not a truth oracle."
+    },
+    {
+      "file": "docs/PRODUCTION_READINESS.md",
+      "line": 36,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "This repository should be treated as part of a layered system, not as an isolated oracle."
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 34,
+      "pattern": "\\bproves?\\s+truth\\b",
+      "safe_negative_context": false,
+      "text": "- before: OMNIA proves truth."
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 37,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": false,
+      "text": "- before: treat OMNIA as an oracle"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 40,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": false,
+      "text": "- before: a truth oracle"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 43,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": false,
+      "text": "- before: OMNIA is a contradiction oracle."
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 46,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": false,
+      "text": "- before: a truth oracle"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 49,
+      "pattern": "\\bproves?\\s+truth\\b",
+      "safe_negative_context": false,
+      "text": "- before: OMNIA proves truth"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 52,
+      "pattern": "\\bartificial\\s+consciousness\\b",
+      "safe_negative_context": false,
+      "text": "- before: OMNIA is artificial consciousness"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 55,
+      "pattern": "\\babsolute\\s+truth\\b",
+      "safe_negative_context": false,
+      "text": "- before: - absolute truth;"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 58,
+      "pattern": "\\bartificial\\s+consciousness\\b",
+      "safe_negative_context": false,
+      "text": "- before: - artificial consciousness;"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 61,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": false,
+      "text": "- before: - an oracle;"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 64,
+      "pattern": "\\buniversal\\s+proof\\b",
+      "safe_negative_context": false,
+      "text": "- before: - a universal proof;"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 67,
+      "pattern": "\\binfallible\\b",
+      "safe_negative_context": false,
+      "text": "- before: - an infallible system;"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 70,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": false,
+      "text": "- before: a truth oracle"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 73,
+      "pattern": "\\bproves?\\s+truth\\b",
+      "safe_negative_context": false,
+      "text": "- before: to prove truth"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 76,
+      "pattern": "\\bartificial\\s+consciousness\\b",
+      "safe_negative_context": false,
+      "text": "- before: to be artificial consciousness"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 79,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": false,
+      "text": "- before: a truth oracle"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 82,
+      "pattern": "\\bproves?\\s+truth\\b",
+      "safe_negative_context": false,
+      "text": "- before: to prove truth"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 85,
+      "pattern": "\\bartificial\\s+consciousness\\b",
+      "safe_negative_context": false,
+      "text": "- before: to be artificial consciousness"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 88,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": false,
+      "text": "- before: a truth oracle"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 95,
+      "pattern": "\\bproves?\\s+truth\\b",
+      "safe_negative_context": true,
+      "text": "- `CORE_SCOPE.md:437` reason `negative_or_boundary_context` -> OMNIA CORE v1 does not prove truth in the universal sense."
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 96,
+      "pattern": "\\bscientific\\s+proof\\b",
+      "safe_negative_context": true,
+      "text": "- `docs/COLAB_VALIDATION_RUN_V1.md:9` reason `negative_or_boundary_context` -> This is not a universal scientific proof."
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 97,
+      "pattern": "\\bproves?\\s+truth\\b",
+      "safe_negative_context": true,
+      "text": "- `docs/GSM_SYMBOLIC_V1_PROTOCOL.md:200` reason `negative_or_boundary_context` -> - does NOT prove truth"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 98,
+      "pattern": "\\bproves?\\s+truth\\b",
+      "safe_negative_context": true,
+      "text": "- `docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md:197` reason `negative_or_boundary_context` -> OMNIA does not claim that invariance proves truth in the semantic or philosophical sense."
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 99,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "- `docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md:546` reason `negative_or_boundary_context` -> It is not a truth oracle."
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 100,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "- `docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md:748` reason `negative_or_boundary_context` -> OMNIA is not a truth oracle."
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 101,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "- `docs/PRODUCTION_READINESS.md:36` reason `negative_or_boundary_context` -> This repository should be treated as part of a layered system, not as an isolated oracle."
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 102,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "- `docs/PUBLIC_REVIEW_PACKAGE.md:640` reason `negative_or_boundary_context` -> [ ] README defines OMNIA as a structural gate, not a truth oracle."
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 103,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "- `docs/REPOSITORY_STATUS.md:25` reason `negative_or_boundary_context` -> It is not a truth oracle."
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 104,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "- `docs/REVIEWER_ENTRYPOINT.md:554` reason `negative_or_boundary_context` -> [ ] README defines OMNIA as a structural gate, not a truth oracle."
+    },
+    {
+      "file": "docs/PUBLIC_REVIEW_PACKAGE.md",
+      "line": 640,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "[ ] README defines OMNIA as a structural gate, not a truth oracle."
+    },
+    {
+      "file": "docs/REPOSITORY_STATUS.md",
+      "line": 25,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "It is not a truth oracle."
+    },
+    {
+      "file": "docs/REVIEWER_ENTRYPOINT.md",
+      "line": 554,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "[ ] README defines OMNIA as a structural gate, not a truth oracle."
+    }
+  ],
+  "risky_hits_after_items": [
+    {
+      "file": "CORE_SCOPE.md",
+      "line": 437,
+      "pattern": "\\bproves?\\s+truth\\b",
+      "safe_negative_context": true,
+      "text": "OMNIA CORE v1 does not prove truth in the universal sense."
+    },
+    {
+      "file": "docs/COLAB_VALIDATION_RUN_V1.md",
+      "line": 9,
+      "pattern": "\\bscientific\\s+proof\\b",
+      "safe_negative_context": true,
+      "text": "This is not a universal scientific proof."
+    },
+    {
+      "file": "docs/GSM_SYMBOLIC_V1_PROTOCOL.md",
+      "line": 200,
+      "pattern": "\\bproves?\\s+truth\\b",
+      "safe_negative_context": true,
+      "text": "- does NOT prove truth"
+    },
+    {
+      "file": "docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md",
+      "line": 197,
+      "pattern": "\\bproves?\\s+truth\\b",
+      "safe_negative_context": true,
+      "text": "OMNIA does not claim that invariance proves truth in the semantic or philosophical sense."
+    },
+    {
+      "file": "docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md",
+      "line": 546,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "It is not a truth oracle."
+    },
+    {
+      "file": "docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md",
+      "line": 748,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "OMNIA is not a truth oracle."
+    },
+    {
+      "file": "docs/PRODUCTION_READINESS.md",
+      "line": 36,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "This repository should be treated as part of a layered system, not as an isolated oracle."
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 34,
+      "pattern": "\\bproves?\\s+truth\\b",
+      "safe_negative_context": false,
+      "text": "- before: OMNIA proves truth."
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 37,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": false,
+      "text": "- before: treat OMNIA as an oracle"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 40,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": false,
+      "text": "- before: a truth oracle"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 43,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": false,
+      "text": "- before: OMNIA is a contradiction oracle."
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 46,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": false,
+      "text": "- before: a truth oracle"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 49,
+      "pattern": "\\bproves?\\s+truth\\b",
+      "safe_negative_context": false,
+      "text": "- before: OMNIA proves truth"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 52,
+      "pattern": "\\bartificial\\s+consciousness\\b",
+      "safe_negative_context": false,
+      "text": "- before: OMNIA is artificial consciousness"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 55,
+      "pattern": "\\babsolute\\s+truth\\b",
+      "safe_negative_context": false,
+      "text": "- before: - absolute truth;"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 58,
+      "pattern": "\\bartificial\\s+consciousness\\b",
+      "safe_negative_context": false,
+      "text": "- before: - artificial consciousness;"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 61,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": false,
+      "text": "- before: - an oracle;"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 64,
+      "pattern": "\\buniversal\\s+proof\\b",
+      "safe_negative_context": false,
+      "text": "- before: - a universal proof;"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 67,
+      "pattern": "\\binfallible\\b",
+      "safe_negative_context": false,
+      "text": "- before: - an infallible system;"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 70,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": false,
+      "text": "- before: a truth oracle"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 73,
+      "pattern": "\\bproves?\\s+truth\\b",
+      "safe_negative_context": false,
+      "text": "- before: to prove truth"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 76,
+      "pattern": "\\bartificial\\s+consciousness\\b",
+      "safe_negative_context": false,
+      "text": "- before: to be artificial consciousness"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 79,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": false,
+      "text": "- before: a truth oracle"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 82,
+      "pattern": "\\bproves?\\s+truth\\b",
+      "safe_negative_context": false,
+      "text": "- before: to prove truth"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 85,
+      "pattern": "\\bartificial\\s+consciousness\\b",
+      "safe_negative_context": false,
+      "text": "- before: to be artificial consciousness"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 88,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": false,
+      "text": "- before: a truth oracle"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 95,
+      "pattern": "\\bproves?\\s+truth\\b",
+      "safe_negative_context": true,
+      "text": "- `CORE_SCOPE.md:437` reason `negative_or_boundary_context` -> OMNIA CORE v1 does not prove truth in the universal sense."
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 96,
+      "pattern": "\\bscientific\\s+proof\\b",
+      "safe_negative_context": true,
+      "text": "- `docs/COLAB_VALIDATION_RUN_V1.md:9` reason `negative_or_boundary_context` -> This is not a universal scientific proof."
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 97,
+      "pattern": "\\bproves?\\s+truth\\b",
+      "safe_negative_context": true,
+      "text": "- `docs/GSM_SYMBOLIC_V1_PROTOCOL.md:200` reason `negative_or_boundary_context` -> - does NOT prove truth"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 98,
+      "pattern": "\\bproves?\\s+truth\\b",
+      "safe_negative_context": true,
+      "text": "- `docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md:197` reason `negative_or_boundary_context` -> OMNIA does not claim that invariance proves truth in the semantic or philosophical sense."
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 99,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "- `docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md:546` reason `negative_or_boundary_context` -> It is not a truth oracle."
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 100,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "- `docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md:748` reason `negative_or_boundary_context` -> OMNIA is not a truth oracle."
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 101,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "- `docs/PRODUCTION_READINESS.md:36` reason `negative_or_boundary_context` -> This repository should be treated as part of a layered system, not as an isolated oracle."
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 102,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "- `docs/PUBLIC_REVIEW_PACKAGE.md:640` reason `negative_or_boundary_context` -> [ ] README defines OMNIA as a structural gate, not a truth oracle."
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 103,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "- `docs/REPOSITORY_STATUS.md:25` reason `negative_or_boundary_context` -> It is not a truth oracle."
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 104,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "- `docs/REVIEWER_ENTRYPOINT.md:554` reason `negative_or_boundary_context` -> [ ] README defines OMNIA as a structural gate, not a truth oracle."
+    },
+    {
+      "file": "docs/PUBLIC_REVIEW_PACKAGE.md",
+      "line": 640,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "[ ] README defines OMNIA as a structural gate, not a truth oracle."
+    },
+    {
+      "file": "docs/REPOSITORY_STATUS.md",
+      "line": 25,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "It is not a truth oracle."
+    },
+    {
+      "file": "docs/REVIEWER_ENTRYPOINT.md",
+      "line": 554,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "[ ] README defines OMNIA as a structural gate, not a truth oracle."
+    }
+  ],
+  "remaining_negative_context_hits": [
+    {
+      "file": "CORE_SCOPE.md",
+      "line": 437,
+      "pattern": "\\bproves?\\s+truth\\b",
+      "safe_negative_context": true,
+      "text": "OMNIA CORE v1 does not prove truth in the universal sense."
+    },
+    {
+      "file": "docs/COLAB_VALIDATION_RUN_V1.md",
+      "line": 9,
+      "pattern": "\\bscientific\\s+proof\\b",
+      "safe_negative_context": true,
+      "text": "This is not a universal scientific proof."
+    },
+    {
+      "file": "docs/GSM_SYMBOLIC_V1_PROTOCOL.md",
+      "line": 200,
+      "pattern": "\\bproves?\\s+truth\\b",
+      "safe_negative_context": true,
+      "text": "- does NOT prove truth"
+    },
+    {
+      "file": "docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md",
+      "line": 197,
+      "pattern": "\\bproves?\\s+truth\\b",
+      "safe_negative_context": true,
+      "text": "OMNIA does not claim that invariance proves truth in the semantic or philosophical sense."
+    },
+    {
+      "file": "docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md",
+      "line": 546,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "It is not a truth oracle."
+    },
+    {
+      "file": "docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md",
+      "line": 748,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "OMNIA is not a truth oracle."
+    },
+    {
+      "file": "docs/PRODUCTION_READINESS.md",
+      "line": 36,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "This repository should be treated as part of a layered system, not as an isolated oracle."
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 95,
+      "pattern": "\\bproves?\\s+truth\\b",
+      "safe_negative_context": true,
+      "text": "- `CORE_SCOPE.md:437` reason `negative_or_boundary_context` -> OMNIA CORE v1 does not prove truth in the universal sense."
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 96,
+      "pattern": "\\bscientific\\s+proof\\b",
+      "safe_negative_context": true,
+      "text": "- `docs/COLAB_VALIDATION_RUN_V1.md:9` reason `negative_or_boundary_context` -> This is not a universal scientific proof."
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 97,
+      "pattern": "\\bproves?\\s+truth\\b",
+      "safe_negative_context": true,
+      "text": "- `docs/GSM_SYMBOLIC_V1_PROTOCOL.md:200` reason `negative_or_boundary_context` -> - does NOT prove truth"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 98,
+      "pattern": "\\bproves?\\s+truth\\b",
+      "safe_negative_context": true,
+      "text": "- `docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md:197` reason `negative_or_boundary_context` -> OMNIA does not claim that invariance proves truth in the semantic or philosophical sense."
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 99,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "- `docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md:546` reason `negative_or_boundary_context` -> It is not a truth oracle."
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 100,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "- `docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md:748` reason `negative_or_boundary_context` -> OMNIA is not a truth oracle."
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 101,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "- `docs/PRODUCTION_READINESS.md:36` reason `negative_or_boundary_context` -> This repository should be treated as part of a layered system, not as an isolated oracle."
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 102,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "- `docs/PUBLIC_REVIEW_PACKAGE.md:640` reason `negative_or_boundary_context` -> [ ] README defines OMNIA as a structural gate, not a truth oracle."
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 103,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "- `docs/REPOSITORY_STATUS.md:25` reason `negative_or_boundary_context` -> It is not a truth oracle."
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 104,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "- `docs/REVIEWER_ENTRYPOINT.md:554` reason `negative_or_boundary_context` -> [ ] README defines OMNIA as a structural gate, not a truth oracle."
+    },
+    {
+      "file": "docs/PUBLIC_REVIEW_PACKAGE.md",
+      "line": 640,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "[ ] README defines OMNIA as a structural gate, not a truth oracle."
+    },
+    {
+      "file": "docs/REPOSITORY_STATUS.md",
+      "line": 25,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "It is not a truth oracle."
+    },
+    {
+      "file": "docs/REVIEWER_ENTRYPOINT.md",
+      "line": 554,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": true,
+      "text": "[ ] README defines OMNIA as a structural gate, not a truth oracle."
+    }
+  ],
+  "remaining_non_negative_hits": [
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 34,
+      "pattern": "\\bproves?\\s+truth\\b",
+      "safe_negative_context": false,
+      "text": "- before: OMNIA proves truth."
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 37,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": false,
+      "text": "- before: treat OMNIA as an oracle"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 40,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": false,
+      "text": "- before: a truth oracle"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 43,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": false,
+      "text": "- before: OMNIA is a contradiction oracle."
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 46,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": false,
+      "text": "- before: a truth oracle"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 49,
+      "pattern": "\\bproves?\\s+truth\\b",
+      "safe_negative_context": false,
+      "text": "- before: OMNIA proves truth"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 52,
+      "pattern": "\\bartificial\\s+consciousness\\b",
+      "safe_negative_context": false,
+      "text": "- before: OMNIA is artificial consciousness"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 55,
+      "pattern": "\\babsolute\\s+truth\\b",
+      "safe_negative_context": false,
+      "text": "- before: - absolute truth;"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 58,
+      "pattern": "\\bartificial\\s+consciousness\\b",
+      "safe_negative_context": false,
+      "text": "- before: - artificial consciousness;"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 61,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": false,
+      "text": "- before: - an oracle;"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 64,
+      "pattern": "\\buniversal\\s+proof\\b",
+      "safe_negative_context": false,
+      "text": "- before: - a universal proof;"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 67,
+      "pattern": "\\binfallible\\b",
+      "safe_negative_context": false,
+      "text": "- before: - an infallible system;"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 70,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": false,
+      "text": "- before: a truth oracle"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 73,
+      "pattern": "\\bproves?\\s+truth\\b",
+      "safe_negative_context": false,
+      "text": "- before: to prove truth"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 76,
+      "pattern": "\\bartificial\\s+consciousness\\b",
+      "safe_negative_context": false,
+      "text": "- before: to be artificial consciousness"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 79,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": false,
+      "text": "- before: a truth oracle"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 82,
+      "pattern": "\\bproves?\\s+truth\\b",
+      "safe_negative_context": false,
+      "text": "- before: to prove truth"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 85,
+      "pattern": "\\bartificial\\s+consciousness\\b",
+      "safe_negative_context": false,
+      "text": "- before: to be artificial consciousness"
+    },
+    {
+      "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "line": 88,
+      "pattern": "\\boracle\\b",
+      "safe_negative_context": false,
+      "text": "- before: a truth oracle"
+    }
+  ],
+  "repair": {
+    "changed_files": [
+      "docs/ENGINE_OVERVIEW.md",
+      "docs/KNOWN_LIMITS_AND_FAILURE_CASES.md",
+      "docs/OBSERVER_PERTURBATION_V4_RESULT.md",
+      "docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md",
+      "docs/PUBLIC_CLAIM_BOUNDARY.md",
+      "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+      "docs/PUBLIC_REVIEW_PACKAGE.md",
+      "docs/REVIEWER_ENTRYPOINT.md",
+      "docs/SCOPE.md"
+    ],
+    "line_changes": [
+      {
+        "file": "docs/ENGINE_OVERVIEW.md",
+        "line": 58,
+        "before": "treat OMNIA as an measurement layer",
+        "after": "treat OMNIA as a measurement layer"
+      },
+      {
+        "file": "docs/KNOWN_LIMITS_AND_FAILURE_CASES.md",
+        "line": 18,
+        "before": "a truth measurement layer",
+        "after": "a semantic-truth authority"
+      },
+      {
+        "file": "docs/OBSERVER_PERTURBATION_V4_RESULT.md",
+        "line": 131,
+        "before": "OMNIA is a contradiction measurement layer.",
+        "after": "OMNIA is a contradiction authority."
+      },
+      {
+        "file": "docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md",
+        "line": 40,
+        "before": "a truth measurement layer",
+        "after": "a semantic-truth authority"
+      },
+      {
+        "file": "docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md",
+        "line": 588,
+        "before": "OMNIA is structural cognition claim",
+        "after": "OMNIA is a structural cognition layer"
+      },
+      {
+        "file": "docs/PUBLIC_CLAIM_BOUNDARY.md",
+        "line": 22,
+        "before": "- structural stability boundary;",
+        "after": "- absolute semantic-truth authority;"
+      },
+      {
+        "file": "docs/PUBLIC_CLAIM_BOUNDARY.md",
+        "line": 23,
+        "before": "- structural cognition claim;",
+        "after": "- structural cognition layer;"
+      },
+      {
+        "file": "docs/PUBLIC_CLAIM_BOUNDARY.md",
+        "line": 24,
+        "before": "- an measurement layer;",
+        "after": "- a measurement layer;"
+      },
+      {
+        "file": "docs/PUBLIC_CLAIM_BOUNDARY.md",
+        "line": 25,
+        "before": "- a reproducible validation evidence;",
+        "after": "- reproducible validation evidence;"
+      },
+      {
+        "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+        "line": 38,
+        "before": "- after: treat OMNIA as an measurement layer",
+        "after": "- after: treat OMNIA as a measurement layer"
+      },
+      {
+        "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+        "line": 41,
+        "before": "- after: a truth measurement layer",
+        "after": "- after: a semantic-truth authority"
+      },
+      {
+        "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+        "line": 44,
+        "before": "- after: OMNIA is a contradiction measurement layer.",
+        "after": "- after: OMNIA is a contradiction authority."
+      },
+      {
+        "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+        "line": 47,
+        "before": "- after: a truth measurement layer",
+        "after": "- after: a semantic-truth authority"
+      },
+      {
+        "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+        "line": 53,
+        "before": "- after: OMNIA is structural cognition claim",
+        "after": "- after: OMNIA is a structural cognition layer"
+      },
+      {
+        "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+        "line": 56,
+        "before": "- after: - structural stability boundary;",
+        "after": "- after: - absolute semantic-truth authority;"
+      },
+      {
+        "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+        "line": 59,
+        "before": "- after: - structural cognition claim;",
+        "after": "- after: - structural cognition layer;"
+      },
+      {
+        "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+        "line": 62,
+        "before": "- after: - an measurement layer;",
+        "after": "- after: - a measurement layer;"
+      },
+      {
+        "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+        "line": 65,
+        "before": "- after: - a reproducible validation evidence;",
+        "after": "- after: - reproducible validation evidence;"
+      },
+      {
+        "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+        "line": 71,
+        "before": "- after: a truth measurement layer",
+        "after": "- after: a semantic-truth authority"
+      },
+      {
+        "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+        "line": 74,
+        "before": "- after: to measures structural stability",
+        "after": "- after: to measure structural stability"
+      },
+      {
+        "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+        "line": 77,
+        "before": "- after: to be structural cognition claim",
+        "after": "- after: to be a structural cognition layer"
+      },
+      {
+        "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+        "line": 80,
+        "before": "- after: a truth measurement layer",
+        "after": "- after: a semantic-truth authority"
+      },
+      {
+        "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+        "line": 83,
+        "before": "- after: to measures structural stability",
+        "after": "- after: to measure structural stability"
+      },
+      {
+        "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+        "line": 86,
+        "before": "- after: to be structural cognition claim",
+        "after": "- after: to be a structural cognition layer"
+      },
+      {
+        "file": "docs/PUBLIC_READINESS_MICRO_FIX_REPORT.md",
+        "line": 89,
+        "before": "- after: a truth measurement layer",
+        "after": "- after: a semantic-truth authority"
+      },
+      {
+        "file": "docs/PUBLIC_REVIEW_PACKAGE.md",
+        "line": 18,
+        "before": "a truth measurement layer",
+        "after": "a semantic-truth authority"
+      },
+      {
+        "file": "docs/PUBLIC_REVIEW_PACKAGE.md",
+        "line": 697,
+        "before": "to measures structural stability",
+        "after": "to measure structural stability"
+      },
+      {
+        "file": "docs/PUBLIC_REVIEW_PACKAGE.md",
+        "line": 704,
+        "before": "to be structural cognition claim",
+        "after": "to be a structural cognition layer"
+      },
+      {
+        "file": "docs/REVIEWER_ENTRYPOINT.md",
+        "line": 18,
+        "before": "a truth measurement layer",
+        "after": "a semantic-truth authority"
+      },
+      {
+        "file": "docs/REVIEWER_ENTRYPOINT.md",
+        "line": 534,
+        "before": "to measures structural stability",
+        "after": "to measure structural stability"
+      },
+      {
+        "file": "docs/REVIEWER_ENTRYPOINT.md",
+        "line": 541,
+        "before": "to be structural cognition claim",
+        "after": "to be a structural cognition layer"
+      },
+      {
+        "file": "docs/SCOPE.md",
+        "line": 173,
+        "before": "a truth measurement layer",
+        "after": "a semantic-truth authority"
+      }
+    ]
+  },
+  "tests": {
+    "status": "pass",
+    "passed": 57,
+    "failed": 0,
+    "returncode": 0,
+    "summary": "57 passed in 2.96s"
+  }
+}

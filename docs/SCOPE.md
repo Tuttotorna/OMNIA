@@ -170,7 +170,7 @@ a reasoning engine
 
 a semantic evaluator
 
-a truth measurement layer
+a semantic-truth authority
 
 a safety authority
 

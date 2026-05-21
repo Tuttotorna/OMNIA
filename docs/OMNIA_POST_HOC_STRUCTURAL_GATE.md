@@ -37,7 +37,7 @@ External humans or policies decide.
 
 OMNIA must not be interpreted as:
 
-a truth measurement layer
+a semantic-truth authority
 a semantic judge
 a reasoning engine
 a decision system
@@ -585,7 +585,7 @@ OMNIA detects all hallucinations
 OMNIA replaces human judgment
 OMNIA proves semantic correctness
 OMNIA guarantees safety
-OMNIA is structural cognition claim
+OMNIA is a structural cognition layer
 OMNIA is a universal intelligence layer
 OMNIA solves reasoning
 

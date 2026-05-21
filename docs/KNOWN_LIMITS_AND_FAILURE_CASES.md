@@ -15,7 +15,7 @@ a post-hoc structural stability gate for AI outputs
 OMNIA is weakest when it is misread as:
 
 ```text
-a truth measurement layer
+a semantic-truth authority
 a semantic evaluator
 a final decision system
 a universal hallucination detector

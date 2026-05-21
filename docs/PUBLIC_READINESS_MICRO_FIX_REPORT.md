@@ -35,58 +35,58 @@ Timestamp UTC: `2026-05-21T16:03:10Z`
   - after: OMNIA measures structural stability.
 - `docs/ENGINE_OVERVIEW.md:58`
   - before: treat OMNIA as an oracle
-  - after: treat OMNIA as an measurement layer
+  - after: treat OMNIA as a measurement layer
 - `docs/KNOWN_LIMITS_AND_FAILURE_CASES.md:18`
   - before: a truth oracle
-  - after: a truth measurement layer
+  - after: a semantic-truth authority
 - `docs/OBSERVER_PERTURBATION_V4_RESULT.md:131`
   - before: OMNIA is a contradiction oracle.
-  - after: OMNIA is a contradiction measurement layer.
+  - after: OMNIA is a contradiction authority.
 - `docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md:40`
   - before: a truth oracle
-  - after: a truth measurement layer
+  - after: a semantic-truth authority
 - `docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md:583`
   - before: OMNIA proves truth
   - after: OMNIA measures structural stability
 - `docs/OMNIA_POST_HOC_STRUCTURAL_GATE.md:588`
   - before: OMNIA is artificial consciousness
-  - after: OMNIA is structural cognition claim
+  - after: OMNIA is a structural cognition layer
 - `docs/PUBLIC_CLAIM_BOUNDARY.md:22`
   - before: - absolute truth;
-  - after: - structural stability boundary;
+  - after: - absolute semantic-truth authority;
 - `docs/PUBLIC_CLAIM_BOUNDARY.md:23`
   - before: - artificial consciousness;
-  - after: - structural cognition claim;
+  - after: - structural cognition layer;
 - `docs/PUBLIC_CLAIM_BOUNDARY.md:24`
   - before: - an oracle;
-  - after: - an measurement layer;
+  - after: - a measurement layer;
 - `docs/PUBLIC_CLAIM_BOUNDARY.md:25`
   - before: - a universal proof;
-  - after: - a reproducible validation evidence;
+  - after: - reproducible validation evidence;
 - `docs/PUBLIC_CLAIM_BOUNDARY.md:26`
   - before: - an infallible system;
   - after: - an auditable system;
 - `docs/PUBLIC_REVIEW_PACKAGE.md:18`
   - before: a truth oracle
-  - after: a truth measurement layer
+  - after: a semantic-truth authority
 - `docs/PUBLIC_REVIEW_PACKAGE.md:697`
   - before: to prove truth
-  - after: to measures structural stability
+  - after: to measure structural stability
 - `docs/PUBLIC_REVIEW_PACKAGE.md:704`
   - before: to be artificial consciousness
-  - after: to be structural cognition claim
+  - after: to be a structural cognition layer
 - `docs/REVIEWER_ENTRYPOINT.md:18`
   - before: a truth oracle
-  - after: a truth measurement layer
+  - after: a semantic-truth authority
 - `docs/REVIEWER_ENTRYPOINT.md:534`
   - before: to prove truth
-  - after: to measures structural stability
+  - after: to measure structural stability
 - `docs/REVIEWER_ENTRYPOINT.md:541`
   - before: to be artificial consciousness
-  - after: to be structural cognition claim
+  - after: to be a structural cognition layer
 - `docs/SCOPE.md:173`
   - before: a truth oracle
-  - after: a truth measurement layer
+  - after: a semantic-truth authority
 
 ## Skipped risky hits
 

@@ -55,7 +55,7 @@ Correct use:
 
 Incorrect use:
 
-    treat OMNIA as an measurement layer
+    treat OMNIA as a measurement layer
     treat a score as truth
     treat structural stability as semantic correctness
     treat measurement as decision

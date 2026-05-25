@@ -232,3 +232,30 @@ measurement != inference != decision
 
 This repository is part of the MB-X.01 / OMNIA ecosystem. Its outputs are structural measurement or validation artifacts, not semantic truth claims or autonomous decisions.
 
+<!-- STRUCTURAL_OBSERVABILITY_ROLE_START -->
+## Structural Observability role
+
+This repository is one bounded measurement role inside **Structural Observability**.
+
+Role:
+
+~~~text
+core post-hoc structural measurement engine
+~~~
+
+Boundary:
+
+~~~text
+OMNIA measures structural behavior after an output, trace, or artifact already exists. It does not infer meaning, learn, or decide.
+~~~
+
+Structural Observability foundation:
+
+- lon-mirror: https://github.com/Tuttotorna/lon-mirror
+- Foundation release: https://github.com/Tuttotorna/lon-mirror/releases/tag/v0.2.2
+- DOI: https://doi.org/10.5281/zenodo.20379374
+
+Role document:
+
+- [Structural Observability Role](docs/STRUCTURAL_OBSERVABILITY_ROLE.md)
+<!-- STRUCTURAL_OBSERVABILITY_ROLE_END -->

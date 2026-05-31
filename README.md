@@ -259,3 +259,19 @@ Role document:
 
 - [Structural Observability Role](docs/STRUCTURAL_OBSERVABILITY_ROLE.md)
 <!-- STRUCTURAL_OBSERVABILITY_ROLE_END -->
+
+## Foundational Principle
+
+OMNIA is an output-level application of the L.O.N. Multi-Form Invariance Principle:
+
+> No single form is sovereign.
+
+In OMNIA, this becomes:
+
+> No output form is sovereign.
+
+A response is not trusted because it appears correct once. It must preserve structural compatibility under independent transformations of form.
+
+See:
+
+- https://github.com/Tuttotorna/lon-mirror/tree/main/foundation

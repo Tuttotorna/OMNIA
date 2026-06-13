@@ -1,10 +1,11 @@
 cff-version: 1.2.0
-message: "If you use this repository, please cite the archived Zenodo record."
-title: "OMNIA — Structural Measurement Core"
+message: "If you use this software, please cite it using the metadata from this file."
+title: "OMNIA: OMNIA Structural Observability Repository"
 authors:
   - family-names: "Brighindi"
     given-names: "Massimiliano"
-repository-code: "https://github.com/Tuttotorna/OMNIA"
-doi: "10.5281/zenodo.19820729"
-version: "1.1"
-date-released: "2026-05-08"
+    affiliation: "Independent researcher"
+version: "v2026.05.21"
+date-released: 2026-06-13
+url: "https://github.com/Tuttotorna/OMNIA"
+type: software

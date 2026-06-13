@@ -275,3 +275,31 @@ A response is not trusted because it appears correct once. It must preserve stru
 See:
 
 - https://github.com/Tuttotorna/lon-mirror/tree/main/foundation
+
+<!-- OMNIA_ZENODO_CITATION_BLOCK_START -->
+
+## Citation and archival
+
+This repository is prepared for GitHub-Zenodo archival.
+
+Repository:
+https://github.com/Tuttotorna/OMNIA
+
+Latest GitHub release: v2026.05.21 (https://github.com/Tuttotorna/OMNIA/releases/tag/v2026.05.21)
+
+Detected Zenodo DOI(s):
+- https://doi.org/10.5281/zenodo.20322683
+- https://doi.org/10.5281/zenodo.20322696
+- https://doi.org/10.5281/zenodo.19820729
+- https://doi.org/10.5281/zenodo.20379374
+
+Metadata files used for archival/citation:
+
+- .zenodo.json
+- CITATION.cff
+
+Zenodo note:
+
+GitHub-Zenodo archiving works after the repository is enabled in Zenodo GitHub settings and a GitHub release is created.
+
+<!-- OMNIA_ZENODO_CITATION_BLOCK_END -->

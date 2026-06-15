@@ -1,4 +1,52 @@
-<!-- WRONG_OBJECT_TEST_START -->
+<!-- PROJECTION_FIDELITY_THEOREM_START -->
+## Projection Fidelity Theorem
+
+The strongest mathematical form of OMNIA is:
+
+**A projection is valid only for the decisions it preserves.**
+
+Let:
+
+`Omega` be the accessible total field or generative structure.
+
+`pi: Omega -> P` be a projection, reduction, aggregation, representation, measurement, or visible terminal form.
+
+`D: Omega -> A` be the decision, inference, classification, or property required on the full field.
+
+The projection `pi` is faithful with respect to `D` if and only if there exists a function:
+
+`d: P -> A`
+
+such that:
+
+`D = d composed with pi`
+
+Equivalently:
+
+`pi(omega1) = pi(omega2) implies D(omega1) = D(omega2)`
+
+for all `omega1, omega2 in Omega`.
+
+Projection failure occurs when:
+
+`pi(omega1) = pi(omega2)` but `D(omega1) != D(omega2)`.
+
+In that case, the projection collapses states that require different decisions.
+
+So the answer may be correct for the projection, but the projection is not faithful to the decision.
+
+Public translation:
+
+**the answer is correct for the wrong object.**
+
+Core document:
+
+[PROJECTION-FIDELITY-THEOREM.md](PROJECTION-FIDELITY-THEOREM.md)
+
+Applied case:
+
+[APPLIED-CASE-002-PROJECTION-DECISION-FAILURE.md](APPLIED-CASE-002-PROJECTION-DECISION-FAILURE.md)
+<!-- PROJECTION_FIDELITY_THEOREM_END -->\n\n<!-- WRONG_OBJECT_TEST_START -->
 ## Wrong Object Test
 
 The public doorway into OMNIA is not abstract theory.
@@ -396,4 +444,4 @@ Zenodo note:
 
 GitHub-Zenodo archiving works after the repository is enabled in Zenodo GitHub settings and a GitHub release is created.
 
-<!-- OMNIA_ZENODO_CITATION_BLOCK_END -->\n
+<!-- OMNIA_ZENODO_CITATION_BLOCK_END -->\n\n

@@ -1,4 +1,40 @@
-<!-- INFINITY_FIRST_OMNIA_START -->
+<!-- WRONG_OBJECT_TEST_START -->
+## Wrong Object Test
+
+The public doorway into OMNIA is not abstract theory.
+
+It is a simple operational question:
+
+**is the answer correct for the right object?**
+
+OMNIA detects when a correct answer is answering the wrong object.
+
+A decision becomes structurally wrong when it is made on a reduced projection while being used as if it were made on the full accessible structure.
+
+Minimal formula:
+
+`E(T, pi) = Assert(pi(T) = T)`
+
+Operational form:
+
+`E_D(T, pi) = Delta(D(pi(T)), D(T))`
+
+Where:
+
+`T` is the accessible generative structure or wider field.
+
+`pi(T)` is the reduced visible projection.
+
+`D` is the decision, inference, calculation, classification, or judgement.
+
+If the decision changes when the missing field is restored, the original decision was made on the wrong object.
+
+Public documents:
+
+[WRONG-OBJECT-TEST.md](WRONG-OBJECT-TEST.md)
+
+[WRONG-OBJECT-TEST-MATRIX.md](WRONG-OBJECT-TEST-MATRIX.md)
+<!-- WRONG_OBJECT_TEST_END -->\n\n<!-- INFINITY_FIRST_OMNIA_START -->
 ## Infinity-First OMNIA
 
 OMNIA is not a collection of independent tools.
@@ -360,4 +396,4 @@ Zenodo note:
 
 GitHub-Zenodo archiving works after the repository is enabled in Zenodo GitHub settings and a GitHub release is created.
 
-<!-- OMNIA_ZENODO_CITATION_BLOCK_END -->
+<!-- OMNIA_ZENODO_CITATION_BLOCK_END -->\n

@@ -1,3 +1,47 @@
+<!-- INFINITY_FIRST_OMNIA_START -->
+## Infinity-First OMNIA
+
+OMNIA is not a collection of independent tools.
+
+It is the operational field that detects when finite local correctness becomes structurally false by pretending to be total.
+
+The central correction is:
+
+**local correctness is not total validity.**
+
+A finite answer can be correct.
+
+A finite metric can be true.
+
+A finite model can pass a test.
+
+A finite process can work.
+
+But none of these local forms can honestly declare itself autonomous, complete, or total.
+
+OMNIA exists to expose the moment when a local success starts speaking as if it were the whole system.
+
+The governing law is formalized here:
+
+[LAW OF TOTALITY](https://github.com/Tuttotorna/LAW-OF-TOTALITY)
+
+Public threshold release:
+
+[LAW OF TOTALITY v0.1.2](https://github.com/Tuttotorna/LAW-OF-TOTALITY/releases/tag/v0.1.2)
+
+DOI:
+
+[10.5281/zenodo.20700914](https://doi.org/10.5281/zenodo.20700914)
+
+Core document:
+
+[INFINITY-FIRST-OMNIA.md](INFINITY-FIRST-OMNIA.md)
+
+First applied case:
+
+[APPLIED-CASE-001-LOCAL-CORRECTNESS-IS-NOT-TOTAL-VALIDITY.md](APPLIED-CASE-001-LOCAL-CORRECTNESS-IS-NOT-TOTAL-VALIDITY.md)
+<!-- INFINITY_FIRST_OMNIA_END -->
+
 <!-- TOTALITY_FIELD_ALIGNMENT_START -->
 ## Totality Field Alignment
 

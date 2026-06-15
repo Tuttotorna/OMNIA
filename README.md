@@ -1,4 +1,34 @@
-<!-- PROJECTION_FIDELITY_THEOREM_START -->
+<!-- DECISION_VALIDITY_CRITERION_START -->
+## Projection Fidelity: Decision-Validity Criterion
+
+The threshold formulation is:
+
+**A projection is valid only for the decisions it preserves.**
+
+Let:
+
+`Omega` = accessible field / generative structure
+
+`pi: Omega -> P` = projection, metric, benchmark, aggregate, model, representation, score, frame, or visible output
+
+`D: Omega -> A` = decision, inference, classification, or judgement
+
+The projection `pi` is valid for `D` if and only if:
+
+`D = d composed with pi`
+
+for some function `d: P -> A`.
+
+Equivalently:
+
+`pi(omega1) = pi(omega2) implies D(omega1) = D(omega2)`.
+
+If two states become identical under the projection but require different decisions, then the decision cannot be founded on that projection.
+
+Core document:
+
+[PROJECTION-FIDELITY-DECISION-VALIDITY-CRITERION.md](PROJECTION-FIDELITY-DECISION-VALIDITY-CRITERION.md)
+<!-- DECISION_VALIDITY_CRITERION_END -->\n\n<!-- PROJECTION_FIDELITY_THEOREM_START -->
 ## Projection Fidelity Theorem
 
 The strongest mathematical form of OMNIA is:
@@ -444,4 +474,4 @@ Zenodo note:
 
 GitHub-Zenodo archiving works after the repository is enabled in Zenodo GitHub settings and a GitHub release is created.
 
-<!-- OMNIA_ZENODO_CITATION_BLOCK_END -->\n\n
+<!-- OMNIA_ZENODO_CITATION_BLOCK_END -->\n\n\n

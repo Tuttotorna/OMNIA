@@ -148,3 +148,31 @@ same object value, different required decision.
 
 This is the current 60-second front door.
 <!-- DVA_ONE_PAGE_FRONT_DOOR_END -->
+
+<!-- DECISION_OBJECT_VALIDATOR_TOOL_START -->
+## Prototype tool
+
+A first prototype tool is available here:
+
+[TOOLS/decision_object_validator.py](TOOLS/decision_object_validator.py)
+
+Demo:
+
+[EXAMPLES/DECISION-OBJECT-VALIDATOR-DEMO](EXAMPLES/DECISION-OBJECT-VALIDATOR-DEMO/)
+
+Purpose:
+
+Given a CSV, an object column and a decision column, detect whether the same object value leads to different decisions.
+
+Core failure:
+
+pi(omega_1) = pi(omega_2) but D(omega_1) != D(omega_2)
+
+Meaning:
+
+same object value, different required action.
+
+Boundary:
+
+This is a prototype audit tool. It does not prove OMNIA or new mathematics.
+<!-- DECISION_OBJECT_VALIDATOR_TOOL_END -->

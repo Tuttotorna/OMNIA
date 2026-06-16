@@ -1,0 +1,3 @@
+object_column,object_value,row_count,distinct_decision_count,decisions,example_ids,hidden_segment_values,hidden_exposure_values
+risk_score,72,2,2,approve / block,A / B,consumer / enterprise,internal_only / public_api
+risk_score,85,2,2,defer_patch / urgent_patch,C / D,development / production,isolated_network / public_internet

@@ -1,0 +1,5 @@
+case_id,risk_score,action,segment,exposure,notes
+A,72,block,enterprise,public_api,same score as B but different action
+B,72,approve,consumer,internal_only,same score as A but different action
+C,85,urgent_patch,production,public_internet,same score as D but different action
+D,85,defer_patch,development,isolated_network,same score as C but different action

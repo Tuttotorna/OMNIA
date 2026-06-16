@@ -1,0 +1,4 @@
+object_column,bucket_width,bucket,row_count,distinct_decision_count,decisions,min_object_value,max_object_value,example_ids,hidden_segment_values,hidden_exposure_values
+risk_score,10.0,"[50, 60)",2,2,approve / manual_review,55.0,59.0,G / H,consumer / enterprise,internal_only / partner_access
+risk_score,10.0,"[70, 80)",2,2,approve / block,72.0,72.0,A / B,consumer / enterprise,internal_only / public_api
+risk_score,10.0,"[80, 90)",2,2,defer_patch / urgent_patch,85.0,85.0,C / D,development / production,isolated_network / public_internet

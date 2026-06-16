@@ -1,0 +1,26 @@
+{
+  "status": "decision object validation audit",
+  "verdict": "INSUFFICIENT_EXACT",
+  "input": "/content/OMNIA-ADD-DECISION-OBJECT-VALIDATOR/field-tools/EXAMPLES/DECISION-OBJECT-VALIDATOR-DEMO/demo_decisions.csv",
+  "object_column_pi": "risk_score",
+  "decision_column_D": "action",
+  "id_column": "case_id",
+  "hidden_columns": [
+    "segment",
+    "exposure"
+  ],
+  "bucket_width": 10.0,
+  "rows_analyzed": 8,
+  "exact_collision_group_count": 2,
+  "exact_collision_row_count": 4,
+  "bucket_collision_group_count": 3,
+  "bucket_collision_row_count": 6,
+  "formal_failure": "pi(omega_1)=pi(omega_2) and D(omega_1)!=D(omega_2)",
+  "not_claimed": [
+    "This does not prove OMNIA.",
+    "This does not prove new mathematics.",
+    "This does not prove that the corrected decision is automatically right.",
+    "This does not replace domain expertise."
+  ],
+  "generated_at": "2026-06-16T09:54:43.906680+00:00"
+}

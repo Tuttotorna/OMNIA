@@ -77,3 +77,21 @@ If no, the decision is being made on the wrong object.
 ## Public sentence
 
 Correct answers to the wrong object are not solutions.
+
+<!-- KIDNEY_STONES_REAL_PUBLIC_CASE_LINK_START -->
+## Real public case
+
+A real public decision-validity case is provided here:
+
+[KIDNEY-STONES-REAL-PUBLIC-CASE](EXAMPLES/KIDNEY-STONES-REAL-PUBLIC-CASE/)
+
+It shows a historical clinical Simpson's paradox case:
+
+- aggregate treatment success rate recommends Treatment B;
+- stone-size-conditioned success rates recommend Treatment A for both small and large stones;
+- therefore aggregate success rate is the wrong object for a stone-size-conditioned treatment decision.
+
+Boundary:
+
+This is not medical advice and not a claim about current clinical practice.
+<!-- KIDNEY_STONES_REAL_PUBLIC_CASE_LINK_END -->

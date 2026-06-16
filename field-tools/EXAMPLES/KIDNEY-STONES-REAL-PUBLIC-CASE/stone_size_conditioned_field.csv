@@ -1,0 +1,5 @@
+stone_size,treatment,successes,total,failures,success_rate
+small,A,81,87,6,0.9310344827586207
+small,B,234,270,36,0.8666666666666667
+large,A,192,263,71,0.7300380228136882
+large,B,55,80,25,0.6875

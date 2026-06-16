@@ -1,0 +1,40 @@
+{
+  "status": "real public case application",
+  "not_claimed": [
+    "This does not prove OMNIA.",
+    "This does not prove a new mathematical theory.",
+    "This is not medical advice.",
+    "This is not a claim about current clinical practice.",
+    "This does not prove empirical value of the entire framework.",
+    "This is not the same as the constructed non-factorization proof with two artificial worlds."
+  ],
+  "proved_locally": "In this public kidney stone dataset, aggregate success rate recommends Treatment B, while stone-size-conditioned success rates recommend Treatment A for both small and large stones.",
+  "Omega": "stone-size-conditioned treatment field",
+  "pi": "aggregate treatment success rate ignoring stone size",
+  "D": "stone-size-conditioned treatment choice by highest observed success rate",
+  "aggregate_decision_from_pi": "B",
+  "stratified_policy_from_Omega": {
+    "large": "A",
+    "small": "A"
+  },
+  "aggregate_vs_stratified_conflict": true,
+  "operational_conclusion": "Aggregate treatment success rate is the wrong object for a stone-size-conditioned treatment decision.",
+  "source_status": "public historical clinical dataset used as a canonical Simpson's paradox example",
+  "sources": {
+    "primary_study": {
+      "label": "Charig C.R., Webb D.R., Payne S.R., Wickham J.E. Comparison of treatment of renal calculi by open surgery, percutaneous nephrolithotomy, and extracorporeal shockwave lithotripsy. British Medical Journal. 1986;292:879-882.",
+      "note": "Original clinical study from which the kidney stone Simpson's paradox data are commonly derived."
+    },
+    "bmj_confounding": {
+      "label": "Julious S.A., Mullee M.A. Confounding and Simpson's paradox. BMJ. 1994;309:1480-1481.",
+      "url": "https://www.bmj.com/content/309/6967/1480.short",
+      "note": "Reports and discusses the confounding / Simpson's paradox structure of the kidney stone data."
+    },
+    "jcm_review": {
+      "label": "Bonovas S., Piovani D. Simpson's Paradox in Clinical Research: A Cautionary Tale. Journal of Clinical Medicine. 2023;12(4):1633.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9960320/",
+      "note": "Peer-reviewed open-access discussion reporting the kidney stone treatment data from Charig et al."
+    }
+  },
+  "generated_at": "2026-06-16T06:45:43.424975+00:00"
+}

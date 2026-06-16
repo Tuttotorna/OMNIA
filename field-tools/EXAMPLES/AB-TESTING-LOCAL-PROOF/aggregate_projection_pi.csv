@@ -1,0 +1,5 @@
+world,variant,trials,conversions,aggregate_rate
+omega_1,A,200,100,0.5
+omega_1,B,200,100,0.5
+omega_2,A,200,100,0.5
+omega_2,B,200,100,0.5

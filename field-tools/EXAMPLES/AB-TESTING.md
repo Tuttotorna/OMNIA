@@ -42,3 +42,21 @@ Use segment-preserving decision rules.
 ## Final sentence
 
 An aggregate is valid only for the rollout decisions it preserves.\n
+
+<!-- AB_TESTING_LOCAL_PROOF_LINK_START -->
+## Local proof
+
+A reproducible local counterexample is provided here:
+
+[AB-TESTING-LOCAL-PROOF](AB-TESTING-LOCAL-PROOF/)
+
+It shows:
+
+`pi(omega_1) = pi(omega_2)`
+
+but:
+
+`D(omega_1) != D(omega_2)`
+
+Therefore aggregate conversion rate cannot ground segment-preserving rollout decisions in general.
+<!-- AB_TESTING_LOCAL_PROOF_LINK_END -->

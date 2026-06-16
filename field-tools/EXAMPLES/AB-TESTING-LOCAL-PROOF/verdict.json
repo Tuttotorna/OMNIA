@@ -1,0 +1,50 @@
+{
+  "status": "local counterexample only",
+  "not_claimed": [
+    "This does not prove OMNIA.",
+    "This does not prove a new mathematical theory.",
+    "This does not prove empirical value in real deployments."
+  ],
+  "proved_locally": "Aggregate conversion rate cannot ground segment-preserving rollout decisions in general.",
+  "Omega": "segmented A/B-test field",
+  "pi": "aggregate conversion rates by variant",
+  "D": "segment-preserving rollout decision",
+  "pi_omega_1": {
+    "A": {
+      "trials": 200,
+      "conversions": 100,
+      "aggregate_rate": 0.5
+    },
+    "B": {
+      "trials": 200,
+      "conversions": 100,
+      "aggregate_rate": 0.5
+    }
+  },
+  "pi_omega_2": {
+    "A": {
+      "trials": 200,
+      "conversions": 100,
+      "aggregate_rate": 0.5
+    },
+    "B": {
+      "trials": 200,
+      "conversions": 100,
+      "aggregate_rate": 0.5
+    }
+  },
+  "D_omega_1": {
+    "S1": "A",
+    "S2": "B"
+  },
+  "D_omega_2": {
+    "S1": "B",
+    "S2": "A"
+  },
+  "pi_omega_1_equals_pi_omega_2": true,
+  "D_omega_1_equals_D_omega_2": false,
+  "factorization_failure": true,
+  "formal_conclusion": "D cannot factor through pi",
+  "operational_conclusion": "The aggregate projection is the wrong object for the segment-preserving rollout decision.",
+  "generated_at": "2026-06-16T06:09:56.582202+00:00"
+}

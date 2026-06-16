@@ -1,0 +1,5 @@
+world,segment,chosen_variant,chosen_rate
+omega_1,S1,A,0.9
+omega_1,S2,B,0.9
+omega_2,S1,B,0.9
+omega_2,S2,A,0.9

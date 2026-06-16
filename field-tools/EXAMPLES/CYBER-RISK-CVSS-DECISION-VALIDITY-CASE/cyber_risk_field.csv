@@ -1,0 +1,3 @@
+cve,cvss_base_score,cvss_severity,cvss_vector,known_exploited_kev,kev_date_added,epss,epss_percentile,epss_date,description,cvss_source,kev_source,epss_source,nvd_error,decision_D
+CVE-2023-3519,9.8,CRITICAL,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H,True,2023-07-19,0.99343,0.99933,2026-06-15,Citrix NetScaler ADC and NetScaler Gateway code injection / RCE case; listed by NVD as in CISA KEV.,secure@citrix.com,CISA KEV JSON,FIRST EPSS API,,URGENT_REMEDIATE_FIRST
+CVE-2019-17531,9.8,CRITICAL,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H,False,,0.05329,0.91537,2026-06-15,FasterXML jackson-databind polymorphic typing issue; NVD CVSS 9.8.,nvd@nist.gov,CISA KEV JSON not found / fallback,FIRST EPSS API,,STANDARD_CRITICAL_QUEUE

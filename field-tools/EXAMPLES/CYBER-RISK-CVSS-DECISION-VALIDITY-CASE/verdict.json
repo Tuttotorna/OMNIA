@@ -1,0 +1,28 @@
+{
+  "status": "real public cyber-risk decision-validity case",
+  "not_claimed": [
+    "This does not prove OMNIA.",
+    "This does not prove new mathematics.",
+    "This does not prove novelty in cybersecurity.",
+    "This does not define a universal patching policy.",
+    "This does not replace exposure-aware vulnerability management.",
+    "This does not mean any critical CVE can be ignored."
+  ],
+  "Omega": "vulnerability field with exploitation / threat-context attributes",
+  "pi": "CVSS base score only",
+  "D": "patch-priority decision using KEV or EPSS threshold as additional context",
+  "omega_1": "CVE-2023-3519",
+  "omega_2": "CVE-2019-17531",
+  "pi_omega_1": 9.8,
+  "pi_omega_2": 9.8,
+  "D_omega_1": "URGENT_REMEDIATE_FIRST",
+  "D_omega_2": "STANDARD_CRITICAL_QUEUE",
+  "pi_omega_1_equals_pi_omega_2": true,
+  "D_omega_1_equals_D_omega_2": false,
+  "factorization_failure": true,
+  "formal_conclusion": "D cannot factor through pi",
+  "operational_conclusion": "CVSS base score alone is the wrong object for this patch-priority decision.",
+  "epss_fetch_error": null,
+  "kev_fetch_error": null,
+  "generated_at": "2026-06-16T08:23:13.570037+00:00"
+}

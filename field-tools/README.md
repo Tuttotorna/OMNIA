@@ -95,3 +95,22 @@ Boundary:
 
 This is not medical advice and not a claim about current clinical practice.
 <!-- KIDNEY_STONES_REAL_PUBLIC_CASE_LINK_END -->
+
+<!-- CYBER_RISK_CVSS_DECISION_VALIDITY_CASE_LINK_START -->
+## Cyber risk public case
+
+A real public cyber-risk decision-validity case is provided here:
+
+[CYBER-RISK-CVSS-DECISION-VALIDITY-CASE](EXAMPLES/CYBER-RISK-CVSS-DECISION-VALIDITY-CASE/)
+
+It shows:
+
+- same CVSS base score;
+- different exploitation/threat context;
+- different patch-priority decision under an explicit policy;
+- therefore CVSS base score alone is the wrong object for that decision.
+
+Boundary:
+
+This does not claim novelty in cybersecurity and does not define a universal patching policy.
+<!-- CYBER_RISK_CVSS_DECISION_VALIDITY_CASE_LINK_END -->

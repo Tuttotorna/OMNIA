@@ -1,0 +1,3 @@
+cve,known_exploited_kev,epss,epss_percentile,decision_D
+CVE-2023-3519,True,0.99343,0.99933,URGENT_REMEDIATE_FIRST
+CVE-2019-17531,False,0.05329,0.91537,STANDARD_CRITICAL_QUEUE

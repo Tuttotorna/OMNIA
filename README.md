@@ -1,4 +1,34 @@
-<!-- DECISION_VALIDITY_CRITERION_START -->
+<!-- OPERATIONAL_AUDIT_FRONT_DOOR_START -->
+## Operational audit front door
+
+The public front door of this repository is now operational, not total-theoretical.
+
+**Core operational sentence:**
+
+A projection is valid only for the decisions it preserves.
+
+This is implemented through field tools:
+
+- [Decision-Validity Audit](field-tools/DECISION-VALIDITY-AUDIT.md)
+- [Structural Stability Audit](field-tools/STRUCTURAL-STABILITY-AUDIT.md)
+- [Preventive Value Audit](field-tools/PREVENTIVE-VALUE-AUDIT.md)
+- [Audit Sheet](field-tools/AUDIT-SHEET.md)
+- [Case Template](field-tools/CASE-TEMPLATE.md)
+
+The reviewer correction is stated here:
+
+- [Reviewer Correction Plan](REVIEWER-CORRECTION-PLAN.md)
+
+This repository does not treat internal coherence, GitHub publication, Zenodo DOI, or release history as scientific validation.
+
+The operational claim is narrower:
+
+A decision cannot be validly founded on an object that does not preserve the distinctions required by that decision.
+
+Public sentence:
+
+**Correct answers to the wrong object are not solutions.**
+<!-- OPERATIONAL_AUDIT_FRONT_DOOR_END -->\n\n<!-- DECISION_VALIDITY_CRITERION_START -->
 ## Projection Fidelity: Decision-Validity Criterion
 
 The threshold formulation is:
@@ -474,4 +504,4 @@ Zenodo note:
 
 GitHub-Zenodo archiving works after the repository is enabled in Zenodo GitHub settings and a GitHub release is created.
 
-<!-- OMNIA_ZENODO_CITATION_BLOCK_END -->\n\n\n
+<!-- OMNIA_ZENODO_CITATION_BLOCK_END -->\n\n\n\n

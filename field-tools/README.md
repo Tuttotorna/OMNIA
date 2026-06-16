@@ -1,49 +1,79 @@
 # OMNIA Field Tools
 
-## Front door
+## Primary operational entry
 
-This folder contains the operational version of OMNIA.
+The primary operational entry point is:
 
-The goal is not to present a total theory first.
+[DECISION-VALIDITY-AUDIT.md](DECISION-VALIDITY-AUDIT.md)
 
-The goal is to provide usable audit tools.
+Everything else in this folder is supporting material.
 
 ---
 
-## Core sentence
+## Core criterion
 
 A projection is valid only for the decisions it preserves.
 
+Let:
+
+`Omega` = accessible field / system / generative structure
+
+`pi: Omega -> P` = projection, metric, benchmark, KPI, score, aggregate, model, representation, classification, or observed output
+
+`D: Omega -> A` = decision, inference, classification, ranking, judgement, or action
+
+The projection `pi` is valid for decision `D` if and only if:
+
+`D = d composed with pi`
+
+for some function:
+
+`d: P -> A`
+
+Equivalently:
+
+`pi(omega1) = pi(omega2) implies D(omega1) = D(omega2)`
+
+Failure condition:
+
+`pi(omega1) = pi(omega2)` and `D(omega1) != D(omega2)`
+
+If this occurs, the projection collapses states that the decision must distinguish.
+
+Therefore the decision cannot be founded on that projection.
+
 ---
 
-## Tools
+## Supporting material
 
-| Tool | Purpose |
+| File | Role |
 |---|---|
-| Decision-Validity Audit | Test whether a metric, score, KPI, benchmark, aggregate, model, or representation can support the decision being made from it. |
-| Structural Stability Audit | Test whether an output or structure remains compatible under controlled transformations. |
-| Preventive Value Audit | Test whether a downstream harm was made probable by upstream design, incentives, defaults, price, distribution, or architecture. |
+| `AUDIT-SHEET.md` | Practical worksheet for applying the primary audit. |
+| `CASE-TEMPLATE.md` | Template for documenting one field case. |
+| `STRUCTURAL-STABILITY-AUDIT.md` | Secondary audit: structural stability under transformations. |
+| `PREVENTIVE-VALUE-AUDIT.md` | Secondary audit: upstream conditions of downstream harm. |
+| `EXAMPLES/` | Illustrative examples only. |
 
 ---
 
-## Operational rule
+## Boundary
 
-No claim is treated as proven because it is coherent internally.
+This folder does not claim a new mathematical foundation.
 
-No repository, DOI, release, PDF, or public archive is treated as validation.
+It does not claim scientific validation.
 
-Every claim must be tested by:
+It does not treat publication, DOI, GitHub releases, or internal coherence as proof.
 
-1. object used;
-2. decision required;
-3. distinctions required;
-4. collapse test;
-5. failure condition;
-6. correction;
-7. result.
+It provides one operational test:
+
+Does the decision factor through the object being used?
+
+If yes, the object may support that decision within scope.
+
+If no, the decision is being made on the wrong object.
 
 ---
 
-## Minimal public translation
+## Public sentence
 
-Correct answers to the wrong object are not solutions.\n
+Correct answers to the wrong object are not solutions.

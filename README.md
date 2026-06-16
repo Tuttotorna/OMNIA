@@ -1,34 +1,46 @@
+
+
 <!-- OPERATIONAL_AUDIT_FRONT_DOOR_START -->
-## Operational audit front door
+## Operational front door
 
-The public front door of this repository is now operational, not total-theoretical.
+The operational entry point of OMNIA is now reduced to one primary object:
 
-**Core operational sentence:**
+**Decision-Validity Audit**
+
+Primary file:
+
+- [field-tools/DECISION-VALIDITY-AUDIT.md](field-tools/DECISION-VALIDITY-AUDIT.md)
+
+Core criterion:
 
 A projection is valid only for the decisions it preserves.
 
-This is implemented through field tools:
+Formal condition:
 
-- [Decision-Validity Audit](field-tools/DECISION-VALIDITY-AUDIT.md)
-- [Structural Stability Audit](field-tools/STRUCTURAL-STABILITY-AUDIT.md)
-- [Preventive Value Audit](field-tools/PREVENTIVE-VALUE-AUDIT.md)
-- [Audit Sheet](field-tools/AUDIT-SHEET.md)
-- [Case Template](field-tools/CASE-TEMPLATE.md)
+`D = d composed with pi`
 
-The reviewer correction is stated here:
+Equivalently:
 
-- [Reviewer Correction Plan](REVIEWER-CORRECTION-PLAN.md)
+`pi(omega1) = pi(omega2) implies D(omega1) = D(omega2)`
 
-This repository does not treat internal coherence, GitHub publication, Zenodo DOI, or release history as scientific validation.
+Operational failure:
 
-The operational claim is narrower:
-
-A decision cannot be validly founded on an object that does not preserve the distinctions required by that decision.
+If two states become identical under the projection but require different decisions, the projection cannot ground that decision.
 
 Public sentence:
 
 **Correct answers to the wrong object are not solutions.**
-<!-- OPERATIONAL_AUDIT_FRONT_DOOR_END -->\n\n<!-- DECISION_VALIDITY_CRITERION_START -->
+
+All other files in `field-tools/` are supporting material, examples, templates, or secondary applications.
+
+This repository does not treat internal coherence, GitHub publication, Zenodo DOI, release history, or public posting as validation.
+
+The claim remains narrow:
+
+A decision cannot be validly founded on an object that does not preserve the distinctions required by that decision.
+<!-- OPERATIONAL_AUDIT_FRONT_DOOR_END -->
+
+\n\n<!-- DECISION_VALIDITY_CRITERION_START -->
 ## Projection Fidelity: Decision-Validity Criterion
 
 The threshold formulation is:

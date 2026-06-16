@@ -130,3 +130,21 @@ This is the current front door.
 
 It is not presented as a new theory.
 <!-- DVA_MINIMAL_CRITERION_FRONT_DOOR_END -->
+
+<!-- DVA_ONE_PAGE_FRONT_DOOR_START -->
+## 60-second front door
+
+The shortest operational entry point is:
+
+[DECISION-VALIDITY-AUDIT-ONE-PAGE.md](DECISION-VALIDITY-AUDIT-ONE-PAGE.md)
+
+Core test:
+
+`pi(omega_1) = pi(omega_2)` but `D(omega_1) != D(omega_2)`
+
+Meaning:
+
+same object value, different required decision.
+
+This is the current 60-second front door.
+<!-- DVA_ONE_PAGE_FRONT_DOOR_END -->

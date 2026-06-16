@@ -114,3 +114,19 @@ Boundary:
 
 This does not claim novelty in cybersecurity and does not define a universal patching policy.
 <!-- CYBER_RISK_CVSS_DECISION_VALIDITY_CASE_LINK_END -->
+
+<!-- DVA_MINIMAL_CRITERION_FRONT_DOOR_START -->
+## Minimal front door
+
+The minimal operational entry point is:
+
+[DECISION-VALIDITY-AUDIT-MINIMAL-CRITERION.md](DECISION-VALIDITY-AUDIT-MINIMAL-CRITERION.md)
+
+It states the limited criterion:
+
+A decision cannot be validly founded on an object that does not preserve the distinctions required by that decision.
+
+This is the current front door.
+
+It is not presented as a new theory.
+<!-- DVA_MINIMAL_CRITERION_FRONT_DOOR_END -->
